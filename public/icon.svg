@@ -1,15 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- White circle background -->
-  <circle cx="256" cy="256" r="256" fill="#ffffff"/>
-  <!-- Gold EM text -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0f0f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
   <text
     x="256"
-    y="302"
+    y="218"
     font-family="Georgia, 'Times New Roman', serif"
     font-weight="700"
-    font-size="210"
+    font-size="168"
     fill="#F1B82D"
     text-anchor="middle"
-    letter-spacing="-4"
+    letter-spacing="-2"
   >EM</text>
+  <text
+    x="256"
+    y="370"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-weight="700"
+    font-size="148"
+    fill="#F1B82D"
+    text-anchor="middle"
+    letter-spacing="-2"
+  >Crit</text>
 </svg>
