@@ -40,7 +40,7 @@ export default function Header({ title, subtitle, showBack = false }) {
       {/* Title */}
       <div className="flex-1 min-w-0">
         <p
-          className="font-display font-semibold truncate leading-none"
+          className="font-display font-semibold truncate leading-tight"
           style={{ fontSize: showBack ? 16 : 17, color: "var(--text-primary)", letterSpacing: "0.01em" }}
         >
           {title}
