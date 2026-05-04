@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Search, Star, X } from "lucide-react";
+import { ChevronDown, Search, Star, X } from "lucide-react";
 import Header from "../components/Header";
 import DiagnosisCard from "../components/DiagnosisCard";
 import { DIAGNOSES } from "../data/diagnoses";
@@ -12,6 +12,20 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const [activeCat, setActiveCat] = useState(null);
   const [starsOnly, setStarsOnly] = useState(false);
+  const [collapsedCats, setCollapsedCats] = useState(new Set());
+
+  // Auto-expand everything when filters/search are active
+  useEffect(() => {
+    setCollapsedCats(new Set());
+  }, [query, activeCat, starsOnly]);
+
+  function toggleCollapse(catId) {
+    setCollapsedCats((prev) => {
+      const next = new Set(prev);
+      next.has(catId) ? next.delete(catId) : next.add(catId);
+      return next;
+    });
+  }
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -34,48 +48,57 @@ export default function Home() {
     <div className="flex flex-col min-h-screen" style={{ background: "var(--bg)" }}>
       <Header title="Critical Diagnoses" subtitle="Emergency Medicine" />
 
-      {/* Search + filters */}
-      <div className="px-4 pt-4 pb-2 flex flex-col gap-3">
+      {/* Sticky search + filters */}
+      <div
+        className="sticky z-20 px-3 pt-1 pb-2 flex flex-col gap-2"
+        style={{
+          top: 64,
+          background: "var(--bg)",
+          borderBottom: "1px solid var(--border-subtle)",
+        }}
+      >
         <div
-          className="flex items-center gap-2 rounded-xl px-3"
-          style={{ background: "var(--bg-input)", border: "1px solid var(--border)", height: 44 }}
+          className="flex items-center gap-2 rounded-lg px-2.5"
+          style={{ background: "var(--bg-input)", border: "1px solid var(--border)", height: 36 }}
         >
-          <Search size={16} className="shrink-0" style={{ color: "var(--text-faint)" }} />
+          <Search size={14} className="shrink-0" style={{ color: "var(--text-faint)" }} />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search diagnoses…"
-            className="flex-1 bg-transparent outline-none text-sm"
-            style={{ color: "var(--text-primary)", caretColor: "#F1B82D" }}
+            className="flex-1 bg-transparent outline-none"
+            style={{ fontSize: 13, color: "var(--text-primary)", caretColor: "#F1B82D" }}
           />
           {query && (
             <button onClick={() => setQuery("")} style={{ color: "var(--text-faint)" }}>
-              <X size={15} />
+              <X size={13} />
             </button>
           )}
         </div>
 
         {/* Filter chips */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1">
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5" style={{ scrollbarWidth: "none" }}>
           {/* Stars */}
           <button
             onClick={() => { setStarsOnly((v) => !v); setActiveCat(null); }}
-            className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
+            className="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-full font-semibold transition-all"
             style={{
+              fontSize: 11,
               background: starsOnly ? "rgba(241,184,45,0.15)" : "var(--bg-subtle)",
               border: starsOnly ? "1px solid rgba(241,184,45,0.4)" : "1px solid var(--border-mid)",
               color: starsOnly ? "#F1B82D" : "var(--text-muted)",
             }}
           >
-            <Star size={12} fill={starsOnly ? "#F1B82D" : "none"} />
+            <Star size={11} fill={starsOnly ? "#F1B82D" : "none"} />
             Starred
           </button>
 
           {/* All */}
           <button
             onClick={() => { setActiveCat(null); setStarsOnly(false); }}
-            className="shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
+            className="shrink-0 px-2.5 py-1 rounded-full font-semibold transition-all"
             style={{
+              fontSize: 11,
               background: activeCat === null && !starsOnly ? "#F1B82D" : "var(--bg-subtle)",
               border: activeCat === null && !starsOnly ? "1px solid #F1B82D" : "1px solid var(--border-mid)",
               color: activeCat === null && !starsOnly ? "#0a0a0a" : "var(--text-muted)",
@@ -90,8 +113,9 @@ export default function Home() {
               <button
                 key={c.id}
                 onClick={() => { setActiveCat(active ? null : c.id); setStarsOnly(false); }}
-                className="shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
+                className="shrink-0 px-2.5 py-1 rounded-full font-semibold transition-all"
                 style={{
+                  fontSize: 11,
                   background: active ? `${c.color}22` : "var(--bg-subtle)",
                   border: active ? `1px solid ${c.color}55` : "1px solid var(--border-mid)",
                   color: active ? c.color : "var(--text-muted)",
@@ -105,7 +129,23 @@ export default function Home() {
       </div>
 
       {/* Results */}
-      <div className="flex-1 px-4 pb-8">
+      <div className="flex-1 px-4 pb-8 pt-2">
+        {grouped.length > 0 && (
+          <div className="flex justify-end pt-1 pb-0.5">
+            <button
+              onClick={() => {
+                const allCollapsed = grouped.every(({ cat }) => collapsedCats.has(cat.id));
+                setCollapsedCats(allCollapsed ? new Set() : new Set(grouped.map(({ cat }) => cat.id)));
+              }}
+              className="text-xs transition-colors"
+              style={{ color: "var(--text-faint)" }}
+              onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-muted)"}
+              onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-faint)"}
+            >
+              {grouped.every(({ cat }) => collapsedCats.has(cat.id)) ? "Expand all" : "Collapse all"}
+            </button>
+          </div>
+        )}
         <AnimatePresence mode="popLayout">
           {grouped.length === 0 ? (
             <motion.div
@@ -122,36 +162,56 @@ export default function Home() {
               </p>
             </motion.div>
           ) : (
-            grouped.map(({ cat, items }) => (
-              <motion.div key={cat.id} layout>
-                {/* Category header */}
-                <div className="flex items-center gap-2 mb-3 mt-5 first:mt-1">
-                  <div className="w-2 h-2 rounded-full shrink-0" style={{ background: cat.color }} />
-                  <span
-                    className="font-display font-semibold uppercase"
-                    style={{ fontSize: 11, color: cat.color, letterSpacing: "0.1em" }}
+            grouped.map(({ cat, items }) => {
+              const isCollapsed = collapsedCats.has(cat.id);
+              return (
+                <motion.div key={cat.id} layout>
+                  {/* Category header — tappable accordion trigger */}
+                  <button
+                    onClick={() => toggleCollapse(cat.id)}
+                    className="w-full flex items-center gap-2 mb-3 mt-5 first:mt-1"
                   >
-                    {cat.label}
-                  </span>
-                  <div className="flex-1 h-px" style={{ background: `${cat.color}22` }} />
-                  <span className="text-xs" style={{ color: "var(--text-dim)" }}>{items.length}</span>
-                </div>
+                    <div className="w-2 h-2 rounded-full shrink-0" style={{ background: cat.color }} />
+                    <span
+                      className="font-display font-semibold uppercase"
+                      style={{ fontSize: 11, color: cat.color, letterSpacing: "0.1em" }}
+                    >
+                      {cat.label}
+                    </span>
+                    <div className="flex-1 h-px" style={{ background: `${cat.color}22` }} />
+                    <span className="text-xs mr-1" style={{ color: "var(--text-dim)" }}>{items.length}</span>
+                    <motion.span
+                      animate={{ rotate: isCollapsed ? -90 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      style={{ color: "var(--text-dim)", display: "flex" }}
+                    >
+                      <ChevronDown size={14} />
+                    </motion.span>
+                  </button>
 
-                {/* Cards */}
-                <div className="grid grid-cols-2 gap-3">
-                  <AnimatePresence mode="popLayout">
-                    {items.map((dx) => (
-                      <DiagnosisCard
-                        key={dx.id}
-                        dx={dx}
-                        isStarred={isStarred(dx.id)}
-                        onToggleStar={toggle}
-                      />
-                    ))}
-                  </AnimatePresence>
-                </div>
-              </motion.div>
-            ))
+                  {/* Collapsible cards */}
+                  <motion.div
+                    initial={false}
+                    animate={{ height: isCollapsed ? 0 : "auto", opacity: isCollapsed ? 0 : 1 }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    <div className="grid grid-cols-2 gap-3 pb-1">
+                      <AnimatePresence mode="popLayout">
+                        {items.map((dx) => (
+                          <DiagnosisCard
+                            key={dx.id}
+                            dx={dx}
+                            isStarred={isStarred(dx.id)}
+                            onToggleStar={toggle}
+                          />
+                        ))}
+                      </AnimatePresence>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })
           )}
         </AnimatePresence>
       </div>

@@ -7,6 +7,9 @@
 /* ── Dark theme (default) ─────────────────────────────── */
 :root,
 [data-theme="dark"] {
+  --gold:          #F1B82D;
+  --dose-bg:       rgba(241, 184, 45, 0.1);
+  --dose-border:   rgba(241, 184, 45, 0.28);
   --bg:            #0a0a0a;
   --bg-card:       #141414;
   --bg-subtle:     #1a1a1a;
@@ -26,6 +29,9 @@
 
 /* ── Light theme ──────────────────────────────────────── */
 [data-theme="light"] {
+  --gold:          #9a6800;
+  --dose-bg:       rgba(154, 104, 0, 0.08);
+  --dose-border:   rgba(154, 104, 0, 0.28);
   --bg:            #f5f5f5;
   --bg-card:       #ffffff;
   --bg-subtle:     #efefef;
@@ -77,7 +83,7 @@ html, body, #root {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: 12px;
-  color: #F1B82D;
+  color: var(--gold);
   margin: 1.5rem 0 0.5rem;
   padding-bottom: 0.25rem;
   border-bottom: 1px solid var(--border);
@@ -90,9 +96,9 @@ html, body, #root {
 .prose-clinical .dose {
   font-family: "JetBrains Mono", monospace;
   font-size: 13px;
-  background: rgba(241, 184, 45, 0.1);
-  border: 1px solid rgba(241, 184, 45, 0.28);
-  color: #F1B82D;
+  background: var(--dose-bg);
+  border: 1px solid var(--dose-border);
+  color: var(--gold);
   padding: 1px 6px;
   border-radius: 4px;
   white-space: nowrap;
