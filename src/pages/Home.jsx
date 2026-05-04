@@ -59,7 +59,7 @@ export default function Home() {
         <div className="flex items-center gap-2 overflow-x-auto pb-1">
           {/* Stars */}
           <button
-            onClick={() => setStarsOnly((v) => !v)}
+            onClick={() => { setStarsOnly((v) => !v); setActiveCat(null); }}
             className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
             style={{
               background: starsOnly ? "rgba(241,184,45,0.15)" : "var(--bg-subtle)",
@@ -73,7 +73,7 @@ export default function Home() {
 
           {/* All */}
           <button
-            onClick={() => setActiveCat(null)}
+            onClick={() => { setActiveCat(null); setStarsOnly(false); }}
             className="shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
             style={{
               background: activeCat === null && !starsOnly ? "#F1B82D" : "var(--bg-subtle)",
@@ -89,7 +89,7 @@ export default function Home() {
             return (
               <button
                 key={c.id}
-                onClick={() => setActiveCat(active ? null : c.id)}
+                onClick={() => { setActiveCat(active ? null : c.id); setStarsOnly(false); }}
                 className="shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
                 style={{
                   background: active ? `${c.color}22` : "var(--bg-subtle)",
