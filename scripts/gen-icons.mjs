@@ -6,8 +6,8 @@ const svg = readFileSync("public/icon.svg", "utf8");
 for (const size of [192, 512]) {
   const resvg = new Resvg(svg, { fitTo: { mode: "width", value: size } });
   const png = resvg.render().asPng();
-  writeFileSync(`public/icon-${size}.png`, png);
-  console.log(`✓ icon-${size}.png`);
+  writeFileSync(`public/icon-${size}-v2.png`, png);
+  console.log(`✓ icon-${size}-v2.png`);
 }
 
 // Apple touch icon at 180x180
