@@ -4,7 +4,7 @@ export default function ViewToggle({ view, onChange }) {
   return (
     <div
       className="flex rounded-full p-0.5 text-sm font-semibold select-none"
-      style={{ background: "#1a1a1a", border: "1px solid #2a2a2a" }}
+      style={{ background: "var(--bg-subtle)", border: "1px solid var(--border-mid)" }}
     >
       {["tldr", "extended"].map((v) => {
         const active = view === v;
@@ -13,7 +13,7 @@ export default function ViewToggle({ view, onChange }) {
             key={v}
             onClick={() => onChange(v)}
             className="relative px-4 py-1.5 rounded-full transition-colors z-10"
-            style={{ color: active ? "#0a0a0a" : "#9ca3af" }}
+            style={{ color: active ? "#0a0a0a" : "var(--text-muted)" }}
           >
             {active && (
               <motion.div

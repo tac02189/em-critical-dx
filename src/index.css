@@ -4,96 +4,103 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* ── Dark theme (default) ─────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  --bg:            #0a0a0a;
+  --bg-card:       #141414;
+  --bg-subtle:     #1a1a1a;
+  --bg-input:      #141414;
+  --border:        #222222;
+  --border-subtle: #1a1a1a;
+  --border-mid:    #2a2a2a;
+  --header-bg:     rgba(10, 10, 10, 0.92);
+  --text-primary:  #f3f4f6;
+  --text-body:     #e5e7eb;
+  --text-secondary:#9ca3af;
+  --text-muted:    #6b7280;
+  --text-faint:    #4b5563;
+  --text-dim:      #374151;
   color-scheme: dark;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
 
-html,
-body,
-#root {
+/* ── Light theme ──────────────────────────────────────── */
+[data-theme="light"] {
+  --bg:            #f5f5f5;
+  --bg-card:       #ffffff;
+  --bg-subtle:     #efefef;
+  --bg-input:      #ffffff;
+  --border:        #e5e7eb;
+  --border-subtle: #f0f0f0;
+  --border-mid:    #d1d5db;
+  --header-bg:     rgba(245, 245, 245, 0.92);
+  --text-primary:  #111827;
+  --text-body:     #1f2937;
+  --text-secondary:#374151;
+  --text-muted:    #6b7280;
+  --text-faint:    #9ca3af;
+  --text-dim:      #d1d5db;
+  color-scheme: light;
+}
+
+/* ── Base ─────────────────────────────────────────────── */
+html, body, #root {
   margin: 0;
   padding: 0;
   min-height: 100svh;
-  background: #0a0a0a;
-  color: #e5e7eb;
+  background: var(--bg);
+  color: var(--text-body);
   font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-* {
-  -webkit-tap-highlight-color: transparent;
-}
+* { -webkit-tap-highlight-color: transparent; }
 
-/* Subtle scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-thumb {
-  background: #2a2a2a;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
 
-/* Selection */
-::selection {
-  background: rgba(241, 184, 45, 0.3);
-  color: #fff;
-}
+::selection { background: rgba(241, 184, 45, 0.3); color: inherit; }
 
-/* Diagnostic content typography */
+/* ── Clinical prose ───────────────────────────────────── */
 .prose-clinical {
   font-size: 15px;
   line-height: 1.6;
+  color: var(--text-body);
 }
 .prose-clinical h3 {
   font-family: "Oswald", sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-size: 13px;
+  font-size: 12px;
   color: #F1B82D;
   margin: 1.5rem 0 0.5rem;
   padding-bottom: 0.25rem;
-  border-bottom: 1px solid #2a2a2a;
+  border-bottom: 1px solid var(--border);
 }
-.prose-clinical h3:first-child {
-  margin-top: 0;
-}
-.prose-clinical ul {
-  margin: 0.25rem 0 0.75rem;
-  padding-left: 1.25rem;
-}
-.prose-clinical li {
-  margin: 0.2rem 0;
-}
-.prose-clinical strong {
-  color: #fff;
-  font-weight: 600;
-}
-.prose-clinical p {
-  margin: 0.5rem 0;
-}
+.prose-clinical h3:first-child { margin-top: 0; }
+.prose-clinical ul { margin: 0.25rem 0 0.75rem; padding-left: 1.25rem; }
+.prose-clinical li { margin: 0.25rem 0; color: var(--text-body); }
+.prose-clinical strong { color: var(--text-primary); font-weight: 600; }
+.prose-clinical p { margin: 0.5rem 0; }
 .prose-clinical .dose {
   font-family: "JetBrains Mono", monospace;
-  font-size: 13.5px;
-  background: rgba(241, 184, 45, 0.08);
-  border: 1px solid rgba(241, 184, 45, 0.25);
+  font-size: 13px;
+  background: rgba(241, 184, 45, 0.1);
+  border: 1px solid rgba(241, 184, 45, 0.28);
   color: #F1B82D;
   padding: 1px 6px;
   border-radius: 4px;
   white-space: nowrap;
 }
 
-/* Animated gold underline pulse for category headers */
+/* ── Shimmer dot ──────────────────────────────────────── */
 @keyframes shimmer {
   0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
+  50%       { opacity: 1;   }
 }
-.shimmer-dot {
-  animation: shimmer 2.4s ease-in-out infinite;
-}
+.shimmer-dot { animation: shimmer 2.4s ease-in-out infinite; }

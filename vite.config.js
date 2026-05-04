@@ -1,11 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// For GitHub Pages: served from /em-critical-dx/. For Firebase Hosting: served from /.
-// Toggle via DEPLOY_TARGET=firebase npm run build
+// dev: base = "/" (no prefix needed)
+// build for GitHub Pages: base = "/em-critical-dx/"
+// build for Firebase: base = "/"
 const isFirebase = process.env.DEPLOY_TARGET === "firebase";
+const isProd = process.env.NODE_ENV === "production";
 
 export default defineConfig({
-  base: isFirebase ? "/" : "/em-critical-dx/",
+  base: isProd && !isFirebase ? "/em-critical-dx/" : "/",
   plugins: [react()],
 });

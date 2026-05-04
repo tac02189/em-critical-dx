@@ -10,7 +10,7 @@ import { useStarred } from "../hooks/useStarred";
 export default function Home() {
   const { isStarred, toggle } = useStarred();
   const [query, setQuery] = useState("");
-  const [activeCat, setActiveCat] = useState(null); // null = all
+  const [activeCat, setActiveCat] = useState(null);
   const [starsOnly, setStarsOnly] = useState(false);
 
   const filtered = useMemo(() => {
@@ -18,79 +18,67 @@ export default function Home() {
     return DIAGNOSES.filter((dx) => {
       if (starsOnly && !isStarred(dx.id)) return false;
       if (activeCat && dx.category !== activeCat) return false;
-      if (q) {
-        return (
-          dx.name.toLowerCase().includes(q) ||
-          (dx.subtitle ?? "").toLowerCase().includes(q)
-        );
-      }
+      if (q) return dx.name.toLowerCase().includes(q) || (dx.subtitle ?? "").toLowerCase().includes(q);
       return true;
     });
   }, [query, activeCat, starsOnly, isStarred]);
 
-  // Group filtered diagnoses by category order
   const grouped = useMemo(() => {
     const map = {};
     CATEGORIES.forEach((c) => { map[c.id] = []; });
-    filtered.forEach((dx) => {
-      if (map[dx.category]) map[dx.category].push(dx);
-    });
-    return CATEGORIES.filter((c) => map[c.id].length > 0).map((c) => ({
-      cat: c,
-      items: map[c.id],
-    }));
+    filtered.forEach((dx) => { if (map[dx.category]) map[dx.category].push(dx); });
+    return CATEGORIES.filter((c) => map[c.id].length > 0).map((c) => ({ cat: c, items: map[c.id] }));
   }, [filtered]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen" style={{ background: "var(--bg)" }}>
       <Header title="EM Critical Dx" subtitle="Mizzou Emergency Medicine" />
 
       {/* Search + filters */}
       <div className="px-4 pt-4 pb-2 flex flex-col gap-3">
-        {/* Search bar */}
         <div
           className="flex items-center gap-2 rounded-xl px-3"
-          style={{ background: "#141414", border: "1px solid #222", height: 44 }}
+          style={{ background: "var(--bg-input)", border: "1px solid var(--border)", height: 44 }}
         >
-          <Search size={16} className="shrink-0" style={{ color: "#4b5563" }} />
+          <Search size={16} className="shrink-0" style={{ color: "var(--text-faint)" }} />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search diagnoses…"
             className="flex-1 bg-transparent outline-none text-sm"
-            style={{ color: "#e5e7eb", caretColor: "#F1B82D" }}
+            style={{ color: "var(--text-primary)", caretColor: "#F1B82D" }}
           />
           {query && (
-            <button onClick={() => setQuery("")} style={{ color: "#4b5563" }}>
+            <button onClick={() => setQuery("")} style={{ color: "var(--text-faint)" }}>
               <X size={15} />
             </button>
           )}
         </div>
 
-        {/* Filter row */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 hide-scrollbar">
-          {/* Stars toggle */}
+        {/* Filter chips */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1">
+          {/* Stars */}
           <button
             onClick={() => setStarsOnly((v) => !v)}
             className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
             style={{
-              background: starsOnly ? "rgba(241,184,45,0.15)" : "#1a1a1a",
-              border: starsOnly ? "1px solid rgba(241,184,45,0.4)" : "1px solid #2a2a2a",
-              color: starsOnly ? "#F1B82D" : "#6b7280",
+              background: starsOnly ? "rgba(241,184,45,0.15)" : "var(--bg-subtle)",
+              border: starsOnly ? "1px solid rgba(241,184,45,0.4)" : "1px solid var(--border-mid)",
+              color: starsOnly ? "#F1B82D" : "var(--text-muted)",
             }}
           >
             <Star size={12} fill={starsOnly ? "#F1B82D" : "none"} />
             Starred
           </button>
 
-          {/* All button */}
+          {/* All */}
           <button
             onClick={() => setActiveCat(null)}
             className="shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
             style={{
-              background: activeCat === null && !starsOnly ? "#F1B82D" : "#1a1a1a",
-              border: activeCat === null && !starsOnly ? "1px solid #F1B82D" : "1px solid #2a2a2a",
-              color: activeCat === null && !starsOnly ? "#0a0a0a" : "#6b7280",
+              background: activeCat === null && !starsOnly ? "#F1B82D" : "var(--bg-subtle)",
+              border: activeCat === null && !starsOnly ? "1px solid #F1B82D" : "1px solid var(--border-mid)",
+              color: activeCat === null && !starsOnly ? "#0a0a0a" : "var(--text-muted)",
             }}
           >
             All
@@ -104,9 +92,9 @@ export default function Home() {
                 onClick={() => setActiveCat(active ? null : c.id)}
                 className="shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
                 style={{
-                  background: active ? `${c.color}22` : "#1a1a1a",
-                  border: active ? `1px solid ${c.color}55` : "1px solid #2a2a2a",
-                  color: active ? c.color : "#6b7280",
+                  background: active ? `${c.color}22` : "var(--bg-subtle)",
+                  border: active ? `1px solid ${c.color}55` : "1px solid var(--border-mid)",
+                  color: active ? c.color : "var(--text-muted)",
                 }}
               >
                 {c.short}
@@ -126,7 +114,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="flex flex-col items-center justify-center py-20 gap-3"
-              style={{ color: "#4b5563" }}
+              style={{ color: "var(--text-faint)" }}
             >
               <Star size={32} strokeWidth={1.2} />
               <p className="text-sm">
@@ -140,16 +128,16 @@ export default function Home() {
                 <div className="flex items-center gap-2 mb-3 mt-5 first:mt-1">
                   <div className="w-2 h-2 rounded-full shrink-0" style={{ background: cat.color }} />
                   <span
-                    className="font-display font-semibold uppercase tracking-widest"
+                    className="font-display font-semibold uppercase"
                     style={{ fontSize: 11, color: cat.color, letterSpacing: "0.1em" }}
                   >
                     {cat.label}
                   </span>
-                  <div className="flex-1 h-px" style={{ background: `${cat.color}20` }} />
-                  <span className="text-xs" style={{ color: "#374151" }}>{items.length}</span>
+                  <div className="flex-1 h-px" style={{ background: `${cat.color}22` }} />
+                  <span className="text-xs" style={{ color: "var(--text-dim)" }}>{items.length}</span>
                 </div>
 
-                {/* Cards grid */}
+                {/* Cards */}
                 <div className="grid grid-cols-2 gap-3">
                   <AnimatePresence mode="popLayout">
                     {items.map((dx) => (
@@ -168,10 +156,9 @@ export default function Home() {
         </AnimatePresence>
       </div>
 
-      {/* Disclaimer footer */}
       <div
         className="px-4 py-3 text-center text-xs"
-        style={{ color: "#374151", borderTop: "1px solid #1a1a1a" }}
+        style={{ color: "var(--text-dim)", borderTop: "1px solid var(--border-subtle)" }}
       >
         For educational use only — verify all doses before clinical application.
       </div>
