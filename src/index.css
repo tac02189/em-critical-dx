@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100svh;
+  background: #0a0a0a;
+  color: #e5e7eb;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Selection */
+::selection {
+  background: rgba(241, 184, 45, 0.3);
+  color: #fff;
+}
+
+/* Diagnostic content typography */
+.prose-clinical {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.prose-clinical h3 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 13px;
+  color: #F1B82D;
+  margin: 1.5rem 0 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #2a2a2a;
+}
+.prose-clinical h3:first-child {
+  margin-top: 0;
+}
+.prose-clinical ul {
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 1.25rem;
+}
+.prose-clinical li {
+  margin: 0.2rem 0;
+}
+.prose-clinical strong {
+  color: #fff;
+  font-weight: 600;
+}
+.prose-clinical p {
+  margin: 0.5rem 0;
+}
+.prose-clinical .dose {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13.5px;
+  background: rgba(241, 184, 45, 0.08);
+  border: 1px solid rgba(241, 184, 45, 0.25);
+  color: #F1B82D;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Animated gold underline pulse for category headers */
+@keyframes shimmer {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.shimmer-dot {
+  animation: shimmer 2.4s ease-in-out infinite;
+}
