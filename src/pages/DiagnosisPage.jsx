@@ -56,7 +56,7 @@ export default function DiagnosisPage() {
       <div
         className="sticky z-20 flex justify-center px-4 py-3"
         style={{
-          top: 57,
+          top: "calc(57px + var(--sat))",
           background: "var(--header-bg)",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
@@ -83,7 +83,7 @@ export default function DiagnosisPage() {
 
       <div
         className="px-4 py-3 text-center text-xs"
-        style={{ color: "var(--text-dim)", borderTop: "1px solid var(--border-subtle)" }}
+        style={{ color: "var(--text-dim)", borderTop: "1px solid var(--border-subtle)", paddingBottom: "calc(0.75rem + var(--sab))" }}
       >
         For educational use only — verify all doses before clinical application.
       </div>
