@@ -52,7 +52,7 @@ export default function Home() {
       <div
         className="sticky z-20 px-3 pt-1 pb-2 flex flex-col gap-2"
         style={{
-          top: "calc(64px + var(--sat))",
+          top: "calc(64px + env(safe-area-inset-top, 0px))",
           background: "var(--bg)",
           borderBottom: "1px solid var(--border-subtle)",
         }}
@@ -218,7 +218,7 @@ export default function Home() {
 
       <div
         className="px-4 py-3 text-center text-xs"
-        style={{ color: "var(--text-dim)", borderTop: "1px solid var(--border-subtle)", paddingBottom: "calc(0.75rem + var(--sab))" }}
+        style={{ color: "var(--text-dim)", borderTop: "1px solid var(--border-subtle)", paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom, 0px))" }}
       >
         For educational use only — verify all doses before clinical application.
       </div>

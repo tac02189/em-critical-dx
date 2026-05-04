@@ -16,7 +16,7 @@ export default function Header({ title, subtitle, showBack = false }) {
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
         borderBottom: "1px solid var(--border-subtle)",
-        paddingTop: "calc(0.75rem + var(--sat))",
+        paddingTop: "calc(0.75rem + env(safe-area-inset-top, 0px))",
       }}
     >
       {/* Back button (detail pages only) */}
