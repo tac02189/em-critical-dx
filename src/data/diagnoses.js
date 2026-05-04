@@ -2100,6 +2100,1041 @@ export const DIAGNOSES = [
       },
     ],
   },
+
+  // ─── HEME / ONCOLOGIC (new) ──────────────────────────────────────────────
+  {
+    id: "hyperleukocytosis",
+    name: "Hyperleukocytosis / Leukostasis",
+    subtitle: "WBC crisis in acute leukemia",
+    category: "heme",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "Urgent hematology/oncology consult",
+          "**Do NOT transfuse RBCs** — increases whole blood viscosity at already critical levels",
+          "**Do NOT transfuse platelets** unless <10K or life-threatening bleed",
+          "Aggressive IV hydration; avoid diuretics",
+          "Avoid supplemental O₂ above what is needed (hyperoxia may worsen leukostasis)",
+        ],
+      },
+      {
+        heading: "Cytoreduction",
+        items: [
+          "**Leukapheresis** — emergent for WBC >100K with symptoms (altered mental status, hypoxia, priapism, visual changes); temporizing measure",
+          "**Hydroxyurea** — `50–100 mg/kg/day PO` (max 8 g) to reduce WBC while arranging apheresis",
+          "Definitive: chemotherapy per hematology",
+        ],
+      },
+      {
+        heading: "APL (AML-M3) special case",
+        items: [
+          "**Start ATRA immediately** — `45 mg/m² PO daily` in 2 divided doses; do NOT wait for pathology confirmation if strong suspicion",
+          "**Do NOT give leukapheresis** in APL — worsens coagulopathy and outcomes",
+          "Monitor for differentiation syndrome: fever, dyspnea, hypoxia, weight gain within days of ATRA start — treat with `Dexamethasone 10 mg IV q12h`",
+          "DIC is common in APL — monitor coags and fibrinogen q6–8h; replace aggressively",
+        ],
+      },
+      {
+        heading: "Monitor for complications",
+        items: [
+          "Tumor lysis syndrome — see Tumor Lysis entry",
+          "DIC — monitor PT, fibrinogen, D-dimer",
+          "Hyperuricemia, hyperkalemia, hyperphosphatemia",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "WBC >50,000–100,000 → microvascular sludging (leukostasis) in brain, lung, and other organs",
+          "Leukemic blasts are large, rigid, and sticky — more prone to leukostasis than mature WBCs",
+          "Most common in AML (especially M4/M5 monocytic), CML blast crisis; less common in ALL",
+          "Hyperviscosity + blast consumption of O₂ in microvasculature → ischemia",
+        ],
+      },
+      {
+        heading: "Clinical presentations of leukostasis",
+        items: [
+          "**CNS**: altered mental status, headache, blurred vision, diplopia, tinnitus, stroke-like symptoms",
+          "**Pulmonary**: dyspnea, hypoxia, bilateral infiltrates (mimics pulmonary edema or pneumonia)",
+          "**Other**: priapism, retinal vein occlusion, limb ischemia, renal failure",
+          "Paradox: WBC can be so high that ABG is unreliable — leukocytes consume O₂ in the syringe (leukocyte larceny); use co-oximetry",
+        ],
+      },
+      {
+        heading: "APL emergency details",
+        items: [
+          "APL (AML-M3): PML-RARA fusion → coagulopathy (DIC + hyperfibrinolysis) is the primary killer",
+          "ATRA initiates differentiation of promyelocytes; dramatically reduces coagulopathy and mortality",
+          "Arsenic trioxide (ATO) added by hematology for definitive induction",
+          "Differentiation syndrome: treat with dexamethasone; hold ATRA only if severe respiratory failure",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 234", "Ganzel et al, Blood Reviews 2012", "LITFL Hyperleukocytosis"],
+      },
+    ],
+  },
+
+  {
+    id: "dic",
+    name: "DIC",
+    subtitle: "Disseminated intravascular coagulation",
+    category: "heme",
+    tldr: [
+      {
+        heading: "First: treat the underlying cause",
+        items: [
+          "Sepsis → antibiotics + source control; Obstetric → delivery; APL → ATRA; Trauma → damage control",
+          "DIC will not resolve without treating the driver",
+        ],
+      },
+      {
+        heading: "Replace what is being consumed (bleed-predominant)",
+        items: [
+          "**Low fibrinogen (<150 mg/dL) + bleeding** → `Cryoprecipitate 10 units IV` (each unit raises fibrinogen ~10 mg/dL in an adult); recheck fibrinogen 30–60 min after",
+          "**Thrombocytopenia (<50K) + bleeding** → `Platelets 1 apheresis unit` (goal >50K for active bleed, >100K for CNS bleed)",
+          "**Prolonged PT/INR + bleeding** → `FFP 15–30 mL/kg IV`; also replaces fibrinogen (less efficiently than cryo)",
+          "**Target fibrinogen >150–200 mg/dL** — most sensitive/specific therapeutic target",
+        ],
+      },
+      {
+        heading: "Thrombosis-predominant DIC",
+        items: [
+          "**Heparin** (therapeutic UFH) — only for thrombotic phenotype: purpura fulminans, acral ischemia, limb-threatening thrombosis",
+          "**Avoid TXA** in mixed DIC (risk of catastrophic thrombosis); TXA may be considered in hyperfibrinolysis-predominant (trauma, obstetric) after discussion with hematology",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Simultaneous uncontrolled systemic coagulation AND fibrinolysis — consumptive coagulopathy",
+          "Tissue factor release → thrombin generation → fibrin deposition in microvasculature → organ ischemia",
+          "Plasmin activation → fibrinolysis → bleeding from consumption of clotting factors and platelets",
+          "End result: paradoxical simultaneous thrombosis AND bleeding",
+        ],
+      },
+      {
+        heading: "Common causes",
+        items: [
+          "**Sepsis** (most common — gram-negative endotoxin, gram-positive exotoxins)",
+          "**Trauma** (tissue factor release, especially brain, fat emboli)",
+          "**Obstetric** (amniotic fluid embolism, placental abruption, HELLP, retained dead fetus)",
+          "**Malignancy** (APL most acute; also mucin-secreting adenocarcinomas)",
+          "**Envenomation** (viper/rattlesnake venom — venom-induced consumption coagulopathy, VICC)",
+          "**Others**: burns, massive transfusion, anaphylaxis, aortic aneurysm",
+        ],
+      },
+      {
+        heading: "Labs and ISTH scoring",
+        items: [
+          "Overt DIC score (ISTH): platelets (<50=2, 50–100=1), D-dimer (strong↑=3, moderate↑=2), PT (>6s=2, 3–6s=1), fibrinogen (<1 g/L=1); **score ≥5 = overt DIC**",
+          "↑D-dimer, ↓fibrinogen, ↓platelets, ↑PT/aPTT, microangiopathic hemolytic anemia (schistocytes)",
+          "Fibrinogen is an acute-phase reactant — can be normal-high in early DIC (false reassurance)",
+          "Serial monitoring (q6–8h in acute DIC): fibrinogen, platelets, coags",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Chasing lab numbers without treating underlying cause is futile",
+          "FFP volume required to raise factor levels meaningfully is large (risk of volume overload); cryo is preferred for fibrinogen",
+          "4F-PCC raises factor levels rapidly but does NOT restore fibrinogen — still need cryo",
+          "Heparin in bleed-predominant DIC is contraindicated; only for thrombotic phenotype",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 246", "Levi & van der Poll, Semin Thromb Hemost 2010", "LITFL DIC"],
+      },
+    ],
+  },
+
+  {
+    id: "ttp",
+    name: "TTP",
+    subtitle: "Thrombotic thrombocytopenic purpura",
+    category: "heme",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Do NOT transfuse platelets** (worsens microvascular thrombosis) — only if life-threatening bleed AND no other option",
+          "Send ADAMTS13 activity level BEFORE plasma exchange (PLEX affects result); also send inhibitor assay",
+          "Urgent hematology consult",
+        ],
+      },
+      {
+        heading: "Plasma exchange (PLEX) — start immediately",
+        items: [
+          "`1–1.5 plasma volumes daily` with FFP replacement — start as soon as TTP suspected, do not wait for ADAMTS13",
+          "Continue daily until platelet count >150K for ≥2 consecutive days, then taper",
+          "Most important intervention — without it: >90% mortality",
+        ],
+      },
+      {
+        heading: "Adjuncts",
+        items: [
+          "**Corticosteroids** — `Methylprednisolone 1 g IV daily × 3 days`, then prednisone `1 mg/kg/day PO`",
+          "**Caplacizumab (Cablivi)** — `11 mg IV` day 1 (before PLEX), then `11 mg SQ daily`; anti-VWF nanobody; reduces recurrence, time to platelet response, and mortality; continue 30 days after last PLEX",
+          "**Rituximab** — `375 mg/m² IV weekly × 4` for ADAMTS13 <10% or refractory/relapsing disease",
+          "Folic acid supplementation (hemolysis); PPI (steroid prophylaxis)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Autoimmune antibodies against **ADAMTS13** (VWF-cleaving protease) → uncleaved ultra-large VWF multimers accumulate",
+          "Ultra-large VWF → platelet adhesion and aggregation → microthrombi in arterioles and capillaries",
+          "Microthrombi → shearing of RBCs → **microangiopathic hemolytic anemia (MAHA)**; organ ischemia",
+          "ADAMTS13 <10% is diagnostic of acquired TTP",
+        ],
+      },
+      {
+        heading: "Clinical recognition",
+        items: [
+          "Classic pentad: MAHA + thrombocytopenia + neurological symptoms + renal dysfunction + fever — present together in <25%; don't wait for all 5",
+          "**Practical trigger**: unexplained thrombocytopenia + schistocytes on smear + elevated LDH → presumptive TTP → start PLEX",
+          "Neurological: headache, confusion, focal deficits, seizures, stroke (fluctuating — classic)",
+          "Renal: usually mild (distinguishes from HUS); severe AKI → consider HUS or aHUS",
+          "Schistocytes usually >2% on peripheral smear",
+        ],
+      },
+      {
+        heading: "TTP vs. HUS vs. aHUS",
+        items: [
+          "**TTP**: ADAMTS13 <10%, neurological predominant, adult, normal ADAMTS13 in HUS",
+          "**Typical HUS**: children, Shiga toxin (E. coli O157:H7), renal predominant, NO PLEX needed",
+          "**aHUS**: complement dysregulation, no Shiga toxin, all ages; treat with eculizumab",
+          "PLASMIC score: 7-variable tool predicting ADAMTS13 <10%; score ≥5 → start PLEX empirically",
+        ],
+      },
+      {
+        heading: "Triggers and associations",
+        items: [
+          "Drugs: quinine (most common drug cause), ticlopidine, clopidogrel, cyclosporine, tacrolimus, gemcitabine",
+          "Pregnancy (TTP in 2nd/3rd trimester vs. HELLP in 3rd trimester/postpartum — distinction critical)",
+          "Infections: HIV, COVID-19",
+          "Autoimmune: SLE",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["George & Nester, NEJM 2014", "HERCULES trial (caplacizumab)", "LITFL TTP", "Tintinalli 9e Ch 236"],
+      },
+    ],
+  },
+
+  {
+    id: "acute-chest-syndrome",
+    name: "Acute Chest Syndrome",
+    subtitle: "Sickle cell pulmonary crisis",
+    category: "heme",
+    tldr: [
+      {
+        heading: "Diagnose",
+        items: [
+          "New pulmonary infiltrate on CXR **+ ≥1 of**: fever, chest pain, cough, dyspnea, hypoxia in sickle cell patient",
+          "CXR may lag 24–48 h behind clinical deterioration — treat clinically if high suspicion",
+        ],
+      },
+      {
+        heading: "Immediate treatment",
+        items: [
+          "O₂ to maintain **SpO₂ >95%** (HFNC or NIV if needed); avoid hyperoxia",
+          "**Incentive spirometry** — `10 breaths q2h` while awake; prevents further atelectasis-driven sickling",
+          "**Pain control**: opioids titrated carefully — avoid over-sedation (hypoventilation → splinting → worsens ACS)",
+          "**Bronchospasm**: `Albuterol 2.5 mg nebulized q4h`",
+        ],
+      },
+      {
+        heading: "Transfusion",
+        items: [
+          "**Simple transfusion** if Hgb <9 g/dL or ≥1 g/dL below baseline — target Hgb 10 g/dL; reduces HbS%",
+          "**Exchange transfusion** (erythrocytapheresis) for: severe/rapidly worsening ACS, multilobar disease, SpO₂ <90% despite O₂, respiratory failure, neurological involvement — target HbS <30%; call hematology urgently",
+        ],
+      },
+      {
+        heading: "Antibiotics",
+        items: [
+          "`Ceftriaxone 1–2 g IV daily` (typical organisms) + `Azithromycin 500 mg IV/PO daily` (atypicals: Mycoplasma, Chlamydia — major triggers)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Leading cause of death in adults with sickle cell disease",
+          "Multiple converging mechanisms: pulmonary fat embolism (from bone marrow infarction), infection (atypicals most common), in-situ sickling in pulmonary vasculature, hypoventilation-driven atelectasis",
+          "Sickling → vascular occlusion → pulmonary infarction → inflammation → further sickling (vicious cycle)",
+          "Rib infarction (common) → splinting → hypoventilation → atelectasis → ACS",
+        ],
+      },
+      {
+        heading: "Triggers",
+        items: [
+          "Post-operative hypoventilation (most preventable — incentive spirometry mandatory peri-op in SCD)",
+          "Opioid over-sedation during vaso-occlusive crisis",
+          "Infection: **Mycoplasma, Chlamydophila, RSV, parvovirus B19, influenza**",
+          "Fat/bone marrow emboli (especially with long bone pain preceding ACS)",
+          "Cold, dehydration, high altitude",
+        ],
+      },
+      {
+        heading: "Exchange transfusion details",
+        items: [
+          "Goal: reduce HbS to <30% while maintaining Hgb 10–11 g/dL (avoid Hgb >11 → hyperviscosity)",
+          "Automated erythrocytapheresis preferred over manual exchange",
+          "Alloimmunization risk — patients should be on extended RBC antigen matched units",
+          "Acute indications: PaO₂ <60 mmHg, multilobar (≥3 lobes), rapid deterioration",
+        ],
+      },
+      {
+        heading: "Long-term prevention",
+        items: [
+          "Hydroxyurea: induces HbF → reduces sickling frequency; reduces ACS incidence ~50%",
+          "Chronic transfusion therapy for recurrent severe ACS",
+          "Voxelotor (anti-sickling agent), crizanlizumab (anti-P-selectin) — newer agents",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 235", "NHLBI SCD Evidence-Based Management Guidelines 2014", "LITFL Acute Chest Syndrome"],
+      },
+    ],
+  },
+
+  {
+    id: "hyperviscosity",
+    name: "Hyperviscosity Syndrome",
+    subtitle: "Serum viscosity crisis",
+    category: "heme",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Do NOT transfuse RBCs** (worsens viscosity)",
+          "IV hydration: `NS bolus 500 mL–1 L` to reduce viscosity; avoid diuretics",
+          "Urgent hematology consult for emergent apheresis",
+          "Ophthalmology: fundoscopic exam for dilated/tortuous veins, retinal hemorrhages, papilledema",
+        ],
+      },
+      {
+        heading: "Definitive treatment",
+        items: [
+          "**Plasmapheresis/therapeutic plasma exchange** — emergent; removes immunoglobulin; 1–2 sessions reduce serum viscosity 60–75%",
+          "**Polycythemia vera**: phlebotomy `500 mL` with NS replacement; target Hct <45% (male) / <42% (female)",
+          "**Leukostasis (leukemia)**: leukapheresis — see Hyperleukocytosis entry",
+          "All above are temporizing — definitive treatment is chemotherapy of the underlying malignancy",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Causes and mechanisms",
+        items: [
+          "**Waldenström macroglobulinemia** (most common) — IgM paraprotein; large pentameric IgM most prone to hyperviscosity even at modest concentrations",
+          "**Multiple myeloma** — IgA or IgG (IgA most viscogenic due to polymerization)",
+          "**Polycythemia vera** — elevated RBC mass increases whole blood viscosity",
+          "**Hyperleukocytosis** — blasts increase viscosity mechanically",
+          "Serum viscosity >4 cP (normal 1.4–1.8) → symptomatic; rule of thumb ≥4 = treat",
+        ],
+      },
+      {
+        heading: "Clinical triad",
+        items: [
+          "**Bleeding** — platelet dysfunction (coating by immunoglobulins) + coagulation factor inhibition; mucosal bleeds most common",
+          "**Neurological** — headache, vertigo, tinnitus, nystagmus, ataxia, altered mental status, stroke, visual loss",
+          "**Visual** — dilated tortuous retinal veins (sausage link / boxcar pattern), retinal hemorrhages, papilledema",
+          "Also: heart failure (from plasma volume expansion by IgM), Raynaud's (cryoglobulin overlap)",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 236", "Gertz, Oncology 2020", "LITFL Hyperviscosity Syndrome"],
+      },
+    ],
+  },
+
+  // ─── METABOLIC / ELECTROLYTE ─────────────────────────────────────────────
+  {
+    id: "hyperkalemia",
+    name: "Hyperkalemia",
+    subtitle: "Elevated serum potassium / cardiac emergency",
+    category: "meta",
+    tldr: [
+      {
+        heading: "Assess urgency",
+        items: [
+          "12-lead ECG immediately — peaked T waves → PR prolongation → wide QRS → sine wave → VF/PEA",
+          "**K+ >6.5 mEq/L OR any ECG changes → treat immediately**",
+          "Confirm: repeat level, check for hemolysis, ensure proper sample collection (pseudohyperkalemia)",
+        ],
+      },
+      {
+        heading: "1. Cardiac membrane stabilization (ECG changes present)",
+        items: [
+          "`Calcium gluconate 1 g IV` (10 mL of 10% solution) over 2–3 min; onset 1–3 min, lasts 30–60 min",
+          "Repeat `1 g IV q5 min × 3` if ECG changes persist or worsen",
+          "Use `Calcium chloride 1 g` (central line preferred) for faster ionized calcium rise if coding",
+          "**Does NOT lower K+** — only stabilizes cardiac membrane",
+        ],
+      },
+      {
+        heading: "2. Shift K+ intracellularly (onset 15–30 min)",
+        items: [
+          "`Regular insulin 10 units IV` + `Dextrose 25 g IV` (D50 50 mL) simultaneously — lowers K+ 0.5–1.5 mEq/L",
+          "`Albuterol 10–20 mg nebulized` (high-dose) — lowers K+ 0.5–1.0 mEq/L; additive to insulin; avoid if tachydysrhythmia",
+          "`Sodium bicarbonate 150 mEq in 1L D5W` — most effective if concomitant metabolic acidosis; less effective in ESRD",
+        ],
+      },
+      {
+        heading: "3. Remove K+ from body",
+        items: [
+          "`Furosemide 40–80 mg IV` if not anuric — renal K+ excretion",
+          "`Patiromer 8.4 g PO` (preferred) or `Sodium zirconium cyclosilicate 10 g PO` — onset 1–2 h; potassium binders",
+          "**Hemodialysis** — fastest definitive removal; for refractory/severe hyperkalemia or AKI/ESRD; contact nephrology early",
+        ],
+      },
+      {
+        heading: "Intubation note",
+        items: [
+          "**Avoid succinylcholine** — depolarization releases ~0.5–1.0 mEq/L K+; potentially fatal in hyperkalemia",
+          "Use `Rocuronium 1.2 mg/kg IV` for RSI",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Common causes",
+        items: [
+          "AKI/CKD (decreased renal excretion), ACE inhibitors/ARBs/potassium-sparing diuretics",
+          "Rhabdomyolysis, massive hemolysis, tumor lysis, extensive burns, crush injury",
+          "Metabolic acidosis (H⁺/K⁺ exchange), DKA (insulin deficiency + acidosis)",
+          "Adrenal insufficiency (hypoaldosteronism → impaired renal K+ excretion)",
+          "Medications: heparin, NSAIDs, trimethoprim, calcineurin inhibitors, digoxin toxicity",
+        ],
+      },
+      {
+        heading: "ECG progression (memorize this sequence)",
+        items: [
+          "**Peaked/tall T waves** (earliest; most sensitive in precordial leads V2-V5)",
+          "**Flat/absent P waves** (SA nodal depression)",
+          "**Prolonged PR interval**",
+          "**Wide QRS** (>120 ms — dangerous, mimics bundle branch block)",
+          "**Sine wave pattern** (QRS merges with T wave — pre-arrest)",
+          "**VF or PEA cardiac arrest**",
+          "Note: ECG can appear normal even with K+ >7 mEq/L, especially in chronic CKD",
+        ],
+      },
+      {
+        heading: "Insulin/dextrose details",
+        items: [
+          "Onset 15–30 min; peak effect 60 min; duration 4–6 h — effect is temporary, K+ rises again",
+          "Monitor glucose at 30, 60, 90 min — hypoglycemia in 10–14% (especially in non-diabetics)",
+          "Can give D10 infusion (125 mL/hr × 6 h) after bolus to prevent delayed hypoglycemia",
+          "In hyperglycemic patients (DKA): insulin alone without dextrose",
+        ],
+      },
+      {
+        heading: "Kayexalate vs. patiromer",
+        items: [
+          "Sodium polystyrene sulfonate (Kayexalate): risk of intestinal necrosis (especially post-op, with sorbitol); less predictable efficacy",
+          "Patiromer (Veltassa): safer, more predictable; binds K+ in colon; takes hours",
+          "Sodium zirconium cyclosilicate (Lokelma): fastest onset among binders (1–2 h); also binds K+ in proximal GI",
+          "All binders take hours — not for acute management; complement to shift strategies",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 20", "Elliott et al, BMJ 2010", "Rafique, J Intensive Care Med 2018", "LITFL Hyperkalemia"],
+      },
+    ],
+  },
+
+  {
+    id: "tumor-lysis",
+    name: "Tumor Lysis Syndrome",
+    subtitle: "Metabolic emergency from cell lysis",
+    category: "meta",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "Aggressive IVF: `NS 200–300 mL/hr`; goal urine output `100–200 mL/hr`; avoid K+/PO₄ in fluids",
+          "Cardiac monitor; check K+, PO₄, Ca²⁺, uric acid, creatinine q4–6h",
+          "Treat each abnormality; contact oncology and nephrology early",
+        ],
+      },
+      {
+        heading: "Hyperuricemia",
+        items: [
+          "**Rasburicase** (drug of choice for severe) — `0.2 mg/kg IV once`; converts uric acid → allantoin (highly soluble); onset 4 h; **contraindicated in G6PD deficiency** (causes hemolysis/methemoglobinemia)",
+          "**Allopurinol** (prophylaxis/mild-moderate) — `300 mg PO TID`; blocks uric acid production; takes days to work; less effective once TLS established",
+          "**Do NOT give allopurinol and rasburicase together** — rasburicase degrades xanthine (allopurinol's substrate) → xanthine nephropathy",
+        ],
+      },
+      {
+        heading: "Hyperkalemia",
+        items: ["Treat per Hyperkalemia protocol — see Hyperkalemia entry; dialysis often needed"],
+      },
+      {
+        heading: "Hyperphosphatemia",
+        items: [
+          "`Sevelamer 1600 mg PO TID with meals` (phosphate binder); avoid calcium-based binders (precipitates Ca-PO₄)",
+          "**Do NOT replace calcium unless symptomatic** (tetany, arrhythmia, seizure) — calcium + high PO₄ → vascular/renal calcification",
+        ],
+      },
+      {
+        heading: "Renal failure / refractory",
+        items: [
+          "Hemodialysis for: oliguria/anuria despite fluids, K+ >6.5 refractory, severe hyperphosphatemia, symptomatic hypocalcemia with high PO₄",
+          "Urine alkalinization no longer recommended (promotes xanthine and Ca-PO₄ precipitation)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Cairo-Bishop criteria",
+        items: [
+          "**Lab TLS**: ≥2 of the following within 3 days before or 7 days after treatment start:",
+          "Uric acid ≥8 mg/dL (or 25% increase), K+ ≥6 mEq/L (or 25% increase), PO₄ ≥6.5 mg/dL (or 25% increase), Ca²⁺ ≤7 mg/dL (or 25% decrease)",
+          "**Clinical TLS**: Lab TLS + AKI (Cr ≥1.5× ULN), cardiac arrhythmia, seizure, or death",
+        ],
+      },
+      {
+        heading: "High-risk malignancies",
+        items: [
+          "Burkitt lymphoma (highest risk — very rapid doubling time)",
+          "ALL (especially T-cell, high WBC)",
+          "AML (especially M4/M5 with high WBC)",
+          "Large bulky aggressive lymphomas (DLBCL with high LDH)",
+          "Any large tumor burden with rapid proliferation",
+        ],
+      },
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Massive cell lysis → release of intracellular contents: purines (→ uric acid), K+, PO₄",
+          "Uric acid: precipitates in renal tubules → acute urate nephropathy → AKI",
+          "Hyperphosphatemia: CaPO₄ precipitation in renal tubules + microvasculature → further AKI",
+          "Hypocalcemia: PO₄ chelates calcium; symptomatic hypocalcemia (tetany, QTc prolongation, seizures)",
+          "Hyperkalemia: life-threatening arrhythmias",
+        ],
+      },
+      {
+        heading: "Rasburicase handling",
+        items: [
+          "Keep blood sample on ice after collection; assay within 4 h — room temperature causes ex vivo uric acid degradation → falsely low levels",
+          "Very expensive; not available in all hospitals; call pharmacy ahead",
+          "G6PD screening: if time allows before administration in at-risk populations (African, Mediterranean, Asian descent)",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Cairo & Bishop, Br J Haematol 2004", "Howard et al, NEJM 2011", "LITFL Tumour Lysis Syndrome"],
+      },
+    ],
+  },
+
+  // ─── ENVIRONMENTAL / ALTITUDE ────────────────────────────────────────────
+  {
+    id: "hypothermia",
+    name: "Hypothermia",
+    subtitle: "Core temperature <35°C",
+    category: "env",
+    tldr: [
+      {
+        heading: "Assess and monitor",
+        items: [
+          "Core temperature only (rectal or esophageal probe) — oral/axillary/tympanic unreliable",
+          "Continuous cardiac monitoring — J (Osborn) waves, AF, VF below 30°C",
+          "**Minimize movement** — VF easily triggered by physical manipulation below 30°C",
+          "Warm, dry patient; remove all wet clothing",
+        ],
+      },
+      {
+        heading: "Rewarming by severity",
+        items: [
+          "**Mild (32–35°C)**: passive rewarming only — insulation, warm environment, warm beverages if alert",
+          "**Moderate (28–32°C)**: active external rewarming — forced warm air (Bair Hugger), warming blankets, warm IV fluids (38–42°C); warm humidified O₂",
+          "**Severe (<28°C) or hemodynamically unstable**: active internal rewarming — warm gastric/bladder/pleural lavage (40–42°C NS); escalate to ECMO if cardiac arrest or refractory instability",
+          "**ECMO** — gold standard for hypothermic cardiac arrest or refractory VF below 30°C; 'not dead until warm and dead'",
+        ],
+      },
+      {
+        heading: "Cardiac arrest management",
+        items: [
+          "Start CPR; attempt defibrillation for VF × 1–3 times — may be ineffective below 30°C; **do not repeat shocks** until core temp >30°C",
+          "**Epinephrine**: withhold if core temp <30°C (drug accumulates → toxic upon rewarming); reduce dosing frequency if 30–35°C",
+          "Target rewarming to >32°C before declaring resuscitation failed",
+          "**K+ >12 mEq/L** in cardiac arrest from hypothermia suggests non-survivable cell death — consider termination; K+ <12 → continue aggressive resuscitation",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Classification",
+        items: [
+          "**Mild (32–35°C)**: shivering, tachycardia, hypertension, ataxia, confusion, poor judgment",
+          "**Moderate (28–32°C)**: shivering stops, paradoxical undressing, bradycardia, hypotension, AF, stupor",
+          "**Severe (<28°C)**: coma, no shivering, fixed dilated pupils, absent reflexes, VF/asystole",
+          "**Profound (<24°C)**: virtually no cardiac activity; appearance of death; still potentially salvageable with ECMO",
+        ],
+      },
+      {
+        heading: "ECG findings",
+        items: [
+          "**J (Osborn) waves**: positive deflection at J point (junction of QRS and ST); most prominent V4–V6; pathognomonic",
+          "Progressive PR and QRS prolongation; QTc prolongation",
+          "AF (most common arrhythmia in moderate hypothermia — usually resolves with rewarming)",
+          "VF risk increases sharply below 30°C",
+        ],
+      },
+      {
+        heading: "Special considerations",
+        items: [
+          "**Afterdrop**: core temperature continues to fall 1–2°C after rewarming starts as cold blood returns from periphery — expected; do not stop rewarming",
+          "**Alcohol**: peripheral vasodilation masks heat loss + impairs shivering + impairs judgment; most common precipitant",
+          "**Secondary hypothermia**: look for underlying cause — hypothyroidism, adrenal insufficiency, CNS injury, drugs",
+          "Warm fluids IV (38–42°C): prevents iatrogenic cooling from cold saline; not primary rewarming method alone",
+        ],
+      },
+      {
+        heading: "ECMO for hypothermic arrest",
+        items: [
+          "VA-ECMO: warms blood as it passes through circuit; most effective rewarming method",
+          "Activate ECMO team early — setup takes time",
+          "Prognostic factors for survival: K+ <12, age, no underlying lethal disease, witnessed arrest",
+          "Reports of survival with good neurological outcome after >6 h cardiac arrest from hypothermia",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 215", "Paal et al, Resuscitation 2016 (wilderness guidelines)", "LITFL Hypothermia"],
+      },
+    ],
+  },
+
+  {
+    id: "hace-hape",
+    name: "HACE / HAPE",
+    subtitle: "High altitude cerebral & pulmonary edema",
+    category: "env",
+    tldr: [
+      {
+        heading: "Both conditions: DESCEND IMMEDIATELY",
+        items: [
+          "**Descent is the most effective treatment** — even 300–1000 m makes a dramatic difference",
+          "If descent delayed: **Gamow bag** (portable hyperbaric chamber at 2 psi = simulates descent of ~2500 m)",
+          "`Supplemental O₂`: 2–4 L/min (HACE) or 4–8 L/min (HAPE); titrate to SpO₂ >90%",
+        ],
+      },
+      {
+        heading: "HACE (cerebral edema)",
+        items: [
+          "**Dexamethasone** — `8 mg IM/IV/PO` initial dose, then `4 mg q6h`; reduces cerebral edema; buys time for descent but is NOT a substitute",
+          "`Acetazolamide 250 mg PO q8h` — adjunct; stimulates respiratory drive",
+          "Intubate if comatose; avoid hypo-ventilation",
+        ],
+      },
+      {
+        heading: "HAPE (pulmonary edema)",
+        items: [
+          "**Nifedipine** (pulmonary vasodilator) — `30 mg extended-release PO`, then `30 mg q12h`; reduces pulmonary hypertension",
+          "Alternatives if nifedipine unavailable: `Tadalafil 10 mg PO q12h` or `Sildenafil 50 mg PO q8h`",
+          "`Salmeterol 125 mcg inhaled q12h` — adjunct (increases alveolar fluid clearance)",
+          "**Do NOT use diuretics** — patients are usually volume-depleted at altitude",
+          "CPAP if available and descent unavailable",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "HACE pathophysiology",
+        items: [
+          "Hypoxia at altitude → HIF-1α activation → VEGF upregulation → increased BBB permeability → vasogenic cerebral edema",
+          "Also: hypoxic cerebral vasodilation → increased cerebral blood flow and volume",
+          "Presents at >3000–3500 m (10,000–12,000 ft); onset 6–96 h after ascent",
+          "Diagnosis: **severe AMS + ataxia OR altered consciousness**; (AMS = headache + ≥1 of: fatigue, dizziness, GI symptoms)",
+          "HACE and HAPE often coexist — assess for both",
+        ],
+      },
+      {
+        heading: "HAPE pathophysiology",
+        items: [
+          "**Leading cause of altitude-related death**; mortality >50% without treatment",
+          "Individual susceptibility greatest risk factor (recurs in same individuals)",
+          "Hypoxic pulmonary vasoconstriction → ↑pulmonary artery pressure → capillary stress failure → non-cardiogenic pulmonary edema (protein-rich, high-pressure edema)",
+          "Clinical: dry cough → dyspnea at rest → pink frothy sputum; bilateral crackles; SpO₂ dramatically low for altitude",
+          "CXR: bilateral patchy infiltrates (right side often worse)",
+        ],
+      },
+      {
+        heading: "Prevention",
+        items: [
+          "Gradual ascent: >2500 m, ascend no faster than 300–500 m/day of sleeping altitude; rest day every 1000 m",
+          "Acetazolamide prophylaxis `125–250 mg PO q12h` starting 1–2 days before ascent; reduces AMS incidence ~50%",
+          "HAPE-susceptible individuals: nifedipine or tadalafil prophylaxis for high-altitude travel",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Luks et al, WEMS Guidelines 2019", "Gallagher & Bhatt, Chest 2019", "LITFL High Altitude Illness"],
+      },
+    ],
+  },
+
+  {
+    id: "envenomations",
+    name: "Envenomations",
+    subtitle: "Snake, spider, scorpion, marine",
+    category: "env",
+    tldr: [
+      {
+        heading: "All envenomations",
+        items: [
+          "**Poison Control: 1-800-222-1222** — call early for antivenom availability and guidance",
+          "Immobilize affected extremity at heart level; remove jewelry/constrictive clothing",
+          "**Do NOT**: tourniquet, incise, suck, apply ice/electric shock",
+          "IV access, monitor, baseline labs (CBC, BMP, coags, fibrinogen, CK, UA)",
+        ],
+      },
+      {
+        heading: "Pit vipers (rattlesnake, copperhead, cottonmouth)",
+        items: [
+          "Antivenom indications: progressive local swelling, coagulopathy (VICC), systemic symptoms (hypotension, altered mental status)",
+          "**CroFab**: `4–6 vials IV over 1 h` initial; repeat `4–6 vials` if symptoms not controlled at 1 h; maintenance `2 vials q6h × 3 doses`",
+          "**Anavip**: `10 vials IV over 1 h`; re-dose `10 vials` if recurrent coagulopathy",
+          "Fasciotomy: rarely needed — antivenom resolves pseudocompartment syndrome in most cases",
+        ],
+      },
+      {
+        heading: "Coral snake",
+        items: [
+          "**Do NOT wait for symptoms** — neurotoxin is irreversible once bound; treat early",
+          "North American Coral Snake Antivenin (if available) — call Poison Control for source",
+          "Supportive: mechanical ventilation for respiratory failure; onset of paralysis may be delayed 12 h",
+        ],
+      },
+      {
+        heading: "Scorpion (Centruroides)",
+        items: [
+          "**Anascorp antivenom** — `3 vials IV over 10 min`; repeat × 1 if needed; dramatically reduces symptom duration",
+          "`Midazolam 0.1 mg/kg IV` for neuromuscular excitability (roving eye movements, hypersalivation, agitation in children)",
+        ],
+      },
+      {
+        heading: "Black widow (Latrodectus)",
+        items: [
+          "Opioids + `Benzodiazepines` for severe muscle cramps",
+          "Antivenom for: severe refractory pain, respiratory compromise, hypertensive crisis, pregnancy — call Poison Control for availability",
+        ],
+      },
+      {
+        heading: "Brown recluse (Loxosceles)",
+        items: ["Supportive; wound care; surgery for large necrotic wounds — **delay ≥6–8 weeks** until wound stabilizes"],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pit viper envenomation details",
+        items: [
+          "Hemotoxic venom: proteases, phospholipases, hyaluronidase, L-amino acid oxidase → tissue necrosis, coagulopathy",
+          "VICC (venom-induced consumption coagulopathy): fibrinogen consumption, thrombocytopenia, prolonged PT/INR — can mimic DIC",
+          "Local: pain, edema advancing proximally with ecchymosis (draw proximal border with marker q30 min)",
+          "Dry bite (no envenomation) in 20–25% of pit viper strikes",
+          "Mojave rattlesnake: neurotoxic venom — may cause respiratory failure with minimal local swelling",
+          "CroFab vs. Anavip: both effective; Anavip longer half-life → less rebound coagulopathy; CroFab more widely available",
+        ],
+      },
+      {
+        heading: "Black widow (Latrodectus) details",
+        items: [
+          "Alpha-latrotoxin → massive ACh and catecholamine release from nerve terminals",
+          "Latrodectism: severe crampy abdominal pain, muscle rigidity, diaphoresis — mimics acute abdomen (appendicitis, peritonitis)",
+          "Hypertension, tachycardia, diaphoresis from catecholamine surge",
+          "Calcium gluconate IV: anecdotal benefit for muscle cramps; mostly historic",
+          "Antivenom (Merck Black Widow Spider Antivenin): equine-derived; very effective; anaphylaxis risk — premedicate",
+        ],
+      },
+      {
+        heading: "Coral snake details",
+        items: [
+          "Elapidae family: fixed front fangs; venom is postsynaptic neurotoxin (blocks nicotinic ACh receptors at NMJ)",
+          "Pattern: red on yellow = kill a fellow (North American coral snake); red on black = venom lack (non-dangerous mimic)",
+          "Symptoms: cranial nerve palsies, ptosis, dysarthria, dysphagia → respiratory paralysis — **may be delayed up to 12–13 h**",
+          "Antivenom supply: North American Coral Snake Antivenin no longer manufactured; limited supply; call Poison Control urgently",
+        ],
+      },
+      {
+        heading: "Marine envenomations",
+        items: [
+          "**Stingray**: immerse in hot water (45°C) until pain resolves; explore wound for retained spine; antibiotics for Aeromonas/Vibrio",
+          "**Box jellyfish (Chironex fleckeri)**: most dangerous; hot water or vinegar to deactivate; CPR; no proven antivenom in US",
+          "**Stonefish**: hot water immersion; antivenom available in Australia",
+          "**Cone snail**: supportive; neurotoxin; respiratory failure possible",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 209–212", "ACMT/AAPCC Antivenom Guidelines", "LITFL Envenomations", "Poison Control 1-800-222-1222"],
+      },
+    ],
+  },
+
+  // ─── SURGICAL EMERGENCIES ─────────────────────────────────────────────────
+  {
+    id: "boerhaave",
+    name: "Boerhaave Syndrome",
+    subtitle: "Spontaneous esophageal perforation",
+    category: "surg",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "NPO immediately; large-bore IV access; resuscitation",
+          "**Urgent thoracic surgery consult** — mortality doubles every 12 h without intervention",
+          "**Do NOT place NG tube** without surgical guidance (risk of extending perforation)",
+        ],
+      },
+      {
+        heading: "Imaging",
+        items: [
+          "**CT chest/abdomen with oral contrast** (water-soluble — Gastrografin) — gold standard; shows extraluminal air, mediastinal/pleural fluid, contrast leak",
+          "**Never use barium** — causes severe mediastinitis if extravasates",
+          "CXR: pneumomediastinum, pleural effusion (usually left), subcutaneous emphysema",
+          "Esophagography (water-soluble contrast) if CT inconclusive",
+        ],
+      },
+      {
+        heading: "Antibiotics (start immediately)",
+        items: [
+          "`Piperacillin-tazobactam 4.5 g IV q6h` + `Fluconazole 400 mg IV loading dose` (covers oral flora, gram-negatives, Candida)",
+          "Alternatively: `Meropenem 1 g IV q8h` + antifungal for critically ill/immunocompromised",
+        ],
+      },
+      {
+        heading: "Surgical decision",
+        items: [
+          "**Early (<24 h)**: primary surgical repair + drainage (best outcomes)",
+          "**Delayed (24–72 h)**: drainage + T-tube repair or stenting; primary repair may still be possible",
+          "**Late (>72 h) or poor surgical candidate**: endoscopic stent + drainage; esophageal diversion in extreme cases",
+          "Nutritional support: TPN or jejunal feeding tube",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology and anatomy",
+        items: [
+          "Sudden increase in intraesophageal pressure (forceful vomiting, retching, straining, childbirth, seizure) → transmural tear",
+          "Most common site: **left posterolateral wall of distal esophagus** (weakest point, 90% of cases)",
+          "Esophagus lacks serosa → mediastinal contamination with oropharyngeal flora → mediastinitis → sepsis → multiorgan failure",
+          "Distinct from Mallory-Weiss (mucosal only, not transmural, much better prognosis)",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "**Mackler's triad**: vomiting + chest pain + subcutaneous emphysema — present in only ~25%",
+          "Severe retrosternal/epigastric/back pain after vomiting or retching — most sensitive symptom",
+          "**Hamman's crunch**: mediastinal crunching sound synchronous with heartbeat on auscultation — pathognomonic but rare",
+          "CXR: pneumomediastinum (earliest finding), left pleural effusion, subcutaneous emphysema",
+          "Often misdiagnosed as: esophageal spasm, myocardial infarction, aortic dissection, peptic ulcer",
+        ],
+      },
+      {
+        heading: "Prognostic factors",
+        items: [
+          "**Time to diagnosis** is the critical variable: <24 h → mortality ~20%; >24 h → mortality 40–60%; >48 h → >70%",
+          "Pittsburgh Severity Score: >6 associated with better outcome with surgery over non-operative management",
+          "Cervical perforations (iatrogenic): better prognosis than thoracic (contained by fascial planes)",
+          "Iatrogenic (endoscopy, intubation) perforations generally smaller and better prognosis than Boerhaave",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 83", "Søreide & Viste, Scand J Trauma 2011", "LITFL Boerhaave Syndrome"],
+      },
+    ],
+  },
+
+  // ─── CARDIOVASCULAR (additional) ─────────────────────────────────────────
+  {
+    id: "scape",
+    name: "SCAPE / Flash Pulmonary Edema",
+    subtitle: "Sympathetic crashing acute pulmonary edema",
+    category: "cv",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "Sit patient upright; legs dependent (decreases venous return)",
+          "**CPAP or BiPAP immediately** — first-line, dramatically reduces intubation rate",
+          "CPAP: PEEP 10 cmH₂O; BiPAP: IPAP 15 / EPAP 5–10 cmH₂O; titrate to comfort and SpO₂",
+          "**Avoid intubation if possible** — these patients can turn around rapidly with CPAP + nitroglycerin",
+        ],
+      },
+      {
+        heading: "Nitroglycerin — the key drug (push hard)",
+        items: [
+          "`NTG 400–800 mcg SL q3–5 min` while establishing IV",
+          "`IV NTG: start 100–200 mcg/min, titrate rapidly to 400 mcg/min`; don't be timid",
+          "**IV push strategy**: `NTG 2 mg IV push q3–5 min` (repeated boluses shown to reduce intubation without dangerous hypotension)",
+          "Goal: afterload and preload reduction → fluid redistribution back to systemic compartment",
+        ],
+      },
+      {
+        heading: "Diuretics",
+        items: [
+          "`Furosemide 40–80 mg IV` — secondary role; SCAPE is fluid redistribution, not primarily fluid overload",
+          "Don't delay nitroglycerin to give furosemide first",
+        ],
+      },
+      {
+        heading: "Find and treat the trigger",
+        items: [
+          "ACS (12-lead ECG immediately), medication non-compliance, hypertensive urgency, infection, arrhythmia, cocaine",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "SCAPE vs. decompensated heart failure",
+        items: [
+          "**SCAPE**: sudden, severe hypertension (SBP typically 180–220 mmHg) → sympathetic surge → fluid *redistributes* from systemic to pulmonary compartment; patient often well-compensated at baseline",
+          "**Chronic decompensated HF**: slowly rising volume overload, less hypertension, chronically edematous — needs diuresis primarily",
+          "SCAPE: lungs 'full' from shifted volume; total body volume often normal → diuresis less effective acutely",
+          "Same drug, different roles: NTG is everything in SCAPE; adjunct in chronic CHF",
+        ],
+      },
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Catecholamine surge (pain, anxiety, cocaine, hypertensive crisis) → severe vasoconstriction → ↑afterload → ↑LVEDP → ↑pulmonary venous pressure → alveolar flooding",
+          "Volume not added externally — rapidly redistributed from systemic to pulmonary vasculature",
+          "After treatment: fluid rapidly redistributes back; dramatic clinical improvement in 30–60 min",
+          "PEEP from NIV: reduces venous return and afterload simultaneously; mechanically assists fluid redistribution",
+        ],
+      },
+      {
+        heading: "High-dose NTG evidence",
+        items: [
+          "Traditional NTG dosing (start low, titrate up) misses the window — these patients need high-dose immediately",
+          "Sharon et al (1997): high-dose NTG + CPAP vs. isosorbide + furosemide — dramatically less intubation in NTG arm",
+          "NTG IV push 2 mg boluses: Levy et al and others — effective with acceptable hypotension profile when BiPAP co-used",
+          "Start NTG boluses before IV established (SL/spray) — do not wait",
+        ],
+      },
+      {
+        heading: "Recognize and avoid cardiogenic shock confusion",
+        items: [
+          "SCAPE: hypertensive + pulmonary edema — vasodilate aggressively",
+          "Cardiogenic shock: hypotensive + pulmonary edema — vasopressors + inotropes; NTG will kill them",
+          "Wet-warm (SCAPE) vs. Wet-cold (cardiogenic shock) — BP is your differentiator",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Sharon et al, JACC 2000", "Vital et al Cochrane 2013 (NIV in APE)", "LITFL SCAPE", "Tintinalli 9e Ch 57"],
+      },
+    ],
+  },
+
+  // ─── NEURO (additional) ───────────────────────────────────────────────────
+  {
+    id: "guillain-barre",
+    name: "Guillain-Barré Syndrome",
+    subtitle: "Acute inflammatory demyelinating polyneuropathy",
+    category: "neuro",
+    tldr: [
+      {
+        heading: "Respiratory monitoring — highest priority",
+        items: [
+          "**Bedside spirometry q4h** if deteriorating: FVC and NIF (negative inspiratory force)",
+          "**Rule of 20s**: FVC <20 mL/kg, NIF worse than −20 cmH₂O, RR >20 → intubate preemptively",
+          "**Bulbar weakness** (dysarthria, dysphagia, facial droop) → aspiration risk → lower threshold to intubate",
+          "Avoid BiPAP as sole airway support — cannot protect against aspiration",
+        ],
+      },
+      {
+        heading: "Immunotherapy (choose one)",
+        items: [
+          "**IVIG** — `0.4 g/kg/day IV × 5 days` (total 2 g/kg); onset benefit 2–4 weeks",
+          "**Plasma exchange (PLEX)** — 5 exchanges (1 plasma volume each) over 10–14 days; may have slightly faster onset",
+          "IVIG and PLEX are equally effective; **do not combine** (no added benefit, more adverse effects)",
+          "**Corticosteroids are NOT effective** — do not use (worsen outcomes per RCT evidence)",
+        ],
+      },
+      {
+        heading: "Autonomic monitoring",
+        items: [
+          "Continuous cardiac monitoring — arrhythmias (bradycardia, tachycardia, heart block), labile BP",
+          "Pacemaker for symptomatic bradycardia; avoid atropine (can cause severe hypertension)",
+          "Bladder: urinary retention common — Foley catheter",
+          "Ileus: NGT if needed; TPN if prolonged",
+        ],
+      },
+      {
+        heading: "Pain management",
+        items: [
+          "Neuropathic pain in >50%: `Gabapentin 300 mg TID` or `carbamazepine`; opioids for severe pain",
+          "Pain is underrecognized and undertreated — address proactively",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Post-infectious immune-mediated attack on peripheral nerve myelin (AIDP) or axons (AMAN, AMSAN)",
+          "Molecular mimicry: antibodies against pathogen cross-react with gangliosides on peripheral nerves",
+          "Most common triggers: **Campylobacter jejuni** (most common, associated with AMAN variant), CMV, EBV, influenza, COVID-19, Zika",
+          "Ascending symmetric weakness + areflexia + sensory symptoms; cranial nerve involvement in 50%",
+        ],
+      },
+      {
+        heading: "Variants",
+        items: [
+          "**AIDP** (acute inflammatory demyelinating polyneuropathy): most common in North America/Europe; classic ascending weakness",
+          "**AMAN** (acute motor axonal neuropathy): axonal; more common in Asia; associated with C. jejuni",
+          "**Miller Fisher syndrome**: ophthalmoplegia + ataxia + areflexia; anti-GQ1b antibodies; usually spares respiratory muscles",
+          "**Bickerstaff brainstem encephalitis**: Miller Fisher + altered consciousness; overlap syndrome",
+        ],
+      },
+      {
+        heading: "Diagnosis",
+        items: [
+          "**Albuminocytologic dissociation on CSF**: elevated protein (>45 mg/dL), normal WBC (<10); may be normal in first week",
+          "**Nerve conduction studies/EMG**: demyelination pattern (AIDP) or axonal loss (AMAN); confirm diagnosis",
+          "Antiganglioside antibodies (GQ1b for Miller Fisher; GM1 for AMAN) — support diagnosis, not required acutely",
+          "Brighton Criteria: standardized diagnostic levels (1–4) for research and reporting",
+        ],
+      },
+      {
+        heading: "Prognosis",
+        items: [
+          "25–30% require mechanical ventilation",
+          "85% walk independently at 6 months; 5–10% have permanent disability",
+          "Mortality ~3–5% with modern ICU care (dysautonomia, infection, PE)",
+          "EGOS (Erasmus GBS Outcome Score) predicts 6-month independent ambulation",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["van Doorn et al, Lancet Neurol 2008", "Hughes et al, Cochrane 2014 (IVIG)", "Tintinalli 9e Ch 171", "LITFL Guillain-Barré"],
+      },
+    ],
+  },
 ];
 
 export default DIAGNOSES;
