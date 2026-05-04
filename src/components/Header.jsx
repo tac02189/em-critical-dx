@@ -18,8 +18,8 @@ export default function Header({ title, subtitle, showBack = false }) {
         borderBottom: "1px solid var(--border-subtle)",
       }}
     >
-      {/* Back button or MU logo */}
-      {showBack ? (
+      {/* Back button (detail pages only) */}
+      {showBack && (
         <button
           onClick={() => navigate(-1)}
           className="shrink-0 flex items-center justify-center rounded-full"
@@ -35,14 +35,6 @@ export default function Header({ title, subtitle, showBack = false }) {
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
-      ) : (
-        <div className="shrink-0">
-          <img
-            src={`${import.meta.env.BASE_URL}mu-icon.svg`}
-            alt="MU"
-            style={{ width: 34, height: 34, borderRadius: 8 }}
-          />
-        </div>
       )}
 
       {/* Title */}

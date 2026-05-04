@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen" style={{ background: "var(--bg)" }}>
-      <Header title="EM Critical Dx" subtitle="Mizzou Emergency Medicine" />
+      <Header title="Critical Diagnoses" subtitle="Emergency Medicine" />
 
       {/* Search + filters */}
       <div className="px-4 pt-4 pb-2 flex flex-col gap-3">
