@@ -1,10 +1,19 @@
 import { useCallback, useEffect, useState } from "react";
 
-const KEY = "em-critical-dx:starred";
+const KEY = "pocket-resus:starred";
+const LEGACY_KEY = "em-critical-dx:starred";
 
 function read() {
   try {
-    const raw = localStorage.getItem(KEY);
+    let raw = localStorage.getItem(KEY);
+    if (!raw) {
+      const legacy = localStorage.getItem(LEGACY_KEY);
+      if (legacy) {
+        localStorage.setItem(KEY, legacy);
+        localStorage.removeItem(LEGACY_KEY);
+        raw = legacy;
+      }
+    }
     return raw ? new Set(JSON.parse(raw)) : new Set();
   } catch {
     return new Set();
@@ -45,12 +54,22 @@ export function useStarred() {
   return { starred, isStarred, toggle };
 }
 
-const TOGGLE_KEY = "em-critical-dx:lastView";
+const TOGGLE_KEY = "pocket-resus:lastView";
+const LEGACY_TOGGLE_KEY = "em-critical-dx:lastView";
 
 export function useLastView() {
   const [view, setView] = useState(() => {
     try {
-      return localStorage.getItem(TOGGLE_KEY) || "tldr";
+      let v = localStorage.getItem(TOGGLE_KEY);
+      if (!v) {
+        const legacy = localStorage.getItem(LEGACY_TOGGLE_KEY);
+        if (legacy) {
+          localStorage.setItem(TOGGLE_KEY, legacy);
+          localStorage.removeItem(LEGACY_TOGGLE_KEY);
+          v = legacy;
+        }
+      }
+      return v || "tldr";
     } catch {
       return "tldr";
     }

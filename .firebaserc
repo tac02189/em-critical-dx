@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "em-critical-dx"
-  }
+  },
+  "targets": {
+    "em-critical-dx": {
+      "hosting": {
+        "pocket": [
+          "pocket-resus"
+        ],
+        "legacy": [
+          "em-critical-dx"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

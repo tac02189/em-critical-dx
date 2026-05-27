@@ -17,53 +17,48 @@ export default function DiagnosisCard({ dx, isStarred, onToggleStar }) {
       whileTap={{ scale: 0.97 }}
       transition={{ type: "spring", stiffness: 350, damping: 28 }}
       onClick={() => navigate(`/dx/${dx.id}`)}
-      className="relative flex flex-col justify-between rounded-2xl cursor-pointer overflow-hidden"
+      className="relative flex items-center gap-3 rounded-xl cursor-pointer overflow-hidden"
       style={{
         background: "var(--bg-card)",
         border: "1px solid var(--border)",
-        minHeight: 110,
-        padding: "16px 16px 12px",
+        padding: "8px 12px 8px 14px",
       }}
     >
-      {/* Category accent bar */}
+      {/* Category accent bar (left edge) */}
       <div
-        className="absolute top-0 left-0 right-0 h-0.5 rounded-t-2xl"
+        className="absolute top-0 bottom-0 left-0 w-0.5"
         style={{ background: cat?.color ?? "#F1B82D" }}
       />
 
-      {/* Header row */}
-      <div className="flex items-start justify-between gap-2">
-        <div className="flex-1 min-w-0">
-          <p
-            className="font-display font-semibold leading-tight"
-            style={{ fontSize: 17, color: "var(--text-primary)", letterSpacing: "0.01em" }}
-          >
-            {dx.name}
+      <div className="flex-1 min-w-0">
+        <p
+          className="font-display font-semibold leading-tight truncate"
+          style={{ fontSize: 15, color: "var(--text-primary)", letterSpacing: "0.01em" }}
+        >
+          {dx.name}
+        </p>
+        {dx.subtitle && (
+          <p className="leading-snug truncate" style={{ fontSize: 11, color: "var(--text-muted)" }}>
+            {dx.subtitle}
           </p>
-          {dx.subtitle && (
-            <p className="mt-0.5 leading-snug" style={{ fontSize: 12, color: "var(--text-muted)" }}>
-              {dx.subtitle}
-            </p>
-          )}
-        </div>
-        <div className="shrink-0 -mt-0.5 -mr-1">
-          <StarButton starred={isStarred} onToggle={() => onToggleStar(dx.id)} size={19} />
-        </div>
+        )}
       </div>
 
-      {/* Category chip */}
-      <div className="mt-3 flex">
-        <span
-          className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold"
-          style={{
-            background: `${cat?.color}1a`,
-            color: cat?.color ?? "#F1B82D",
-            border: `1px solid ${cat?.color}35`,
-            letterSpacing: "0.04em",
-          }}
-        >
-          {cat?.short ?? dx.category}
-        </span>
+      <span
+        className="shrink-0 inline-flex items-center px-1.5 py-0.5 rounded-full font-semibold"
+        style={{
+          fontSize: 10,
+          background: `${cat?.color}1a`,
+          color: cat?.color ?? "#F1B82D",
+          border: `1px solid ${cat?.color}35`,
+          letterSpacing: "0.04em",
+        }}
+      >
+        {cat?.short ?? dx.category}
+      </span>
+
+      <div className="shrink-0">
+        <StarButton starred={isStarred} onToggle={() => onToggleStar(dx.id)} size={17} />
       </div>
     </motion.div>
   );

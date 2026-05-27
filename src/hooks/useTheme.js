@@ -1,10 +1,20 @@
 import { useCallback, useEffect, useState } from "react";
 
-const KEY = "em-critical-dx:theme";
+const KEY = "pocket-resus:theme";
+const LEGACY_KEY = "em-critical-dx:theme";
 
 function read() {
   try {
-    return localStorage.getItem(KEY) || "dark";
+    let v = localStorage.getItem(KEY);
+    if (!v) {
+      const legacy = localStorage.getItem(LEGACY_KEY);
+      if (legacy) {
+        localStorage.setItem(KEY, legacy);
+        localStorage.removeItem(LEGACY_KEY);
+        v = legacy;
+      }
+    }
+    return v || "dark";
   } catch {
     return "dark";
   }

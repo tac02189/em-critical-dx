@@ -1942,6 +1942,253 @@ export const DIAGNOSES = [
     ],
   },
 
+  {
+    id: "postpartum-hemorrhage",
+    name: "Postpartum Hemorrhage",
+    subtitle: "≥1000 mL blood loss or bleeding with hypovolemia within 24h of birth",
+    category: "ob",
+    tldr: [
+      {
+        heading: "Resuscitate (parallel with stopping bleeding)",
+        items: [
+          "Call OB + activate **massive transfusion protocol** early; 2 large-bore IVs",
+          "Type & crossmatch, CBC, coags, fibrinogen; **fibrinogen <200 mg/dL predicts severe PPH**",
+          "Warmed crystalloid + early balanced blood products (target 1:1:1); don't over-resuscitate with crystalloid",
+          "**Tranexamic acid 1 g IV over 10 min** — give within 3 h of delivery (WOMAN trial); repeat 1 g if bleeding continues after 30 min",
+          "Keep patient warm; monitor for hypothermia, acidosis, hypocalcemia (lethal triad)",
+        ],
+      },
+      {
+        heading: "Identify cause — the 4 T's",
+        items: [
+          "**Tone** — uterine atony (70–80%, most common): boggy uterus",
+          "**Trauma** — lacerations (cervix/vagina/perineum), hematoma, uterine rupture/inversion",
+          "**Tissue** — retained placenta or products of conception",
+          "**Thrombin** — coagulopathy (DIC, HELLP, AFE, anticoagulants, dilutional)",
+        ],
+      },
+      {
+        heading: "Atony — uterotonics + maneuvers",
+        items: [
+          "**Bimanual uterine massage** first-line, immediately",
+          "**Oxytocin** — `10–40 units in 500–1000 mL NS IV infusion` (or 10 units IM); avoid rapid IV push (hypotension)",
+          "**Methylergonovine** — `0.2 mg IM` q2–4h; **contraindicated in HTN/pre-eclampsia**",
+          "**Carboprost (Hemabate)** — `250 mcg IM` q15–90 min (max 2 mg); **contraindicated in asthma**",
+          "**Misoprostol** — `800–1000 mcg rectal/sublingual` ×1",
+          "Refractory: intrauterine balloon tamponade (Bakri), uterine packing",
+        ],
+      },
+      {
+        heading: "Escalate if refractory",
+        items: [
+          "Retained tissue → manual removal / D&C",
+          "Trauma → repair lacerations; evacuate/ligate hematoma; **uterine inversion → immediate manual replacement before uterus contracts** (consider tocolytic to relax, then uterotonics after)",
+          "Definitive: uterine artery embolization (IR), B-Lynch compression suture, artery ligation, **hysterectomy** (lifesaving — don't delay)",
+          "Correct coagulopathy: FFP, cryoprecipitate (fibrinogen <150–200), platelets; consider fibrinogen concentrate",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Definition & classification",
+        items: [
+          "Cumulative blood loss ≥1000 mL OR blood loss with signs/symptoms of hypovolemia within 24h of birth (ACOG 2017 — route-independent)",
+          "Classic thresholds: ≥500 mL vaginal, ≥1000 mL cesarean",
+          "**Primary PPH**: within 24h of delivery (most common, usually atony)",
+          "**Secondary (delayed) PPH**: 24h to 12 weeks postpartum — retained products, endometritis, subinvolution, abnormal placentation",
+          "Vital signs are late — young healthy parturients compensate; estimate blood loss is unreliable (often underestimated)",
+        ],
+      },
+      {
+        heading: "Risk factors",
+        items: [
+          "Atony: prolonged/augmented labor, chorioamnionitis, multiple gestation, polyhydramnios, macrosomia, grand multiparity, prior PPH",
+          "Trauma: operative vaginal delivery, precipitous labor, episiotomy, prior cesarean",
+          "Tissue: placenta accreta spectrum, prior uterine surgery, succenturiate lobe",
+          "Thrombin: HELLP, abruption, amniotic fluid embolism, sepsis, fetal demise, anticoagulation, inherited bleeding disorders",
+        ],
+      },
+      {
+        heading: "Uterotonic dosing & contraindications",
+        items: [
+          "**Oxytocin (Pitocin)** — 10–40 units/500–1000 mL infusion or 10 units IM; first-line; rapid IV bolus → hypotension",
+          "**Methylergonovine (Methergine)** — 0.2 mg IM q2–4h; CONTRAINDICATED in hypertension, pre-eclampsia, Raynaud's, CAD",
+          "**Carboprost / 15-methyl PGF2α (Hemabate)** — 250 mcg IM q15–90 min, max 8 doses; CONTRAINDICATED in asthma; caution in hepatic/renal/cardiac disease; causes diarrhea/fever/bronchospasm",
+          "**Misoprostol (PGE1)** — 800–1000 mcg rectal/SL/buccal; causes fever, shivering",
+          "**Tranexamic acid** — 1 g IV over 10 min within 3 h; repeat ×1 if continued bleeding at 30 min (WOMAN trial — reduces death from bleeding)",
+        ],
+      },
+      {
+        heading: "Mechanical & surgical interventions",
+        items: [
+          "Bimanual uterine compression/massage — immediate, first-line for atony",
+          "Intrauterine balloon tamponade — Bakri balloon, or improvised (condom catheter); definitive in ~85%",
+          "Uterine packing (gauze)",
+          "Tranexamic acid as above",
+          "Uterine artery embolization — IR, if hemodynamically stable",
+          "B-Lynch / compression sutures, uterine or internal iliac artery ligation",
+          "**Hysterectomy** — definitive; don't delay in life-threatening hemorrhage or placenta accreta spectrum",
+          "Uterine inversion: replace immediately; uterine rupture: laparotomy",
+        ],
+      },
+      {
+        heading: "Resuscitation & transfusion",
+        items: [
+          "Activate massive transfusion protocol early; balanced 1:1:1 (PRBC:FFP:platelets)",
+          "Tranexamic acid early (within 3h)",
+          "Fibrinogen is the first factor to fall in obstetric hemorrhage — target >150–200 mg/dL; give cryoprecipitate or fibrinogen concentrate",
+          "Calcium replacement (citrate from massive transfusion → hypocalcemia)",
+          "Avoid the lethal triad: hypothermia, acidosis, coagulopathy — warm fluids/patient",
+          "Point-of-care testing (ROTEM/TEG) if available to guide product use",
+          "Cell salvage in select cases",
+        ],
+      },
+      {
+        heading: "ED / out-of-hospital considerations",
+        items: [
+          "Delayed (secondary) PPH may present to ED days–weeks postpartum: retained products, endometritis, subinvolution",
+          "Get OB/Gyn emergently; ultrasound for retained products; treat endometritis with broad-spectrum antibiotics",
+          "Precipitous delivery in ED: have oxytocin ready, controlled cord traction, inspect for lacerations",
+          "Consider uterine artery embolization or D&C for retained products",
+          "Sheehan syndrome (postpartum pituitary necrosis) is a late complication of severe PPH",
+        ],
+      },
+      {
+        heading: "Disposition",
+        items: [
+          "All significant PPH → OB management, typically ICU/L&D monitoring",
+          "Serial Hgb, coags, urine output; watch for ongoing/recurrent bleeding",
+          "Transfer to higher level of care if accreta spectrum, IR/surgical capability needed",
+          "Debrief and document estimated blood loss, interventions, response",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["ACOG Practice Bulletin 183 (2017, reaffirmed)", "WOMAN Trial, Lancet 2017", "Tintinalli 9e Ch 103", "RCOG Green-top Guideline 52"],
+      },
+    ],
+  },
+
+  {
+    id: "ectopic-pregnancy",
+    name: "Ectopic Pregnancy",
+    subtitle: "Implantation outside uterine cavity — leading cause of 1st-trimester maternal death",
+    category: "ob",
+    tldr: [
+      {
+        heading: "Recognize",
+        items: [
+          "**Any reproductive-age female with abdominal pain or vaginal bleeding → β-hCG until proven otherwise**",
+          "Classic triad (amenorrhea + abdominal pain + vaginal bleeding) — but presentation highly variable",
+          "Risk factors: prior ectopic, tubal surgery/ligation, PID, IUD in place, ART/IVF, prior STI — but **50% have no risk factors**",
+          "Ruptured: peritoneal signs, shoulder pain (diaphragmatic irritation), syncope, hemodynamic instability",
+        ],
+      },
+      {
+        heading: "Unstable / ruptured — resuscitate + emergency surgery",
+        items: [
+          "2 large-bore IVs, type & cross, activate **massive transfusion** if shock",
+          "**Immediate OB/Gyn consult for operative laparoscopy/laparotomy** — do NOT delay for imaging if unstable + positive pregnancy test",
+          "FAST/bedside US: free fluid + positive β-hCG + instability = OR",
+          "Resuscitate with blood products; permissive approach until surgical control",
+        ],
+      },
+      {
+        heading: "Stable — diagnostic workup",
+        items: [
+          "Quantitative **β-hCG** + **transvaginal ultrasound**",
+          "TVUS: intrauterine pregnancy (IUP) essentially excludes ectopic (heterotopic rare ~1:4000, higher with ART)",
+          "**Discriminatory zone**: β-hCG ≥1500–3500 with no IUP on TVUS → concern for ectopic",
+          "No definitive IUP and stable → serial β-hCG q48h (normal IUP rises ≥35–53% in 48h); abnormal rise/plateau suggests ectopic or nonviable",
+          "Type & screen — give **Rho(D) immune globulin (RhoGAM 50–300 mcg IM) if Rh-negative**",
+        ],
+      },
+      {
+        heading: "Management of confirmed ectopic",
+        items: [
+          "**Methotrexate** (medical) — stable, unruptured, β-hCG <5000 (ideally), no fetal cardiac activity, mass <3.5–4 cm, reliable follow-up; `50 mg/m² IM` (single-dose protocol)",
+          "**Surgery** — unstable, ruptured, contraindication to/failure of MTX, heterotopic, large mass or cardiac activity (salpingostomy vs salpingectomy)",
+          "Expectant management — selected, declining low β-hCG, asymptomatic, very close follow-up",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Epidemiology & sites",
+        items: [
+          "~2% of pregnancies; leading cause of 1st-trimester pregnancy-related death",
+          "**Ampullary (~70%)** most common; isthmic, fimbrial, interstitial/cornual (more catastrophic bleeding), ovarian, cervical, cesarean scar, abdominal",
+          "Heterotopic (concurrent IUP + ectopic): ~1:4000 spontaneous, up to 1:100 with ART — IUP does NOT fully exclude in ART patients",
+        ],
+      },
+      {
+        heading: "Risk factors",
+        items: [
+          "Prior ectopic (10–25% recurrence), prior tubal surgery or ligation",
+          "PID / prior chlamydia or gonorrhea, tubal pathology",
+          "IUD in situ (overall ↓ pregnancy, but if pregnant, ↑ proportion ectopic)",
+          "Assisted reproductive technology / IVF, ovulation induction",
+          "Smoking, increasing maternal age, prior pelvic/abdominal surgery, DES exposure",
+          "~50% of patients have NO identifiable risk factor — never use absence to exclude",
+        ],
+      },
+      {
+        heading: "Clinical presentation",
+        items: [
+          "Abdominal/pelvic pain (often unilateral), amenorrhea, vaginal bleeding/spotting",
+          "Ruptured: severe pain, syncope, shoulder tip pain (Kehr sign), peritonitis, hemorrhagic shock",
+          "Adnexal tenderness ± palpable mass; cervical motion tenderness",
+          "May mimic: appendicitis, ovarian torsion, ruptured ovarian cyst, PID, threatened abortion, UTI",
+          "A patient can rupture with relatively low β-hCG and a 'reassuring' exam — maintain suspicion",
+        ],
+      },
+      {
+        heading: "Diagnostics",
+        items: [
+          "Urine qualitative β-hCG (screen) → quantitative serum β-hCG",
+          "Transvaginal ultrasound — most useful single test; look for IUP (yolk sac/fetal pole), adnexal mass, tubal ring, free fluid",
+          "Discriminatory zone (β-hCG ~1500–3500 mIU/mL) institution- and US-dependent; no IUP above it raises concern but is not diagnostic alone",
+          "Serial β-hCG q48h in stable indeterminate cases: minimal expected rise ~35–53% over 48h; abnormal kinetics → ectopic or failed IUP",
+          "Progesterone (adjunct): <5 ng/mL suggests nonviable; >20 favors viable IUP (not definitive)",
+          "CBC, type & screen/cross, Rh status; consider D&C/uterine aspiration if differentiating failed IUP vs ectopic",
+        ],
+      },
+      {
+        heading: "Methotrexate (medical management)",
+        items: [
+          "Folate antagonist — halts trophoblast proliferation",
+          "Best candidates: hemodynamically stable, unruptured, β-hCG <5000 (success ↓ as β-hCG ↑), no fetal cardiac activity, mass <3.5–4 cm, able/willing to follow up",
+          "Single-dose protocol: 50 mg/m² IM; check β-hCG day 4 and day 7 — expect ≥15% decline day 4→7; if not, repeat dose or surgery",
+          "**Absolute contraindications**: hemodynamic instability/rupture, IUP, breastfeeding, immunodeficiency, hepatic/renal/hematologic dysfunction, peptic ulcer, active pulmonary disease, inability to follow up",
+          "Counsel: avoid folic acid, NSAIDs, alcohol, sun exposure, and intercourse until resolved; expect transient 'separation pain'",
+          "Avoid pregnancy for ~3 months after MTX",
+        ],
+      },
+      {
+        heading: "Surgical management",
+        items: [
+          "Indications: instability, rupture, MTX contraindicated/failed, heterotopic pregnancy, large mass or cardiac activity, patient preference",
+          "Laparoscopy preferred if stable; laparotomy if unstable",
+          "Salpingostomy (tube-sparing) vs salpingectomy — salpingectomy if uncontrolled bleeding, severely damaged tube, recurrent ectopic in same tube, or completed childbearing",
+          "Persistent trophoblast after salpingostomy → follow β-hCG to zero; may need MTX",
+        ],
+      },
+      {
+        heading: "Rh & disposition",
+        items: [
+          "Give Rho(D) immune globulin if Rh-negative (50 mcg if <12 wk, otherwise 300 mcg) — give to all Rh-neg with ectopic/bleeding",
+          "Admit: ruptured/unstable, surgical management, unreliable follow-up, indeterminate with concerning features",
+          "Discharge (selected stable, MTX or expectant): strict return precautions, scheduled β-hCG follow-up, OB/Gyn arranged",
+          "Document a clear 'pregnancy of unknown location' follow-up plan — missed ectopic is a high-risk diagnosis",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["ACOG Practice Bulletin 193 (2018, reaffirmed)", "Tintinalli 9e Ch 98", "ACEP Clinical Policy: Early Pregnancy 2017", "Barnhart, NEJM 2009"],
+      },
+    ],
+  },
+
   // ─── OPHTHALMOLOGIC ─────────────────────────────────────────────────────
   {
     id: "acute-angle-closure",
@@ -2333,6 +2580,245 @@ export const DIAGNOSES = [
   },
 
   {
+    id: "hus",
+    name: "Hemolytic Uremic Syndrome (HUS)",
+    subtitle: "Triad: MAHA + thrombocytopenia + AKI",
+    category: "heme",
+    tldr: [
+      {
+        heading: "Recognize",
+        items: [
+          "**Triad**: microangiopathic hemolytic anemia (schistocytes) + thrombocytopenia + acute kidney injury",
+          "**Typical (STEC-HUS)** — child with bloody diarrhea 5–10 days prior; E. coli O157:H7 (Shiga toxin); summer peak",
+          "**Atypical HUS (aHUS)** — complement dysregulation; family history, recurrent episodes, no diarrhea prodrome",
+          "Other: Strep pneumoniae, drugs (calcineurin inhibitors, quinine, gemcitabine), pregnancy, HIV",
+          "Overlap with TTP — but HUS = renal dominant, normal ADAMTS13; TTP = neuro dominant, ADAMTS13 <10%",
+        ],
+      },
+      {
+        heading: "ED management",
+        items: [
+          "**Supportive care is mainstay** — IV fluids (cautious — avoid overload with AKI), correct electrolytes",
+          "**Do NOT give antibiotics for confirmed/suspected STEC** — antibiotics may increase Shiga toxin release and worsen HUS",
+          "**Avoid antimotility agents** (loperamide) — prolong toxin exposure",
+          "Transfuse pRBCs for severe anemia; platelets only for active bleeding or pre-procedure (microthrombi consume platelets)",
+          "Nephrology consult early — many require renal replacement therapy",
+          "Hypertension control (often volume-mediated)",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "CBC, peripheral smear (schistocytes), reticulocytes, LDH, haptoglobin, indirect bilirubin",
+          "BMP — Cr, BUN, K⁺; urinalysis (hematuria, proteinuria)",
+          "Coags (usually normal in HUS — distinguishes from DIC)",
+          "**Stool culture/PCR for Shiga toxin / E. coli O157:H7** — confirms STEC-HUS",
+          "**ADAMTS13** to differentiate from TTP (normal in HUS, <10% in TTP)",
+          "Complement (C3, C4, CH50) if atypical HUS suspected; family history",
+        ],
+      },
+      {
+        heading: "Disposition / treatment",
+        items: [
+          "All HUS → admit (often ICU); pediatric nephrology / hematology",
+          "Renal replacement (hemodialysis) in 50–60% of STEC-HUS pediatric cases",
+          "**aHUS**: `Eculizumab` (anti-C5 monoclonal Ab) — vaccinate or empirically treat for meningococcus (eculizumab ↑ risk)",
+          "STEC-HUS recovery typically 1–3 weeks; long-term renal monitoring (CKD in ~5–10%)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "**STEC-HUS**: Shiga toxin (E. coli O157:H7 or Shigella dysenteriae) binds Gb3 receptors on glomerular endothelium → endothelial injury → microthrombi formation",
+          "**Atypical HUS**: complement dysregulation — mutations in CFH, CFI, MCP, C3, CFB; triggered by infection, pregnancy, drugs",
+          "**Pneumococcal HUS**: neuraminidase exposes T-antigen → endogenous IgM cross-reaction",
+          "Result: thrombotic microangiopathy with platelet consumption, RBC fragmentation, ischemic organ injury (kidney > others)",
+        ],
+      },
+      {
+        heading: "Clinical features",
+        items: [
+          "STEC-HUS prodrome: 5–10 days of bloody diarrhea, abdominal pain, then sudden pallor, oliguria, edema, hematuria",
+          "AKI: oliguria, hypertension, edema; ~50% require dialysis (children)",
+          "CNS: irritability, seizures (in 20–30%), stroke (rare but severe)",
+          "GI: severe colitis, intussusception, pancreatitis (~10%), rarely bowel perforation",
+          "Cardiac: myocardial injury, pericardial effusion (rare)",
+          "Adults: worse prognosis than children; mortality 5–15%",
+        ],
+      },
+      {
+        heading: "Differential diagnosis (TMA)",
+        items: [
+          "TTP — fever + neuro symptoms more prominent, ADAMTS13 <10% (severely deficient)",
+          "DIC — abnormal coags (low fibrinogen, ↑ PT/PTT, ↑ D-dimer); HUS coags usually normal",
+          "Malignant hypertension — TMA can occur",
+          "Pre-eclampsia / HELLP — pregnant or postpartum",
+          "Catastrophic antiphospholipid syndrome",
+          "Drug-induced TMA: quinine, calcineurin inhibitors (tacrolimus, cyclosporine), gemcitabine, mitomycin C",
+        ],
+      },
+      {
+        heading: "Treatment details",
+        items: [
+          "**STEC-HUS**: supportive — IV fluids (careful, AKI), electrolyte correction, dialysis as needed",
+          "Antibiotics CONTRAINDICATED for confirmed STEC (worsens outcomes)",
+          "Plasma exchange NOT routinely beneficial for STEC-HUS (unlike TTP)",
+          "Antimotility drugs (loperamide), NSAIDs CONTRAINDICATED — worsen kidney injury and toxin clearance",
+          "**Atypical HUS**: eculizumab (5 mg/kg IV weekly ×4, then maintenance) — must vaccinate for meningococcus or give prophylactic antibiotics (ceftriaxone, penicillin)",
+          "Ravulizumab — longer-acting alternative to eculizumab",
+          "**Pneumococcal HUS**: treat infection, plasma exchange may help; do NOT use plasma (contains anti-T antibodies)",
+        ],
+      },
+      {
+        heading: "Prognosis",
+        items: [
+          "STEC-HUS: 70–85% complete renal recovery; 5–10% chronic kidney disease; 3–5% ESRD; 3–5% mortality",
+          "Atypical HUS pre-eculizumab era: 50% progression to ESRD; mortality 25%; markedly improved with eculizumab",
+          "Long-term: hypertension, proteinuria, chronic kidney disease — lifelong renal follow-up",
+          "Risk factors for poor outcome: age <2 or adult, anuria >2 weeks, leukocytosis, CNS involvement, severe colitis",
+        ],
+      },
+      {
+        heading: "Disposition",
+        items: [
+          "Admit all suspected HUS — usually pediatric ICU or nephrology service",
+          "Renal replacement therapy in 50–60% pediatric STEC-HUS",
+          "Atypical HUS: hematology + nephrology consult; eculizumab access",
+          "Long-term nephrology follow-up — annual BP, UA, creatinine",
+          "Public health notification for STEC outbreaks",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Noris & Remuzzi, NEJM 2009", "Loirat & Frémeaux-Bacchi, Orphanet J Rare Dis 2011", "Cody & Dixon, Pediatr Clin N Am 2019", "Tintinalli 9e Ch 236"],
+      },
+    ],
+  },
+
+  {
+    id: "itp",
+    name: "Immune Thrombocytopenia (ITP)",
+    subtitle: "Isolated thrombocytopenia from autoimmune platelet destruction",
+    category: "heme",
+    tldr: [
+      {
+        heading: "Recognize",
+        items: [
+          "Isolated thrombocytopenia (often <50k, can be <10k) with **otherwise normal CBC**",
+          "Mucocutaneous bleeding: petechiae, purpura, epistaxis, gum bleeding, menorrhagia",
+          "**Severe bleeding rare** unless platelets <10–20k — wet purpura (oral blisters) is a warning sign",
+          "Children: often post-viral, acute, self-limiting; **Adults: typically chronic** (>3–12 months)",
+          "Diagnosis of exclusion — rule out drug-induced thrombocytopenia, HIT, leukemia, MDS, TTP",
+        ],
+      },
+      {
+        heading: "When to treat",
+        items: [
+          "**Platelets <20–30k** OR active bleeding OR procedure planned",
+          "Asymptomatic with platelets >30k → observe (especially children)",
+          "Severe bleeding / ICH suspected → emergency treatment regardless of count",
+        ],
+      },
+      {
+        heading: "ED treatment",
+        items: [
+          "**Corticosteroids** (first-line): `Prednisone 1 mg/kg PO daily` × 1–2 weeks, taper; OR `Dexamethasone 40 mg PO daily × 4 days` (rapid response)",
+          "**IVIG `1 g/kg IV` × 1–2 doses** — rapid platelet rise (24–48h); for severe bleeding, pre-procedure, or steroid-resistant",
+          "**Anti-D (WinRho)** `50–75 mcg/kg IV` — only in Rh+ non-splenectomized; risk of intravascular hemolysis",
+          "**Severe / life-threatening bleeding (ICH)**: IVIG + high-dose steroids (methylprednisolone 1 g IV) + **platelet transfusion** (typically futile alone but use as adjunct in life threat) + antifibrinolytics (TXA)",
+          "Refractory / second-line: rituximab, TPO-receptor agonists (eltrombopag, romiplostim), splenectomy",
+        ],
+      },
+      {
+        heading: "Workup & disposition",
+        items: [
+          "CBC + peripheral smear (large platelets, no schistocytes, normal RBC/WBC), reticulocytes",
+          "Rule out HIV, HCV, HIT, drug-induced (quinine, sulfonamides, vancomycin, heparin, others), pregnancy",
+          "Coags normal; LDH normal; consider H. pylori testing (treating may improve ITP)",
+          "Bone marrow biopsy not routinely needed in classic presentation; consider if >60yo or atypical",
+          "Discharge if no bleeding, platelets >20–30k after treatment, reliable follow-up; hematology referral",
+          "Admit: active bleeding, platelets <10k, neuro symptoms (ICH), social/follow-up concerns",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Autoantibodies (usually IgG, anti-GPIIb/IIIa or anti-GPIb/IX) bind platelets → splenic destruction",
+          "Also impaired megakaryocyte production / reduced TPO response",
+          "Primary ITP: idiopathic (~80%)",
+          "Secondary ITP: HIV, HCV, H. pylori, SLE, CLL, drugs, post-vaccination, post-viral",
+        ],
+      },
+      {
+        heading: "Diagnostic criteria",
+        items: [
+          "Isolated thrombocytopenia (platelets <100k)",
+          "Otherwise normal CBC and peripheral smear (no schistocytes, no blasts)",
+          "Normal coagulation studies",
+          "Exclusion of: drug-induced TP, HIT, TTP/HUS, DIC, hematologic malignancy, MDS, pseudothrombocytopenia (clumping)",
+          "Diagnosis is clinical — antiplatelet antibody testing not routinely useful",
+        ],
+      },
+      {
+        heading: "Differential — must exclude",
+        items: [
+          "**Pseudothrombocytopenia** — EDTA-induced clumping; repeat in citrate tube",
+          "**Drug-induced** — quinine, vancomycin, sulfonamides, NSAIDs, heparin (HIT), GP IIb/IIIa inhibitors, linezolid",
+          "**HIT** — recent heparin exposure, 4T score, anti-PF4 antibodies",
+          "**TTP / HUS** — schistocytes on smear, MAHA, AKI, neuro symptoms; ADAMTS13",
+          "**DIC** — abnormal coags, low fibrinogen, elevated D-dimer",
+          "**Hematologic malignancy** — leukemia, MDS, lymphoma (look for cytopenias, blasts, abnormal cells on smear)",
+          "**Aplastic anemia, MAS, HLH** — pancytopenia patterns",
+          "**Liver disease / splenomegaly** — secondary sequestration",
+          "**Pregnancy** — gestational thrombocytopenia (usually >70k), HELLP, AFLP, pre-eclampsia",
+        ],
+      },
+      {
+        heading: "Treatment specifics",
+        items: [
+          "**First-line: corticosteroids**",
+          "  • Prednisone 1 mg/kg/day PO × 1–2 wk then taper over 4–6 wk (response 50–80%, slower)",
+          "  • Dexamethasone 40 mg PO daily × 4 days (single cycle, rapid response within 2–5 days; may repeat × 2–6 cycles)",
+          "**IVIG 1 g/kg IV** × 1–2 doses — for severe bleeding, pre-procedure, pregnancy, or steroid-resistant; rapid response 24–48h",
+          "**Anti-D immune globulin (WinRho) 50–75 mcg/kg IV** — Rh+ non-splenectomized patients only; risk of severe hemolysis (~1:1000); contraindicated if Rh- or splenectomized",
+          "**Platelet transfusion** — generally not helpful (antibodies destroy transfused platelets); reserve for life-threatening bleeding alongside IVIG/steroids",
+          "**Tranexamic acid (TXA)** — 1 g IV/PO TID adjunct for mucosal bleeding",
+          "**Second-line**: rituximab 375 mg/m² IV weekly × 4; TPO-RAs (eltrombopag, romiplostim, avatrombopag); splenectomy (>50% sustained remission)",
+          "**Refractory**: fostamatinib (SYK inhibitor), mycophenolate, cyclophosphamide, danazol",
+        ],
+      },
+      {
+        heading: "Special populations",
+        items: [
+          "**Pediatric ITP** — usually self-limited (post-viral); observe if asymptomatic; treat only if bleeding or counts <10–20k; IVIG preferred over steroids",
+          "**Pregnancy** — IVIG and corticosteroids safe; goal platelets >20–30k throughout pregnancy, >50k for delivery, >80k for epidural",
+          "**HIV-associated ITP** — antiretroviral therapy often improves counts",
+          "**HCV-associated ITP** — treat HCV; eltrombopag well-studied",
+          "**Refractory adult ITP** — splenectomy still highly effective (>2/3 long-term remission); vaccinate first (Strep pneumo, H. flu, meningococcus)",
+        ],
+      },
+      {
+        heading: "Disposition",
+        items: [
+          "Discharge if: no bleeding, platelets >20–30k after treatment, asymptomatic, reliable follow-up",
+          "Admit if: active bleeding, platelets <10k, neurologic symptoms (concern for ICH), failed outpatient management",
+          "Activity restrictions: avoid contact sports, IM injections, NSAIDs, antiplatelets",
+          "Hematology follow-up within 1–2 weeks",
+          "Patient education: head injury precautions, bleeding monitoring",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Neunert et al, ASH 2019 Guidelines", "Provan et al, Blood Advances 2019", "Cines & Bussel, Blood 2005", "Tintinalli 9e Ch 232"],
+      },
+    ],
+  },
+
+  {
     id: "acute-chest-syndrome",
     name: "Acute Chest Syndrome",
     subtitle: "Sickle cell pulmonary crisis",
@@ -2556,6 +3042,128 @@ export const DIAGNOSES = [
       {
         heading: "References",
         items: ["Tintinalli 9e Ch 20", "Elliott et al, BMJ 2010", "Rafique, J Intensive Care Med 2018", "LITFL Hyperkalemia"],
+      },
+    ],
+  },
+
+  {
+    id: "hypercalcemia",
+    name: "Hypercalcemia",
+    subtitle: "Elevated serum calcium / hypercalcemic crisis",
+    category: "meta",
+    tldr: [
+      {
+        heading: "Assess severity",
+        items: [
+          "**Corrected Ca** = measured Ca + 0.8 × (4 − albumin); or use ionized calcium directly",
+          "Mild 10.5–12 mg/dL (usually asymptomatic) · Moderate 12–14 · **Severe ≥14 → emergency**",
+          "ECG: short QT (Ca >12); ST elevation, bradydysrhythmias, AV block at very high levels",
+          "Symptoms: 'stones, bones, abdominal groans, psychiatric overtones' — polyuria, AMS, n/v, weakness, constipation",
+        ],
+      },
+      {
+        heading: "1. Volume resuscitation (cornerstone)",
+        items: [
+          "`Normal saline 200–300 mL/h IV` — target UOP 100–150 mL/h",
+          "Most patients severely volume-depleted (calcium-induced nephrogenic DI)",
+          "Restores GFR + promotes urinary calcium excretion",
+          "Caution in CHF/ESRD — adjust rate, consider early dialysis",
+        ],
+      },
+      {
+        heading: "2. Calcitonin (rapid onset — hours)",
+        items: [
+          "`Calcitonin 4 IU/kg IM/SC q12h` (can escalate to 8 IU/kg q6h)",
+          "Onset 4–6 h; lowers Ca 1–2 mg/dL",
+          "**Tachyphylaxis in 48–72 h** — bridge to bisphosphonate, not standalone",
+          "Test dose 1 IU SC first if allergy concern (salmon-derived)",
+        ],
+      },
+      {
+        heading: "3. Bisphosphonate (definitive, delayed onset)",
+        items: [
+          "`Zoledronic acid 4 mg IV over 15 min` — preferred, more potent",
+          "`Pamidronate 60–90 mg IV over 2–4 h` — alternative",
+          "Onset 24–48 h; effect lasts 2–4 weeks",
+          "Renal dosing — avoid if CrCl <30 (zoledronic acid)",
+          "Watch for hypocalcemia 5–7 days post-dose",
+        ],
+      },
+      {
+        heading: "4. Refractory / renal failure options",
+        items: [
+          "`Denosumab 60–120 mg SC` — for bisphosphonate-refractory or severe CKD",
+          "`Hydrocortisone 200–300 mg IV` — for hypercalcemia of lymphoma, granulomatous disease (sarcoid, TB), vitamin D toxicity",
+          "**Hemodialysis** — Ca >18, severe symptoms with renal failure, or unresponsive to medical therapy",
+          "`Furosemide 20–40 mg IV` — ONLY if volume overloaded; not routine (older teaching)",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Thiazide diuretics — worsen hypercalcemia",
+          "Loop diuretics as first-line (only if fluid overloaded)",
+          "Volume restriction — most patients are dry, not wet",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Common causes",
+        items: [
+          "**Malignancy** (most common in hospitalized): bone metastases, PTHrP (squamous cell, renal, breast), lymphoma (1,25-OH vit D), multiple myeloma",
+          "**Primary hyperparathyroidism** (most common outpatient — often asymptomatic, elevated PTH)",
+          "**Granulomatous disease**: sarcoidosis, TB, histoplasmosis (extra-renal 1α-hydroxylase activity)",
+          "**Medications**: thiazides, lithium, excessive vitamin D, vitamin A, calcium supplements",
+          "Milk-alkali syndrome (calcium carbonate + dairy)",
+          "Immobilization (especially Paget disease, young patients)",
+          "Endocrine: thyrotoxicosis, adrenal insufficiency, pheochromocytoma",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "**Stones**: nephrolithiasis, nephrocalcinosis, polyuria/polydipsia (nephrogenic DI)",
+          "**Bones**: bone pain, pathologic fractures (especially with malignancy)",
+          "**Abdominal groans**: n/v, constipation, ileus, pancreatitis, peptic ulcer",
+          "**Psychiatric overtones**: AMS, lethargy, confusion, depression, coma",
+          "**Cardiac**: short QT, bradycardia, hypertension, digitalis sensitivity",
+          "Hypercalcemic crisis: severe AMS + dehydration + AKI + Ca >14",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "BMP (Cr, Ca), ionized Ca, Mg, Phos, albumin, PTH, PTHrP, 25-OH and 1,25-OH vitamin D",
+          "TSH, SPEP/UPEP (if myeloma suspected), 24-h urine calcium",
+          "ECG — short QT, dysrhythmias",
+          "Imaging guided by suspected etiology (CXR for sarcoid/malignancy, skeletal survey for myeloma)",
+          "PTH high or inappropriately normal → hyperparathyroidism; PTH low → malignancy or granulomatous",
+        ],
+      },
+      {
+        heading: "Mechanism of treatments",
+        items: [
+          "**IV fluids**: dilute serum Ca, restore GFR, promote calciuresis",
+          "**Calcitonin**: inhibits osteoclast bone resorption + ↑ renal Ca excretion (rapid, weak, tachyphylaxis)",
+          "**Bisphosphonates**: inhibit osteoclast bone resorption (potent, delayed onset)",
+          "**Denosumab**: monoclonal Ab against RANKL → inhibits osteoclast formation",
+          "**Glucocorticoids**: ↓ 1,25-OH vit D production in granulomas/lymphoma; ↓ GI calcium absorption",
+          "**Dialysis**: low-calcium bath; fastest definitive removal",
+        ],
+      },
+      {
+        heading: "Disposition",
+        items: [
+          "Severe (Ca >14) or symptomatic — ICU admission",
+          "Moderate (12–14) with symptoms — admit telemetry",
+          "Mild asymptomatic — outpatient workup, ensure hydration, avoid thiazides",
+          "Identify and treat underlying cause — oncology, endocrinology consults as appropriate",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 21", "Rosen's 10e Ch 116", "Goldner, J Endocr Soc 2016", "Stewart, NEJM 2005"],
       },
     ],
   },
@@ -3050,6 +3658,195 @@ export const DIAGNOSES = [
     ],
   },
 
+  {
+    id: "svt-management",
+    name: "SVT — Stable & Unstable Management",
+    subtitle: "Regular narrow-complex tachycardia — vagal, adenosine, cardioversion",
+    category: "cv",
+    tldr: [
+      {
+        heading: "Unstable → synchronized cardioversion",
+        items: [
+          "**Unstable** = hypotension/shock, altered mental status, ischemic chest pain, acute heart failure due to the rate",
+          "**Synchronized cardioversion** — narrow regular: `50–100 J` (biphasic); escalate if unsuccessful",
+          "Sedate if time/conscious (e.g., ketamine/etomidate) but **do NOT delay cardioversion in periarrest**",
+          "If IV in place, may attempt `adenosine 6 mg` while preparing — must not delay shock",
+        ],
+      },
+      {
+        heading: "Stable — vagal first",
+        items: [
+          "**Modified Valsalva** (REVERT) — strain 15 s semi-recumbent, then supine + passive leg raise; ~43% conversion",
+          "Carotid sinus massage (avoid if bruit or stroke/TIA history)",
+        ],
+      },
+      {
+        heading: "Stable — adenosine if vagal fails",
+        items: [
+          "**Adenosine `6 mg` rapid IV push** + immediate 20 mL flush (proximal/large vein); if no effect in 1–2 min → `12 mg`, may repeat `12 mg` ×1",
+          "Warn patient: transient chest pain, flushing, sense of doom, brief asystole",
+          "Run a continuous rhythm strip — diagnostic even if it doesn't convert (unmasks flutter/atrial tachycardia)",
+          "Reduce dose / use caution: central line (use `3 mg`), transplanted heart, dipyridamole/carbamazepine; avoid in known WPW with irregular wide complex",
+        ],
+      },
+      {
+        heading: "If adenosine fails / recurs (stable)",
+        items: [
+          "Rate control: **diltiazem** `0.25 mg/kg IV` over 2 min (≈15–20 mg), may repeat `0.35 mg/kg`; or **metoprolol** `2.5–5 mg IV` q5 min",
+          "Avoid AV nodal blockers if pre-excited/irregular (possible WPW + AF)",
+          "Recurrent/refractory → cardiology, consider amiodarone; electrophysiology for ablation referral",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Classification",
+        items: [
+          "SVT = regular narrow-complex (QRS <120 ms) tachycardia, typically 150–250 bpm",
+          "**AVNRT** (most common ~60%), **AVRT** (accessory pathway, e.g., WPW — orthodromic = narrow), atrial tachycardia",
+          "Distinguish from sinus tach (look for cause), atrial flutter (~150 with 2:1 — adenosine unmasks flutter waves), and AF (irregular)",
+          "Wide-complex regular → treat as VT unless known SVT with aberrancy",
+        ],
+      },
+      {
+        heading: "Vagal maneuvers",
+        items: [
+          "Modified Valsalva is superior to standard Valsalva (REVERT, Lancet 2015) — strain to 40 mmHg ×15 s, then lay supine with legs raised 45° ×15 s",
+          "Carotid sinus massage 5–10 s, one side at a time; contraindicated with carotid bruit, recent stroke/TIA, or VT history",
+          "Ice-water immersion / diving reflex effective in infants and young children",
+        ],
+      },
+      {
+        heading: "Adenosine details",
+        items: [
+          "Ultra-short half-life (<10 s) — must push fast through proximal vein with rapid saline flush (or dual-syringe technique)",
+          "Transient AV block — diagnostic and therapeutic for AV-nodal-dependent SVT",
+          "Initial 6 mg → 12 mg → 12 mg; central line or heart transplant: start at 3 mg",
+          "Caution/relative: severe asthma/COPD (bronchospasm), 2nd/3rd degree block without pacemaker",
+          "Potentiated by dipyridamole & carbamazepine; antagonized by methylxanthines (caffeine, theophylline) — may need higher dose",
+          "Brief post-conversion asystole/ectopy is expected; have defib pads on",
+        ],
+      },
+      {
+        heading: "Special situations",
+        items: [
+          "**Pre-excited tachycardia / WPW with AF** (irregular, wide, very fast): AVOID adenosine, diltiazem, beta-blockers, digoxin (can accelerate accessory pathway → VF) — use **procainamide** or synchronized cardioversion",
+          "Pregnancy: vagal → adenosine (safe) → cardioversion if unstable (safe)",
+          "Pediatrics: adenosine 0.1 mg/kg (max 6 mg) → 0.2 mg/kg (max 12 mg); cardioversion 0.5–1 J/kg → 2 J/kg",
+          "Stable but recurrent despite conversion — search for triggers (stimulants, hyperthyroid, PE, ischemia)",
+        ],
+      },
+      {
+        heading: "Disposition",
+        items: [
+          "Converted, asymptomatic, no ischemia/structural disease → discharge with cardiology follow-up; counsel on vagal maneuvers",
+          "Admit/observe: unstable presentation, ischemia, recurrent SVT, WPW, structural heart disease, syncope",
+          "Refer for electrophysiology study/ablation (often curative for AVNRT/AVRT)",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["AHA ACLS 2020", "Appelboam et al REVERT, Lancet 2015", "Page et al ACC/AHA/HRS SVT Guideline 2015", "Tintinalli 9e Ch 18"],
+      },
+    ],
+  },
+
+  {
+    id: "vt-cardioversion",
+    name: "Ventricular Tachycardia — Cardioversion & Mgmt",
+    subtitle: "Wide-complex tachycardia — defibrillation, synchronized CV, antiarrhythmics",
+    category: "cv",
+    tldr: [
+      {
+        heading: "Pulseless VT / VF → defibrillate NOW",
+        items: [
+          "**Unsynchronized defibrillation** at max energy (`200 J` biphasic) + immediate CPR",
+          "ACLS: epinephrine 1 mg q3–5 min; **amiodarone 300 mg IV** (then 150 mg) or **lidocaine 1–1.5 mg/kg**",
+          "Treat reversible causes (Hs & Ts); consider double-sequential defibrillation / refractory VF protocol",
+        ],
+      },
+      {
+        heading: "Unstable VT with a pulse → synchronized cardioversion",
+        items: [
+          "**Unstable** = hypotension, altered mental status, ischemic chest pain, acute heart failure",
+          "**Synchronized cardioversion** — monomorphic: start `100 J` biphasic, escalate (150 → 200 J)",
+          "Polymorphic VT (irregular) → treat as VF: **unsynchronized** high-energy defibrillation (sync often can't track it)",
+          "Sedate if conscious & time allows — don't delay shock in periarrest",
+        ],
+      },
+      {
+        heading: "Stable monomorphic VT — antiarrhythmic",
+        items: [
+          "**Procainamide** `20–50 mg/min IV` until arrhythmia suppressed, hypotension, QRS widens >50%, or max `17 mg/kg` (preferred — PROCAMIO trial)",
+          "**Amiodarone** `150 mg IV over 10 min`, repeat as needed; then infusion `1 mg/min ×6h`",
+          "**Lidocaine** `1–1.5 mg/kg IV` (esp. ischemic VT); repeat 0.5–0.75 mg/kg q5–10 min (max 3 mg/kg)",
+          "Have pads on and prepare for synchronized cardioversion if deterioration or drug failure",
+        ],
+      },
+      {
+        heading: "Polymorphic VT / Torsades de Pointes",
+        items: [
+          "**Magnesium sulfate `2 g IV`** over 1–2 min (Torsades, even if Mg normal)",
+          "Defibrillate if unstable/pulseless (unsynchronized)",
+          "Long QT–related: correct K⁺/Mg²⁺, stop offending drugs, **overdrive pacing or isoproterenol** for bradycardia-dependent Torsades",
+          "Ischemic polymorphic VT (normal QT): treat ischemia — revascularization, beta-blocker, amiodarone",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Wide-complex tachycardia approach",
+        items: [
+          "QRS ≥120 ms + rate >100 — **assume VT until proven otherwise**, especially with structural heart disease or prior MI (regular WCT in this setting is VT ~90%+)",
+          "Do NOT give AV-nodal blockers (verapamil/diltiazem) to undifferentiated WCT — can precipitate hemodynamic collapse in VT",
+          "Brugada/Vereckei/aVR criteria support VT; AV dissociation, fusion/capture beats, concordance favor VT",
+          "Irregular wide-complex → polymorphic VT, AF with aberrancy, or pre-excited AF (WPW)",
+        ],
+      },
+      {
+        heading: "Energy & cardioversion technique",
+        items: [
+          "Monomorphic VT (regular, pulse, unstable): synchronized, 100 J biphasic initial, escalate",
+          "Polymorphic VT: irregular — defibrillator often cannot synchronize → unsynchronized (defib) doses",
+          "Pulseless VT/VF: unsynchronized max energy + ACLS",
+          "Ensure 'sync' is re-enabled before each synchronized shock (defibrillators default back to unsync after a shock)",
+          "Pre-oxygenate and sedate the conscious stable-but-for-cardioversion patient (etomidate/ketamine + analgesia)",
+        ],
+      },
+      {
+        heading: "Antiarrhythmic specifics",
+        items: [
+          "**Procainamide** preferred for stable monomorphic VT (PROCAMIO 2017 — fewer major cardiac events vs amiodarone); avoid if QT prolonged, severe HF, or renal failure (accumulation)",
+          "**Amiodarone** reasonable, especially with poor LV function; watch hypotension with rapid infusion",
+          "**Lidocaine** best for ischemia-related VT; less effective for non-ischemic",
+          "Avoid combining multiple QT/AV agents; reassess QRS/QT and BP frequently",
+        ],
+      },
+      {
+        heading: "Etiology & reversible causes",
+        items: [
+          "Ischemia/MI (most common), cardiomyopathy, prior infarct scar, electrolyte derangement (K⁺, Mg²⁺, Ca²⁺)",
+          "Drug toxicity: Na-channel blockers (TCA, cocaine — give NaHCO₃), digoxin, QT-prolonging drugs",
+          "Channelopathies: long QT, Brugada, catecholaminergic polymorphic VT, ARVC",
+          "VT storm (≥3 episodes/24h): beta-blockade (esmolol), amiodarone, sedation/intubation, treat ischemia, consider stellate ganglion block, mechanical support",
+        ],
+      },
+      {
+        heading: "Disposition",
+        items: [
+          "Admit all sustained VT — telemetry/ICU; cardiology/EP involvement",
+          "Identify and treat ischemia (cath if ACS-driven), correct electrolytes",
+          "ICD evaluation for sustained VT not due to fully reversible cause; EP study/ablation for recurrent VT",
+          "Document rhythm strips, energy used, drug responses",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["AHA ACLS 2020", "Ortiz et al PROCAMIO, Eur Heart J 2017", "AHA/ACC/HRS VA Guideline 2017", "Tintinalli 9e Ch 18"],
+      },
+    ],
+  },
+
   // ─── NEURO (additional) ───────────────────────────────────────────────────
   {
     id: "guillain-barre",
@@ -3132,6 +3929,1452 @@ export const DIAGNOSES = [
       {
         heading: "References",
         items: ["van Doorn et al, Lancet Neurol 2008", "Hughes et al, Cochrane 2014 (IVIG)", "Tintinalli 9e Ch 171", "LITFL Guillain-Barré"],
+      },
+    ],
+  },
+
+  // ─── INFECTIOUS / PUBLIC HEALTH ──────────────────────────────────────────
+  {
+    id: "diphtheria",
+    name: "Diphtheria",
+    subtitle: "Respiratory diphtheria — pseudomembrane, airway, myocarditis",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Airway is THE priority** — pseudomembrane can detach and obstruct; ENT/anesthesia at bedside",
+          "Droplet + contact isolation",
+          "**Notify CDC immediately** for antitoxin: `770-488-7100` (24/7)",
+          "Avoid manipulating pseudomembrane — bleeding risk; intubate before total obstruction",
+          "Continuous cardiac monitoring (myocarditis)",
+        ],
+      },
+      {
+        heading: "Drugs & doses",
+        items: [
+          "**Diphtheria antitoxin (DAT)** — `20,000–120,000 units IM/IV` based on severity; equine; skin test first",
+          "**Erythromycin** `500 mg PO/IV QID × 14d` OR **Procaine penicillin G** `600,000 units IM q12h × 14d`",
+          "Peds: erythromycin `40–50 mg/kg/day div q6h` (max 2 g/day)",
+          "Active immunization (Tdap) on recovery — disease does not confer immunity",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Disturbing the pseudomembrane during exam",
+          "Delaying antitoxin for lab confirmation — neutralizes only unbound toxin",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: [
+          "ICU for moderate–severe; isolation until 2 negative cultures 24h apart post-treatment",
+          "Cardiac telemetry ≥4 weeks (delayed myocarditis)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "C. diphtheriae toxin inhibits EF-2 → cell death → pseudomembrane formation",
+          "Toxin spreads systemically → myocarditis, polyneuropathy, renal failure",
+          "Pseudomembrane: fibrin + dead cells + bacteria; firmly adherent; bleeds when scraped",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "Sore throat, low-grade fever, malaise — gradual onset over days",
+          "Gray-white adherent pseudomembrane on tonsils/pharynx/larynx",
+          "**Bull neck** — massive cervical lymphadenopathy + edema (severe)",
+          "Cutaneous form — chronic non-healing ulcer with gray membrane",
+          "Late: myocarditis (1–2 wk), polyneuropathy (3–7 wk)",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "Throat/NP swab — Gram stain + culture on Loeffler/tellurite media (alert lab)",
+          "ECG, troponin (myocarditis)",
+          "Notify state public health and CDC immediately",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Antitoxin doesn't reverse established myocarditis — give early",
+          "Close contacts: PEP (erythromycin ×7–10d OR single PCN G dose) + booster vaccine",
+          "Outbreaks in unvaccinated populations, refugees, travelers from former USSR / Asia / Africa",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["CDC Diphtheria Clinical Guidance", "Tintinalli 9e Ch 152", "WHO Diphtheria Position Paper 2017"],
+      },
+    ],
+  },
+
+  {
+    id: "tetanus",
+    name: "Tetanus",
+    subtitle: "Generalized tetanus — toxin-mediated NM hyperexcitability",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "Quiet darkened room, minimize stimuli",
+          "Wound debridement — surgery early",
+          "Aggressive airway management — laryngospasm risk; intubate early if generalized spasms",
+          "ICU admission for all generalized cases",
+          "Continuous cardiac + autonomic monitoring",
+        ],
+      },
+      {
+        heading: "Drugs & doses",
+        items: [
+          "**Human tetanus immune globulin (TIG)** — `3,000–6,000 units IM ×1` (infiltrate around wound separately)",
+          "**Metronidazole** — `500 mg IV q6–8h × 7–10 days` (preferred over PCN — no GABA antagonism)",
+          "**Benzodiazepines** — diazepam `10–30 mg IV q1–4h prn` or midazolam infusion for spasms",
+          "**Magnesium sulfate** — `4–6 g IV load, then 1–3 g/h infusion` for autonomic instability",
+          "**Vecuronium/rocuronium** — for refractory spasms once intubated",
+          "Active vaccination (Td/Tdap) — disease does not confer immunity",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Penicillin (GABA antagonist — may worsen spasms)",
+          "Beta-blockers alone for autonomic storm — paradoxical hypertension; combine with alpha-blocker or use magnesium",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: ["ICU for weeks; recovery 4–6 weeks; mortality ~10% with intensive care"],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Clostridium tetani spores → wound → tetanospasmin",
+          "Toxin retrograde axonal transport to spinal cord → blocks GABA/glycine release from inhibitory interneurons",
+          "Loss of inhibition → unopposed motor neuron firing → sustained muscle contraction",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "**Trismus** (lockjaw) — earliest sign in 75%",
+          "**Risus sardonicus** — sustained facial spasm",
+          "**Opisthotonos** — generalized arching",
+          "Reflex spasms triggered by minor stimuli (sound, light, touch)",
+          "Autonomic storm: tachycardia, labile BP, sweating, fever (often after week 1)",
+          "Patient remains alert and oriented",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "Clinical diagnosis — no confirmatory test",
+          "Wound culture often negative; spatula test (touching pharynx → masseter spasm) supportive",
+          "CBC, BMP, CK (rhabdomyolysis from spasms)",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "TIG separate from Td/Tdap — give both, different sites",
+          "Generalized spasms often look like seizure but patient is alert",
+          "Local tetanus may precede generalized — high suspicion in localized stiffness near wound",
+          "Survivors require active immunization (3 doses) — disease confers no immunity",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["CDC Tetanus Clinical Guidance", "Tintinalli 9e Ch 154", "Thwaites & Yen, Lancet 2015"],
+      },
+    ],
+  },
+
+  {
+    id: "anthrax",
+    name: "Anthrax — Inhalational / Systemic",
+    subtitle: "Bacillus anthracis — bioterror or occupational exposure",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Notify CDC and state public health IMMEDIATELY** — bioterror concern",
+          "Standard precautions (no person-to-person spread for inhalation/cutaneous)",
+          "Decontamination if powder exposure — gentle wash with soap/water",
+          "**Mediastinal widening on CXR** is hallmark of inhalational; CT chest if suspected",
+          "Aggressive ICU support — pleural drainage often needed",
+        ],
+      },
+      {
+        heading: "Drugs & doses (systemic / inhalational)",
+        items: [
+          "**Combination IV regimen — multidrug essential**:",
+          "**Ciprofloxacin** `400 mg IV q8h` OR **Levofloxacin** `750 mg IV daily`",
+          "**+ Linezolid** `600 mg IV q12h` (toxin/protein synthesis suppression — preferred over clindamycin if meningitis)",
+          "**+ Meropenem** `2 g IV q8h` (cell wall — also crosses BBB)",
+          "**Anthrax antitoxin** — **Raxibacumab** `40 mg/kg IV ×1` OR **Obiltoxaximab** `16 mg/kg IV ×1` (CDC stockpile)",
+          "Peds cipro `10–15 mg/kg IV q12h`",
+          "**Cutaneous anthrax**: cipro/doxy PO × 7–10 days (60 days if bioterror exposure)",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Monotherapy for systemic disease",
+          "Cephalosporins, TMP-SMX (intrinsic resistance)",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: ["ICU; total 60 days antibiotics if bioterror exposure (spores persist); systemic ≥2 weeks IV then PO"],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "B. anthracis spores germinate in alveoli/skin/GI → bacteria produce three toxins",
+          "Lethal toxin (LF + PA) and edema toxin (EF + PA) cause vascular collapse and tissue necrosis",
+          "Inhalation: spores reach mediastinal LNs → hemorrhagic mediastinitis → bacteremia → meningitis (50%)",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "**Inhalational**: prodrome (flu-like) → fulminant phase (24–48h): dyspnea, shock, mediastinal widening",
+          "**Hemorrhagic mediastinitis** — pathognomonic; widened mediastinum + pleural effusions on CXR",
+          "**Cutaneous** (95% of natural cases): painless papule → vesicle → black eschar with surrounding edema",
+          "**GI**: severe abdominal pain, hematemesis, ascites; ingestion of contaminated meat",
+          "**Injectional**: IV drug users — extensive soft tissue infection without typical eschar",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "Blood cultures × 2 (highly positive in systemic) — alert lab (BSL-3)",
+          "CXR + CT chest (mediastinal widening, hemorrhagic effusion)",
+          "LP if any neuro symptoms (high meningitis incidence — 50%)",
+          "Skin lesion swab/biopsy for cutaneous",
+          "PCR via state lab / LRN",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Initial flu-like prodrome misleads — high mortality if treatment delayed >48h",
+          "Antitoxin (raxibacumab/obiltoxaximab) only neutralizes circulating toxin — give with antibiotics, not instead",
+          "PEP for known exposure: cipro or doxy × 60 days + 3-dose anthrax vaccine",
+          "Person-to-person not transmitted (except injectional/cutaneous fluids — use standard precautions)",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["CDC Anthrax Treatment Guidelines 2014", "Hendricks et al, Emerg Infect Dis 2014", "MMWR 2014: 63(RR-09)"],
+      },
+    ],
+  },
+
+  {
+    id: "severe-malaria",
+    name: "Severe Malaria",
+    subtitle: "P. falciparum — life-threatening; travel exposure",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "Thick + thin smears STAT + repeat q12–24h × 3 if initial negative",
+          "Rapid diagnostic test (RDT) — adjunct to microscopy",
+          "ICU admission for any severity criteria",
+          "Cautious fluids — both pulmonary edema and AKI common; avoid aggressive boluses",
+        ],
+      },
+      {
+        heading: "Drugs & doses",
+        items: [
+          "**IV artesunate** — `2.4 mg/kg IV at 0, 12, 24h, then daily × 7d` — first-line worldwide; available in US via CDC",
+          "Transition to PO after 24h IV + clinical improvement: artemether-lumefantrine, atovaquone-proguanil, or mefloquine ×3 days",
+          "**If artesunate unavailable** — quinidine gluconate `10 mg/kg IV load over 1–2h, then 0.02 mg/kg/min` (continuous cardiac monitoring; QTc prolongation)",
+          "Empiric broad antibiotics if shock — coinfection common",
+          "Exchange transfusion considered if parasitemia >10% with end-organ dysfunction (controversial)",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Aggressive crystalloid resuscitation — pulmonary edema risk",
+          "Steroids (cerebral malaria) — worsen outcomes",
+          "Heparin in DIC — increased bleeding",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: ["ICU; reportable to public health; discuss with infectious disease; acquire artesunate via CDC `770-488-7788`"],
+      },
+    ],
+    extended: [
+      {
+        heading: "Severity criteria (any one = severe)",
+        items: [
+          "Parasitemia >5% (or >10% non-immune)",
+          "Cerebral malaria (impaired consciousness, GCS <11, seizures)",
+          "Respiratory distress / ARDS / pulmonary edema",
+          "Shock (SBP <80)",
+          "AKI (Cr >3 or oliguria)",
+          "Hyperbilirubinemia + organ dysfunction",
+          "Severe anemia (Hgb <7), DIC, hypoglycemia (<40), acidosis (HCO₃ <15)",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "Travel to endemic area (sub-Saharan Africa, S. Asia, S. America) within 1 year — ASK ALWAYS",
+          "Fever (cyclical or continuous), chills, headache, myalgia",
+          "Cerebral: confusion → coma; seizures common in children",
+          "Hyperparasitemia + organ dysfunction = severe",
+          "Thrombocytopenia near-universal",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "Thick smear (parasitemia quantification) + thin smear (species ID)",
+          "RDT (HRP-2 or pLDH antigens)",
+          "CBC, BMP, LFTs, coags, lactate, glucose (hypoglycemia common)",
+          "ABG, urinalysis (hemoglobinuria — blackwater fever)",
+          "Blood cultures (sepsis coinfection)",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Hypoglycemia is iatrogenic from quinidine OR from severe disease — check q4h",
+          "Artesunate-induced hemolysis can occur 7–14 days after treatment — recheck Hgb",
+          "P. vivax/ovale require primaquine (after G6PD testing) for hypnozoites — radical cure",
+          "Pregnancy + severe malaria: artesunate preferred; quinidine 2nd-line",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["WHO Guidelines for the Treatment of Malaria 3e", "CDC Malaria Treatment Tables", "Tintinalli 9e Ch 159", "Lancet 2014: AQUAMAT trial"],
+      },
+    ],
+  },
+
+  {
+    id: "rabies-exposure",
+    name: "Rabies Exposure",
+    subtitle: "Post-exposure prophylaxis — universally fatal once symptomatic",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Wound care first** — irrigate copiously with soap/water for ≥15 min, then virucidal (povidone-iodine)",
+          "Risk-stratify exposure (animal type, bite vs scratch, vaccination status)",
+          "Notify public health — animal observation/testing",
+          "Tetanus prophylaxis update",
+          "Empiric antibiotics for bite (amox-clav)",
+        ],
+      },
+      {
+        heading: "Drugs & doses (PEP — previously unvaccinated)",
+        items: [
+          "**Human rabies immune globulin (HRIG)** — `20 IU/kg`; infiltrate **as much as possible AROUND wound**, remainder IM at site distant from vaccine",
+          "**Rabies vaccine (HDCV or PCEC)** — `1 mL IM` (deltoid; anterolateral thigh in young children) on **days 0, 3, 7, 14**",
+          "Immunocompromised: add 5th dose on day 28",
+          "Previously vaccinated: vaccine days 0 and 3 only; **NO HRIG**",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Giving HRIG and vaccine in the same anatomic site",
+          "Delaying PEP for animal observation results — start immediately if high-risk",
+          "PEP if symptomatic — virtually no survivors; comfort care (Milwaukee protocol largely failed)",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: ["Outpatient PEP with follow-up scheduled; document carefully; report to public health"],
+      },
+    ],
+    extended: [
+      {
+        heading: "Risk assessment",
+        items: [
+          "**HIGH risk (PEP indicated)**: bat exposure (any contact in sleeping person); raccoon, skunk, fox, coyote bites; unprovoked attack from wild carnivore",
+          "**MODERATE**: dog/cat bite if animal cannot be observed × 10 days",
+          "**LOW**: rodents (mice, rats, squirrels, hamsters) — PEP rarely indicated",
+          "Bat in room with sleeping/intoxicated/child/cognitively impaired person → PEP even without known bite",
+        ],
+      },
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Rabies virus (Lyssavirus) — neurotropic; retrograde axonal transport to CNS",
+          "Incubation 1–3 months (range 5d to >1yr); depends on inoculum and proximity to CNS",
+          "Once symptomatic: encephalitis → universal mortality (~99.9%)",
+        ],
+      },
+      {
+        heading: "Recognition (clinical rabies)",
+        items: [
+          "Prodrome: fever, headache, paresthesias at bite site",
+          "**Furious form** — hydrophobia, aerophobia, agitation, hypersalivation, autonomic instability",
+          "**Paralytic form** — ascending paralysis, cranial nerve palsies",
+          "Coma → death within 1–2 weeks of symptoms",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "PEP is clinical decision — no testing of patient required for prophylaxis",
+          "If symptomatic: nuchal skin biopsy, saliva PCR, CSF antibodies, brain MRI",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "HRIG must be infiltrated INTO wound — IM-only does not provide local neutralization",
+          "Bat exposures — extremely high suspicion; bites can be invisible",
+          "PEP failures rare but reported with delayed/incomplete administration",
+          "Pre-exposure prophylaxis: 3 doses days 0, 7, 21 or 28 (vets, lab workers, travelers)",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["ACIP Rabies Recommendations MMWR 2022", "Tintinalli 9e Ch 156", "WHO Rabies Position Paper 2018"],
+      },
+    ],
+  },
+
+  {
+    id: "naegleria",
+    name: "Naegleria fowleri PAM",
+    subtitle: "Primary amebic meningoencephalitis — fulminant, >97% mortality",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Call CDC Emergency Operations Center: `770-488-7100` (24/7)** — they coordinate miltefosine + management",
+          "Warm freshwater nasal exposure → consider in any rapidly progressive meningoencephalitis",
+          "ICU admission, neurosurg consult (ICP management)",
+          "Wet mount fresh CSF — DO NOT REFRIGERATE; motile trophozoites",
+        ],
+      },
+      {
+        heading: "Drugs & doses (CDC combination protocol)",
+        items: [
+          "**Amphotericin B** — `1.5 mg/kg/day IV ×3 days, then 1 mg/kg/day` + `1.5 mg intrathecal q24h ×2 days, then qod`",
+          "**Miltefosine** — `50 mg PO TID` (≥45 kg) or `2.5 mg/kg/day div BID` (peds) × 28 days",
+          "**Rifampin** `10 mg/kg/day IV/PO` + **Fluconazole** `10 mg/kg/day IV/PO` + **Azithromycin** `10 mg/kg/day IV/PO`",
+          "**Dexamethasone** `0.6 mg/kg/day IV div q6h` for cerebral edema",
+          "Consider **therapeutic hypothermia** (32–34°C × 24h) — adjunct in surviving cases",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Refrigerating CSF specimen — kills motile trophozoites",
+          "Standard bacterial meningitis empiric therapy alone (will mistreat)",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: ["ICU; mortality >97%; rare survivors had early diagnosis + aggressive combo + miltefosine + hypothermia"],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Naegleria fowleri (free-living thermophilic amoeba) → cribriform plate → olfactory nerves → brain",
+          "Acute necrotizing hemorrhagic meningoencephalitis",
+          "Warm freshwater (lakes, hot springs, untreated wells, neti pots with tap water); summer months",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "Recent (1–9 days) freshwater nasal exposure (jumping/diving, neti pot, ritual ablution)",
+          "Initial: severe frontal headache, fever, nausea, anosmia/parosmia",
+          "Rapid progression: AMS, seizures, increased ICP, brainstem herniation",
+          "Death typically within 5–7 days of symptom onset",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "LP: high opening pressure, neutrophilic pleocytosis (>500), low glucose, high protein — MIMICS bacterial meningitis",
+          "**Wet mount fresh CSF** — motile trophozoites (15–25 µm); DO NOT refrigerate or centrifuge",
+          "PCR (CDC), immunohistochemistry on biopsy",
+          "MRI: bilateral cortical/subcortical edema, basal cisternal enhancement",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "CSF profile indistinguishable from bacterial meningitis — must specifically request wet mount",
+          "Tap water for sinus rinsing is a documented vehicle — public health education",
+          "Miltefosine teratogenic — pregnancy testing in women of childbearing age",
+          "Differentiate from Acanthamoeba (granulomatous, immunocompromised, more chronic)",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["CDC Naegleria Treatment Recommendations", "Capewell et al, J Pediatr Infect Dis Soc 2015", "Linam et al, Pediatrics 2015 (survivor case)"],
+      },
+    ],
+  },
+
+  {
+    id: "severe-babesiosis",
+    name: "Severe Babesiosis",
+    subtitle: "Tick-borne; hemolysis, asplenia/immunocompromise risk",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "Severity criteria → ICU + IV therapy",
+          "Type & cross — exchange transfusion if parasitemia >10% or end-organ dysfunction",
+          "Address coinfection (Lyme, anaplasmosis — same Ixodes vector)",
+          "Inquire about asplenia / immunosuppression",
+        ],
+      },
+      {
+        heading: "Drugs & doses (severe)",
+        items: [
+          "**Azithromycin** `500 mg IV daily` + **Atovaquone** `750 mg PO BID`",
+          "OR **Clindamycin** `600 mg IV q6h` + **Quinine** `650 mg PO q8h` (more side effects but historically standard)",
+          "Duration: ≥7–10 days; longer (≥6 weeks) in immunocompromised; until parasitemia <4% AND clinical improvement",
+          "**Exchange transfusion** if: parasitemia >10%, severe hemolysis, organ failure, ARDS",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Quinine if QTc prolonged or with other QT-prolonging agents",
+          "Stopping treatment early — relapse common in immunocompromised; check serial parasitemia",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: ["ICU for severe; reportable to public health; tick-borne disease packet"],
+      },
+    ],
+    extended: [
+      {
+        heading: "Severity criteria",
+        items: [
+          "Parasitemia >4% (>10% definite severe)",
+          "Hemoglobin <10",
+          "End-organ dysfunction: AKI, ARDS, DIC, MI",
+          "Asplenia / functional asplenia / immunocompromise",
+          "Age >50",
+        ],
+      },
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Babesia microti (US Northeast/Midwest), B. duncani (West Coast), B. divergens (Europe; severe in asplenia)",
+          "Vector: Ixodes scapularis (same as Lyme, anaplasmosis) — coinfection common",
+          "Intraerythrocytic parasite → hemolysis, microvascular sludging",
+          "Asplenia → fulminant disease (analogous to malaria)",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "Tick exposure in endemic area (NE/Midwest US, summer)",
+          "Fever, fatigue, headache, myalgia",
+          "Hemolytic anemia: jaundice, dark urine, splenomegaly",
+          "Severe: ARDS, DIC, AKI, MI",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "Thin blood smear — intraerythrocytic ring forms ± **Maltese cross** (tetrad — pathognomonic)",
+          "PCR (more sensitive than smear at low parasitemia)",
+          "CBC (anemia, thrombocytopenia), haptoglobin (low), LDH (high), bili (high)",
+          "Coag studies, LFTs, BMP",
+          "Lyme + anaplasmosis serologies (coinfection)",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Misdiagnosed as malaria — geography/exposure history distinguishes",
+          "Asplenic patients can deteriorate rapidly — admit",
+          "Persistent / relapsing disease in immunocompromised — extend treatment to 6+ weeks; consider quadruple therapy",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["IDSA Guidelines for Babesiosis 2020", "Krause, NEJM 2019", "Tintinalli 9e Ch 158"],
+      },
+    ],
+  },
+
+  {
+    id: "plague",
+    name: "Plague",
+    subtitle: "Yersinia pestis — bubonic / septicemic / pneumonic",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Notify CDC and public health IMMEDIATELY** — bioterror agent; reportable",
+          "**Pneumonic plague** — droplet + airborne isolation until 48h of effective treatment",
+          "Aggressive resuscitation for septicemic form",
+          "Source control: drain bubo if needed (after 24h antibiotics)",
+        ],
+      },
+      {
+        heading: "Drugs & doses",
+        items: [
+          "**Streptomycin** `1 g IM BID × 10 days` — historic standard",
+          "**Gentamicin** `5 mg/kg IV daily × 10 days` — preferred (more available)",
+          "**Doxycycline** `100 mg IV/PO BID × 10–14 days` — alternative; mild disease",
+          "**Ciprofloxacin** `400 mg IV / 500 mg PO BID × 10 days`",
+          "Severe / pneumonic: combination (aminoglycoside + doxy or FQ)",
+          "Peds: gentamicin `2.5 mg/kg IV q8h` or doxy `2.2 mg/kg q12h` (max 100 mg)",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Cephalosporins, beta-lactams (poor activity)",
+          "Delaying antibiotics for confirmation — pneumonic plague 100% fatal untreated",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: [
+          "ICU for septicemic/pneumonic; isolation 48h post-effective therapy",
+          "PEP for close contacts: doxy or cipro × 7 days",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Yersinia pestis — gram-negative coccobacillus; bipolar 'safety pin' staining",
+          "Vector: rodent fleas (rural SW US — NM, AZ, CO endemic)",
+          "Bubonic (most common) → bacteremia → pneumonic (secondary; person-to-person spread)",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "**Bubonic**: sudden fever, painful inguinal/axillary/cervical buboes, malaise; 2–6 day incubation",
+          "**Septicemic**: fever, GI symptoms, DIC, gangrenous extremities (Black Death)",
+          "**Pneumonic**: rapid-onset fever + cough + hemoptysis; bilateral infiltrates; high mortality",
+          "Travel to / residence in endemic area (US Southwest, parts of Africa, Asia)",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "Bubo aspirate, blood, sputum cultures — alert lab (BSL-3); LRN PCR",
+          "CBC (leukocytosis), DIC labs",
+          "CXR: bilateral infiltrates in pneumonic",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Atypical/initial presentation may resemble flu — high suspicion in endemic areas with rodent/flea exposure",
+          "Bioterror via aerosol → primary pneumonic plague (bypasses bubonic phase)",
+          "Worker safety: full PPE; alert lab before processing specimens",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["CDC Plague Clinical Guidance", "WHO Plague Fact Sheet", "Tintinalli 9e Ch 157"],
+      },
+    ],
+  },
+
+  {
+    id: "tularemia",
+    name: "Tularemia",
+    subtitle: "Francisella tularensis — ulceroglandular, pneumonic, typhoidal",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Notify lab BEFORE sending cultures** — BSL-3 pathogen; bioterror concern",
+          "Notify state public health and CDC",
+          "Standard precautions (no person-to-person)",
+          "ICU for pneumonic / typhoidal forms",
+        ],
+      },
+      {
+        heading: "Drugs & doses",
+        items: [
+          "**Streptomycin** `1 g IM BID × 10 days` OR **Gentamicin** `5 mg/kg IV daily × 10 days`",
+          "**Doxycycline** `100 mg PO/IV BID × 14–21 days` — mild only (higher relapse)",
+          "**Ciprofloxacin** `400 mg IV / 500 mg PO BID × 10–14 days`",
+          "Peds: gentamicin `2.5 mg/kg IV q8h`",
+          "**PEP** (bioterror exposure): doxy or cipro × 14 days",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Beta-lactams (intrinsic resistance)",
+          "Treating with doxy alone in severe disease — relapse rate 10–25%",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: ["Admit for IV therapy (severe forms); 10–14 days antibiotics"],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "F. tularensis — small gram-negative coccobacillus; intracellular pathogen",
+          "Vectors: ticks, deer flies, infected mammals (rabbits, rodents, hares)",
+          "Inhalation, ingestion, inoculation — multiple routes",
+          "Geographic: US (Arkansas, Missouri, Oklahoma, Kansas), Scandinavia, Russia",
+        ],
+      },
+      {
+        heading: "Clinical forms",
+        items: [
+          "**Ulceroglandular** (most common, 75%): papule → ulcer at inoculation site + regional lymphadenopathy",
+          "**Glandular**: lymphadenopathy without skin ulcer",
+          "**Oculoglandular**: conjunctival inoculation → painful red eye + preauricular adenopathy",
+          "**Oropharyngeal**: ingestion → pharyngitis, cervical adenopathy",
+          "**Pneumonic**: inhalation; high mortality, bioterror form",
+          "**Typhoidal**: systemic illness without localizing signs; high mortality",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "Tick or deer fly bite; rabbit/rodent contact (hunters, taxidermists, lab workers)",
+          "Acute fever, chills, malaise",
+          "Skin ulcer + tender regional lymphadenopathy (ulceroglandular form)",
+          "Rapidly progressive pneumonia in inhalational form",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "Cultures (specially handled — alert lab, BSL-3); serology (paired sera 4-fold rise)",
+          "PCR via state lab / LRN",
+          "CXR: patchy infiltrates, hilar adenopathy, pleural effusions",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Lab biohazard — workers can acquire infection from sniffing plates; ALWAYS alert lab",
+          "Doxy higher relapse rate than aminoglycosides — reserve for mild disease",
+          "Bioterror form (aerosolized) — primary pneumonic with high lethality",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["CDC Tularemia Clinical Guidance", "Dennis et al, JAMA 2001 (consensus)", "Tintinalli 9e Ch 157"],
+      },
+    ],
+  },
+
+  // ─── HEMATOLOGY / IMMUNOLOGY ─────────────────────────────────────────────
+  {
+    id: "hereditary-angioedema",
+    name: "Hereditary Angioedema",
+    subtitle: "C1-INH deficiency — bradykinin-mediated; airway emergency",
+    category: "heme",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Airway is the priority** — laryngeal involvement; intubate early; surgical airway ready",
+          "Distinguish from histaminergic angioedema (no urticaria, no pruritus; doesn't respond to epi/steroids/antihistamines)",
+          "**Treat early** — efficacy decreases as attack progresses",
+          "Identify trigger (ACE-I, trauma, stress, infection)",
+        ],
+      },
+      {
+        heading: "Drugs & doses (acute attack)",
+        items: [
+          "**Icatibant** (Firazyr) — `30 mg SQ ×1`; bradykinin B2 antagonist; can repeat at 6h",
+          "**Ecallantide** (Kalbitor) — `30 mg SQ` (3 × 10 mg injections); plasma kallikrein inhibitor",
+          "**C1 esterase inhibitor concentrate** (Berinert/Cinryze) — `20 IU/kg IV`; replaces deficient C1-INH",
+          "**FFP** `2–4 units` — alternative if specific agents unavailable (contains C1-INH); paradoxical worsening rare",
+          "**Tranexamic acid** `1 g IV` — limited adjunct evidence",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Reflexive epinephrine, steroids, antihistamines — typically ineffective (bradykinin, not histamine)",
+          "Don't withhold airway management waiting for medications to work",
+          "ACE inhibitors, ARBs, estrogens — known triggers",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: [
+          "ICU for airway involvement; admit for facial/oropharyngeal swelling even if stable",
+          "Allergy/immunology referral for prophylaxis (C1-INH, danazol, lanadelumab)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Type I (85%): C1-INH deficiency (autosomal dominant)",
+          "Type II (15%): C1-INH dysfunction (normal level, low function)",
+          "Type III (rare): factor XII mutation; estrogen-sensitive; normal C1-INH",
+          "Bradykinin accumulates → vascular permeability → angioedema",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "Recurrent angioedema episodes lasting 2–5 days",
+          "**No urticaria, no pruritus** (key differentiator from histaminergic)",
+          "Family history common (autosomal dominant)",
+          "Triggers: trauma, surgery, dental work, infection, stress, ACE-I, estrogens",
+          "GI attacks: severe abdominal pain, vomiting, diarrhea (mimics surgical abdomen)",
+          "Erythema marginatum may precede attack (transient, non-pruritic rash)",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "C4 level (low between attacks — screening test)",
+          "C1-INH antigenic level + functional assay",
+          "C1q normal (low in acquired AE)",
+          "Endoscopy/CT — when GI attack mimics surgical abdomen",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "ACE-inhibitor angioedema is also bradykinin-mediated — same agents may help",
+          "Allergic angioedema (with urticaria) responds to epi/steroids/antihistamines — different treatment",
+          "Acquired angioedema (associated with lymphoma, autoimmune): low C1q, often older adults",
+          "Long-term prophylaxis for frequent attackers: lanadelumab, C1-INH SQ, danazol",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "WAO/EAACI Guideline for HAE 2021",
+          "Maurer et al, Allergy 2017",
+          "Tintinalli 9e Ch 14",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "acquired-hemophilia-a",
+    name: "Acquired Hemophilia A",
+    subtitle: "Acquired FVIII inhibitor — spontaneous severe bleeding",
+    category: "heme",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "Stop active bleeding — local pressure, surgical control",
+          "Type and cross, large-bore IV access",
+          "Hematology consult IMMEDIATELY",
+          "Avoid IM injections, arterial sticks, NSAIDs/antiplatelets",
+        ],
+      },
+      {
+        heading: "Drugs & doses (acute bleeding)",
+        items: [
+          "**rFVIIa (NovoSeven)** — `90 mcg/kg IV q2–3h` until bleeding controlled; first-line bypass agent",
+          "**Activated PCC (FEIBA)** — `50–100 units/kg IV q8–12h` (max 200 units/kg/day); alternative bypass",
+          "**Recombinant porcine FVIII (Obizur)** — `200 units/kg IV ×1, then dose to FVIII level`",
+          "FVIII concentrates rarely effective (inhibitor titer too high)",
+          "**Eradication of inhibitor** (start early, even during acute bleed):",
+          "**Prednisone** `1 mg/kg/day` ± **cyclophosphamide** `1–2 mg/kg/day` ± **rituximab** `375 mg/m² weekly ×4`",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "DDAVP (no significant effect — inhibitor blocks FVIII)",
+          "Standard plasma-derived FVIII concentrates as primary treatment",
+          "IM injections, arterial blood gases, urinary catheterization unless essential",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: [
+          "Admit all active bleeders — ICU if life-threatening",
+          "Hematology/oncology workup for underlying cause (autoimmune, malignancy, postpartum, idiopathic)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Autoantibody (IgG) inhibits FVIII coagulant activity",
+          "Most cases idiopathic; ~50% associated with autoimmune disease, malignancy (lymphoproliferative), postpartum, drugs",
+          "Different from congenital hemophilia: spontaneous, older patients, no family history",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "Spontaneous severe bleeding without prior history",
+          "Soft tissue hematomas, hematuria, GI bleeding, retroperitoneal bleeding",
+          "**Joint bleeding LESS common** than congenital hemophilia",
+          "Older adults (median 60–70s); postpartum women (3 months postpartum peak)",
+          "Isolated PTT prolongation, normal PT, normal platelet count",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "PT, PTT, INR, fibrinogen, platelets — isolated PTT prolongation",
+          "**Mixing study** — PTT does NOT correct (vs factor deficiency, which corrects)",
+          "FVIII activity (low) + Bethesda assay (inhibitor titer)",
+          "Workup for underlying cause: ANA, RF, complement, age-appropriate cancer screen",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Often initially mistaken for warfarin overdose, DIC, or congenital hemophilia",
+          "Vitamin K and FFP do not correct the PTT — diagnostic clue",
+          "Mortality ~20% — most deaths from bleeding before diagnosis or eradication therapy complications",
+          "Bypass agents are pro-thrombotic — caution in elderly with vascular disease",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tiede et al, Blood 2020 (consensus)",
+          "Collins et al, Blood 2007 (UK registry)",
+          "ISTH-SSC Guidelines 2020",
+        ],
+      },
+    ],
+  },
+
+  // ─── METABOLIC / PORPHYRIA ───────────────────────────────────────────────
+  {
+    id: "acute-intermittent-porphyria",
+    name: "Acute Intermittent Porphyria",
+    subtitle: "Heme synthesis defect — neurovisceral attack",
+    category: "meta",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "Stop ALL porphyrinogenic drugs (review carefully — see drugs.exeter.ac.uk)",
+          "**High-dose IV glucose** — `D10 at 200–400 g/day` (1L D10 q6h) — suppresses ALA synthase",
+          "Identify trigger: drug, fasting, infection, hormonal cycle, alcohol",
+          "Pain control with opioids (morphine, hydromorphone — safe)",
+        ],
+      },
+      {
+        heading: "Drugs & doses",
+        items: [
+          "**Hemin (Panhematin)** — `3–4 mg/kg IV daily × 4 days`; specific therapy; obtain via specialty pharmacy / Recordati Rare Diseases",
+          "**Glucose loading** (until hemin available) — `D10 IV at high rate`",
+          "**Ondansetron** for nausea (safe)",
+          "**Gabapentin** for neuropathic pain (safe)",
+          "**Seizures** — levetiracetam, gabapentin (avoid phenytoin, barbiturates, carbamazepine)",
+          "Hyponatremia (SIADH-like): cautious correction, hypertonic saline if severe symptoms",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "**Porphyrinogenic drugs**: barbiturates, phenytoin, carbamazepine, sulfonamides, rifampin, OCPs, ergot alkaloids",
+          "Fasting — exacerbates attacks",
+          "ANY new drug without checking porphyria-safe database",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: [
+          "Admit all attacks (often ICU for autonomic instability/respiratory)",
+          "Genetic counseling, drug list, MedicAlert bracelet",
+          "Givosiran (siRNA against ALA synthase) for prophylaxis in recurrent attackers",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Autosomal dominant; deficiency of porphobilinogen deaminase (HMBS)",
+          "Triggers (drugs, fasting, hormones) → induce ALA synthase → ALA + PBG accumulation → neurotoxicity",
+          "85% of carriers asymptomatic (incomplete penetrance)",
+          "Female:Male ~5:1; attacks tied to luteal phase (high progesterone)",
+        ],
+      },
+      {
+        heading: "Recognition (classic triad)",
+        items: [
+          "**Severe diffuse abdominal pain** — out of proportion to exam, no peritonism, no fever",
+          "**Neurologic**: peripheral neuropathy (motor predominant, ascending), seizures, AMS, psychiatric (anxiety, agitation, hallucinations)",
+          "**Autonomic**: tachycardia (universal), hypertension, sweating",
+          "Hyponatremia (SIADH-like) in 40%",
+          "**Port-wine urine** — darkens on standing in light",
+          "Constipation, nausea, vomiting",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "**Spot urine PBG** (porphobilinogen) — markedly elevated during attacks; key diagnostic test",
+          "Random urine ALA, total porphyrins (also elevated)",
+          "Genetic testing for HMBS mutation",
+          "BMP (Na low), CBC, LFTs, lipase",
+          "Imaging to rule out surgical abdomen (CT abdomen)",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Often misdiagnosed as functional/conversion disorder due to negative imaging",
+          "Patients have undergone unnecessary surgery (negative laparotomy)",
+          "Drug list MUST be checked — many common drugs trigger attacks",
+          "Latent carriers test positive PBG only during attacks — repeat testing during symptoms",
+          "Acute attacks can progress to flaccid quadriplegia + respiratory failure if untreated",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Anderson et al, Ann Intern Med 2005 (consensus)",
+          "Bonkovsky et al, Hepatology 2014",
+          "American Porphyria Foundation drug database (drugs-porphyria.org)",
+        ],
+      },
+    ],
+  },
+
+  // ─── TOXICOLOGY (additions) ──────────────────────────────────────────────
+  {
+    id: "sodium-channel-blocker",
+    name: "Sodium Channel Blocker Toxicity",
+    subtitle: "Wide QRS, hypotension — bicarb is the antidote",
+    category: "tox",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "Continuous cardiac monitoring; serial 12-lead ECGs",
+          "IV access ×2; airway management",
+          "**Sodium bicarbonate** for QRS >100 ms, hypotension, ventricular dysrhythmia",
+          "Identify offending agent (TCA, cocaine, flecainide, propranolol high-dose, bupropion, lamotrigine, carbamazepine, diphenhydramine high-dose, quinidine, propafenone)",
+        ],
+      },
+      {
+        heading: "Drugs & doses",
+        items: [
+          "**Sodium bicarbonate** — `1–2 mEq/kg IV bolus`, repeat until QRS narrows; then infusion `3 amps in 1L D5W at 200–250 mL/h`",
+          "Goal arterial pH `7.50–7.55`; goal QRS <120 ms",
+          "**Hypertonic saline** (3%) — alternative if bicarb-refractory",
+          "**Lipid emulsion** (Intralipid 20%) — `1.5 mL/kg bolus over 1 min, then 0.25 mL/kg/min × 30–60 min` — for refractory shock with lipid-soluble agents (TCA, bupropion, cocaine)",
+          "**Hypotension refractory** — norepinephrine first-line; epinephrine if needed",
+          "**Seizures** — benzodiazepines first-line; **AVOID phenytoin** (Class IB → worsens)",
+          "**Bupropion**: prolonged toxicity from extended-release; consider hemodialysis with refractory shock",
+          "**ECMO/cardiopulmonary bypass** for refractory cardiac arrest with non-lipid-soluble agents",
+        ],
+      },
+      {
+        heading: "Avoid",
+        items: [
+          "Class IA (procainamide, quinidine), IC (flecainide, propafenone) — additive Na-channel blockade",
+          "Phenytoin for seizures — Class IB Na-channel blocker",
+          "Beta-blockers as anti-arrhythmic — potentiate hypotension",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: [
+          "ICU for any patient with QRS prolongation or hemodynamic instability",
+          "Bupropion/lamotrigine: monitor ≥24h (delayed toxicity from XR formulations)",
+          "Wean bicarb infusion slowly",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Class I antiarrhythmics (Vaughan-Williams) — block fast inward Na current → slowed phase 0 depolarization → wide QRS",
+          "Effect is use-dependent and pH-dependent: acidosis worsens block, alkalosis (NaHCO₃) reduces it",
+          "Sodium loading + alkalinization → reverses Na-channel blockade",
+          "Many non-cardiac drugs have Na-channel blocking activity at toxic doses",
+        ],
+      },
+      {
+        heading: "Common offending agents",
+        items: [
+          "**Cardiac**: flecainide, propafenone, quinidine, procainamide, disopyramide, lidocaine (in toxicity)",
+          "**Antidepressants**: TCAs (amitriptyline, nortriptyline), bupropion (delayed)",
+          "**Anticonvulsants**: carbamazepine, lamotrigine, phenytoin (paradoxically)",
+          "**Antimalarials**: quinine, chloroquine, hydroxychloroquine",
+          "**Recreational**: cocaine (also catecholamine surge)",
+          "**Antihistamines** (diphenhydramine, doxylamine) at massive doses",
+          "**Local anesthetics**: bupivacaine (LAST — see separate entry)",
+        ],
+      },
+      {
+        heading: "Recognition (ECG signs)",
+        items: [
+          "**QRS >100 ms** — sensitive marker of Na-channel block",
+          "**Terminal R wave in aVR >3 mm** + R:S ratio >0.7 in aVR",
+          "Right axis deviation of terminal QRS",
+          "Brugada-like pattern (J-point elevation V1–V3)",
+          "Sinus tachycardia early; bradycardia/asystole late",
+          "Hypotension, AMS, seizures",
+        ],
+      },
+      {
+        heading: "Bicarb mechanism / monitoring",
+        items: [
+          "Sodium loading (more important): increases Na driving force, overcomes channel block",
+          "Alkalinization: shifts drug from active (open-channel) to inactive form",
+          "Monitor: ABG (pH 7.50–7.55), Na (don't exceed 155), K (alkalosis drops K — replete), iCa (drops with alkalosis)",
+          "Continue infusion until ECG normalizes for 12–24h, then taper",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Cocaine: combines Na-channel block + sympathomimetic — bicarb first, then benzodiazepines for sympathomimetic features; AVOID beta-blockers alone",
+          "Bupropion/lamotrigine: extended-release formulations have delayed peak (8–12h)",
+          "Propranolol toxicity has both Na-channel block and beta-blockade — challenging",
+          "Lipid emulsion is reserved for life-threatening cases — controversy in non-LAST; useful for highly lipid-soluble drugs",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Levine et al, Am J Emerg Med 2014",
+          "Bruccoleri & Burns, J Med Toxicol 2016",
+          "Tintinalli 9e Ch 191",
+          "LITFL Sodium Channel Blocker Toxicity",
+        ],
+      },
+    ],
+  },
+
+  // ─── RHEUMATOLOGY / INFLAMMATORY ─────────────────────────────────────────
+  {
+    id: "polymyalgia-rheumatica",
+    name: "Polymyalgia Rheumatica",
+    subtitle: "Inflammatory shoulder/hip girdle pain in patients >50",
+    category: "rheum",
+    tldr: [
+      {
+        heading: "Recognize",
+        items: [
+          "**Age ≥50** with bilateral shoulder + hip girdle aching/stiffness ≥2 weeks",
+          "**Morning stiffness >45 min** (often >1 hour); difficulty rising from chair, raising arms above shoulders",
+          "Elevated **ESR ≥40 mm/h** and/or CRP — usually both markedly elevated",
+          "Rapid, dramatic response to low-dose steroids (diagnostic feature)",
+          "**Rule out GCA every visit** — headache, jaw claudication, vision changes, scalp tenderness, temporal artery abnormalities",
+        ],
+      },
+      {
+        heading: "Treatment",
+        items: [
+          "`Prednisone 12.5–25 mg PO daily` — start low; most respond within 24–72 h",
+          "If concomitant GCA suspected: `Prednisone 40–60 mg PO daily` (or `methylprednisolone 1 g IV × 3 days` for vision threat)",
+          "Symptoms should improve dramatically — if not, reconsider diagnosis",
+          "Calcium 1200 mg + vitamin D 800 IU daily; consider bisphosphonate prophylaxis (long-course steroids)",
+          "PPI for GI prophylaxis if NSAID co-use or high risk",
+        ],
+      },
+      {
+        heading: "ED disposition",
+        items: [
+          "Start steroids in ED if classic presentation with markedly elevated inflammatory markers",
+          "Outpatient rheumatology follow-up within 1–2 weeks",
+          "**Urgent ophthalmology + start high-dose steroids immediately if any GCA symptoms** — do NOT wait for biopsy",
+          "Return precautions: headache, vision change, jaw pain, fever, weight loss",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Diagnostic criteria (2012 EULAR/ACR)",
+        items: [
+          "Required: age ≥50, bilateral shoulder aching, elevated CRP and/or ESR",
+          "Plus ≥4 points from: morning stiffness >45 min (2), hip pain/limited ROM (1), absence of RF/anti-CCP (2), absence of other joint involvement (1)",
+          "Ultrasound criteria add points if available (subdeltoid bursitis, biceps tenosynovitis, glenohumeral synovitis)",
+          "Score ≥4 = PMR diagnosis",
+        ],
+      },
+      {
+        heading: "Differential diagnosis",
+        items: [
+          "**Giant cell arteritis** — co-exists in 15–30% of PMR; PMR symptoms in 40–50% of GCA",
+          "Rheumatoid arthritis (especially elderly-onset RA) — check RF, anti-CCP",
+          "Inflammatory myopathy (polymyositis, dermatomyositis) — elevated CK, weakness > pain",
+          "Hypothyroidism — proximal muscle aching",
+          "Fibromyalgia — widespread pain but no inflammatory markers",
+          "Malignancy (occult): myeloma, lymphoma — protein electrophoresis, imaging if atypical",
+          "Statin myopathy, viral myalgia, drug-induced (checkpoint inhibitors)",
+          "Septic arthritis, crystal arthropathy (single joint)",
+        ],
+      },
+      {
+        heading: "Giant cell arteritis — must screen at every visit",
+        items: [
+          "New headache (temporal, occipital), scalp tenderness, jaw claudication",
+          "Vision changes — amaurosis fugax, diplopia, blindness (medical emergency, often irreversible)",
+          "Temporal artery abnormalities — tenderness, nodularity, decreased pulse",
+          "Constitutional symptoms — fever, weight loss, fatigue",
+          "ESR usually >50 mm/h; can be normal in 10–20% — do NOT exclude with normal ESR if clinical suspicion",
+          "**Start high-dose steroids immediately if suspected** — biopsy can be done within 1–2 weeks while on steroids",
+          "Temporal artery biopsy or temporal artery US (halo sign) for confirmation",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "CBC (normocytic anemia, thrombocytosis common), ESR, CRP",
+          "CK (normal in PMR; elevated in inflammatory myopathy)",
+          "TSH (hypothyroidism), CMP, LFTs (alk phos sometimes mildly elevated)",
+          "RF, anti-CCP (negative in PMR; helps rule out RA)",
+          "SPEP/UPEP if atypical features or refractory to steroids (myeloma)",
+          "Consider temporal artery US or biopsy if any GCA features",
+          "Imaging not routinely required; ultrasound can show bursitis/tenosynovitis",
+        ],
+      },
+      {
+        heading: "Treatment course",
+        items: [
+          "Initial: prednisone 12.5–25 mg PO daily until symptoms resolve and inflammatory markers normalize (typically 2–4 weeks)",
+          "Taper: reduce by 2.5 mg every 2–4 weeks to 10 mg daily, then by 1 mg every 4–8 weeks",
+          "Typical total duration: 1–3 years; ~50% require >2 years of therapy",
+          "Methotrexate as steroid-sparing agent if relapses or unable to taper",
+          "Tocilizumab (IL-6 inhibitor) approved for refractory PMR and GCA",
+          "Relapse common (>50%) during taper — increase to last effective dose",
+        ],
+      },
+      {
+        heading: "Steroid complications to monitor",
+        items: [
+          "Hyperglycemia/new-onset diabetes — screen at baseline and on follow-up",
+          "Osteoporosis — bone density at baseline, calcium/vit D, consider bisphosphonate",
+          "Hypertension, fluid retention, weight gain",
+          "Infection risk — vaccinations up to date (avoid live vaccines on high-dose)",
+          "Cataracts, glaucoma — yearly ophtho",
+          "Adrenal suppression — never stop abruptly, always taper",
+        ],
+      },
+      {
+        heading: "Disposition",
+        items: [
+          "Outpatient management for classic PMR without GCA features",
+          "Start steroids in ED, refer to rheumatology within 1–2 weeks",
+          "Admit if: suspected GCA with vision threat, severe systemic symptoms, diagnostic uncertainty",
+          "Patient education: never miss a dose, return for headache/vision change",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Dasgupta et al, ACR/EULAR 2012", "Buttgereit et al, JAMA 2016", "Tintinalli 9e Ch 281", "Mackie et al, Rheumatology 2020"],
+      },
+    ],
+  },
+
+  {
+    id: "hsp-iga-vasculitis",
+    name: "Henoch-Schönlein Purpura (IgA Vasculitis)",
+    subtitle: "Small-vessel IgA vasculitis — purpura, arthritis, abd pain, nephritis",
+    category: "rheum",
+    tldr: [
+      {
+        heading: "Recognize the tetrad",
+        items: [
+          "**Palpable purpura** — symmetric, lower extremities + buttocks (mandatory for diagnosis)",
+          "**Arthritis / arthralgia** — large joints, knees/ankles, non-destructive (60–80%)",
+          "**Abdominal pain** — colicky, can precede rash; intussusception risk (50–75%)",
+          "**Renal involvement** — hematuria, proteinuria, HTN; usually within 4–6 weeks (20–55%)",
+          "Most common <10 yo (peak 4–6); often follows URI by 1–3 weeks",
+        ],
+      },
+      {
+        heading: "ED management",
+        items: [
+          "Supportive — most cases self-limited (resolves 4 weeks; relapse in 1/3)",
+          "Hydration, pain control with `acetaminophen` (avoid NSAIDs if renal involvement)",
+          "**Check BP, UA, BMP at presentation** — screen for nephritis",
+          "Abdominal exam serial — concern for intussusception or perforation",
+          "**Steroids** — `Prednisone 1–2 mg/kg/day PO` (max 60–80 mg) for: severe abdominal pain, scrotal/testicular involvement, severe joint pain, GI bleeding, or significant nephritis",
+          "Refractory or severe nephritis → pediatric nephrology, consider IV methylpred + cytotoxic agents",
+        ],
+      },
+      {
+        heading: "Red flags / admit if",
+        items: [
+          "Severe abdominal pain, bloody stools, intussusception concern",
+          "Hypertension, AKI, gross hematuria, nephrotic-range proteinuria",
+          "Scrotal/testicular pain (mimics torsion)",
+          "CNS involvement (rare): seizures, headache, AMS",
+          "Pulmonary hemorrhage (rare but life-threatening)",
+          "Inability to tolerate PO, severe pain refractory to outpatient management",
+        ],
+      },
+      {
+        heading: "Disposition",
+        items: [
+          "Most: outpatient with close pediatric follow-up",
+          "Weekly UA + BP for 1–2 months, then monthly for 6 months — late nephritis common",
+          "Admit if: red flags above, severe symptoms, diagnostic uncertainty, inability to follow up",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Epidemiology",
+        items: [
+          "Most common childhood vasculitis (10–20 per 100,000)",
+          "Peak age 4–6 years; 90% under age 10",
+          "Slight male predominance (1.2:1)",
+          "Adults can be affected (worse renal prognosis); now formally called IgA vasculitis",
+          "Often follows URI (group A strep, viral) by 1–3 weeks; seasonal (fall/winter peak)",
+        ],
+      },
+      {
+        heading: "Pathophysiology",
+        items: [
+          "IgA1-mediated leukocytoclastic vasculitis of small vessels",
+          "Galactose-deficient IgA1 forms immune complexes → deposit in vessel walls",
+          "Triggers: infection, drugs, vaccines, malignancy (adults)",
+          "Skin: dermal vessel deposition → palpable purpura",
+          "GI: submucosal vessel involvement → pain, bleeding, edema, intussusception",
+          "Renal: mesangial IgA deposition (similar to IgA nephropathy) → variable severity",
+        ],
+      },
+      {
+        heading: "Diagnostic criteria (EULAR/PRINTO/PRES 2010)",
+        items: [
+          "**Required: palpable purpura** (not 2/2 thrombocytopenia) predominantly on lower limbs",
+          "Plus ≥1 of:",
+          "  • Abdominal pain (diffuse, colicky)",
+          "  • Histology: leukocytoclastic vasculitis with IgA deposition (or proliferative GN with IgA)",
+          "  • Arthritis or arthralgia (acute, any joint)",
+          "  • Renal involvement (proteinuria or hematuria)",
+        ],
+      },
+      {
+        heading: "Differential diagnosis",
+        items: [
+          "**Meningococcemia** — must rule out; purpura + fever + ill-appearing",
+          "ITP, TTP, DIC — check platelets, coags",
+          "Hemolytic uremic syndrome (HUS) — schistocytes, thrombocytopenia, AKI",
+          "Acute hemorrhagic edema of infancy (AHEI) — <2 yo, cockade purpura, well-appearing",
+          "Other vasculitides — ANCA-associated, polyarteritis nodosa",
+          "Septic emboli, endocarditis (especially adults)",
+          "Drug-induced vasculitis",
+          "Child abuse — pattern, location of bruising",
+        ],
+      },
+      {
+        heading: "Abdominal complications",
+        items: [
+          "**Intussusception** — most common surgical complication; usually ileoileal (not ileocolic like idiopathic) — air enema may miss it; **ultrasound preferred**",
+          "GI bleeding — occult to massive; hematochezia, melena",
+          "Bowel ischemia, perforation, infarction (rare)",
+          "Pancreatitis, cholecystitis (rare)",
+          "Protein-losing enteropathy",
+          "Steroids reduce pain and may reduce intussusception risk",
+        ],
+      },
+      {
+        heading: "Renal involvement (HSP nephritis)",
+        items: [
+          "20–55% of children, higher in adults",
+          "Onset within 4–6 weeks of disease in 85%; can be delayed up to 6 months — follow UA weekly × 1 month, then monthly × 6 months",
+          "Spectrum: isolated microscopic hematuria → nephritic/nephrotic syndrome → rapidly progressive GN",
+          "Most resolve spontaneously; ~5% develop chronic kidney disease",
+          "Indications for biopsy: significant proteinuria, RPGN, persistent renal dysfunction",
+          "Severe nephritis: pediatric nephrology, methylprednisolone pulse + immunosuppression (azathioprine, MMF, cyclophosphamide)",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "CBC (platelets — should be normal/elevated in HSP, low platelets = NOT HSP), coags",
+          "BMP — Cr, BUN, electrolytes (renal involvement)",
+          "**Urinalysis** — hematuria, proteinuria, RBC casts",
+          "Spot urine protein/creatinine ratio if proteinuria",
+          "C3/C4 — typically normal (helps differentiate from lupus nephritis)",
+          "ASO titer, throat culture if recent pharyngitis",
+          "Blood cultures if febrile or toxic (rule out meningococcemia)",
+          "Abdominal US if abdominal pain — intussusception",
+          "Skin biopsy rarely needed if classic presentation; DIF shows IgA in vessel walls",
+        ],
+      },
+      {
+        heading: "Treatment details",
+        items: [
+          "**Supportive care is mainstay** — hydration, rest, analgesia",
+          "Acetaminophen for pain; NSAIDs OK if no renal involvement",
+          "Steroids do NOT prevent renal disease but reduce duration of abdominal pain and joint symptoms",
+          "**Indications for steroids**: severe abdominal pain, GI bleeding, severe joint pain, scrotal involvement, significant nephritis",
+          "Prednisone 1–2 mg/kg/day × 1–2 weeks then taper",
+          "Severe nephritis: IV methylprednisolone pulse 30 mg/kg (max 1g) × 3 days, then oral steroids + immunosuppression",
+          "ACE inhibitor / ARB for persistent proteinuria after acute phase",
+        ],
+      },
+      {
+        heading: "Prognosis",
+        items: [
+          "Excellent in children — 94% complete recovery",
+          "Self-limited; resolves in 4–6 weeks in most",
+          "**Recurrence in ~30%** (typically milder, within 4 months)",
+          "Chronic kidney disease in 1–5% of children, 10–30% of adults",
+          "Adults: worse renal prognosis, often need biopsy and immunosuppression",
+          "ESRD rare (<1% pediatric); typically with severe initial nephritis",
+        ],
+      },
+      {
+        heading: "Disposition",
+        items: [
+          "Outpatient if: stable, tolerating PO, no red flags, reliable follow-up",
+          "Admit if: severe abd pain, GI bleeding, AKI/HTN, scrotal involvement, intussusception",
+          "Pediatric follow-up within 1 week",
+          "Long-term BP and UA monitoring × 6 months minimum",
+          "Adults: nephrology referral baseline; higher threshold for biopsy",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Ozen et al, EULAR/PRINTO/PRES 2010", "Trnka, J Paediatr Child Health 2013", "Nelson 21e Ch 192", "Tintinalli 9e Ch 119"],
       },
     ],
   },

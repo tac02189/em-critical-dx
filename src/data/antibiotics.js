@@ -1,0 +1,3653 @@
+export const ANTIBIOTIC_CATEGORIES = [
+  { id: "sepsis",      label: "Sepsis",              short: "Sepsis",    color: "#ef4444" },
+  { id: "resp",        label: "Respiratory",          short: "Resp",      color: "#3b82f6" },
+  { id: "ent",         label: "ENT / Dental",         short: "ENT",       color: "#06b6d4" },
+  { id: "eye",         label: "Eye",                  short: "Eye",       color: "#0ea5e9" },
+  { id: "uti",         label: "Urinary",              short: "Urinary",   color: "#f59e0b" },
+  { id: "cns",         label: "CNS / Meningitis",     short: "CNS",       color: "#a855f7" },
+  { id: "gi",          label: "GI / Abdominal",       short: "GI/Abd",    color: "#f97316" },
+  { id: "skin",        label: "Skin / Bites",         short: "Skin",      color: "#22c55e" },
+  { id: "bone",        label: "Bone / Joint",         short: "Bone/Jt",   color: "#64748b" },
+  { id: "cardiac",     label: "Cardiac / Vascular",   short: "Cardiac",   color: "#ec4899" },
+  { id: "obgyn",       label: "OB / Gyn",             short: "OB/Gyn",    color: "#f43f5e" },
+  { id: "sti",         label: "STI",                  short: "STI",       color: "#d946ef" },
+  { id: "tickborne",   label: "Tick-borne",           short: "Tick",      color: "#a16207" },
+  { id: "peds",        label: "Pediatric",            short: "Peds",      color: "#eab308" },
+  { id: "fungal",      label: "Fungal",               short: "Fungal",    color: "#10b981" },
+  { id: "viral",       label: "Viral",                short: "Viral",     color: "#6366f1" },
+  { id: "parasitic",   label: "Parasitic",            short: "Parasitic", color: "#84cc16" },
+  { id: "neutropenia", label: "Febrile Neutropenia",  short: "FN",        color: "#14b8a6" },
+];
+
+export const ANTIBIOTICS = [
+  // ── SEPSIS ──────────────────────────────────────────────────────────────
+  {
+    id: "sepsis-community",
+    name: "Sepsis — Community-Acquired",
+    category: "sepsis",
+    indication: "Unknown source, community onset without MDR risk factors",
+    firstLine: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h (extended infusion)", pedsDose: "100 mg/kg piperacillin q6–8h" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided", pedsDose: "60 mg/kg/day IV div q6h", note: "Add for MRSA concern" },
+    ],
+    alternatives: [
+      { name: "Cefepime", dose: "2g IV q8h", pedsDose: "50 mg/kg/dose q8h (max 2g)", note: "If PCN allergy" },
+      { name: "Meropenem", dose: "1–2g IV q8h", pedsDose: "20–40 mg/kg/dose q8h (max 2g)", note: "ESBL/MDR concern" },
+    ],
+    duration: "7–10 days; de-escalate within 72h based on cultures and clinical response",
+    pearls: [
+      "Blood cultures ×2 from separate sites before antibiotics — do not delay >1h",
+      "Add antifungals (micafungin) if: TPN, prolonged ICU stay, immunocompromised, prior Candida",
+      "Source control is paramount — drain, debride, remove hardware",
+      "Procalcitonin trend supports de-escalation",
+    ],
+  },
+  {
+    id: "sepsis-nosocomial",
+    name: "Sepsis — Nosocomial / Healthcare-Associated",
+    category: "sepsis",
+    indication: "Hospital-acquired onset ≥48h, or high MRSA/MDR risk",
+    firstLine: [
+      { name: "Meropenem", dose: "1–2g IV q8h", pedsDose: "20–40 mg/kg/dose q8h" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided", pedsDose: "60 mg/kg/day IV div q6h" },
+    ],
+    alternatives: [
+      { name: "Ceftazidime-avibactam", dose: "2.5g IV q8h", note: "For KPC or CRE" },
+      { name: "Linezolid", dose: "600mg IV q12h", pedsDose: "10 mg/kg q8h", note: "If vancomycin contraindicated" },
+    ],
+    duration: "7–14 days depending on source",
+    pearls: [
+      "ID consult for MRSA bacteremia, CRE, carbapenem-resistant Pseudomonas",
+      "TTE/TEE within 24h of confirmed Staph bacteremia",
+      "De-escalate as soon as cultures available",
+    ],
+  },
+  {
+    id: "tss-staph",
+    name: "Toxic Shock Syndrome — Staphylococcal",
+    category: "sepsis",
+    indication: "Fever + hypotension + diffuse macular rash + multi-organ involvement; tampon, post-op, soft tissue source",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided", pedsDose: "60 mg/kg/day IV div q6h" },
+      { name: "Clindamycin", dose: "900mg IV q8h", pedsDose: "10–13 mg/kg/dose q8h (max 900mg)", note: "Toxin suppression — essential" },
+    ],
+    alternatives: [
+      { name: "Linezolid", dose: "600mg IV q12h", pedsDose: "10 mg/kg q8h", note: "Also suppresses toxin production" },
+    ],
+    duration: "10–14 days",
+    pearls: [
+      "Source control essential — remove tampon, drain wound, debride",
+      "Clindamycin (or linezolid) blocks ribosomal toxin synthesis even for resistant strains",
+      "IVIG 1–2 g/kg ×1 considered for severe / refractory cases",
+      "Aggressive volume resuscitation — large-volume capillary leak typical",
+    ],
+  },
+  {
+    id: "tss-strep",
+    name: "Streptococcal Toxic Shock Syndrome (STSS)",
+    category: "sepsis",
+    indication: "Group A Strep + hypotension + multi-organ involvement; often with necrotizing fasciitis",
+    firstLine: [
+      { name: "Penicillin G", dose: "4 million units IV q4h", pedsDose: "250–400k units/kg/day div q4–6h" },
+      { name: "Clindamycin", dose: "900mg IV q8h", pedsDose: "10–13 mg/kg/dose q8h", note: "Mandatory — toxin suppression (Eagle effect)" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load", note: "Empirically until GAS confirmed" },
+    ],
+    duration: "10–14 days",
+    pearls: [
+      "Surgical exploration mandatory if soft tissue source — necrotizing fasciitis until proven otherwise",
+      "IVIG 1 g/kg day 1, then 0.5 g/kg days 2–3",
+      "Mortality 30–70% — early recognition essential",
+      "Clindamycin works on stationary-phase organisms (where penicillin alone fails)",
+    ],
+  },
+
+  // ── RESPIRATORY ─────────────────────────────────────────────────────────
+  {
+    id: "cap-outpatient",
+    name: "CAP — Outpatient (Low Severity)",
+    category: "resp",
+    indication: "Community-acquired pneumonia, no chronic cardiopulmonary disease",
+    firstLine: [
+      { name: "Amoxicillin", dose: "1g PO TID × 5 days", pedsDose: "90 mg/kg/day div BID × 5 days" },
+      { name: "Doxycycline", dose: "100mg PO BID × 5 days", pedsDose: "2.2 mg/kg/dose BID (max 100mg)", note: "Atypical coverage; PCN allergy" },
+      { name: "Azithromycin", dose: "500mg PO ×1, then 250mg PO daily ×4", pedsDose: "10 mg/kg day 1, then 5 mg/kg days 2–5", note: "Avoid if local macrolide resistance >25%" },
+    ],
+    alternatives: [
+      { name: "Levofloxacin", dose: "750mg PO daily × 5 days", note: "Reserve — only if other agents inappropriate" },
+    ],
+    duration: "5 days",
+    pearls: [
+      "Do not routinely combine beta-lactam + macrolide for outpatient mild CAP",
+      "Chest X-ray not required for clinical diagnosis",
+      "Reserve fluoroquinolones — avoid as first-line in mild CAP",
+    ],
+  },
+  {
+    id: "cap-inpatient",
+    name: "CAP — Inpatient (Moderate–Severe)",
+    category: "resp",
+    indication: "CAP requiring hospitalization; non-ICU or ICU",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "1–2g IV q24h", pedsDose: "50–75 mg/kg q24h (max 2g)" },
+      { name: "Azithromycin", dose: "500mg IV/PO q24h", pedsDose: "10 mg/kg day 1, then 5 mg/kg" },
+    ],
+    alternatives: [
+      { name: "Levofloxacin", dose: "750mg IV/PO q24h × 5 days", note: "Monotherapy acceptable for non-ICU" },
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", pedsDose: "200–300 mg/kg/day amp component div q6h", note: "Alternative to ceftriaxone" },
+    ],
+    duration: "5–7 days; switch to PO when stable",
+    pearls: [
+      "ICU CAP: always combine beta-lactam + macrolide OR beta-lactam + respiratory FQ",
+      "Add MRSA coverage (vancomycin) if cavitary infiltrate, post-influenza, prior MRSA",
+      "Add anti-pseudomonal coverage if structural lung disease or prior Pseudomonas",
+      "Legionella + pneumococcal urine antigen for ICU CAP",
+    ],
+  },
+  {
+    id: "hap-vap",
+    name: "HAP / VAP",
+    category: "resp",
+    indication: "Hospital-acquired (≥48h after admission) or ventilator-associated pneumonia",
+    firstLine: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h (extended infusion)", note: "Or cefepime 2g IV q8h" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided", note: "Add if MRSA risk" },
+    ],
+    alternatives: [
+      { name: "Meropenem", dose: "1–2g IV q8h", note: "MDR/Pseudomonas concern" },
+      { name: "Ceftazidime-avibactam", dose: "2.5g IV q8h", note: "For CRE or carbapenem-R Pseudomonas" },
+    ],
+    duration: "7 days (shorter if rapid response, no MDR organism)",
+    pearls: [
+      "MRSA nasal swab negative >95% NPV for MRSA VAP — can withhold vancomycin",
+      "Dual anti-pseudomonal only for confirmed Pseudomonas or septic shock + MDR risk",
+      "BAL or mini-BAL with quantitative culture > tracheal aspirates",
+    ],
+  },
+  {
+    id: "aspiration-pneumonia",
+    name: "Aspiration Pneumonia",
+    category: "resp",
+    indication: "Witnessed aspiration with subsequent pneumonia; oropharyngeal flora",
+    firstLine: [
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", pedsDose: "200 mg/kg/day amp component div q6h" },
+      { name: "Ceftriaxone", dose: "1–2g IV q24h", note: "Alternative — anaerobic coverage less critical for community aspiration" },
+    ],
+    alternatives: [
+      { name: "Clindamycin", dose: "600mg IV q8h", pedsDose: "10 mg/kg/dose q8h", note: "PCN allergy" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", note: "Healthcare-associated aspiration" },
+    ],
+    duration: "7 days",
+    pearls: [
+      "Aspiration pneumonitis (chemical, no infection) — no antibiotics, supportive only",
+      "Anaerobic coverage debated — many cases respond to standard CAP regimens",
+      "Lung abscess, putrid sputum, poor dentition → definitely add anaerobic coverage",
+      "Risk factors: dysphagia, alcohol, drug use, NG tube, decreased consciousness",
+    ],
+  },
+  {
+    id: "lung-abscess",
+    name: "Lung Abscess",
+    category: "resp",
+    indication: "Cavitary pulmonary infection; aerobic + anaerobic flora",
+    firstLine: [
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h" },
+      { name: "Clindamycin", dose: "600mg IV q8h", note: "Alternative or add-on for anaerobes" },
+    ],
+    alternatives: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h" },
+      { name: "Ceftriaxone + Metronidazole", dose: "1–2g IV q24h + 500mg IV q8h" },
+    ],
+    duration: "4–8 weeks (transition to PO when improving)",
+    pearls: [
+      "Drainage if large (>6cm) or not responsive to antibiotics",
+      "Consider IDU (septic emboli), foreign body aspiration, malignancy",
+      "Sputum cultures often unhelpful — bronchoscopy in select cases",
+      "Aspergillus or TB on differential for cavitary disease",
+    ],
+  },
+  {
+    id: "empyema",
+    name: "Parapneumonic Effusion / Empyema",
+    category: "resp",
+    indication: "Infected pleural fluid; pH <7.2, glucose <40, or frank pus",
+    firstLine: [
+      { name: "Ceftriaxone + Metronidazole", dose: "2g IV q24h + 500mg IV q8h" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", note: "Single-agent alternative" },
+    ],
+    duration: "2–4 weeks",
+    pearls: [
+      "Tube thoracostomy for drainage essential — antibiotics alone insufficient",
+      "Intrapleural tPA + DNase for loculated empyema (MIST2 trial)",
+      "VATS if loculated and not draining adequately",
+      "Light's criteria → exudative; pH <7.2 or glucose <40 → drain",
+    ],
+  },
+  {
+    id: "copd-exacerbation",
+    name: "COPD Exacerbation — Antibiotic Indications",
+    category: "resp",
+    indication: "Anthonisen criteria: ↑ sputum volume, ↑ purulence, ↑ dyspnea — treat if ≥2 (especially purulence) or mechanically ventilated",
+    firstLine: [
+      { name: "Azithromycin", dose: "500mg PO ×1, then 250mg PO daily ×4" },
+      { name: "Doxycycline", dose: "100mg PO BID × 5 days" },
+      { name: "Amoxicillin-clavulanate", dose: "875mg PO BID × 5 days" },
+    ],
+    alternatives: [
+      { name: "Levofloxacin", dose: "500–750mg PO daily × 5 days", note: "Reserve for severe disease, prior FQ" },
+    ],
+    duration: "5 days",
+    pearls: [
+      "Pseudomonas coverage if: severe disease, frequent exacerbations, prior Pseudomonas, recent abx",
+      "Procalcitonin can guide use — low values support no abx",
+      "Steroids + bronchodilators are mainstays of treatment",
+      "No antibiotics for non-purulent or single-symptom exacerbation",
+    ],
+  },
+  {
+    id: "pertussis",
+    name: "Pertussis (Whooping Cough)",
+    category: "resp",
+    indication: "Paroxysmal cough ≥2 weeks, post-tussive emesis, inspiratory whoop",
+    firstLine: [
+      { name: "Azithromycin", dose: "500mg PO ×1, then 250mg PO daily ×4", pedsDose: "10 mg/kg day 1, then 5 mg/kg days 2–5 (peds: 1st month — 10 mg/kg ×5 days)" },
+    ],
+    alternatives: [
+      { name: "TMP-SMX DS", dose: "160/800mg PO BID × 14 days", pedsDose: "8 mg/kg/day TMP component div BID", note: "If macrolide contraindicated" },
+      { name: "Clarithromycin", dose: "500mg PO BID × 7 days" },
+    ],
+    duration: "5 days (azithromycin)",
+    pearls: [
+      "Treatment + post-exposure prophylaxis (same regimen) for close contacts",
+      "Treat regardless of stage to reduce transmission — symptomatic benefit limited after catarrhal phase",
+      "Hospitalize infants <6 months (apnea risk)",
+      "Tdap booster recommended in adults",
+    ],
+  },
+  {
+    id: "pjp",
+    name: "Pneumocystis Pneumonia (PJP)",
+    category: "resp",
+    indication: "Immunocompromised + hypoxemia + bilateral infiltrates (HIV CD4<200, transplant, malignancy, chronic steroids)",
+    firstLine: [
+      { name: "TMP-SMX", dose: "15–20 mg/kg/day TMP IV/PO div q6–8h", pedsDose: "Same: 15–20 mg/kg/day TMP div q6–8h" },
+      { name: "Prednisone", dose: "40mg PO BID ×5d, 40mg PO daily ×5d, 20mg PO daily ×11d", note: "If PaO₂ <70 mmHg or A-a gradient >35" },
+    ],
+    alternatives: [
+      { name: "Pentamidine", dose: "4 mg/kg IV daily" },
+      { name: "Atovaquone", dose: "750mg PO BID", note: "Mild disease only" },
+      { name: "Clindamycin + Primaquine", dose: "600mg IV q8h + 30mg PO daily" },
+    ],
+    duration: "21 days",
+    pearls: [
+      "HIV with PJP — initiate ART within 2 weeks unless severe disease (IRIS risk)",
+      "Steroids critical when hypoxic — prevents paradoxical worsening from organism lysis",
+      "LDH and beta-D-glucan elevated; bronchoscopy + BAL gold standard for diagnosis",
+      "Continue secondary prophylaxis (TMP-SMX SS daily) until immune reconstitution",
+    ],
+  },
+  {
+    id: "tuberculosis",
+    name: "Tuberculosis (Active, Drug-Susceptible)",
+    category: "resp",
+    indication: "Active TB confirmed (smear +, NAAT +, or culture +)",
+    firstLine: [
+      { name: "RIPE", dose: "Rifampin + Isoniazid + Pyrazinamide + Ethambutol × 2 months" },
+      { name: "Continuation phase", dose: "Rifampin + Isoniazid × 4 months" },
+    ],
+    duration: "6 months total (longer for cavitary, miliary, CNS disease)",
+    pearls: [
+      "ED role: airborne isolation, induced sputum or NAAT, ID + Public Health consult",
+      "Always test for HIV — co-infection alters management",
+      "DOT (directly observed therapy) is standard of care",
+      "LTBI: isoniazid 9 mo, rifampin 4 mo, or isoniazid + rifapentine weekly ×12 wk",
+      "Pyridoxine 25–50mg PO daily with INH to prevent neuropathy",
+    ],
+  },
+
+  // ── ENT / DENTAL ────────────────────────────────────────────────────────
+  {
+    id: "strep-pharyngitis",
+    name: "Group A Strep Pharyngitis",
+    category: "ent",
+    indication: "Centor 3–4 + positive RADT or culture",
+    firstLine: [
+      { name: "Penicillin V", dose: "500mg PO BID × 10 days", pedsDose: "250mg PO BID/TID × 10 days (≥27kg: 500mg BID)" },
+      { name: "Amoxicillin", dose: "1g PO daily × 10 days", pedsDose: "50 mg/kg/day PO daily × 10 days", note: "Better palatability for peds" },
+    ],
+    alternatives: [
+      { name: "Cephalexin", dose: "500mg PO BID × 10 days", pedsDose: "40 mg/kg/day div BID", note: "Non-anaphylactic PCN allergy" },
+      { name: "Azithromycin", dose: "500mg PO ×1, then 250mg ×4", pedsDose: "12 mg/kg day 1, then 6 mg/kg days 2–5", note: "Severe PCN allergy" },
+    ],
+    duration: "10 days (5 days for azithromycin)",
+    pearls: [
+      "Treat to prevent rheumatic fever, peritonsillar abscess, suppurative complications",
+      "70%+ pharyngitis is viral — don't treat without testing",
+      "Single dose dexamethasone reduces pain and time to symptom resolution",
+      "Rule out epiglottitis, peritonsillar abscess, retropharyngeal abscess if severe",
+    ],
+  },
+  {
+    id: "otitis-media",
+    name: "Acute Otitis Media",
+    category: "ent",
+    indication: "Bulging tympanic membrane with effusion, otorrhea, severe symptoms",
+    firstLine: [
+      { name: "Amoxicillin", dose: "500mg PO TID (adults)", pedsDose: "80–90 mg/kg/day div BID × 10d (<2yo) / 7d (≥2yo)" },
+    ],
+    alternatives: [
+      { name: "Amoxicillin-clavulanate", dose: "875mg PO BID", pedsDose: "90 mg/kg/day amox component div BID", note: "Recent abx, conjunctivitis-otitis, severe" },
+      { name: "Ceftriaxone", dose: "50 mg/kg IM × 1–3 doses", note: "Vomiting, treatment failure" },
+      { name: "Cefdinir / Cefuroxime", dose: "—", pedsDose: "Cefdinir 14 mg/kg/day div BID", note: "PCN allergy" },
+    ],
+    duration: "10 days <2yo, 7 days ≥2yo, 5 days adults",
+    pearls: [
+      "Watchful waiting reasonable: age >2yo, mild AOM, no severe symptoms, reliable follow-up",
+      "Bilateral AOM or otorrhea — always treat",
+      "Treatment failure at 48–72h → switch to amox-clav or ceftriaxone",
+      "Recurrent AOM (≥4/year) → ENT for tube placement consideration",
+    ],
+  },
+  {
+    id: "otitis-externa",
+    name: "Otitis Externa (Including Malignant)",
+    category: "ent",
+    indication: "Ear canal inflammation; malignant = osteomyelitis of skull base in DM/immunocompromised",
+    firstLine: [
+      { name: "Cipro/dexamethasone otic", dose: "4 drops in affected ear BID × 7 days", note: "Uncomplicated — avoid systemic abx" },
+      { name: "Ofloxacin otic", dose: "10 drops daily × 7 days", note: "Alternative; safe with TM perforation" },
+    ],
+    alternatives: [
+      { name: "Ciprofloxacin (PO/IV)", dose: "750mg PO BID or 400mg IV q12h", note: "Malignant otitis externa" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", note: "Severe malignant OE" },
+    ],
+    duration: "Uncomplicated: 7 days; Malignant: 6–8 weeks",
+    pearls: [
+      "Pseudomonas dominant — ototopical FQ first-line",
+      "Malignant OE: elderly diabetic with severe pain, granulation in canal, cranial nerve involvement",
+      "CT/MRI for malignant OE — shows bone erosion at skull base",
+      "Avoid aminoglycoside drops with TM perforation (ototoxicity)",
+    ],
+  },
+  {
+    id: "sinusitis",
+    name: "Acute Bacterial Sinusitis",
+    category: "ent",
+    indication: "Symptoms >10 days, OR worsening after improvement, OR severe (fever ≥39°C + purulent rhinorrhea ≥3 days)",
+    firstLine: [
+      { name: "Amoxicillin-clavulanate", dose: "875mg PO BID × 5–7 days", pedsDose: "90 mg/kg/day amox component div BID × 10–14 days" },
+    ],
+    alternatives: [
+      { name: "Doxycycline", dose: "100mg PO BID × 5–7 days", note: "PCN allergy" },
+      { name: "Levofloxacin", dose: "500mg PO daily × 5 days", note: "PCN allergy or treatment failure" },
+    ],
+    duration: "5–7 days adults; 10–14 days pediatric",
+    pearls: [
+      "Most acute sinusitis is viral — antibiotics overprescribed",
+      "Watch for orbital cellulitis or intracranial extension (frontal/sphenoid sinus)",
+      "Avoid macrolides empirically — high S. pneumoniae resistance",
+      "Saline rinses + intranasal steroids are useful adjuncts",
+    ],
+  },
+  {
+    id: "peritonsillar-abscess",
+    name: "Peritonsillar Abscess (Quinsy)",
+    category: "ent",
+    indication: "Unilateral throat pain, trismus, deviated uvula, muffled voice, drooling",
+    firstLine: [
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", pedsDose: "200 mg/kg/day amp component div q6h" },
+      { name: "Clindamycin", dose: "600mg IV q8h", pedsDose: "10 mg/kg/dose q8h", note: "PCN allergy" },
+    ],
+    duration: "Switch to PO amox-clav for total 10–14 days after drainage",
+    pearls: [
+      "Drainage essential — needle aspiration or I&D",
+      "ENT consult, especially if airway concern or peds",
+      "Distinguish from peritonsillar cellulitis (no fluid collection)",
+      "Watch for Lemierre's syndrome (Fusobacterium IJ thrombophlebitis)",
+    ],
+  },
+  {
+    id: "ludwigs-angina",
+    name: "Ludwig's Angina",
+    category: "ent",
+    indication: "Bilateral submandibular/sublingual cellulitis from dental source — life-threatening airway compromise",
+    firstLine: [
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", pedsDose: "200 mg/kg/day amp component div q6h" },
+      { name: "Clindamycin", dose: "600mg IV q8h", pedsDose: "10 mg/kg/dose q8h" },
+    ],
+    alternatives: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h" },
+      { name: "Meropenem", dose: "1g IV q8h", note: "Severe / immunocompromised" },
+    ],
+    duration: "14 days",
+    pearls: [
+      "AIRWAY EMERGENCY — awake fiberoptic intubation in OR with ENT/anesthesia",
+      "Direct laryngoscopy difficult — tongue elevated, distorted anatomy",
+      "Surgical drainage by ENT if collection identified",
+      "Antibiotics adjunctive — never alone",
+    ],
+  },
+  {
+    id: "epiglottitis",
+    name: "Epiglottitis (Adult / Pediatric)",
+    category: "ent",
+    indication: "Fever + sore throat + drooling + tripod posture + stridor",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "2g IV q24h", pedsDose: "50 mg/kg IV q24h (max 2g)" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load", pedsDose: "60 mg/kg/day div q6h", note: "Add for severe disease or MRSA risk" },
+    ],
+    duration: "7–10 days",
+    pearls: [
+      "AIRWAY EMERGENCY — secure airway in OR with ENT + anesthesia",
+      "H. influenzae type B less common with vaccination — now Strep, Staph, viral",
+      "Do NOT agitate child — allow position of comfort, defer exam",
+      "Lateral neck XR shows 'thumbprint sign' — but don't delay management for imaging",
+    ],
+  },
+  {
+    id: "dental-abscess",
+    name: "Dental / Odontogenic Infection",
+    category: "ent",
+    indication: "Periapical or periodontal abscess; facial swelling from dental source",
+    firstLine: [
+      { name: "Amoxicillin", dose: "500mg PO TID × 7 days", pedsDose: "50 mg/kg/day div TID" },
+      { name: "Amoxicillin-clavulanate", dose: "875mg PO BID × 7 days", note: "Spreading infection or systemic symptoms" },
+    ],
+    alternatives: [
+      { name: "Clindamycin", dose: "300–450mg PO TID × 7 days", pedsDose: "10 mg/kg/dose TID", note: "PCN allergy" },
+      { name: "Penicillin VK", dose: "500mg PO QID × 7 days", note: "Localized, immunocompetent" },
+    ],
+    duration: "7 days",
+    pearls: [
+      "Dental drainage essential — antibiotics adjunctive only",
+      "Watch for Ludwig's angina, deep neck space infection if severe",
+      "Cavernous sinus thrombosis risk from upper face/maxillary infection",
+      "Examine teeth in any unexplained sepsis or facial cellulitis",
+    ],
+  },
+
+  // ── EYE ─────────────────────────────────────────────────────────────────
+  {
+    id: "bacterial-conjunctivitis",
+    name: "Bacterial Conjunctivitis",
+    category: "eye",
+    indication: "Purulent discharge, lids stuck shut on awakening; usually unilateral",
+    firstLine: [
+      { name: "Erythromycin ophthalmic ointment", dose: "0.5 inch in eye QID × 5–7d", pedsDose: "Same; safe in neonates" },
+      { name: "Trimethoprim-polymyxin B drops", dose: "1 drop QID × 5–7d" },
+    ],
+    alternatives: [
+      { name: "Moxifloxacin / Ciprofloxacin drops", dose: "1 drop q2h × 2 days, then QID", note: "Contact lens wearers — Pseudomonas coverage" },
+      { name: "Ceftriaxone", dose: "1g IM ×1", note: "Hyperacute (<24h) — gonococcal — emergency" },
+    ],
+    duration: "5–7 days",
+    pearls: [
+      "Most pink eye is viral — watery discharge, often bilateral",
+      "Hyperacute purulent (<24h onset) → gonococcal → ceftriaxone IM + saline irrigation",
+      "Contact lens wearer with conjunctivitis → consider keratitis, cover Pseudomonas",
+      "Newborn (ophthalmia neonatorum): cover GC + Chlamydia (ceftriaxone IM + erythromycin oint)",
+    ],
+  },
+  {
+    id: "bacterial-keratitis",
+    name: "Bacterial Keratitis (Corneal Ulcer)",
+    category: "eye",
+    indication: "Corneal opacity, pain, photophobia, decreased vision, foreign body sensation",
+    firstLine: [
+      { name: "Fortified vancomycin + tobramycin drops", dose: "25 mg/mL + 14 mg/mL alternating q1h around the clock" },
+      { name: "Moxifloxacin 0.5% drops", dose: "1 drop q1h around the clock", note: "Monotherapy alternative" },
+    ],
+    duration: "Until corneal ulcer healed (weeks)",
+    pearls: [
+      "OPHTHALMOLOGY CONSULT IMMEDIATELY",
+      "Contact lens wearers: Pseudomonas common — must cover",
+      "DO NOT patch the eye — promotes bacterial proliferation",
+      "HSV keratitis (dendritic ulcer) → topical ganciclovir or oral acyclovir",
+      "Fungal keratitis suspected with vegetative trauma, agricultural injury",
+    ],
+  },
+  {
+    id: "preseptal-cellulitis",
+    name: "Preseptal (Periorbital) Cellulitis",
+    category: "eye",
+    indication: "Eyelid erythema, swelling, warmth — anterior to orbital septum (no proptosis, EOM normal)",
+    firstLine: [
+      { name: "Amoxicillin-clavulanate", dose: "875mg PO BID × 7 days", pedsDose: "90 mg/kg/day amox component div BID" },
+      { name: "Cephalexin + TMP-SMX", dose: "500mg PO QID + 1 DS PO BID", note: "Cover MRSA if abscess or risk factors" },
+    ],
+    alternatives: [
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", pedsDose: "200 mg/kg/day amp component div q6h", note: "Severe / admission" },
+    ],
+    duration: "7–10 days",
+    pearls: [
+      "PRESEPTAL = lid only; ORBITAL = behind septum (proptosis, EOM pain, vision change) — emergency",
+      "CT orbits with contrast for any concern of postseptal involvement",
+      "Common in children with sinusitis — watch for progression",
+      "Trauma, insect bite, sty — mostly Staph/Strep",
+    ],
+  },
+  {
+    id: "orbital-cellulitis",
+    name: "Orbital (Postseptal) Cellulitis",
+    category: "eye",
+    indication: "Proptosis, painful eye movements, decreased vision, ophthalmoplegia, chemosis",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided", pedsDose: "60 mg/kg/day div q6h" },
+      { name: "Ceftriaxone + Metronidazole", dose: "2g IV q24h + 500mg IV q8h", pedsDose: "Ceftriaxone 50 mg/kg q24h + metronidazole 30 mg/kg/day div q8h" },
+    ],
+    alternatives: [
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", note: "Alternative to ceftriaxone+metronidazole" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h" },
+    ],
+    duration: "14–21 days",
+    pearls: [
+      "EMERGENCY — vision and life-threatening (cavernous sinus thrombosis, intracranial extension)",
+      "CT orbits with contrast — confirms diagnosis, identifies abscess",
+      "ENT + Ophthalmology consult; neurosurgery if intracranial extension",
+      "Subperiosteal or orbital abscess often requires drainage",
+      "Most commonly arises from ethmoid sinusitis",
+    ],
+  },
+
+  // ── URINARY ─────────────────────────────────────────────────────────────
+  {
+    id: "uti-uncomplicated",
+    name: "Uncomplicated UTI (Cystitis)",
+    category: "uti",
+    indication: "Cystitis in non-pregnant women without structural abnormality",
+    firstLine: [
+      { name: "Nitrofurantoin", dose: "100mg PO BID × 5 days", note: "Avoid if eGFR <30" },
+      { name: "TMP-SMX DS", dose: "160/800mg PO BID × 3 days", pedsDose: "8 mg/kg/day TMP component div BID", note: "If local resistance <20%" },
+      { name: "Fosfomycin", dose: "3g PO single dose", note: "Single-dose convenience; effective for ESBL E. coli" },
+    ],
+    alternatives: [
+      { name: "Ciprofloxacin", dose: "250mg PO BID × 3 days", note: "Reserve fluoroquinolones" },
+    ],
+    duration: "3–5 days",
+    pearls: [
+      "Avoid fluoroquinolones as first-line — reserve for pyelonephritis",
+      "Don't treat asymptomatic bacteriuria except in pregnancy or pre-urologic procedure",
+      "Treat empirically — don't wait for culture",
+      "Phenazopyridine 200mg PO TID ×2d for dysuria as adjunct",
+    ],
+  },
+  {
+    id: "pyelonephritis",
+    name: "Pyelonephritis",
+    category: "uti",
+    indication: "Flank pain, CVA tenderness, fever; ascending UTI",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "1–2g IV q24h", pedsDose: "50–75 mg/kg q24h (max 2g)", note: "Inpatient — narrow when cultures available" },
+      { name: "Ciprofloxacin", dose: "500mg PO BID × 7 days", note: "Outpatient if no systemic illness + local FQ sensitivity >90%" },
+    ],
+    alternatives: [
+      { name: "Ertapenem", dose: "1g IV q24h", note: "ESBL suspected" },
+      { name: "TMP-SMX DS", dose: "160/800mg PO BID × 14 days", note: "Outpatient if susceptibility confirmed" },
+    ],
+    duration: "7 days FQ; 14 days TMP-SMX or beta-lactam",
+    pearls: [
+      "Blood cultures for admitted patients — bacteremia in 15–20%",
+      "CT if no improvement at 48–72h — rule out obstruction or abscess",
+      "Do NOT use nitrofurantoin — poor tissue levels",
+    ],
+  },
+  {
+    id: "urosepsis",
+    name: "Urosepsis",
+    category: "uti",
+    indication: "UTI with sepsis criteria — hemodynamic instability or organ dysfunction",
+    firstLine: [
+      { name: "Cefepime", dose: "2g IV q8h", pedsDose: "50 mg/kg/dose q8h (max 2g)" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load", note: "Add only if enterococcal or MRSA concern" },
+    ],
+    alternatives: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", note: "If enterococcal coverage desired" },
+      { name: "Meropenem", dose: "1–2g IV q8h", note: "Known ESBL or no response to cefepime" },
+    ],
+    duration: "7–14 days",
+    pearls: [
+      "Urology consult for obstructive uropathy — source control critical (perc nephrostomy)",
+      "CT abdomen/pelvis to identify obstruction, abscess, gas-forming infection",
+      "Enterococcus: pip-tazo preferred; ampicillin if susceptible",
+    ],
+  },
+  {
+    id: "prostatitis",
+    name: "Acute Bacterial Prostatitis",
+    category: "uti",
+    indication: "Pelvic pain, dysuria, fever, tender boggy prostate on exam",
+    firstLine: [
+      { name: "Ciprofloxacin", dose: "500mg PO BID × 14 days" },
+      { name: "TMP-SMX DS", dose: "160/800mg PO BID × 14 days" },
+    ],
+    alternatives: [
+      { name: "Ceftriaxone + Doxycycline", dose: "500mg IM ×1 + 100mg PO BID × 14 days", note: "Sexually active <35yo — cover GC/Chlamydia" },
+      { name: "Levofloxacin", dose: "500mg PO daily × 14 days" },
+    ],
+    duration: "14 days (4–6 weeks for chronic prostatitis)",
+    pearls: [
+      "AVOID prostate massage in acute phase — can precipitate bacteremia",
+      "E. coli most common in older men; STI organisms in <35yo",
+      "Watch for urinary retention from edema → catheterization",
+      "Recurrent → 4–6 week course of fluoroquinolone",
+    ],
+  },
+
+  // ── CNS / MENINGITIS ────────────────────────────────────────────────────
+  {
+    id: "bacterial-meningitis",
+    name: "Bacterial Meningitis",
+    category: "cns",
+    indication: "Fever, headache, neck stiffness, AMS — suspected acute bacterial meningitis",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "2g IV q12h", pedsDose: "100 mg/kg/day div q12h (max 4g/day)" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided", pedsDose: "60 mg/kg/day div q6h" },
+      { name: "Dexamethasone", dose: "0.15 mg/kg IV q6h × 4 days", pedsDose: "Same; give 15–20 min before or with first abx dose" },
+    ],
+    alternatives: [
+      { name: "Ampicillin", dose: "2g IV q4h", pedsDose: "100 mg/kg/dose q6h", note: "Add if Listeria concern: age >50, immunocompromised, pregnant, alcoholism, neonate" },
+      { name: "Cefotaxime", dose: "—", pedsDose: "75 mg/kg q6h (max 12g/day)", note: "Preferred over ceftriaxone in neonates (<1 mo) — bilirubin displacement" },
+      { name: "Meropenem", dose: "2g IV q8h", note: "PCN allergy" },
+    ],
+    duration: "Pneumococcal 10–14d; Meningococcal 7d; Listeria 21d; GNR 21d",
+    pearls: [
+      "Do NOT delay antibiotics for LP — start abx, image if needed, then tap",
+      "Classic triad (fever + neck stiffness + AMS) only 44% — low threshold to treat",
+      "Dexamethasone — bacterial only; discontinue if viral confirmed",
+      "Droplet precautions for meningococcal × 24h after effective therapy; notify public health",
+      "Post-exposure prophylaxis for close contacts: rifampin, ciprofloxacin, or ceftriaxone",
+    ],
+  },
+  {
+    id: "hsv-encephalitis",
+    name: "HSV Encephalitis",
+    category: "cns",
+    indication: "Fever + AMS + temporal lobe MRI/EEG changes; encephalitis with limbic features",
+    firstLine: [
+      { name: "Acyclovir", dose: "10 mg/kg IV q8h", pedsDose: "10–15 mg/kg/dose q8h (neonates: 20 mg/kg/dose q8h)", note: "Infuse over 1h; renal dose adjust" },
+    ],
+    duration: "14 days adults; 21 days immunocompromised or neonates",
+    pearls: [
+      "TREAT EMPIRICALLY — do not wait for HSV PCR; mortality high if delayed",
+      "MRI > CT — T2/FLAIR temporal/limbic signal; can be normal first 24–48h",
+      "CSF HSV PCR sensitivity 98% — repeat if initially negative + high suspicion",
+      "Hydrate aggressively — acyclovir nephrotoxic; monitor Cr and urine output",
+      "Cover bacterial meningitis empirically (ceftriaxone) until ruled out",
+    ],
+  },
+  {
+    id: "brain-abscess",
+    name: "Brain Abscess",
+    category: "cns",
+    indication: "Ring-enhancing lesion, fever, focal neurologic deficit, headache",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided" },
+      { name: "Ceftriaxone", dose: "2g IV q12h" },
+      { name: "Metronidazole", dose: "500mg IV q8h" },
+    ],
+    alternatives: [
+      { name: "Meropenem", dose: "2g IV q8h", note: "Mixed pathogens, post-neurosurgical" },
+    ],
+    duration: "6–8 weeks",
+    pearls: [
+      "Identify source: sinus, otitis, dental, endocarditis, immunocompromise, IDU",
+      "Neurosurgical drainage for abscess >2.5 cm or impending herniation",
+      "Steroids reserved for severe edema with mass effect (do not delay drainage)",
+      "HIV with brain lesions → empiric Toxoplasma treatment; consider TB, lymphoma",
+      "Imaging: contrast-enhancing ring lesion; restricted diffusion on MRI",
+    ],
+  },
+  {
+    id: "spinal-epidural-abscess",
+    name: "Spinal Epidural Abscess",
+    category: "cns",
+    indication: "Back pain + fever + neurologic deficit (full triad in only 13%)",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided" },
+      { name: "Ceftriaxone", dose: "2g IV q12h" },
+    ],
+    alternatives: [
+      { name: "Cefepime", dose: "2g IV q8h", note: "Healthcare-associated or post-procedural" },
+    ],
+    duration: "6–8 weeks",
+    pearls: [
+      "MRI with contrast — diagnostic; image entire spine (skip lesions in 15%)",
+      "Risk factors: IVDU, DM, CKD, recent procedure, bacteremia",
+      "S. aureus most common (MRSA increasingly)",
+      "Surgical decompression urgent for any neurologic deficit — outcome time-dependent",
+      "Don't miss — neurologic recovery correlates with timing of intervention",
+    ],
+  },
+
+  // ── GI / ABDOMINAL ──────────────────────────────────────────────────────
+  {
+    id: "intraabdominal",
+    name: "Intra-abdominal Infection",
+    category: "gi",
+    indication: "Appendicitis, peritonitis, diverticulitis, bowel perforation",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "1–2g IV q24h", pedsDose: "50–75 mg/kg q24h" },
+      { name: "Metronidazole", dose: "500mg IV q8h", pedsDose: "30 mg/kg/day div q8h" },
+    ],
+    alternatives: [
+      { name: "Piperacillin-tazobactam", dose: "3.375g IV q6h or 4.5g IV q8h", note: "Single-agent; mild–moderate community" },
+      { name: "Ertapenem", dose: "1g IV q24h", note: "Once-daily community-acquired" },
+      { name: "Meropenem", dose: "1g IV q8h", note: "Healthcare-associated, prior MDR" },
+    ],
+    duration: "4–5 days after source control; 7–10 days without source control",
+    pearls: [
+      "Source control paramount — drain abscess, surgical intervention",
+      "Empiric must cover gram-negatives AND anaerobes",
+      "MRSA coverage only for healthcare-associated or known MRSA",
+      "Uncomplicated appendicitis: antibiotics alone may be definitive (discuss with surgery)",
+    ],
+  },
+  {
+    id: "sbp",
+    name: "Spontaneous Bacterial Peritonitis (SBP)",
+    category: "gi",
+    indication: "Ascitic fluid PMN ≥250 cells/mm³ in cirrhotic with ascites",
+    firstLine: [
+      { name: "Cefotaxime", dose: "2g IV q8h × 5–7 days" },
+      { name: "Ceftriaxone", dose: "1–2g IV q24h × 5–7 days" },
+    ],
+    alternatives: [
+      { name: "Piperacillin-tazobactam", dose: "3.375g IV q6h", note: "Nosocomial SBP or MDR risk" },
+    ],
+    duration: "5–7 days",
+    pearls: [
+      "Albumin 1.5 g/kg day 1, then 1 g/kg day 3 — reduces hepatorenal syndrome and mortality",
+      "Inoculate ascitic fluid into blood culture bottles at bedside — improves yield",
+      "SBP prophylaxis post-episode: norfloxacin 400mg or ciprofloxacin 500mg PO daily",
+      "Primary prophylaxis: cirrhosis + GIB or low-protein ascites with renal/hepatic dysfunction",
+    ],
+  },
+  {
+    id: "cdiff",
+    name: "C. difficile Colitis",
+    category: "gi",
+    indication: "Diarrhea ≥3 unformed stools/day + positive C. diff toxin or NAAT",
+    firstLine: [
+      { name: "Fidaxomicin", dose: "200mg PO BID × 10 days", pedsDose: "16 mg/kg/dose BID (max 200mg)", note: "Preferred — lower recurrence" },
+      { name: "Vancomycin (PO)", dose: "125mg PO QID × 10 days", pedsDose: "10 mg/kg/dose PO QID (max 125mg)" },
+    ],
+    alternatives: [
+      { name: "Metronidazole (PO)", dose: "500mg PO TID × 10 days", note: "Inferior — only if first-line unavailable" },
+      { name: "Bezlotoxumab", dose: "10 mg/kg IV ×1", note: "Adjunct for high recurrence risk" },
+    ],
+    duration: "10 days (longer for recurrence with pulsed/tapered regimens)",
+    pearls: [
+      "Severe (WBC >15k or Cr >1.5× baseline): vanc 500mg PO QID + metronidazole 500mg IV q8h",
+      "Fulminant (megacolon, ileus, shock): surgery + vanc PO/NGT + rectal vanc enemas + IV metronidazole",
+      "Stop offending antibiotic ASAP",
+      "Soap and water handwashing — alcohol does NOT kill spores",
+      "Do not test for cure — NAAT stays positive for weeks",
+    ],
+  },
+  {
+    id: "cholangitis",
+    name: "Acute Cholangitis (Ascending)",
+    category: "gi",
+    indication: "Charcot triad: fever + RUQ pain + jaundice (only ~50%)",
+    firstLine: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h" },
+      { name: "Ceftriaxone + Metronidazole", dose: "2g IV q24h + 500mg IV q8h", note: "Alternative; add ampicillin for enterococcal coverage" },
+    ],
+    alternatives: [
+      { name: "Meropenem", dose: "1g IV q8h", note: "Severe / healthcare-associated" },
+    ],
+    duration: "4–7 days after biliary decompression",
+    pearls: [
+      "Reynold's pentad adds shock + AMS — severe disease",
+      "ERCP for biliary decompression within 24–48h is essential — do not delay",
+      "GBS, Enterococcus also common — consider ampicillin if not on pip-tazo",
+      "Tokyo guidelines stratify severity (Grade I–III)",
+    ],
+  },
+  {
+    id: "cholecystitis",
+    name: "Acute Cholecystitis",
+    category: "gi",
+    indication: "Murphy sign + sonographic findings; cystic duct obstruction",
+    firstLine: [
+      { name: "Cefazolin", dose: "1–2g IV q8h", note: "Uncomplicated" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", note: "Severe / septic" },
+    ],
+    alternatives: [
+      { name: "Ceftriaxone + Metronidazole", dose: "1–2g IV q24h + 500mg IV q8h", note: "If anaerobes suspected (gangrenous, perforated)" },
+    ],
+    duration: "24h post-cholecystectomy if uncomplicated; 4–7d if complicated",
+    pearls: [
+      "Cholecystectomy within 24–72h is the definitive treatment",
+      "Acalculous cholecystitis: critically ill, no stone — high mortality",
+      "Emphysematous cholecystitis: gas in wall — emergent surgery, broaden coverage",
+      "Antibiotics adjunctive — surgery is the cure",
+    ],
+  },
+  {
+    id: "diverticulitis",
+    name: "Acute Diverticulitis",
+    category: "gi",
+    indication: "LLQ pain + fever + leukocytosis; CT confirms",
+    firstLine: [
+      { name: "Amoxicillin-clavulanate", dose: "875mg PO BID × 7–10 days", note: "Outpatient, uncomplicated" },
+      { name: "Ciprofloxacin + Metronidazole", dose: "500mg PO BID + 500mg PO TID × 7–10 days", note: "Outpatient alternative" },
+    ],
+    alternatives: [
+      { name: "Ceftriaxone + Metronidazole", dose: "2g IV q24h + 500mg IV q8h", note: "Inpatient" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", note: "Complicated / severe" },
+    ],
+    duration: "7–10d uncomplicated; 10–14d complicated",
+    pearls: [
+      "Selected uncomplicated diverticulitis may not need antibiotics (newer evidence)",
+      "Complicated: abscess, perforation, fistula, obstruction — CT-defined",
+      "Abscess >3–4 cm — percutaneous drainage",
+      "Surgical consultation for perforation or peritonitis",
+    ],
+  },
+  {
+    id: "bacterial-gastroenteritis",
+    name: "Bacterial Gastroenteritis",
+    category: "gi",
+    indication: "Severe bacterial diarrhea: bloody, high fever, immunocompromised, dehydrated",
+    firstLine: [
+      { name: "Azithromycin", dose: "500mg PO daily × 3 days", pedsDose: "10 mg/kg PO daily × 3 days", note: "Preferred — Campylobacter and Shigella" },
+      { name: "Ciprofloxacin", dose: "500mg PO BID × 3–5 days", note: "Salmonella, Shigella; resistance increasing" },
+    ],
+    duration: "3–5 days",
+    pearls: [
+      "DO NOT TREAT E. coli O157:H7 (STEC) — increases HUS risk",
+      "Most bacterial GE is self-limited — supportive care primary",
+      "Antibiotics may prolong Salmonella shedding in non-typhoidal infection",
+      "Stool culture/PCR for: bloody diarrhea, severe dehydration, fever, immunocompromised",
+      "Treat: severe disease, immunocompromised, age >65, food handlers, healthcare workers",
+    ],
+  },
+
+  // ── SKIN / SOFT TISSUE / BITES ──────────────────────────────────────────
+  {
+    id: "cellulitis-nonpurulent",
+    name: "Cellulitis — Non-Purulent",
+    category: "skin",
+    indication: "Spreading erythema, warmth, tenderness without abscess",
+    firstLine: [
+      { name: "Cephalexin", dose: "500mg PO QID × 5–7 days", pedsDose: "50 mg/kg/day div q6h" },
+      { name: "Cefazolin", dose: "1–2g IV q8h", pedsDose: "100 mg/kg/day div q8h", note: "If admission required" },
+    ],
+    alternatives: [
+      { name: "Clindamycin", dose: "300–450mg PO TID × 5–7 days", pedsDose: "10 mg/kg/dose TID", note: "PCN allergy" },
+      { name: "Dicloxacillin", dose: "500mg PO QID × 5 days", note: "MSSA suspected" },
+    ],
+    duration: "5–7 days",
+    pearls: [
+      "Mark borders with skin marker — track progression",
+      "Elevate affected extremity",
+      "MRSA coverage NOT routinely needed for non-purulent (strep is pathogen)",
+      "Bilateral leg 'cellulitis' rarely true — consider stasis dermatitis, DVT",
+    ],
+  },
+  {
+    id: "ssti-purulent",
+    name: "SSTI — Purulent (Abscess / Furuncle)",
+    category: "skin",
+    indication: "Abscess with surrounding cellulitis; MRSA most common community pathogen",
+    firstLine: [
+      { name: "Incision & Drainage", dose: "Primary treatment", note: "Adequate I&D alone sufficient for uncomplicated abscess" },
+      { name: "TMP-SMX DS", dose: "160/800mg PO BID × 5–7 days", pedsDose: "8–12 mg/kg/day TMP component div BID", note: "Add if: systemic illness, extensive cellulitis, immunocompromised" },
+      { name: "Doxycycline", dose: "100mg PO BID × 5–7 days", pedsDose: "2.2 mg/kg/dose BID (max 100mg)", note: "Alternative MRSA coverage" },
+    ],
+    duration: "5–7 days if antibiotics needed",
+    pearls: [
+      "I&D is definitive — antibiotics adjunctive but reduce treatment failure (NEJM 2017)",
+      "Routine packing not supported by evidence for uncomplicated abscess",
+      "MRSA dominant pathogen — don't assume strep in purulent SSTI",
+    ],
+  },
+  {
+    id: "necrotizing-fasciitis",
+    name: "Necrotizing Fasciitis",
+    category: "skin",
+    indication: "Pain out of proportion, systemic toxicity, bullae, ecchymosis, crepitus, skin necrosis",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided", pedsDose: "60 mg/kg/day div q6h" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", pedsDose: "100 mg/kg piperacillin q6h" },
+      { name: "Clindamycin", dose: "900mg IV q8h", pedsDose: "10–13 mg/kg/dose q8h", note: "CRITICAL — toxin suppression" },
+    ],
+    alternatives: [
+      { name: "Meropenem", dose: "1–2g IV q8h", note: "MDR concern" },
+      { name: "Linezolid", dose: "600mg IV q12h", note: "Replaces vancomycin + suppresses toxin" },
+    ],
+    duration: "Until clinical resolution + surgical debridement complete",
+    pearls: [
+      "SURGICAL EMERGENCY — do NOT delay OR for imaging",
+      "Clindamycin essential — suppresses exotoxin even in resistant organisms (Eagle effect)",
+      "LRINEC score has insufficient sensitivity to rule out NF",
+      "MRI sensitivity high but should not delay surgical exploration",
+      "IVIG 1–2 g/kg for streptococcal toxic shock syndrome (adjunctive)",
+    ],
+  },
+  {
+    id: "erysipelas",
+    name: "Erysipelas",
+    category: "skin",
+    indication: "Superficial cellulitis with sharply demarcated, raised borders; usually face or extremity",
+    firstLine: [
+      { name: "Penicillin VK", dose: "500mg PO QID × 10–14 days", pedsDose: "25–50 mg/kg/day div q6–8h" },
+      { name: "Cephalexin", dose: "500mg PO QID × 10 days" },
+    ],
+    alternatives: [
+      { name: "Penicillin G", dose: "2 million units IV q4–6h", note: "IV; severe disease" },
+      { name: "Cefazolin", dose: "1–2g IV q8h" },
+    ],
+    duration: "10–14 days",
+    pearls: [
+      "Group A Strep dominant — penicillin works",
+      "Sharp, raised borders distinguish from cellulitis",
+      "Compression and elevation help",
+      "Recurrent erysipelas → consider prophylactic penicillin",
+    ],
+  },
+  {
+    id: "animal-bite",
+    name: "Animal Bite (Dog / Cat)",
+    category: "skin",
+    indication: "Bite wound with infection risk or established infection",
+    firstLine: [
+      { name: "Amoxicillin-clavulanate", dose: "875mg PO BID × 5–7 days", pedsDose: "45 mg/kg/day amox component div BID" },
+    ],
+    alternatives: [
+      { name: "Doxycycline + Metronidazole", dose: "100mg PO BID + 500mg PO TID", note: "PCN allergy" },
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", note: "Severe / IV needed" },
+    ],
+    duration: "5–7 days (3–5 days for prophylaxis)",
+    pearls: [
+      "Pasteurella multocida (cats > dogs), Capnocytophaga (asplenic), MRSA, anaerobes",
+      "Cat bites: deep puncture, high infection rate — always treat empirically",
+      "Hand bites, near joints/bone, immunocompromised, asplenic — prophylax",
+      "Tetanus + rabies prophylaxis assessment mandatory",
+      "Wound care: copious irrigation, leave open if infected, primary closure for face",
+    ],
+  },
+  {
+    id: "human-bite",
+    name: "Human Bite",
+    category: "skin",
+    indication: "Bite wound or 'fight bite' (clenched-fist injury striking teeth)",
+    firstLine: [
+      { name: "Amoxicillin-clavulanate", dose: "875mg PO BID × 5–7 days" },
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", note: "Severe, hand involvement" },
+    ],
+    alternatives: [
+      { name: "Doxycycline + Metronidazole", dose: "100mg PO BID + 500mg PO TID", note: "PCN allergy" },
+    ],
+    duration: "5–7 days; longer if joint involvement",
+    pearls: [
+      "Eikenella corrodens, Strep, Staph, anaerobes",
+      "Fight bite (clenched-fist) high infection risk — always evaluate joint/tendon",
+      "HIV, hepatitis B/C exposure assessment required",
+      "Hand surgeon consult for clenched-fist injuries with joint involvement",
+      "Tetanus prophylaxis",
+    ],
+  },
+  {
+    id: "diabetic-foot",
+    name: "Diabetic Foot Infection",
+    category: "skin",
+    indication: "Wound, ulcer, or cellulitis in diabetic foot — IDSA classification (mild / moderate / severe)",
+    firstLine: [
+      { name: "Cephalexin", dose: "500mg PO QID × 7–14 days", note: "Mild, no systemic symptoms" },
+      { name: "Amoxicillin-clavulanate", dose: "875mg PO BID × 7–14 days", note: "Mild–moderate" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", note: "Moderate–severe" },
+    ],
+    alternatives: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load", note: "Add if MRSA risk or severe" },
+      { name: "Ertapenem", dose: "1g IV q24h", note: "Convenient once-daily; avoid Pseudomonas coverage" },
+    ],
+    duration: "7–14d skin; 4–6 weeks osteomyelitis",
+    pearls: [
+      "Probe to bone — positive suggests osteomyelitis",
+      "MRI to evaluate for osteomyelitis",
+      "Vascular assessment — revascularization may be needed",
+      "Surgical consultation for debridement, drainage",
+      "MRSA coverage if recent MRSA, severe disease, or local high prevalence",
+    ],
+  },
+  {
+    id: "impetigo",
+    name: "Impetigo",
+    category: "skin",
+    indication: "Honey-colored crusted lesions; usually face, extremities in children",
+    firstLine: [
+      { name: "Mupirocin 2% ointment", dose: "TID × 5 days", note: "Limited disease" },
+      { name: "Cephalexin", dose: "500mg PO QID × 7 days", pedsDose: "25–50 mg/kg/day div q6–8h", note: "Widespread or systemic" },
+    ],
+    alternatives: [
+      { name: "Dicloxacillin", dose: "250–500mg PO QID × 7 days", note: "MSSA-targeted" },
+      { name: "Clindamycin", dose: "—", pedsDose: "10 mg/kg/dose TID", note: "MRSA suspected" },
+    ],
+    duration: "5–7 days",
+    pearls: [
+      "Mupirocin sufficient for limited disease",
+      "Bullous impetigo from S. aureus exfoliative toxin",
+      "Post-streptococcal glomerulonephritis possible — but rheumatic fever NOT seen post-impetigo",
+      "Highly contagious — avoid sharing towels, school exclusion until 24h on abx",
+    ],
+  },
+
+  // ── BONE / JOINT ────────────────────────────────────────────────────────
+  {
+    id: "septic-arthritis",
+    name: "Septic Arthritis — Native Joint",
+    category: "bone",
+    indication: "Acute joint pain, swelling, restricted ROM, fever; synovial fluid WBC >50k with PMN predominance",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided", pedsDose: "60 mg/kg/day div q6h" },
+      { name: "Ceftriaxone", dose: "2g IV q24h", pedsDose: "50–75 mg/kg q24h" },
+    ],
+    alternatives: [
+      { name: "Cefepime", dose: "2g IV q8h", note: "Pseudomonas risk (IDU, immunocompromised)" },
+    ],
+    duration: "2–4 weeks IV (longer with hardware or osteomyelitis)",
+    pearls: [
+      "Joint aspiration AND surgical washout essential",
+      "Synovial fluid: WBC >50k with PMN predominance suggestive (not specific)",
+      "Crystals don't rule out infection — can have both",
+      "Sexually active: cover GC (tenosynovitis-dermatitis-polyarthralgia syndrome)",
+      "Prosthetic joint: lower WBC threshold (>1100); ID + ortho consult",
+    ],
+  },
+  {
+    id: "osteomyelitis",
+    name: "Acute Osteomyelitis",
+    category: "bone",
+    indication: "Bone pain, fever, elevated inflammatory markers; MRI confirms",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided" },
+      { name: "Ceftriaxone", dose: "2g IV q24h", note: "Or cefepime if Pseudomonas risk" },
+    ],
+    alternatives: [
+      { name: "Cefazolin", dose: "2g IV q8h", pedsDose: "100 mg/kg/day div q8h", note: "Pediatric — Kingella, S. aureus" },
+      { name: "Linezolid", dose: "600mg IV/PO q12h", note: "Oral transition option" },
+    ],
+    duration: "4–6 weeks total (IV ± transition to PO)",
+    pearls: [
+      "Bone biopsy/culture before antibiotics if possible",
+      "MRI most sensitive for marrow edema",
+      "PO transition acceptable with good source control + bioavailability (levofloxacin, linezolid)",
+      "Vertebral osteomyelitis — rule out epidural abscess",
+      "Pediatric: Kingella kingae increasingly recognized",
+    ],
+  },
+  {
+    id: "open-fracture",
+    name: "Open Fracture Prophylaxis",
+    category: "bone",
+    indication: "Open fracture (Gustilo I, II, or III)",
+    firstLine: [
+      { name: "Cefazolin", dose: "2g IV q8h", pedsDose: "50 mg/kg/dose q8h" },
+    ],
+    alternatives: [
+      { name: "Cefazolin + Gentamicin", dose: "Above + 5 mg/kg IV daily", note: "Gustilo III injuries" },
+      { name: "Cefazolin + Penicillin G", dose: "Above + 4 million units IV q4h", note: "Soil/water/farm contamination — clostridial coverage" },
+    ],
+    duration: "24h after wound closure (typically 48–72h total)",
+    pearls: [
+      "Antibiotics within 1–3 hours of injury — reduces infection rate",
+      "Tetanus prophylaxis assessment",
+      "Surgical irrigation and debridement essential",
+      "Antibiotic timing more important than spectrum",
+      "Don't forget penicillin for clostridia in farm/soil contamination",
+    ],
+  },
+
+  // ── CARDIAC / VASCULAR ──────────────────────────────────────────────────
+  {
+    id: "endocarditis-empiric",
+    name: "Endocarditis — Empiric",
+    category: "cardiac",
+    indication: "Suspected infective endocarditis; native or prosthetic valve",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided", pedsDose: "60 mg/kg/day div q6h" },
+      { name: "Ceftriaxone", dose: "2g IV q24h", pedsDose: "50–75 mg/kg q24h", note: "Add for HACEK, streptococci" },
+    ],
+    alternatives: [
+      { name: "Nafcillin", dose: "2g IV q4h", pedsDose: "100–200 mg/kg/day div q6h", note: "Confirmed MSSA — superior to vancomycin" },
+      { name: "Daptomycin", dose: "6–10 mg/kg IV q24h", note: "MRSA if vanco MIC ≥2; not for pulmonary IE" },
+    ],
+    duration: "4–6 weeks native valve; 6+ weeks prosthetic",
+    pearls: [
+      "Blood cultures ×3 from separate sites before antibiotics — at least 1h apart",
+      "TTE within 24h; TEE if TTE negative + high suspicion or prosthetic valve",
+      "Modified Duke criteria for diagnosis (2023 update includes CT, PET)",
+      "MSSA endocarditis: nafcillin/cefazolin — vanco associated with treatment failure",
+      "ID consult mandatory; surgical indications include HF, uncontrolled infection, embolic events",
+    ],
+  },
+  {
+    id: "septic-thrombophlebitis",
+    name: "Septic (Suppurative) Thrombophlebitis",
+    category: "cardiac",
+    indication: "Persistent bacteremia + venous thrombus; often catheter-related",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided" },
+      { name: "Ceftriaxone", dose: "2g IV q24h", note: "Or pip-tazo if GNR suspected" },
+    ],
+    duration: "4–6 weeks",
+    pearls: [
+      "Source control: remove catheter, drain abscess",
+      "S. aureus (especially MRSA) most common",
+      "Anticoagulation considered for jugular, IVC, dural sinus thrombophlebitis",
+      "Lemierre's = jugular vein septic thrombophlebitis from oropharyngeal source",
+      "Pelvic septic thrombophlebitis — postpartum, post-OB surgery",
+    ],
+  },
+  {
+    id: "lemierres-syndrome",
+    name: "Lemierre's Syndrome",
+    category: "cardiac",
+    indication: "Pharyngitis → IJ vein septic thrombophlebitis → metastatic septic emboli",
+    firstLine: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h" },
+      { name: "Meropenem", dose: "1g IV q8h", note: "Alternative" },
+    ],
+    alternatives: [
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h" },
+      { name: "Ceftriaxone + Metronidazole", dose: "2g IV q24h + 500mg IV q8h", note: "Metronidazole alone insufficient" },
+    ],
+    duration: "4–6 weeks",
+    pearls: [
+      "Fusobacterium necrophorum classic pathogen",
+      "Young, healthy patients — high mortality if missed",
+      "CT neck with contrast diagnoses; pulmonary septic emboli on CXR",
+      "Anticoagulation considered (controversial)",
+      "Need beta-lactam + anaerobic coverage — metronidazole alone insufficient",
+    ],
+  },
+
+  // ── OB / GYN ────────────────────────────────────────────────────────────
+  {
+    id: "pid-outpatient",
+    name: "PID — Outpatient",
+    category: "obgyn",
+    indication: "Lower abdominal/pelvic pain + cervical motion or adnexal tenderness; mild–moderate",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "500mg IM ×1 (1g if >150kg)" },
+      { name: "Doxycycline", dose: "100mg PO BID × 14 days" },
+      { name: "Metronidazole", dose: "500mg PO BID × 14 days", note: "Add if: TOA, BV, recent instrumentation" },
+    ],
+    duration: "14 days",
+    pearls: [
+      "Treat empirically — long-term consequences (infertility, ectopic, chronic pain)",
+      "Re-evaluate at 48–72h — hospitalize if not improving",
+      "Treat all sexual partners",
+      "Test for HIV, syphilis, hep B/C",
+    ],
+  },
+  {
+    id: "pid-inpatient",
+    name: "PID — Inpatient",
+    category: "obgyn",
+    indication: "Severe disease, abscess, pregnancy, no PO tolerance, no outpatient response",
+    firstLine: [
+      { name: "Cefoxitin", dose: "2g IV q6h" },
+      { name: "Doxycycline", dose: "100mg PO/IV q12h" },
+    ],
+    alternatives: [
+      { name: "Cefotetan + Doxycycline", dose: "2g IV q12h + 100mg PO/IV q12h" },
+      { name: "Clindamycin + Gentamicin", dose: "900mg IV q8h + 5 mg/kg IV daily" },
+    ],
+    duration: "IV until clinically improved (24–48h), then PO doxycycline to 14 days total",
+    pearls: [
+      "Add metronidazole 500mg PO/IV q8h if TOA",
+      "TOA — drainage if >7–9 cm or no improvement at 48–72h",
+      "Surgery for rupture, persistent symptoms, large abscess",
+    ],
+  },
+  {
+    id: "tubo-ovarian-abscess",
+    name: "Tubo-Ovarian Abscess",
+    category: "obgyn",
+    indication: "PID with adnexal mass on imaging; polymicrobial",
+    firstLine: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h" },
+      { name: "Cefoxitin + Doxycycline", dose: "2g IV q6h + 100mg PO/IV q12h", note: "Alternative" },
+    ],
+    alternatives: [
+      { name: "Clindamycin + Gentamicin + Doxycycline", dose: "900mg IV q8h + 5 mg/kg IV daily + 100mg PO BID" },
+    ],
+    duration: "14 days total",
+    pearls: [
+      "Polymicrobial — anaerobes, GNR; need broad coverage",
+      "Drainage if >7–9 cm or no response in 48–72h",
+      "Image-guided drainage feasible for many",
+      "Surgery for rupture or persistent symptoms",
+    ],
+  },
+  {
+    id: "postpartum-endometritis",
+    name: "Postpartum Endometritis",
+    category: "obgyn",
+    indication: "Postpartum fever + uterine tenderness (especially after C-section)",
+    firstLine: [
+      { name: "Clindamycin", dose: "900mg IV q8h" },
+      { name: "Gentamicin", dose: "5 mg/kg IV q24h" },
+    ],
+    alternatives: [
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", note: "Single agent alternative" },
+    ],
+    duration: "Until afebrile 48 hours; oral switch usually unnecessary",
+    pearls: [
+      "Most common cause of postpartum fever",
+      "C-section >> vaginal delivery risk",
+      "If no improvement at 48–72h: consider abscess, septic pelvic thrombophlebitis, retained POC",
+      "Add ampicillin if using clindamycin/gentamicin and no response — covers Enterococcus",
+    ],
+  },
+  {
+    id: "mastitis-puerperal",
+    name: "Puerperal Mastitis",
+    category: "obgyn",
+    indication: "Localized breast erythema + tenderness in lactating woman",
+    firstLine: [
+      { name: "Dicloxacillin", dose: "500mg PO QID × 10–14 days" },
+      { name: "Cephalexin", dose: "500mg PO QID × 10–14 days" },
+    ],
+    alternatives: [
+      { name: "Clindamycin", dose: "300mg PO QID × 10–14 days", note: "PCN allergy or MRSA" },
+    ],
+    duration: "10–14 days",
+    pearls: [
+      "Continue breastfeeding/pumping — drainage essential to recovery",
+      "S. aureus most common",
+      "Abscess: I&D often needed; ultrasound guidance helpful",
+      "Avoid TMP-SMX in mothers nursing infants <2 months (kernicterus risk)",
+    ],
+  },
+  {
+    id: "chorioamnionitis",
+    name: "Chorioamnionitis",
+    category: "obgyn",
+    indication: "Maternal fever + uterine tenderness + maternal/fetal tachycardia + foul-smelling lochia",
+    firstLine: [
+      { name: "Ampicillin", dose: "2g IV q6h" },
+      { name: "Gentamicin", dose: "5 mg/kg IV q24h" },
+      { name: "Clindamycin or Metronidazole", dose: "900mg IV q8h or 500mg IV q8h", note: "Add if C-section or prolonged ROM" },
+    ],
+    duration: "Continue until afebrile 24h post-delivery",
+    pearls: [
+      "Treatment + prompt delivery",
+      "Cover GBS, anaerobes, GNR",
+      "Neonatal evaluation/treatment also required",
+      "Add anaerobic coverage if C-section delivery (clindamycin or metronidazole)",
+    ],
+  },
+
+  // ── STI ─────────────────────────────────────────────────────────────────
+  {
+    id: "gc-chlamydia",
+    name: "Gonorrhea + Chlamydia (Empiric)",
+    category: "sti",
+    indication: "Urethritis, cervicitis, pharyngitis, proctitis with STI risk",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "500mg IM ×1 (1g if >150kg)", pedsDose: "Children: 25–50 mg/kg IM ×1 (max 250mg <45kg)" },
+      { name: "Doxycycline", dose: "100mg PO BID × 7 days" },
+    ],
+    alternatives: [
+      { name: "Azithromycin", dose: "1g PO ×1", note: "Less preferred for chlamydia (CDC 2021); use if doxy contraindicated" },
+      { name: "Gentamicin + Azithromycin", dose: "240mg IM + 2g PO", note: "Cephalosporin allergy" },
+    ],
+    duration: "Single dose ceftriaxone; 7 days doxycycline",
+    pearls: [
+      "Treat empirically while awaiting confirmation",
+      "Test for HIV, syphilis, hepatitis B/C",
+      "Test/treat all sexual partners; abstain 7 days",
+      "Repeat NAAT in 3 months — high reinfection rate",
+      "Disseminated GC: ceftriaxone 1g IV daily ×7 days + treat joint/skin manifestations",
+    ],
+  },
+  {
+    id: "syphilis",
+    name: "Syphilis (All Stages)",
+    category: "sti",
+    indication: "Primary chancre, secondary rash, latent (positive serology), or tertiary (gumma, neurosyphilis)",
+    firstLine: [
+      { name: "Penicillin G benzathine", dose: "2.4 million units IM ×1", pedsDose: "50,000 units/kg IM (max 2.4 mil)", note: "Primary, secondary, early latent (<1 year)" },
+      { name: "Penicillin G benzathine ×3", dose: "2.4 million units IM weekly × 3 weeks", note: "Late latent or unknown duration" },
+    ],
+    alternatives: [
+      { name: "Penicillin G aqueous", dose: "18–24 million units/day IV × 10–14 days", note: "Neurosyphilis" },
+      { name: "Doxycycline", dose: "100mg PO BID × 14d (early) or 28d (late)", note: "PCN allergy non-pregnant" },
+    ],
+    duration: "Stage-dependent (above)",
+    pearls: [
+      "PREGNANCY: penicillin only — desensitize if allergic",
+      "Jarisch-Herxheimer reaction: fever, myalgia 2–4h after first dose (warn patient)",
+      "Always screen for HIV, other STIs",
+      "RPR/VDRL titers monitor response — 4-fold decrease = treatment success",
+      "Neurosyphilis: any neurologic symptoms or HIV+ with high RPR — LP for diagnosis",
+    ],
+  },
+  {
+    id: "hiv-pep",
+    name: "HIV Post-Exposure Prophylaxis (PEP)",
+    category: "sti",
+    indication: "Occupational or non-occupational HIV exposure within 72 hours",
+    firstLine: [
+      { name: "Tenofovir/Emtricitabine (Truvada)", dose: "1 tab PO daily", pedsDose: "Per weight-band dosing" },
+      { name: "Dolutegravir", dose: "50mg PO daily" },
+    ],
+    alternatives: [
+      { name: "Raltegravir", dose: "400mg PO BID", note: "Alternative integrase inhibitor" },
+      { name: "Darunavir + Ritonavir", dose: "800mg + 100mg PO daily", note: "If integrase inhibitor not tolerated" },
+    ],
+    duration: "28 days",
+    pearls: [
+      "Start within 72 hours — sooner is better",
+      "Baseline HIV testing, hepatitis B/C, syphilis, pregnancy",
+      "Source patient HIV testing when possible",
+      "Follow-up HIV testing at 4–6 weeks, 3 months",
+      "Counsel on adherence, side effects, and ongoing risk reduction (PrEP)",
+    ],
+  },
+  {
+    id: "trichomoniasis",
+    name: "Trichomoniasis",
+    category: "sti",
+    indication: "Vaginal/urethral discharge + motile trichomonads or NAAT positive",
+    firstLine: [
+      { name: "Metronidazole (women)", dose: "500mg PO BID × 7 days", note: "Preferred per CDC 2021" },
+      { name: "Metronidazole (men)", dose: "2g PO ×1" },
+    ],
+    alternatives: [
+      { name: "Tinidazole", dose: "2g PO ×1" },
+    ],
+    duration: "Single dose or 7 days (women)",
+    pearls: [
+      "Treat all sexual partners simultaneously",
+      "Avoid alcohol with metronidazole/tinidazole (disulfiram-like reaction)",
+      "Pregnancy: metronidazole now considered safe",
+      "Recurrence common — retest in 3 months",
+    ],
+  },
+
+  // ── TICK-BORNE ──────────────────────────────────────────────────────────
+  {
+    id: "lyme-disease",
+    name: "Lyme Disease",
+    category: "tickborne",
+    indication: "Erythema migrans, viral-like illness, arthritis, carditis, or neurologic findings post-tick exposure",
+    firstLine: [
+      { name: "Doxycycline", dose: "100mg PO BID × 10–14 days", pedsDose: "4.4 mg/kg/day div BID (max 100mg)" },
+      { name: "Amoxicillin", dose: "500mg PO TID × 14 days", pedsDose: "50 mg/kg/day div TID", note: "Pregnancy or doxycycline contraindicated" },
+    ],
+    alternatives: [
+      { name: "Cefuroxime axetil", dose: "500mg PO BID × 14 days", note: "PCN allergy" },
+      { name: "Ceftriaxone", dose: "2g IV q24h × 14–21 days", note: "Carditis (advanced AV block), neuro Lyme, Lyme arthritis refractory" },
+    ],
+    duration: "10–14 days early; 14–21 days disseminated; 28 days arthritis",
+    pearls: [
+      "Erythema migrans = clinical diagnosis — treat without serology",
+      "Doxycycline NOW considered safe in <8yo for SHORT courses (tickborne illness)",
+      "Single 200mg doxycycline dose as prophylaxis for high-risk tick bite (Ixodes >36h attached)",
+      "Co-infection with Babesia, Anaplasma possible",
+      "Post-Lyme syndrome ≠ chronic Lyme — no benefit from prolonged antibiotics",
+    ],
+  },
+  {
+    id: "rmsf",
+    name: "Rocky Mountain Spotted Fever (RMSF)",
+    category: "tickborne",
+    indication: "Fever + headache + tick exposure (rash often delayed); ECCHYMOSES on palms/soles classic but late",
+    firstLine: [
+      { name: "Doxycycline", dose: "100mg PO/IV BID × 5–7 days (or until afebrile 3 days)", pedsDose: "2.2 mg/kg/dose BID (max 100mg)" },
+    ],
+    duration: "5–7 days minimum; until afebrile 3 days",
+    pearls: [
+      "DOXYCYCLINE FIRST-LINE FOR ALL AGES INCLUDING <8yo — benefits outweigh risks for tickborne",
+      "Treat empirically based on clinical suspicion — serology takes weeks",
+      "Mortality up to 25% if untreated; 5% with timely treatment",
+      "'Spotless' RMSF in 10% — don't wait for rash",
+      "Treat anyone with fever + headache + tick exposure even with no other findings",
+    ],
+  },
+  {
+    id: "anaplasmosis",
+    name: "Human Granulocytic Anaplasmosis / Ehrlichiosis",
+    category: "tickborne",
+    indication: "Fever + leukopenia + thrombocytopenia + elevated transaminases post-tick exposure",
+    firstLine: [
+      { name: "Doxycycline", dose: "100mg PO/IV BID × 10–14 days", pedsDose: "2.2 mg/kg/dose BID (max 100mg)" },
+    ],
+    duration: "10–14 days",
+    pearls: [
+      "Doxycycline for all ages — same as RMSF",
+      "Often co-infection with Lyme (same Ixodes tick)",
+      "Triad: fever + cytopenias + hepatitis",
+      "Diagnosis: PCR or 4-fold rise in IgG",
+      "Severe cases: SIRS, DIC, organ failure",
+    ],
+  },
+  {
+    id: "babesiosis",
+    name: "Babesiosis",
+    category: "tickborne",
+    indication: "Hemolytic anemia + fever + fatigue post-tick exposure (Northeast US, Midwest)",
+    firstLine: [
+      { name: "Atovaquone + Azithromycin", dose: "750mg PO BID + 500mg PO ×1 then 250mg daily", note: "Mild–moderate disease" },
+      { name: "Quinine + Clindamycin", dose: "650mg PO TID + 600mg IV q8h", note: "Severe disease" },
+    ],
+    duration: "7–10 days",
+    pearls: [
+      "Asplenic, immunocompromised — high risk for severe disease",
+      "Smear: intra-erythrocytic forms; Maltese cross pathognomonic",
+      "Often co-infection with Lyme",
+      "Severe (parasitemia >10%, hemolysis, organ dysfunction): exchange transfusion",
+      "Parasitemia <4% mild; >10% severe",
+    ],
+  },
+
+  // ── PEDIATRIC ───────────────────────────────────────────────────────────
+  {
+    id: "neonatal-fever",
+    name: "Neonatal Fever (≤28 days)",
+    category: "peds",
+    indication: "Rectal temp ≥38.0°C in any infant ≤28 days — full evaluation mandatory",
+    firstLine: [
+      { name: "Ampicillin", dose: "100 mg/kg IV q6h" },
+      { name: "Gentamicin", dose: "4 mg/kg IV q24h", note: "Or cefotaxime 50 mg/kg q6h if meningitis" },
+      { name: "Acyclovir", dose: "20 mg/kg IV q8h", note: "If HSV concern: vesicles, seizures, abnormal LFTs, CSF pleocytosis" },
+    ],
+    duration: "48–72h pending cultures; longer if positive",
+    pearls: [
+      "MANDATORY full sepsis workup: CBC, blood/urine/CSF cultures, urinalysis",
+      "Empirically treat ALL febrile neonates ≤28d — high SBI risk",
+      "Common pathogens: GBS, E. coli, Listeria",
+      "HSV: temp instability, seizures, LFTs ↑, CSF pleocytosis — add acyclovir",
+      "Cefotaxime preferred over ceftriaxone in <1 month (bilirubin displacement → kernicterus)",
+    ],
+  },
+  {
+    id: "infant-fever",
+    name: "Young Infant Fever (29–60 days)",
+    category: "peds",
+    indication: "Fever ≥38.0°C in infant 29–60 days; risk-stratify before treatment",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "50 mg/kg IV q24h (max 2g)", note: "If meningitis ruled out or low risk" },
+      { name: "Ceftriaxone + Vancomycin", dose: "Above + 60 mg/kg/day div q6h", note: "If meningitis confirmed" },
+    ],
+    alternatives: [
+      { name: "Ampicillin + Ceftriaxone", dose: "50 mg/kg q6h + 50 mg/kg q24h", note: "Add ampicillin if Listeria concern (rare in this age)" },
+    ],
+    duration: "Pending cultures (typically 24–48h if cultures negative)",
+    pearls: [
+      "Risk stratify: PECARN, Step-by-Step, Boston, Philadelphia, Rochester criteria",
+      "Procalcitonin <0.5 ng/mL helps risk-stratify (Step-by-Step)",
+      "Negative HR-SBI workup may allow outpatient with close follow-up",
+      "Always check inflammatory markers, urinalysis with culture",
+      "Clinical appearance trumps numbers",
+    ],
+  },
+  {
+    id: "bronchiolitis-rsv",
+    name: "Bronchiolitis (RSV)",
+    category: "peds",
+    indication: "Wheezing + URI symptoms in infant <2 years",
+    firstLine: [
+      { name: "Supportive care", dose: "O₂, fluids, suctioning, monitoring", note: "NO antibiotics routinely indicated" },
+    ],
+    duration: "Self-limited (5–7 day course typical)",
+    pearls: [
+      "Most common cause of infant hospitalization in US",
+      "Antibiotics for documented bacterial co-infection only (rare)",
+      "No role for: routine bronchodilators, steroids, ribavirin",
+      "Palivizumab prophylaxis for high-risk infants",
+      "HFNC for moderate-severe disease; bilevel/intubation for respiratory failure",
+    ],
+  },
+  {
+    id: "kawasaki-disease",
+    name: "Kawasaki Disease",
+    category: "peds",
+    indication: "Fever ≥5 days + ≥4 of: conjunctivitis, mucositis, rash, extremity changes, lymphadenopathy",
+    firstLine: [
+      { name: "IVIG", dose: "2 g/kg IV ×1 over 10–12h" },
+      { name: "Aspirin", dose: "80–100 mg/kg/day div QID until afebrile, then 3–5 mg/kg/day until echo normal" },
+    ],
+    alternatives: [
+      { name: "Infliximab", dose: "5–10 mg/kg IV ×1", note: "Refractory to IVIG" },
+    ],
+    duration: "IVIG ×1; aspirin until coronary aneurysms ruled out (6–8 weeks)",
+    pearls: [
+      "Treat within 10 days of fever onset to prevent coronary artery aneurysms",
+      "NOT bacterial — mucocutaneous lymph node syndrome (vasculitis)",
+      "Echocardiogram at diagnosis, 2 weeks, 6–8 weeks",
+      "Consider in any child with prolonged unexplained fever",
+      "Incomplete Kawasaki: lab criteria (CRP, ESR, anemia, thrombocytosis) + echo to confirm",
+    ],
+  },
+
+  // ── FUNGAL ──────────────────────────────────────────────────────────────
+  {
+    id: "candidemia",
+    name: "Candidemia",
+    category: "fungal",
+    indication: "Candida species in blood cultures",
+    firstLine: [
+      { name: "Caspofungin", dose: "70mg IV ×1, then 50mg IV q24h", pedsDose: "70 mg/m² load, then 50 mg/m² daily" },
+      { name: "Micafungin", dose: "100mg IV q24h", pedsDose: "2–4 mg/kg IV daily", note: "Alternative echinocandin" },
+    ],
+    alternatives: [
+      { name: "Fluconazole", dose: "800mg IV/PO load, then 400mg daily", note: "Step-down for sensitive C. albicans only" },
+      { name: "Liposomal amphotericin B", dose: "3–5 mg/kg IV daily", note: "Resistant species or echinocandin failure" },
+    ],
+    duration: "14 days after first negative blood culture",
+    pearls: [
+      "REMOVE all central catheters — source control critical",
+      "Echinocandins preferred over fluconazole as initial empiric therapy",
+      "Ophthalmologic exam to rule out endophthalmitis (candida endophthalmitis common)",
+      "Echocardiogram to rule out endocarditis",
+      "Infectious diseases consult mandatory",
+    ],
+  },
+  {
+    id: "cryptococcal-meningitis",
+    name: "Cryptococcal Meningitis",
+    category: "fungal",
+    indication: "Subacute meningitis in immunocompromised (especially HIV/AIDS, CD4 <100)",
+    firstLine: [
+      { name: "Liposomal amphotericin B", dose: "3–4 mg/kg IV daily" },
+      { name: "Flucytosine", dose: "25 mg/kg PO QID", note: "Induction × 2 weeks" },
+    ],
+    alternatives: [
+      { name: "Fluconazole", dose: "800mg PO daily × 8 weeks", note: "Consolidation phase after induction" },
+      { name: "Fluconazole maintenance", dose: "200–400mg PO daily ≥1 year", note: "Until immune reconstitution" },
+    ],
+    duration: "Induction 2 wk, consolidation 8 wk, maintenance ≥1 year",
+    pearls: [
+      "Diagnose: CSF india ink, cryptococcal antigen (CrAg), culture",
+      "Manage elevated ICP with serial therapeutic LPs (q1–3 days until improving)",
+      "Don't start ART for 4–6 weeks (IRIS risk in HIV)",
+      "Survival depends on early diagnosis + aggressive ICP management",
+      "Renal function monitoring on amphotericin",
+    ],
+  },
+  {
+    id: "esophageal-candidiasis",
+    name: "Esophageal Candidiasis",
+    category: "fungal",
+    indication: "Odynophagia/dysphagia in immunocompromised; HIV CD4 <200, transplant, malignancy, chronic steroids",
+    firstLine: [
+      { name: "Fluconazole", dose: "200–400mg PO daily × 14–21 days", pedsDose: "6 mg/kg/day PO daily" },
+    ],
+    alternatives: [
+      { name: "Itraconazole solution", dose: "200mg PO daily", note: "Fluconazole-refractory" },
+      { name: "Voriconazole", dose: "200mg PO BID", note: "Refractory disease" },
+      { name: "Echinocandin", dose: "Caspofungin 50mg IV daily", note: "Severe / azole-resistant" },
+    ],
+    duration: "14–21 days",
+    pearls: [
+      "Endoscopy diagnostic — white plaques",
+      "HIV testing if status unknown",
+      "Concomitant oropharyngeal thrush common",
+      "Consider switching if no improvement at 5–7 days",
+    ],
+  },
+  {
+    id: "mucormycosis",
+    name: "Mucormycosis (Zygomycosis)",
+    category: "fungal",
+    indication: "Rhino-orbito-cerebral or pulmonary fungal infection in DM (DKA) or immunocompromised",
+    firstLine: [
+      { name: "Liposomal amphotericin B", dose: "5–10 mg/kg IV daily" },
+      { name: "Surgical debridement", dose: "Aggressive, repeated", note: "Lifesaving — antifungals alone insufficient" },
+    ],
+    alternatives: [
+      { name: "Posaconazole", dose: "300mg PO daily after 2 doses BID", note: "Step-down or salvage" },
+      { name: "Isavuconazole", dose: "200mg IV/PO q8h ×6 doses, then 200mg daily", note: "Step-down or salvage" },
+    ],
+    duration: "Weeks to months, until resolution + immune recovery",
+    pearls: [
+      "DKA, hematologic malignancy, transplant — classic risk factors",
+      "Black eschar, necrotic tissue — pathognomonic of rhino-orbito-cerebral form",
+      "TIME-CRITICAL — surgical debridement saves lives, hours matter",
+      "High mortality (>50%)",
+      "Treat underlying immunosuppression (correct DKA, taper immunosuppressants)",
+    ],
+  },
+  {
+    id: "vvc",
+    name: "Vulvovaginal Candidiasis",
+    category: "fungal",
+    indication: "Pruritus + thick white discharge + vulvar erythema",
+    firstLine: [
+      { name: "Fluconazole", dose: "150mg PO ×1" },
+      { name: "Clotrimazole / Miconazole topical", dose: "Cream or suppository × 7 days", note: "Pregnancy: topical only" },
+    ],
+    alternatives: [
+      { name: "Fluconazole pulsed", dose: "150mg PO q72h × 3 doses, then weekly × 6 months", note: "Recurrent (≥4/year)" },
+      { name: "Boric acid", dose: "600mg vaginally daily × 14 days", note: "C. glabrata or azole-resistant" },
+    ],
+    duration: "Single dose or 7 days topical",
+    pearls: [
+      "Topical and oral equivalent for uncomplicated disease",
+      "Pregnancy: topical only — fluconazole avoided in 1st trimester",
+      "Recurrent: rule out diabetes, HIV, immunosuppression",
+      "Non-albicans species (C. glabrata) — boric acid effective",
+      "Don't treat asymptomatic colonization",
+    ],
+  },
+
+  // ── VIRAL ───────────────────────────────────────────────────────────────
+  {
+    id: "influenza",
+    name: "Influenza",
+    category: "viral",
+    indication: "Suspected or confirmed influenza A/B; benefits greatest within 48h",
+    firstLine: [
+      { name: "Oseltamivir (Tamiflu)", dose: "75mg PO BID × 5 days", pedsDose: "Weight-based: 30mg BID (≤15kg) → 75mg BID (>40kg)" },
+    ],
+    alternatives: [
+      { name: "Baloxavir (Xofluza)", dose: "40–80mg PO ×1", note: "Single-dose alternative; ≥12 yo" },
+      { name: "Peramivir", dose: "600mg IV ×1", note: "IV option for hospitalized" },
+      { name: "Zanamivir", dose: "10mg inhaled BID × 5 days", note: "Avoid in asthma/COPD" },
+    ],
+    duration: "5 days",
+    pearls: [
+      "Start within 48h of symptom onset for best benefit (still consider beyond)",
+      "Hospitalized + critically ill: treat regardless of duration of symptoms",
+      "High-risk: pregnancy, age <2 or >65, immunocompromised, lung/cardiac disease",
+      "Post-exposure prophylaxis for high-risk close contacts",
+      "Watch for bacterial superinfection (S. aureus pneumonia especially)",
+    ],
+  },
+  {
+    id: "hsv-mucocutaneous",
+    name: "HSV — Genital / Mucocutaneous",
+    category: "viral",
+    indication: "Painful genital, oral, or mucocutaneous vesicles/ulcers",
+    firstLine: [
+      { name: "Valacyclovir", dose: "1g PO BID × 7–10 days (initial); 500mg BID × 3 days (recurrent)", pedsDose: "20 mg/kg/dose TID (max 1g)" },
+      { name: "Acyclovir", dose: "400mg PO TID × 7–10 days (initial); same × 5 days (recurrent)", pedsDose: "Per weight; 80 mg/kg/day div QID for primary genital" },
+    ],
+    alternatives: [
+      { name: "Famciclovir", dose: "250mg PO TID (initial); 1g PO BID × 1 day (recurrent)" },
+      { name: "Acyclovir IV", dose: "5–10 mg/kg IV q8h", note: "Severe disseminated, visceral, or immunocompromised" },
+    ],
+    duration: "7–10 days initial; 3–5 days recurrent",
+    pearls: [
+      "Best response within 72h of symptom onset",
+      "Suppression: valacyclovir 500–1000mg PO daily for frequent recurrences",
+      "Pregnancy: valacyclovir from 36 weeks if Hx genital HSV (prevent neonatal HSV)",
+      "Counsel on transmission, suppressive therapy, condom use",
+    ],
+  },
+  {
+    id: "varicella-zoster",
+    name: "Herpes Zoster (Shingles)",
+    category: "viral",
+    indication: "Dermatomal vesicular rash + pain",
+    firstLine: [
+      { name: "Valacyclovir", dose: "1g PO TID × 7 days" },
+      { name: "Acyclovir", dose: "800mg PO 5×/day × 7 days" },
+    ],
+    alternatives: [
+      { name: "Famciclovir", dose: "500mg PO TID × 7 days" },
+      { name: "Acyclovir IV", dose: "10 mg/kg IV q8h × 7–10 days", note: "Disseminated, ophthalmic, otic, immunocompromised" },
+    ],
+    duration: "7 days",
+    pearls: [
+      "Start within 72h of rash onset for maximal benefit",
+      "Older patients (>50) benefit most",
+      "Disseminated, ophthalmic, otic zoster — more aggressive treatment, specialist consult",
+      "Postherpetic neuralgia treatment: gabapentin, TCAs, capsaicin",
+      "Vaccinate immunocompetent ≥50yo with Shingrix (recombinant zoster vaccine)",
+    ],
+  },
+  {
+    id: "covid",
+    name: "COVID-19 (SARS-CoV-2)",
+    category: "viral",
+    indication: "SARS-CoV-2 infection with risk for progression or hospitalization",
+    firstLine: [
+      { name: "Nirmatrelvir/ritonavir (Paxlovid)", dose: "300/100mg PO BID × 5 days", note: "High-risk outpatient; start within 5 days of symptoms" },
+    ],
+    alternatives: [
+      { name: "Remdesivir", dose: "200mg IV load, then 100mg IV daily × 4 days", pedsDose: "≥40kg: same; <40kg: 5mg/kg load, 2.5mg/kg daily", note: "Hospitalized + supplemental O₂" },
+      { name: "Dexamethasone", dose: "6mg PO/IV daily × 10 days", note: "Hospitalized + supplemental O₂ (RECOVERY trial)" },
+      { name: "Tocilizumab", dose: "8 mg/kg IV ×1 (max 800mg)", note: "Severe (rapidly worsening, ICU) — per institutional protocols" },
+    ],
+    duration: "5 days Paxlovid; 5 days remdesivir; 10 days dexamethasone",
+    pearls: [
+      "Paxlovid drug interactions extensive — check all meds (statins, anticoagulants)",
+      "Renal dose adjustment for Paxlovid (eGFR 30–60: nirmatrelvir 150mg)",
+      "Steroids only if hypoxic — may worsen outcomes if not requiring O₂",
+      "Always check for bacterial co-infection (uncommon but possible)",
+      "Anticoagulation per institutional protocol for hospitalized",
+    ],
+  },
+  {
+    id: "rabies-pep",
+    name: "Rabies Post-Exposure Prophylaxis",
+    category: "viral",
+    indication: "Bite or significant exposure to rabies-suspect animal (bat, raccoon, skunk, fox, coyote) or unknown dog/cat in endemic area",
+    firstLine: [
+      { name: "Rabies vaccine (HDCV or PCEC)", dose: "1 mL IM days 0, 3, 7, 14 (and day 28 if immunocompromised)", pedsDose: "Same volume — 1 mL IM" },
+      { name: "Rabies Immune Globulin (HRIG)", dose: "20 IU/kg infiltrated around wound + remainder IM (different site from vaccine)" },
+    ],
+    duration: "4 doses over 14 days (5 doses if immunocompromised)",
+    pearls: [
+      "Bat in room with sleeping/intoxicated/non-communicative person → treat",
+      "Dog/cat: observe ×10 days if available; if not, start PEP",
+      "Wash wound thoroughly with soap and water (kills virus)",
+      "Once symptoms develop, ~100% fatal — prevention is everything",
+      "Previously vaccinated: 2 doses vaccine days 0, 3 — NO HRIG",
+    ],
+  },
+
+  // ── PARASITIC ───────────────────────────────────────────────────────────
+  {
+    id: "malaria-uncomplicated",
+    name: "Malaria — Uncomplicated",
+    category: "parasitic",
+    indication: "Confirmed P. falciparum or other Plasmodium without severe features",
+    firstLine: [
+      { name: "Artemether-lumefantrine (Coartem)", dose: "4 tabs PO at 0, 8, 24, 36, 48, 60h", pedsDose: "Weight-band dosing: 1–4 tabs per dose" },
+    ],
+    alternatives: [
+      { name: "Atovaquone-proguanil (Malarone)", dose: "4 adult tabs PO daily × 3 days" },
+      { name: "Quinine + Doxycycline", dose: "650mg PO TID × 3–7 days + 100mg PO BID × 7 days" },
+      { name: "Primaquine", dose: "30mg PO daily × 14 days", note: "ADD for P. vivax/ovale to eradicate hypnozoites — check G6PD first" },
+    ],
+    duration: "3 days (Coartem); 14 days (primaquine for vivax/ovale)",
+    pearls: [
+      "Determine species and parasitemia — thick AND thin smears",
+      "Drug resistance varies by region — check CDC Yellow Book",
+      "Severe = parasitemia >5%, organ failure, AMS, hemoglobinuria → treat as severe",
+      "Pregnancy: avoid primaquine, atovaquone-proguanil (1st trim), tetracyclines",
+      "Returning traveler with fever — always check smears",
+    ],
+  },
+  {
+    id: "malaria-severe",
+    name: "Malaria — Severe",
+    category: "parasitic",
+    indication: "Parasitemia >5%, organ failure, AMS, hemoglobinuria, hyperthermia, hypoglycemia",
+    firstLine: [
+      { name: "IV Artesunate", dose: "2.4 mg/kg IV at 0, 12, 24h, then daily until oral conversion" },
+    ],
+    alternatives: [
+      { name: "IV Quinidine", dose: "10 mg/kg load, then 0.02 mg/kg/min", note: "CDC stockpile only — backup if artesunate unavailable" },
+    ],
+    duration: "Until parasitemia <1% and able to take PO — then complete with oral antimalarial",
+    pearls: [
+      "Severe = parasitemia >5%, organ failure, AMS, hyperthermia, hemoglobinuria",
+      "IV artesunate available from CDC; ID consult immediately",
+      "Watch for delayed hemolysis 1–3 weeks post-treatment",
+      "ICU admission appropriate",
+      "Always follow IV with full course oral antimalarial",
+    ],
+  },
+  {
+    id: "scabies",
+    name: "Scabies",
+    category: "parasitic",
+    indication: "Pruritic burrows in web spaces, wrists, axillae, genitals; nighttime itching",
+    firstLine: [
+      { name: "Permethrin 5% cream", dose: "Apply head to toe ×8–14h, repeat in 1 week", pedsDose: "Same; safe ≥2 months" },
+    ],
+    alternatives: [
+      { name: "Ivermectin", dose: "200 mcg/kg PO ×1, repeat in 1–2 weeks", pedsDose: "Same; off-label <15kg" },
+      { name: "Crotamiton 10% cream", dose: "Apply daily ×5 days", note: "Less effective" },
+    ],
+    duration: "2 applications spaced 1 week apart",
+    pearls: [
+      "Treat ALL household contacts simultaneously even if asymptomatic",
+      "Wash all bedding, clothing in hot water; bag non-washable items ×72h",
+      "Itching may persist 2–4 weeks after successful treatment",
+      "Crusted (Norwegian) scabies: highly contagious — isolate, combine permethrin + ivermectin",
+      "Distribution: web spaces, wrists, axillae, genitals, areolae (face/scalp in infants)",
+    ],
+  },
+  {
+    id: "giardia",
+    name: "Giardiasis",
+    category: "parasitic",
+    indication: "Foamy, foul-smelling diarrhea + bloating; hiking, daycare, contaminated water",
+    firstLine: [
+      { name: "Tinidazole", dose: "2g PO ×1", pedsDose: "50 mg/kg PO ×1 (max 2g)" },
+      { name: "Metronidazole", dose: "250mg PO TID × 5–7 days", pedsDose: "15 mg/kg/day div TID × 5–7 days" },
+    ],
+    alternatives: [
+      { name: "Nitazoxanide", dose: "500mg PO BID × 3 days", pedsDose: "100mg BID (1–3yo) / 200mg BID (4–11yo)" },
+      { name: "Paromomycin", dose: "25–35 mg/kg/day PO div TID × 7 days", note: "Safe in pregnancy" },
+    ],
+    duration: "Single dose to 7 days",
+    pearls: [
+      "Tinidazole preferred (single dose, better tolerated than metronidazole)",
+      "Avoid alcohol with metronidazole/tinidazole (disulfiram-like reaction)",
+      "Pregnancy: paromomycin (not absorbed)",
+      "Can present with chronic malabsorption / failure to thrive in children",
+    ],
+  },
+  {
+    id: "pinworms",
+    name: "Pinworms (Enterobiasis)",
+    category: "parasitic",
+    indication: "Perianal itching, especially nocturnal; visible worms or eggs on tape test",
+    firstLine: [
+      { name: "Albendazole", dose: "400mg PO ×1, repeat in 2 weeks", pedsDose: "400mg PO ×1 (≥2yo); 200mg PO ×1 (1–2yo)" },
+      { name: "Pyrantel pamoate", dose: "11 mg/kg PO ×1 (max 1g), repeat in 2 weeks", note: "OTC; safe in pregnancy" },
+    ],
+    duration: "Single dose, repeat in 2 weeks",
+    pearls: [
+      "Treat all household members simultaneously",
+      "Repeat dose in 2 weeks to kill newly hatched worms",
+      "Wash all bedding, underwear in hot water",
+      "Trim fingernails; emphasize handwashing",
+      "Reinfection common — environmental contamination persists",
+    ],
+  },
+
+  // ── FEBRILE NEUTROPENIA ─────────────────────────────────────────────────
+  {
+    id: "febrile-neutropenia",
+    name: "Febrile Neutropenia",
+    category: "neutropenia",
+    indication: "Fever ≥38.3°C (or ≥38°C ×1h) + ANC <500 or expected <500 in 48h",
+    firstLine: [
+      { name: "Cefepime", dose: "2g IV q8h", pedsDose: "50 mg/kg/dose q8h (max 2g)", note: "High-risk: hospitalization required" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", pedsDose: "100 mg/kg piperacillin q6h", note: "Alternative" },
+    ],
+    alternatives: [
+      { name: "Ciprofloxacin + Amoxicillin-clavulanate", dose: "500mg PO BID + 875mg PO BID", note: "Low-risk only: MASCC ≥21; outpatient acceptable" },
+      { name: "Meropenem", dose: "1–2g IV q8h", note: "Prior Pseudomonas, MDR, instability" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load", note: "Add only if: hemodynamic instability, skin/mucosa infection, catheter infection, GP bacteremia" },
+    ],
+    duration: "Until ANC recovery + afebrile ≥48h (minimum 4–5 days)",
+    pearls: [
+      "MASCC score ≥21 identifies low-risk patients eligible for outpatient PO therapy",
+      "Add antifungals if fever persists >4–7 days without source: caspofungin 70mg load, then 50mg daily",
+      "Blood cultures ×2 (peripheral + each CVC lumen) before antibiotics",
+      "G-CSF for high-risk or prolonged neutropenia",
+      "Vancomycin not first-line — add only for specific indications above",
+    ],
+  },
+
+  // ── ENT / HEAD & NECK ───────────────────────────────────────────────────
+  {
+    id: "mastoiditis",
+    name: "Mastoiditis",
+    category: "ent",
+    indication: "Postauricular swelling/erythema, protruding pinna; complication of otitis media",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "2g IV q24h", pedsDose: "50 mg/kg IV q24h (max 2g)" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided", pedsDose: "60 mg/kg/day IV div q6h", note: "Add for MRSA risk or severe disease" },
+    ],
+    alternatives: [
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", pedsDose: "50 mg/kg ampicillin q6h" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", note: "Chronic with Pseudomonas concern" },
+    ],
+    duration: "≥7–10 days IV; total 2–4 weeks; longer if intracranial extension",
+    pearls: [
+      "CT temporal bones with contrast — assess coalescent disease and intracranial complications",
+      "ENT consult; myringotomy ± mastoidectomy for failure",
+      "Common: S. pneumoniae, S. pyogenes, S. aureus, H. influenzae",
+      "Watch for Bezold abscess, sigmoid sinus thrombosis, meningitis",
+    ],
+  },
+  {
+    id: "retropharyngeal-abscess",
+    name: "Retropharyngeal Abscess",
+    category: "ent",
+    indication: "Deep neck space infection — sore throat, neck stiffness, drooling, fever; widened prevertebral space",
+    firstLine: [
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", pedsDose: "50 mg/kg ampicillin/dose q6h (max 3g)" },
+      { name: "Clindamycin", dose: "600–900 mg IV q8h", pedsDose: "10–13 mg/kg/dose q8h", note: "PCN allergy or MRSA risk" },
+    ],
+    alternatives: [
+      { name: "Piperacillin-tazobactam + Vancomycin", dose: "4.5g IV q8h + 25–30 mg/kg load", note: "Toxic-appearing or healthcare-associated" },
+      { name: "Ceftriaxone + Metronidazole", dose: "2g IV q24h + 500 mg IV q8h" },
+    ],
+    duration: "14 days (longer if mediastinitis)",
+    pearls: [
+      "Polymicrobial — Strep, Staph, anaerobes",
+      "CT neck with contrast confirms; ENT for surgical drainage",
+      "Airway management priority — anesthesia/ENT bedside",
+      "Watch for descending mediastinitis, jugular thrombosis",
+    ],
+  },
+  {
+    id: "subdural-empyema",
+    name: "Subdural Empyema",
+    category: "cns",
+    indication: "Pus in subdural space — fever, focal deficit; from sinus/otitis/mastoid extension or postsurgical",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided", pedsDose: "60 mg/kg/day IV div q6h" },
+      { name: "Ceftriaxone", dose: "2g IV q12h", pedsDose: "100 mg/kg/day IV div q12h (max 4g/day)" },
+      { name: "Metronidazole", dose: "500 mg IV q8h", pedsDose: "10 mg/kg q8h", note: "Anaerobic coverage" },
+    ],
+    alternatives: [
+      { name: "Meropenem", dose: "2g IV q8h", note: "Postoperative or healthcare-associated" },
+    ],
+    duration: "4–6 weeks IV (longer with osteomyelitis)",
+    pearls: [
+      "Neurosurgical emergency — drainage required",
+      "Streptococci (esp. milleri group), Staph, anaerobes most common",
+      "MRI with contrast > CT",
+      "Address underlying source (sinusitis, mastoiditis)",
+    ],
+  },
+  {
+    id: "cavernous-sinus-thrombosis",
+    name: "Septic Cavernous Sinus Thrombosis",
+    category: "cns",
+    indication: "Septic thrombosis from facial/sinus/dental source — proptosis, ophthalmoplegia, chemosis, CN palsies",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided", pedsDose: "60 mg/kg/day IV div q6h" },
+      { name: "Ceftriaxone", dose: "2g IV q12h", pedsDose: "100 mg/kg/day IV div q12h (max 4g/day)" },
+      { name: "Metronidazole", dose: "500 mg IV q8h", pedsDose: "10 mg/kg q8h" },
+    ],
+    alternatives: [
+      { name: "Meropenem + Vancomycin", dose: "2g IV q8h + 25–30 mg/kg load", note: "Healthcare-associated or PCN allergy" },
+    ],
+    duration: "3–4 weeks IV minimum",
+    pearls: [
+      "S. aureus dominates (~70%) — vancomycin pending cultures",
+      "Anticoagulation often used (LMWH or heparin) — discuss with neurology",
+      "MRI/MRV is diagnostic test of choice",
+      "Surgical drainage of underlying source",
+    ],
+  },
+  {
+    id: "meningococcemia",
+    name: "Meningococcemia",
+    category: "sepsis",
+    indication: "N. meningitidis bloodstream — petechial/purpuric rash, sepsis, ± meningitis (Waterhouse-Friderichsen)",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "2g IV q12h", pedsDose: "100 mg/kg/day IV div q12h (max 4g/day)" },
+    ],
+    alternatives: [
+      { name: "Penicillin G", dose: "4 million units IV q4h", pedsDose: "300k units/kg/day IV div q4–6h", note: "Once susceptibility confirmed" },
+      { name: "Meropenem", dose: "2g IV q8h", note: "Severe beta-lactam allergy" },
+      { name: "Chloramphenicol", dose: "1g IV q6h", note: "True severe PCN/cephalosporin allergy" },
+    ],
+    duration: "5–7 days",
+    pearls: [
+      "Do not delay antibiotics for LP",
+      "Droplet precautions until 24h of effective therapy",
+      "PEP for close contacts: rifampin, ciprofloxacin, or ceftriaxone",
+      "Consider stress steroids in shock (Waterhouse-Friderichsen)",
+      "Public health reportable",
+    ],
+  },
+
+  // ── SKIN / SOFT TISSUE / MSK ────────────────────────────────────────────
+  {
+    id: "infected-pressure-ulcer",
+    name: "Infected Pressure Ulcer",
+    category: "skin",
+    indication: "Stage III/IV pressure injury with surrounding cellulitis, purulence, or systemic signs",
+    firstLine: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided", note: "Add for MRSA coverage" },
+    ],
+    alternatives: [
+      { name: "Ampicillin-sulbactam", dose: "3g IV q6h", note: "Mild infection without Pseudomonas concern" },
+      { name: "Ceftriaxone + Metronidazole", dose: "2g IV q24h + 500 mg IV q8h" },
+    ],
+    duration: "10–14 days (4–6 weeks if osteomyelitis)",
+    pearls: [
+      "Polymicrobial — anaerobes, GN rods, MRSA common",
+      "Rule out underlying osteomyelitis (probe-to-bone, MRI)",
+      "Surgical debridement essential — antibiotics alone insufficient",
+      "Avoid surface swab cultures — deep tissue biopsy preferred",
+    ],
+  },
+  {
+    id: "flexor-tenosynovitis",
+    name: "Flexor Tenosynovitis (Pyogenic)",
+    category: "skin",
+    indication: "Kanavel signs: fusiform swelling, semi-flexed posture, tenderness along sheath, pain on passive extension",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided", pedsDose: "60 mg/kg/day IV div q6h" },
+      { name: "Ceftriaxone", dose: "1–2g IV q24h", pedsDose: "50–75 mg/kg IV q24h", note: "GN coverage / GC if STI risk" },
+    ],
+    alternatives: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", note: "Bite, water/soil exposure, immunocompromised" },
+      { name: "Cefepime + Vancomycin", dose: "2g IV q8h + 25–30 mg/kg", note: "Healthcare-associated" },
+    ],
+    duration: "10–14 days (longer if osteomyelitis)",
+    pearls: [
+      "Surgical emergency — hand surgery for irrigation/debridement",
+      "Most common: S. aureus (incl. MRSA), Streptococcus",
+      "Consider GC tenosynovitis in young, sexually active patients",
+      "Pasteurella in cat bites, Eikenella in human bites",
+    ],
+  },
+  {
+    id: "septic-bursitis",
+    name: "Septic Bursitis",
+    category: "bone",
+    indication: "Bursal infection — typically olecranon or prepatellar; warmth, swelling, fluctuance over bursa",
+    firstLine: [
+      { name: "TMP-SMX", dose: "1–2 DS PO BID", note: "Outpatient MRSA coverage" },
+      { name: "Doxycycline", dose: "100 mg PO BID", note: "Alternative outpatient" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load", note: "Severe / systemic / hospitalized" },
+    ],
+    alternatives: [
+      { name: "Cephalexin", dose: "500 mg PO QID", note: "MSSA/strep only" },
+      { name: "Clindamycin", dose: "300–450 mg PO TID", note: "PCN allergy" },
+    ],
+    duration: "2–3 weeks (10 days minimum after drainage)",
+    pearls: [
+      "S. aureus >80% — empiric MRSA coverage prudent",
+      "Aspirate (Gram, culture, cell count) — distinguish from gout",
+      "Surgical drainage if loculated, persistent, immunocompromised",
+      "No joint involvement — distinguish from septic arthritis",
+    ],
+  },
+  {
+    id: "pyomyositis",
+    name: "Pyomyositis",
+    category: "skin",
+    indication: "Bacterial muscle abscess — focal pain, fever, tenderness; tropical or immunocompromised hosts",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided", pedsDose: "60 mg/kg/day IV div q6h" },
+    ],
+    alternatives: [
+      { name: "Cefazolin", dose: "2g IV q8h", note: "Confirmed MSSA" },
+      { name: "Piperacillin-tazobactam + Vancomycin", note: "Immunocompromised, GN coverage" },
+      { name: "Linezolid", dose: "600 mg IV/PO q12h", note: "Vanc alternative" },
+    ],
+    duration: "3–4 weeks (extend if bacteremia, endocarditis, or osteo)",
+    pearls: [
+      "S. aureus 75–90% (MRSA increasing); add GN coverage in DM/HIV",
+      "MRI is imaging of choice; aspiration/drainage of abscess",
+      "Three stages: invasive → suppurative → septic",
+      "Always assess for endocarditis, deep abscess seeding",
+    ],
+  },
+  {
+    id: "fournier-gangrene",
+    name: "Fournier Gangrene",
+    category: "skin",
+    indication: "Necrotizing fasciitis of perineum/genitalia/perianal — pain out of proportion, crepitus, rapid spread",
+    firstLine: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided" },
+      { name: "Clindamycin", dose: "900 mg IV q8h", note: "Toxin suppression" },
+    ],
+    alternatives: [
+      { name: "Meropenem + Vancomycin + Clindamycin", note: "Severe sepsis or healthcare-associated" },
+    ],
+    duration: "Continue IV until clinically stable; ≥7 days post final debridement",
+    pearls: [
+      "Surgical emergency — immediate, aggressive debridement (urology + general surgery)",
+      "Polymicrobial — GN, anaerobes, GP synergy",
+      "Risk: diabetes, alcoholism, immunocompromise, perianal pathology",
+      "Mortality 20–40% — early operative debridement is the intervention",
+    ],
+  },
+  {
+    id: "clostridial-myonecrosis",
+    name: "Clostridial Myonecrosis (Gas Gangrene)",
+    category: "skin",
+    indication: "Clostridial muscle necrosis — severe pain, bronze/dusky skin, bullae, crepitus, gas on imaging; trauma/post-op",
+    firstLine: [
+      { name: "Penicillin G", dose: "4 million units IV q4h", pedsDose: "300k units/kg/day IV div q4–6h" },
+      { name: "Clindamycin", dose: "900 mg IV q8h", pedsDose: "10–13 mg/kg/dose q8h", note: "Mandatory toxin suppression" },
+    ],
+    alternatives: [
+      { name: "Piperacillin-tazobactam + Vancomycin + Clindamycin", note: "Polymicrobial concern or PCN allergy" },
+      { name: "Meropenem + Clindamycin", note: "Severe PCN allergy" },
+    ],
+    duration: "10–14 days post final debridement",
+    pearls: [
+      "C. perfringens most common; surgical debridement is the intervention",
+      "Hyperbaric O2 may be adjunctive — should not delay surgery",
+      "Mortality >25% overall; >50% with torso involvement",
+      "Add broad coverage until polymicrobial nec fasc ruled out",
+    ],
+  },
+  {
+    id: "ssss",
+    name: "Staphylococcal Scalded Skin Syndrome",
+    category: "skin",
+    indication: "Toxin-mediated diffuse desquamation in young children — fever, erythroderma, positive Nikolsky",
+    firstLine: [
+      { name: "Nafcillin or Oxacillin", dose: "2g IV q4h", pedsDose: "150 mg/kg/day IV div q6h" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load", pedsDose: "60 mg/kg/day IV div q6h", note: "Add until MRSA excluded" },
+      { name: "Clindamycin", dose: "10–13 mg/kg IV q8h (peds)", note: "Toxin suppression" },
+    ],
+    alternatives: [
+      { name: "Cefazolin", dose: "100 mg/kg/day IV div q8h", note: "MSSA confirmed" },
+      { name: "Linezolid", note: "MRSA confirmed; toxin suppression" },
+    ],
+    duration: "7–10 days (transition to PO when improving)",
+    pearls: [
+      "Children <5 mostly; mortality higher in adults (immunocompromised)",
+      "Skin biopsy distinguishes from TEN — superficial split (granular layer)",
+      "Aggressive supportive care — fluid, thermoregulation, analgesia",
+      "Cultures from blood, nasopharynx, conjunctiva — not desquamated skin",
+    ],
+  },
+
+  // ── GU / GYN ────────────────────────────────────────────────────────────
+  {
+    id: "obstructive-pyelonephritis",
+    name: "Obstructive Pyelonephritis / Infected Stone",
+    category: "uti",
+    indication: "Urosepsis with hydronephrosis or obstructing stone — surgical emergency",
+    firstLine: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", pedsDose: "100 mg/kg piperacillin q6–8h" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load", note: "Add if shock or healthcare-associated" },
+    ],
+    alternatives: [
+      { name: "Meropenem", dose: "1–2g IV q8h", note: "ESBL risk, prior MDR" },
+      { name: "Cefepime", dose: "2g IV q8h" },
+      { name: "Ceftriaxone", dose: "2g IV q24h", note: "Lower acuity" },
+    ],
+    duration: "10–14 days; modify after source control + cultures",
+    pearls: [
+      "Urgent decompression — percutaneous nephrostomy or ureteral stent",
+      "Antibiotics alone insufficient — source control essential",
+      "Blood + urine cultures before antibiotics",
+      "Mortality high without prompt drainage",
+    ],
+  },
+  {
+    id: "epididymitis",
+    name: "Epididymitis / Epididymo-orchitis",
+    category: "sti",
+    indication: "Unilateral testicular pain with epididymal tenderness; rule out torsion first",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "500 mg IM ×1 (1g if ≥150 kg)", note: "<35 yo, STI risk" },
+      { name: "Doxycycline", dose: "100 mg PO BID × 10 days", note: "<35 yo, STI risk" },
+    ],
+    alternatives: [
+      { name: "Levofloxacin", dose: "500 mg PO daily × 10 days", note: "≥35 yo, enteric organisms" },
+      { name: "Ceftriaxone + Doxycycline + Levofloxacin", note: "Insertive anal sex risk" },
+      { name: "TMP-SMX", dose: "1 DS PO BID × 10 days", note: "Older, enteric (per local resistance)" },
+    ],
+    duration: "10 days (14 if older / enteric coverage)",
+    pearls: [
+      "<35: GC/CT — treat both empirically",
+      "≥35 or insertive anal sex: add enteric (E. coli) coverage",
+      "Doppler US if torsion not excluded clinically",
+      "Bedrest, scrotal elevation, NSAIDs adjunctive",
+    ],
+  },
+  {
+    id: "bartholin-abscess",
+    name: "Bartholin Gland Abscess",
+    category: "obgyn",
+    indication: "Painful labial mass; antibiotics adjunctive to I&D / Word catheter",
+    firstLine: [
+      { name: "TMP-SMX", dose: "1–2 DS PO BID × 7 days", note: "MRSA coverage" },
+      { name: "Cephalexin + Metronidazole", dose: "500 mg PO QID + 500 mg PO BID × 7 days", note: "If no MRSA risk" },
+    ],
+    alternatives: [
+      { name: "Amoxicillin-clavulanate", dose: "875 mg PO BID × 7 days" },
+      { name: "Clindamycin", dose: "300–450 mg PO TID × 7 days", note: "PCN allergy + MRSA" },
+    ],
+    duration: "7 days (antibiotics not always required if drained and stable)",
+    pearls: [
+      "Drainage is the intervention — Word catheter or marsupialization",
+      "Antibiotics for surrounding cellulitis, immunocompromised, systemic signs",
+      "Polymicrobial (E. coli, anaerobes, GBS, MRSA) — historic GC/CT now uncommon",
+      "Send fluid culture if recurrent or complicated",
+    ],
+  },
+
+  // ── GI / INTRA-ABDOMINAL ────────────────────────────────────────────────
+  {
+    id: "appendicitis",
+    name: "Appendicitis (Antibiotic Therapy)",
+    category: "gi",
+    indication: "Confirmed/suspected appendicitis — preop, postop complicated, or non-operative management",
+    firstLine: [
+      { name: "Ceftriaxone + Metronidazole", dose: "2g IV q24h + 500 mg IV q8h", pedsDose: "50 mg/kg + 10 mg/kg" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", pedsDose: "100 mg/kg piperacillin q6–8h", note: "Complicated / perforated" },
+    ],
+    alternatives: [
+      { name: "Ertapenem", dose: "1g IV q24h", note: "Stable, complicated, no Pseudomonas" },
+      { name: "Levofloxacin + Metronidazole", dose: "750 mg IV/PO + 500 mg IV/PO q8h", note: "Severe beta-lactam allergy" },
+    ],
+    duration: "Uncomplicated: 24h post-op (or single preop dose); Complicated: 4–7 days; Non-operative: 7–10 days",
+    pearls: [
+      "Single preoperative dose adequate if uncomplicated and removed",
+      "Non-operative option for selected uncomplicated (recurrence ~20–30%)",
+      "Source control — surgery or IR drainage of abscess",
+      "Failure of source control prolongs antibiotics",
+    ],
+  },
+  {
+    id: "pyogenic-liver-abscess",
+    name: "Pyogenic Liver Abscess",
+    category: "gi",
+    indication: "Hepatic abscess — fever, RUQ pain, ↑ALP; biliary, portal, or hematogenous",
+    firstLine: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h" },
+      { name: "Ceftriaxone + Metronidazole", dose: "2g IV q24h + 500 mg IV q8h" },
+    ],
+    alternatives: [
+      { name: "Meropenem", dose: "1g IV q8h", note: "Severe sepsis or ESBL" },
+      { name: "Levofloxacin + Metronidazole", note: "PCN allergy" },
+    ],
+    duration: "4–6 weeks (2–3 weeks IV, transition PO with source control)",
+    pearls: [
+      "Source control — percutaneous or surgical drainage essential",
+      "Klebsiella pneumoniae increasingly common (esp. invasive K1/K2)",
+      "Always check serology for amebic abscess if travel/risk",
+      "Klebsiella endophthalmitis screen if K. pneumoniae cultured",
+    ],
+  },
+  {
+    id: "neutropenic-enterocolitis",
+    name: "Neutropenic Enterocolitis (Typhlitis)",
+    category: "neutropenia",
+    indication: "Cecal/right colon inflammation in neutropenic host — fever, abdominal pain, diarrhea; CT bowel wall thickening",
+    firstLine: [
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load", note: "Add if shock, mucositis, or VRE risk" },
+    ],
+    alternatives: [
+      { name: "Meropenem", dose: "1–2g IV q8h", note: "Septic, anaerobic concern, MDR" },
+      { name: "Cefepime + Metronidazole", dose: "2g IV q8h + 500 mg IV q8h" },
+      { name: "Caspofungin", dose: "70 mg IV ×1, then 50 mg IV daily", note: "Add if persistent fever >4 days" },
+    ],
+    duration: "Until ANC recovery + clinical resolution + ≥14 days",
+    pearls: [
+      "Mostly cecum (typhlon) — bowel rest, NG decompression",
+      "Surgery rarely needed — only for perforation, persistent bleed, deterioration",
+      "Mortality 20–50% — high translocation sepsis risk",
+      "Address C. difficile concomitantly — overlap common",
+    ],
+  },
+
+  // ── CARDIAC / VASCULAR / DEVICE ─────────────────────────────────────────
+  {
+    id: "crbsi",
+    name: "Catheter-Related Bloodstream Infection",
+    category: "cardiac",
+    indication: "Bacteremia attributable to indwelling catheter — differential time-to-positivity, line vs peripheral cultures",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided" },
+      { name: "Cefepime or Piperacillin-tazobactam", dose: "2g IV q8h or 4.5g IV q8h", note: "Add if septic, neutropenic, or femoral line" },
+    ],
+    alternatives: [
+      { name: "Daptomycin", dose: "8–10 mg/kg IV daily", note: "MRSA bacteremia or vancomycin failure" },
+      { name: "Caspofungin", dose: "70 mg IV ×1, then 50 mg IV daily", note: "Suspected fungal CRBSI" },
+    ],
+    duration: "S. aureus 4–6 wks; CoNS 5–7 days; GN rods 7–14 days; Candida 14 days from first negative",
+    pearls: [
+      "Remove catheter for: S. aureus, Pseudomonas, Candida, mycobacteria, instability, persistent bacteremia",
+      "Antibiotic lock therapy option for salvage of long-term lines (not S. aureus or Candida)",
+      "TTE/TEE for S. aureus bacteremia",
+      "Repeat cultures 48–96h to document clearance",
+    ],
+  },
+  {
+    id: "vascular-graft-infection",
+    name: "Vascular Graft Infection",
+    category: "cardiac",
+    indication: "Prosthetic graft infection — local signs (drainage, sinus tract), bacteremia, or imaging evidence",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided" },
+      { name: "Piperacillin-tazobactam or Cefepime", dose: "4.5g IV q8h or 2g IV q8h" },
+    ],
+    alternatives: [
+      { name: "Daptomycin + Cefepime", note: "Vancomycin failure" },
+      { name: "Meropenem + Vancomycin", note: "ESBL or MDR risk" },
+    ],
+    duration: "≥4–6 weeks IV; lifelong suppression if graft retained",
+    pearls: [
+      "Vascular surgery — graft excision usually required",
+      "Most common: S. aureus (incl. MRSA), CoNS, GN rods",
+      "PET-CT or tagged WBC scan to localize",
+      "Lifelong PO suppression if graft cannot be removed",
+    ],
+  },
+  {
+    id: "mycotic-aneurysm",
+    name: "Mycotic (Infected) Aneurysm",
+    category: "cardiac",
+    indication: "Aneurysm with infectious etiology — fever, bacteremia, focal pain; rapidly expanding aneurysm",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided" },
+      { name: "Ceftriaxone", dose: "2g IV q12h" },
+    ],
+    alternatives: [
+      { name: "Piperacillin-tazobactam + Vancomycin", note: "Healthcare-associated" },
+      { name: "Meropenem + Vancomycin", note: "ESBL / Salmonella concern" },
+    ],
+    duration: "≥6 weeks IV; lifelong suppression often warranted post-repair",
+    pearls: [
+      "Vascular surgery — repair urgently; rupture risk high",
+      "S. aureus and Salmonella most common",
+      "Always pair with endocarditis evaluation",
+      "High-mortality entity — early aggressive intervention",
+    ],
+  },
+  {
+    id: "cied-infection",
+    name: "Pacemaker / ICD Pocket Infection",
+    category: "cardiac",
+    indication: "Cardiac implantable electronic device infection — pocket erythema/pus, bacteremia, lead vegetation",
+    firstLine: [
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided" },
+    ],
+    alternatives: [
+      { name: "Daptomycin", dose: "8–10 mg/kg IV daily", note: "MRSA bacteremia, vanc-MIC ≥2" },
+      { name: "Cefazolin", dose: "2g IV q8h", note: "Confirmed MSSA" },
+      { name: "Add cefepime", note: "If GN coverage needed" },
+    ],
+    duration: "Pocket post-explant: 10–14 days; bacteremia: 2–4 wks; valve: 4–6 wks",
+    pearls: [
+      "Complete device + lead extraction is the intervention — antibiotics alone fail",
+      "TEE for vegetation; blood cultures ×2 before antibiotics",
+      "Reimplantation timing depends on bacteremia clearance",
+      "CoNS and S. aureus dominate",
+    ],
+  },
+
+  // ── IMMUNOCOMPROMISED / HIGH-RISK HOST ──────────────────────────────────
+  {
+    id: "asplenia-fever",
+    name: "Fever in Asplenia / Hyposplenia",
+    category: "sepsis",
+    indication: "Fever in functionally/anatomically asplenic patient — risk for fulminant encapsulated organism sepsis (OPSI)",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "2g IV q12h", pedsDose: "100 mg/kg/day IV div q12h (max 4g/day)" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load", note: "Add for resistant pneumococcus or shock" },
+    ],
+    alternatives: [
+      { name: "Meropenem", dose: "1g IV q8h", note: "Severe shock, broad coverage" },
+      { name: "Levofloxacin", dose: "750 mg IV daily", note: "Severe beta-lactam allergy" },
+    ],
+    duration: "Tailor to source/cultures; minimum 7–10 days for bacteremia",
+    pearls: [
+      "Treat presumptively — mortality up to 50%",
+      "S. pneumoniae most common; H. influenzae, N. meningitidis, Capnocytophaga (dog bite), Babesia",
+      "Always ask travel/exposure — malaria, babesiosis amplified in asplenia",
+      "Verify vaccinations — pneumococcal, meningococcal, Hib",
+    ],
+  },
+  {
+    id: "sickle-cell-fever",
+    name: "Fever in Sickle Cell Disease",
+    category: "sepsis",
+    indication: "Fever ≥38.5°C in sickle cell — functional asplenia, encapsulated organism risk",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "50–75 mg/kg IV q24h (max 2g)", pedsDose: "50–75 mg/kg/dose" },
+      { name: "Vancomycin", dose: "60 mg/kg/day IV div q6h", note: "Add for shock, central line, known MRSA" },
+    ],
+    alternatives: [
+      { name: "Cefepime", dose: "50 mg/kg IV q8h", note: "Older / hospitalized / GN concern" },
+      { name: "Piperacillin-tazobactam + Vancomycin", note: "Severe sepsis" },
+    ],
+    duration: "Until cultures negative ×48h or per source",
+    pearls: [
+      "Always rule out acute chest, osteomyelitis, splenic sequestration",
+      "S. pneumoniae, Salmonella (osteo), H. influenzae top organisms",
+      "Admit if febrile ≤6 mo, ill-appearing, WBC <5 or >30k, sequestration",
+      "Pneumococcal vaccination + PCN prophylaxis (peds) reduces risk",
+    ],
+  },
+  {
+    id: "post-transplant-infection",
+    name: "Post-Transplant Bacterial Infection",
+    category: "sepsis",
+    indication: "Solid organ or HSCT recipient with suspected bacterial infection — broaden empiric coverage",
+    firstLine: [
+      { name: "Cefepime or Piperacillin-tazobactam", dose: "2g IV q8h or 4.5g IV q8h" },
+      { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided" },
+    ],
+    alternatives: [
+      { name: "Meropenem + Vancomycin", note: "ESBL / prior MDR / shock" },
+      { name: "Add Daptomycin or Linezolid", note: "VRE risk (liver transplant, prior colonization)" },
+      { name: "Add antifungal/CMV coverage", note: "As risk dictates — discuss with transplant ID" },
+    ],
+    duration: "Tailor to source; transplant ID drives duration",
+    pearls: [
+      "Always involve transplant ID team early",
+      "Drug interactions with calcineurin inhibitors — adjust tacrolimus levels",
+      "Wide differential — CMV, BK, PJP, Nocardia, Listeria, atypical mycobacteria depending on time post-tx",
+      "Send broad workup early: CMV PCR, EBV PCR, galactomannan, beta-D-glucan",
+    ],
+  },
+  {
+    id: "pd-peritonitis",
+    name: "Peritoneal Dialysis–Associated Peritonitis",
+    category: "gi",
+    indication: "Cloudy PD effluent with WBC >100/µL (>50% PMNs) ± abdominal pain in PD patient",
+    firstLine: [
+      { name: "Cefazolin (intraperitoneal)", dose: "Loading 500 mg/L; maintenance 125 mg/L per exchange OR 15–20 mg/kg IP q24h", note: "GP coverage" },
+      { name: "Ceftazidime (intraperitoneal)", dose: "Loading 500 mg/L; maintenance 125 mg/L OR 1–1.5g IP q24h", note: "GN coverage" },
+    ],
+    alternatives: [
+      { name: "Vancomycin (intraperitoneal)", dose: "Loading 1g/L; maintenance 25 mg/L OR 15–30 mg/kg IP q5–7d", note: "MRSA risk; PCN allergy" },
+      { name: "Gentamicin (intraperitoneal)", dose: "0.6 mg/kg IP q24h", note: "GN alternative" },
+    ],
+    duration: "14–21 days IP (longer for S. aureus, Pseudomonas, fungal)",
+    pearls: [
+      "IP route preferred — far higher peritoneal levels",
+      "Send PD fluid: cell count, Gram stain, culture (≥10 mL in blood culture bottle)",
+      "Catheter removal: fungal, refractory, relapsing, tunnel infection",
+      "ISPD guidelines drive practice — coordinate with nephrology",
+    ],
+  },
+
+  // ── TICKBORNE / ZOONOTIC ────────────────────────────────────────────────
+  {
+    id: "tularemia",
+    name: "Tularemia",
+    category: "tickborne",
+    indication: "Francisella tularensis — ulceroglandular, typhoidal, pneumonic; tick/rabbit/aerosol exposure",
+    firstLine: [
+      { name: "Streptomycin", dose: "1g IM BID × 10 days" },
+      { name: "Gentamicin", dose: "5 mg/kg IV daily × 10 days", note: "Alternative; preferred for severe" },
+    ],
+    alternatives: [
+      { name: "Doxycycline", dose: "100 mg PO/IV BID × 14–21 days", note: "Mild disease only" },
+      { name: "Ciprofloxacin", dose: "400 mg IV / 500 mg PO BID × 10–14 days" },
+    ],
+    duration: "Aminoglycosides 10 days; doxy/cipro 14–21 days",
+    pearls: [
+      "Pneumonic and typhoidal forms — high mortality untreated",
+      "Lab biohazard — alert microbiology before sending cultures (BSL-3)",
+      "Doxy higher relapse vs aminoglycosides",
+      "Bioterror agent — report to public health",
+    ],
+  },
+  {
+    id: "plague",
+    name: "Plague (Yersinia pestis)",
+    category: "tickborne",
+    indication: "Bubonic, septicemic, or pneumonic plague — flea exposure, US Southwest, rapidly progressive sepsis",
+    firstLine: [
+      { name: "Streptomycin", dose: "1g IM BID × 10 days" },
+      { name: "Gentamicin", dose: "5 mg/kg IV daily × 10 days", note: "Equally effective; widely used" },
+    ],
+    alternatives: [
+      { name: "Doxycycline", dose: "100 mg IV/PO BID × 10–14 days", note: "Mild or post-exposure" },
+      { name: "Ciprofloxacin", dose: "400 mg IV / 500 mg PO BID × 10 days" },
+    ],
+    duration: "10 days (14 if mild/oral)",
+    pearls: [
+      "Pneumonic — droplet/airborne isolation; 100% mortality untreated",
+      "Bioterror agent — notify public health, CDC immediately",
+      "PEP: doxy or cipro × 7 days for close contacts",
+      "Dual therapy considered for severe (aminoglycoside + doxy/FQ)",
+    ],
+  },
+  {
+    id: "anthrax",
+    name: "Anthrax (Bacillus anthracis)",
+    category: "tickborne",
+    indication: "Cutaneous, inhalational, GI, or injection anthrax — bioterror or occupational",
+    firstLine: [
+      { name: "Ciprofloxacin", dose: "400 mg IV q8–12h", pedsDose: "10–15 mg/kg IV q12h" },
+      { name: "Doxycycline", dose: "100 mg IV q12h", note: "Alternative or combine for severe" },
+      { name: "Add second/third agent for systemic", note: "Linezolid, meropenem, rifampin, clindamycin per CDC" },
+    ],
+    alternatives: [
+      { name: "Levofloxacin", dose: "750 mg IV daily" },
+      { name: "Penicillin G", dose: "4 million units IV q4h", note: "Susceptible isolate only" },
+    ],
+    duration: "Cutaneous: 7–10 days (60 days if bioterror); systemic: 60 days total (≥2 wks IV)",
+    pearls: [
+      "Add anthrax antitoxin (raxibacumab or obiltoxaximab) for systemic",
+      "Inhalational: add IV linezolid/clindamycin (toxin suppression)",
+      "Mediastinal widening hallmark of inhalation",
+      "Notify public health/CDC immediately",
+    ],
+  },
+  {
+    id: "brucellosis",
+    name: "Brucellosis",
+    category: "tickborne",
+    indication: "Undulant fever, sweats, arthralgia from unpasteurized dairy or animal contact",
+    firstLine: [
+      { name: "Doxycycline + Rifampin", dose: "100 mg PO BID + 600–900 mg PO daily × 6 weeks" },
+      { name: "Doxycycline + Streptomycin", dose: "100 mg BID × 6 wks + 1g IM daily × 14–21 days", note: "Lower relapse than rifampin" },
+    ],
+    alternatives: [
+      { name: "TMP-SMX + Rifampin", note: "Pediatric or pregnant" },
+      { name: "Doxy + Rifampin + Aminoglycoside", note: "Endocarditis, neurobrucellosis, spondylitis — extend 3+ months" },
+    ],
+    duration: "6 weeks minimum; 3–6 months for focal disease",
+    pearls: [
+      "Lab biohazard — alert microbiology (BSL-3)",
+      "Relapse common — combination therapy mandatory",
+      "Always check for endocarditis, spondylitis, neurobrucellosis",
+      "Public health reportable",
+    ],
+  },
+  {
+    id: "leptospirosis",
+    name: "Leptospirosis",
+    category: "tickborne",
+    indication: "Biphasic febrile illness with conjunctival suffusion, AKI, jaundice (Weil's) — water/animal exposure",
+    firstLine: [
+      { name: "Penicillin G", dose: "1.5 million units IV q6h × 7 days", note: "Severe disease" },
+      { name: "Doxycycline", dose: "100 mg PO BID × 7 days", note: "Mild disease" },
+    ],
+    alternatives: [
+      { name: "Ceftriaxone", dose: "1g IV daily × 7 days", note: "Severe; equivalent to PCN" },
+      { name: "Azithromycin", dose: "500 mg PO daily × 3 days", note: "Pregnancy / mild disease" },
+    ],
+    duration: "7 days",
+    pearls: [
+      "Jarisch-Herxheimer may occur after first dose",
+      "Doxy 200 mg weekly = PEP (travelers, military)",
+      "Public health reportable",
+      "Severe (Weil's): mortality 5–15% — supportive care critical",
+    ],
+  },
+  {
+    id: "rat-bite-fever",
+    name: "Rat-Bite Fever",
+    category: "tickborne",
+    indication: "Streptobacillus moniliformis (US) or Spirillum minus — fever, polyarthralgia, rash after rodent exposure",
+    firstLine: [
+      { name: "Penicillin G", dose: "200,000 units IV q4h × 5–7 days, then PCN VK 500 mg PO QID × 7 days" },
+    ],
+    alternatives: [
+      { name: "Doxycycline", dose: "100 mg PO BID × 14 days", note: "PCN allergy" },
+      { name: "Ceftriaxone", dose: "1–2g IV daily × 14 days", note: "Endocarditis or severe" },
+    ],
+    duration: "14 days (4–6 weeks for endocarditis)",
+    pearls: [
+      "Endocarditis is feared complication — TTE if persistent fever",
+      "Rare — high suspicion in pet store / lab workers / homeless",
+      "Often missed — extremity rash, polyarthritis differentiate from common viral",
+    ],
+  },
+  {
+    id: "vibrio-vulnificus",
+    name: "Vibrio vulnificus Infection",
+    category: "skin",
+    indication: "Necrotizing soft tissue infection or sepsis after seawater/raw oyster exposure, esp. cirrhotic / immunocompromised",
+    firstLine: [
+      { name: "Doxycycline + Ceftriaxone", dose: "100 mg IV/PO BID + 1–2g IV q24h" },
+    ],
+    alternatives: [
+      { name: "Doxycycline + Cefotaxime", dose: "100 mg BID + 2g IV q8h" },
+      { name: "Levofloxacin + Doxycycline", note: "Severe beta-lactam allergy" },
+      { name: "Tigecycline", note: "MDR alternative" },
+    ],
+    duration: "Minimum 7–14 days; tailor to source control",
+    pearls: [
+      "Surgical debridement is the intervention — antibiotics alone fail",
+      "Mortality 30–50% in cirrhotics",
+      "Risk: liver disease, hemochromatosis, immunocompromise",
+      "Saltwater wounds + cirrhosis = high suspicion",
+    ],
+  },
+  {
+    id: "aeromonas",
+    name: "Aeromonas Wound Infection",
+    category: "skin",
+    indication: "Cellulitis or necrotizing infection after freshwater/soil exposure (also leech therapy)",
+    firstLine: [
+      { name: "Ciprofloxacin", dose: "400 mg IV / 500 mg PO BID" },
+      { name: "TMP-SMX", dose: "1–2 DS PO BID" },
+      { name: "Doxycycline", dose: "100 mg PO BID" },
+    ],
+    alternatives: [
+      { name: "Ceftriaxone", dose: "1–2g IV q24h" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", note: "Polymicrobial nec fasc concern" },
+    ],
+    duration: "7–14 days (longer for necrotizing)",
+    pearls: [
+      "Resistant to ampicillin and many cephalosporins (AmpC)",
+      "Necrotizing fasciitis association — surgical debridement",
+      "Consider with freshwater drowning, leech use, fish handling",
+    ],
+  },
+  {
+    id: "erysipelothrix",
+    name: "Erysipelothrix Infection (Erysipeloid)",
+    category: "skin",
+    indication: "Violaceous, well-demarcated cellulitis after fish/shellfish/meat exposure (butchers, fishermen)",
+    firstLine: [
+      { name: "Penicillin V", dose: "500 mg PO QID × 7 days", note: "Localized" },
+      { name: "Penicillin G", dose: "2–4 million units IV q4–6h", note: "Systemic / endocarditis" },
+    ],
+    alternatives: [
+      { name: "Ciprofloxacin", dose: "500 mg PO BID × 7 days" },
+      { name: "Ceftriaxone", dose: "1–2g IV daily" },
+      { name: "Clindamycin", dose: "300 mg PO TID", note: "PCN allergy" },
+    ],
+    duration: "7 days localized; 4–6 weeks endocarditis",
+    pearls: [
+      "Resistant to vancomycin — important pitfall",
+      "Endocarditis (esp. aortic) — high mortality if missed",
+      "Lesions violaceous, painful, rarely suppurate",
+    ],
+  },
+
+  // ── TOXIN-MEDIATED / SPECIAL PATHOGENS ──────────────────────────────────
+  {
+    id: "botulism",
+    name: "Botulism",
+    category: "sepsis",
+    indication: "Descending symmetric flaccid paralysis with cranial nerve palsies; foodborne, wound, infant, iatrogenic",
+    firstLine: [
+      { name: "Equine antitoxin (HBAT)", dose: "1 vial IV ×1", note: "Adult/peds non-infant — call CDC" },
+      { name: "BabyBIG (human botulism IG)", note: "Infant botulism — California IDPH" },
+    ],
+    alternatives: [
+      { name: "Penicillin G or Metronidazole", note: "Wound botulism only — debride" },
+      { name: "Avoid aminoglycosides", note: "Worsen NM blockade" },
+    ],
+    duration: "Antitoxin single dose; supportive care prolonged (weeks–months)",
+    pearls: [
+      "Supportive care = mainstay — intubate early for vital capacity decline",
+      "Antitoxin halts progression; does not reverse paralysis",
+      "Do NOT give antibiotics in foodborne or infant botulism (toxin release with bacterial lysis)",
+      "Notify public health and CDC (770-488-7100, 24/7) immediately",
+    ],
+  },
+  {
+    id: "diphtheria",
+    name: "Diphtheria",
+    category: "ent",
+    indication: "Pseudomembranous pharyngitis ± cutaneous; bull neck; unvaccinated, travel-associated",
+    firstLine: [
+      { name: "Diphtheria antitoxin (DAT)", dose: "20,000–120,000 units IM/IV (CDC)", note: "Most important — call CDC" },
+      { name: "Erythromycin", dose: "500 mg PO/IV QID × 14 days", pedsDose: "40–50 mg/kg/day div" },
+      { name: "Penicillin G", dose: "Procaine 600,000 units IM q12h × 14 days" },
+    ],
+    alternatives: [
+      { name: "Azithromycin", dose: "500 mg PO daily × 14 days" },
+    ],
+    duration: "14 days antibiotics; antitoxin single course",
+    pearls: [
+      "Antitoxin neutralizes circulating toxin only — give before lab confirmation",
+      "Droplet precautions until 2 negative cultures 24h apart post-treatment",
+      "Myocarditis, neuropathy from toxin — even after acute infection",
+      "Notify public health, CDC immediately",
+    ],
+  },
+  {
+    id: "tetanus",
+    name: "Tetanus",
+    category: "skin",
+    indication: "Trismus, risus sardonicus, opisthotonos, autonomic instability — wound (clean or contaminated)",
+    firstLine: [
+      { name: "Human tetanus immune globulin (TIG)", dose: "3,000–6,000 units IM ×1 (infiltrate around wound)", note: "Most important — neutralizes unbound toxin" },
+      { name: "Metronidazole", dose: "500 mg IV q6–8h × 7–10 days", pedsDose: "30 mg/kg/day div" },
+    ],
+    alternatives: [
+      { name: "Penicillin G", dose: "2–4 million units IV q4–6h", note: "Alternative; metronidazole now preferred" },
+      { name: "Doxycycline", dose: "100 mg IV/PO BID", note: "PCN allergy" },
+    ],
+    duration: "Antibiotics 7–10 days; supportive care often weeks",
+    pearls: [
+      "Supportive care: debridement, ICU, sedation, magnesium for autonomic instability, NM blockade if severe",
+      "TIG separate from Td/Tdap — both given (different sites)",
+      "Survivors require active immunization — disease does not confer immunity",
+      "Generalized: mortality ~10% with intensive care",
+    ],
+  },
+
+  // ── TRAVEL / GLOBAL ID ──────────────────────────────────────────────────
+  {
+    id: "typhoid",
+    name: "Typhoid / Paratyphoid Fever",
+    category: "gi",
+    indication: "Salmonella Typhi or Paratyphi — fever, abdominal pain, rose spots, relative bradycardia; travel to endemic areas",
+    firstLine: [
+      { name: "Ceftriaxone", dose: "2g IV q24h × 10–14 days", pedsDose: "75 mg/kg IV daily (max 2g)" },
+      { name: "Azithromycin", dose: "1g PO ×1, then 500 mg daily × 5–7 days", note: "Uncomplicated, MDR / XDR strains" },
+    ],
+    alternatives: [
+      { name: "Ciprofloxacin", dose: "500 mg PO / 400 mg IV BID × 7–10 days", note: "Only if susceptible — South Asia widely resistant" },
+      { name: "Meropenem", dose: "1g IV q8h", note: "XDR (Pakistan, Iraq) — combine with azithromycin" },
+    ],
+    duration: "10–14 days (5–7 days for azithromycin in uncomplicated)",
+    pearls: [
+      "South Asia and parts of Africa — assume FQ resistance",
+      "XDR S. Typhi (Pakistan): ceftriaxone-resistant — carbapenem + azithromycin",
+      "Add dexamethasone (3 mg/kg load, then 1 mg/kg q6h × 8 doses) for severe (shock, AMS)",
+      "Public health reportable",
+    ],
+  },
+  {
+    id: "cholera",
+    name: "Cholera (Vibrio cholerae)",
+    category: "gi",
+    indication: "Profuse rice-water diarrhea, dehydration; travel/outbreak setting",
+    firstLine: [
+      { name: "Doxycycline", dose: "300 mg PO ×1", pedsDose: "2–4 mg/kg ×1 (max 300 mg)" },
+      { name: "Azithromycin", dose: "1g PO ×1", pedsDose: "20 mg/kg PO ×1 (max 1g)", note: "Pregnancy, peds" },
+    ],
+    alternatives: [
+      { name: "Ciprofloxacin", dose: "1g PO ×1", note: "Per local susceptibility" },
+    ],
+    duration: "Single dose typically sufficient",
+    pearls: [
+      "Aggressive ORS or IV fluids = mainstay; antibiotics shorten illness",
+      "Antibiotics indicated for severe dehydration only",
+      "Public health reportable; outbreak control essential",
+    ],
+  },
+  {
+    id: "melioidosis",
+    name: "Melioidosis (Burkholderia pseudomallei)",
+    category: "sepsis",
+    indication: "SE Asia / N. Australia exposure (soil, water); pneumonia, sepsis, abscess; diabetics at high risk",
+    firstLine: [
+      { name: "Ceftazidime", dose: "2g IV q6h × ≥10–14 days (intensive phase)", pedsDose: "50 mg/kg IV q6h" },
+      { name: "Meropenem", dose: "1g IV q8h × ≥10–14 days", note: "Severe, neuromelioidosis, septic shock" },
+    ],
+    alternatives: [
+      { name: "TMP-SMX", dose: "1600/320 mg PO BID × ≥3 months (eradication phase)", note: "± folic acid" },
+      { name: "Doxycycline", dose: "100 mg PO BID × 3 months", note: "Eradication alternative" },
+    ],
+    duration: "Intensive: 10–14 days IV (longer if abscess/CNS); Eradication: 3–6 months PO",
+    pearls: [
+      "Intrinsic resistance — gent, aminopenicillins ineffective",
+      "Relapse common — eradication phase mandatory",
+      "Always check for visceral abscesses (CT chest/abdomen)",
+      "Lab biohazard (BSL-3) — alert microbiology",
+    ],
+  },
+  {
+    id: "relapsing-fever",
+    name: "Relapsing Fever (Borrelia)",
+    category: "tickborne",
+    indication: "Recurrent febrile episodes with afebrile intervals; tick-borne (B. hermsii) or louse-borne (B. recurrentis)",
+    firstLine: [
+      { name: "Doxycycline", dose: "100 mg PO BID × 7–10 days" },
+      { name: "Tetracycline", dose: "500 mg PO QID × 7–10 days" },
+    ],
+    alternatives: [
+      { name: "Erythromycin", dose: "500 mg PO QID × 7–10 days", note: "Pregnancy, peds <8" },
+      { name: "Ceftriaxone", dose: "2g IV daily × 10–14 days", note: "CNS involvement" },
+      { name: "Penicillin G", dose: "Single dose 600k units IM (louse-borne)" },
+    ],
+    duration: "7–10 days (single dose may suffice for louse-borne)",
+    pearls: [
+      "Jarisch-Herxheimer reaction is severe — monitor closely after first dose",
+      "Single dose preferred over multi-day for louse-borne (less Herx)",
+      "Public health reportable",
+    ],
+  },
+  {
+    id: "q-fever",
+    name: "Q Fever (Coxiella burnetii)",
+    category: "tickborne",
+    indication: "Atypical pneumonia, granulomatous hepatitis, culture-negative endocarditis; livestock/parturient animal exposure",
+    firstLine: [
+      { name: "Doxycycline", dose: "100 mg PO BID × 14 days (acute)" },
+    ],
+    alternatives: [
+      { name: "Doxycycline + Hydroxychloroquine", dose: "100 mg BID + 200 mg TID × ≥18 months", note: "Chronic Q fever / endocarditis" },
+      { name: "Moxifloxacin or TMP-SMX", note: "Alternatives or pregnancy" },
+    ],
+    duration: "Acute: 14 days; Endocarditis/chronic: 18–24 months",
+    pearls: [
+      "Endocarditis is most feared chronic form — culture-negative",
+      "Pregnancy: TMP-SMX preferred — avoid doxy",
+      "Check serology (IgG phase I and II) for diagnosis and chronicity",
+      "Lab biohazard (BSL-3) — bioterror agent; report to public health",
+    ],
+  },
+  {
+    id: "rickettsialpox",
+    name: "Rickettsialpox",
+    category: "tickborne",
+    indication: "Mite-borne Rickettsia akari — eschar at bite site, fever, papulovesicular rash; urban (mouse mites)",
+    firstLine: [
+      { name: "Doxycycline", dose: "100 mg PO BID × 7 days (or until 2–3 days afebrile)" },
+    ],
+    alternatives: [
+      { name: "Chloramphenicol", note: "Pregnancy or doxy intolerance — rarely used" },
+    ],
+    duration: "5–7 days (or 2–3 days post-defervescence)",
+    pearls: [
+      "Self-limited but doxy hastens recovery",
+      "Eschar at mite bite site — distinguishes from chickenpox",
+      "Often reported in NYC / urban settings — mouse-associated",
+    ],
+  },
+
+  // ── ANTIVIRAL ───────────────────────────────────────────────────────────
+  {
+    id: "zoster-ophthalmicus",
+    name: "Herpes Zoster Ophthalmicus",
+    category: "viral",
+    indication: "VZV reactivation in V1 distribution — Hutchinson sign (nasociliary involvement) raises ocular risk",
+    firstLine: [
+      { name: "Valacyclovir", dose: "1g PO TID × 7–10 days" },
+      { name: "Acyclovir", dose: "800 mg PO 5×/day × 7–10 days OR 10 mg/kg IV q8h if severe" },
+    ],
+    alternatives: [
+      { name: "Famciclovir", dose: "500 mg PO TID × 7–10 days" },
+    ],
+    duration: "7–10 days (start within 72h of rash for max benefit)",
+    pearls: [
+      "Urgent ophthalmology — slit lamp, fluorescein, IOP",
+      "Add topical steroid (prescribed by ophthalmology) for keratitis/uveitis",
+      "Hutchinson sign → high risk for ocular involvement",
+      "Postherpetic neuralgia common — pre-emptive analgesia, gabapentin",
+    ],
+  },
+  {
+    id: "varicella",
+    name: "Varicella (Chickenpox)",
+    category: "viral",
+    indication: "Primary VZV — fever, generalized vesicular rash; treat adults, immunocompromised, pregnant, severe peds",
+    firstLine: [
+      { name: "Valacyclovir", dose: "1g PO TID × 5–7 days", note: "Healthy adults if within 24h of rash" },
+      { name: "Acyclovir", dose: "10 mg/kg IV q8h × 7–10 days", note: "Immunocompromised, severe, pregnant" },
+    ],
+    alternatives: [
+      { name: "Famciclovir", dose: "500 mg PO TID × 7 days" },
+      { name: "VZIG", note: "Post-exposure: pregnant, immunocompromised, neonate" },
+    ],
+    duration: "5–10 days",
+    pearls: [
+      "Healthy children — usually no antiviral; supportive care",
+      "Airborne + contact precautions until lesions crusted",
+      "Risk groups need treatment — pneumonia, hepatitis, encephalitis",
+      "Aspirin contraindicated — Reye's syndrome",
+    ],
+  },
+  {
+    id: "hsv-keratitis",
+    name: "HSV Keratitis",
+    category: "viral",
+    indication: "Dendritic ulcer on fluorescein — unilateral red painful eye, decreased vision",
+    firstLine: [
+      { name: "Trifluridine 1% (topical)", dose: "1 drop q2h while awake (max 9/day) × 7–14 days" },
+      { name: "Ganciclovir gel 0.15% (topical)", dose: "1 drop 5×/day until reepithelialized, then TID × 7d" },
+      { name: "Oral acyclovir", dose: "400 mg PO 5×/day × 7–10 days", note: "Stromal disease" },
+    ],
+    alternatives: [
+      { name: "Valacyclovir", dose: "500 mg PO TID × 7–10 days" },
+    ],
+    duration: "7–14 days; chronic suppression in recurrent disease",
+    pearls: [
+      "Urgent ophthalmology — slit lamp confirms dendrites",
+      "AVOID topical steroids in epithelial HSV — worsens disease",
+      "Stromal/disciform — combine antiviral + topical steroid (ophtho only)",
+      "Recurrence common — long-term oral suppression option",
+    ],
+  },
+  {
+    id: "hbv-pep",
+    name: "HBV Post-Exposure Prophylaxis",
+    category: "viral",
+    indication: "Percutaneous, mucosal, or sexual exposure to HBV-positive or unknown source",
+    firstLine: [
+      { name: "HBIG", dose: "0.06 mL/kg IM ×1 (within 24h, ≤7 days)", note: "Source HBsAg+ and exposed unvaccinated/non-responder" },
+      { name: "HBV vaccine series", note: "Initiate or complete; coadminister with HBIG (different sites)" },
+    ],
+    alternatives: [
+      { name: "Vaccine alone", note: "Source HBsAg- or low risk; vaccinated responders need no PEP" },
+    ],
+    duration: "HBIG single dose; vaccine 3-dose series 0/1/6 months",
+    pearls: [
+      "Test exposed: anti-HBs (immune status); source: HBsAg",
+      "Start within 24h ideal — efficacy diminishes after 7 days",
+      "Vaccinated responder (anti-HBs ≥10): no action needed",
+      "Non-responder + HBsAg+ source: HBIG ×2 doses 1 month apart",
+    ],
+  },
+  {
+    id: "hsv-disseminated",
+    name: "Disseminated / Neonatal HSV",
+    category: "viral",
+    indication: "Neonatal HSV (SEM, CNS, or disseminated) or disseminated HSV in immunocompromised",
+    firstLine: [
+      { name: "Acyclovir", dose: "20 mg/kg IV q8h (neonate)", pedsDose: "20 mg/kg IV q8h × 14 days (SEM) or 21 days (CNS/disseminated)" },
+    ],
+    alternatives: [
+      { name: "Foscarnet", dose: "40 mg/kg IV q8h", note: "Acyclovir-resistant HSV (immunocompromised)" },
+    ],
+    duration: "Neonatal SEM: 14 days; CNS/disseminated: 21 days; adult dissem: 14–21 days",
+    pearls: [
+      "Send HSV PCR (CSF, blood, surface), LFTs, CBC; LP for CNS",
+      "Suppression with PO acyclovir × 6 months reduces neonatal CNS recurrence",
+      "Empiric coverage in any neonate with sepsis-like illness ± seizures + low platelets, transaminitis",
+    ],
+  },
+  {
+    id: "vzv-severe",
+    name: "Severe VZV (Encephalitis / Vasculopathy / Disseminated)",
+    category: "viral",
+    indication: "VZV CNS or disseminated — encephalitis, myelitis, stroke (vasculopathy), pneumonitis, multi-dermatomal",
+    firstLine: [
+      { name: "Acyclovir", dose: "10–15 mg/kg IV q8h × 14–21 days" },
+    ],
+    alternatives: [
+      { name: "Foscarnet", dose: "40 mg/kg IV q8h", note: "Acyclovir resistance" },
+      { name: "Add steroids", note: "VZV vasculopathy — coordinate with neurology/ID" },
+    ],
+    duration: "14–21 days IV (vasculopathy may need longer + repeat course)",
+    pearls: [
+      "VZV vasculopathy — large or small vessel; check CSF VZV PCR + anti-VZV IgG/serum ratio",
+      "MRI/MRA brain; treat for stroke etiology if VZV confirmed",
+      "Adjust IV dose for renal function; monitor crystalluria — hydrate",
+    ],
+  },
+  {
+    id: "cmv-end-organ",
+    name: "CMV End-Organ Disease (Retinitis / Colitis / Esophagitis)",
+    category: "viral",
+    indication: "Severe CMV in immunocompromised (HIV with low CD4, transplant) — retinitis, GI, esophagitis",
+    firstLine: [
+      { name: "Ganciclovir", dose: "5 mg/kg IV q12h × 14–21 days (induction), then 5 mg/kg daily (maintenance)" },
+      { name: "Valganciclovir", dose: "900 mg PO BID × 21 days, then 900 mg daily", note: "Oral alternative for less severe" },
+    ],
+    alternatives: [
+      { name: "Foscarnet", dose: "60 mg/kg IV q8h or 90 mg/kg q12h", note: "Ganciclovir resistance / cytopenia" },
+      { name: "Cidofovir", dose: "5 mg/kg IV weekly ×2, then q2 weeks", note: "Salvage; pre/post-hydrate + probenecid" },
+      { name: "Intravitreal ganciclovir/foscarnet", note: "Sight-threatening retinitis — combine with systemic" },
+    ],
+    duration: "Induction 14–21 days, then maintenance until immune reconstitution",
+    pearls: [
+      "Immune reconstitution: ART for HIV; reduce immunosuppression for transplant",
+      "Retinitis: dilated fundoscopy by ophtho; treat ASAP — sight-threatening",
+      "Monitor CMV viral load; ganciclovir → marrow suppression",
+      "Rule out IRIS in HIV with rapid CD4 recovery",
+    ],
+  },
+  {
+    id: "mpox-severe",
+    name: "Severe Mpox",
+    category: "viral",
+    indication: "Severe mpox (Clade I or II) — extensive rash, mucosal/ocular, immunocompromised, pregnant, severe pain",
+    firstLine: [
+      { name: "Tecovirimat (TPOXX)", dose: "600 mg PO BID × 14 days (≥40 kg)", pedsDose: "Weight-based (CDC)", note: "EA-IND in US" },
+    ],
+    alternatives: [
+      { name: "Brincidofovir", note: "Severe / failure — limited supply" },
+      { name: "Vaccinia immune globulin (VIGIV)", note: "Severe / immunocompromised, may add to tecovirimat" },
+    ],
+    duration: "14 days (longer for severe / immunocompromised)",
+    pearls: [
+      "Coordinate with state public health; CDC consult for tecovirimat access",
+      "Contact + droplet (airborne for procedures) until all lesions resolved",
+      "Pain control often requires opioids — proctitis, oropharyngeal disease",
+      "Test for HIV, syphilis, GC/CT — frequent co-infection",
+    ],
+  },
+  {
+    id: "viral-hemorrhagic-fever",
+    name: "Viral Hemorrhagic Fever (Ebola / Marburg)",
+    category: "viral",
+    indication: "Filovirus — fever, GI symptoms, hemorrhage, shock; epidemic exposure or contact with confirmed case",
+    firstLine: [
+      { name: "Inmazeb (REGN-EB3)", note: "Ebola Zaire — monoclonal antibody cocktail" },
+      { name: "Ebanga (ansuvimab)", note: "Ebola Zaire — single mAb" },
+    ],
+    alternatives: [
+      { name: "Marburg: no licensed therapy", note: "Supportive; investigational mAbs and remdesivir per protocol" },
+      { name: "Aggressive supportive care", note: "Fluids, electrolytes, pressors, blood products" },
+    ],
+    duration: "Per protocol; supportive care for duration of illness",
+    pearls: [
+      "BSL-4 pathogens — strict isolation, specialized facility, PPE",
+      "Notify state public health, CDC EOC (770-488-7100) immediately",
+      "Lab samples handled per CDC Category A guidance",
+      "Differential: malaria, typhoid, leptospirosis, rickettsiosis — rule out concurrently",
+    ],
+  },
+  {
+    id: "severe-adenovirus",
+    name: "Severe Adenovirus (Immunocompromised)",
+    category: "viral",
+    indication: "Disseminated adenovirus in HSCT or solid organ transplant — pneumonitis, hepatitis, hemorrhagic cystitis, GI",
+    firstLine: [
+      { name: "Cidofovir", dose: "5 mg/kg IV weekly ×2, then q2 weeks (or 1 mg/kg 3×/week)", note: "Pre/post hydrate + probenecid" },
+      { name: "Brincidofovir", note: "Investigational; better tolerated; preferred when available" },
+    ],
+    alternatives: [
+      { name: "Reduce immunosuppression", note: "Cornerstone — coordinate with transplant team" },
+      { name: "Adenovirus-specific T cells", note: "Specialized centers" },
+    ],
+    duration: "Variable — until viral load undetectable + clinical resolution",
+    pearls: [
+      "Quantitative blood adenovirus PCR for monitoring",
+      "Cidofovir nephrotoxic — rigorous hydration, probenecid mandatory",
+      "Mortality very high in HSCT — early aggressive treatment essential",
+    ],
+  },
+
+  // ── ANTIFUNGAL ──────────────────────────────────────────────────────────
+  {
+    id: "oral-candidiasis",
+    name: "Oral Candidiasis (Thrush)",
+    category: "fungal",
+    indication: "White plaques on tongue/buccal mucosa; immunocompromised, infants, ICS users, denture wearers",
+    firstLine: [
+      { name: "Nystatin suspension", dose: "400,000–600,000 units PO QID × 7–14 days (swish & swallow)", pedsDose: "200,000 units QID" },
+      { name: "Clotrimazole troches", dose: "10 mg PO 5×/day × 7–14 days" },
+      { name: "Fluconazole", dose: "200 mg PO ×1, then 100–200 mg daily × 7–14 days", note: "Moderate–severe, HIV" },
+    ],
+    alternatives: [
+      { name: "Itraconazole solution", dose: "200 mg PO daily × 14 days", note: "Fluconazole-refractory" },
+      { name: "Posaconazole", dose: "400 mg PO BID day 1, then 400 mg daily", note: "Refractory" },
+    ],
+    duration: "7–14 days",
+    pearls: [
+      "Always evaluate underlying immunosuppression — test for HIV if no obvious cause",
+      "Denture wearers: disinfect dentures + treat oral cavity",
+      "Esophageal symptoms (odynophagia) → empiric fluconazole + endoscopy if no response",
+    ],
+  },
+  {
+    id: "candida-uti",
+    name: "Candida Urinary Tract Infection",
+    category: "fungal",
+    indication: "Symptomatic candiduria (cystitis, pyelo) or asymptomatic in high-risk (neutropenic, neonate, pre-urology)",
+    firstLine: [
+      { name: "Fluconazole", dose: "200 mg PO/IV daily × 14 days (cystitis); 200–400 mg × 14 days (pyelo)" },
+    ],
+    alternatives: [
+      { name: "Amphotericin B deoxycholate", dose: "0.3–0.6 mg/kg IV daily × 1–7 days", note: "Fluconazole-resistant (C. glabrata, krusei)" },
+      { name: "Flucytosine", dose: "25 mg/kg PO QID × 7–10 days", note: "Adjunct for resistant Candida" },
+    ],
+    duration: "Cystitis 14 days; pyelonephritis 14 days; fungus ball — antifungals + surgical removal",
+    pearls: [
+      "Asymptomatic candiduria: usually no treatment — remove catheter",
+      "Treat: symptomatic, neutropenic, low birth weight neonate, before urologic procedure",
+      "Echinocandins poorly excreted in urine — not preferred",
+      "Bladder washout with amphotericin largely abandoned",
+    ],
+  },
+  {
+    id: "fungal-peritonitis",
+    name: "Fungal Peritonitis",
+    category: "fungal",
+    indication: "Candida peritonitis — secondary (perforation/anastomotic leak) or PD-associated",
+    firstLine: [
+      { name: "Echinocandin (caspofungin/micafungin)", dose: "70 mg IV ×1 → 50 mg daily (caspo); 100 mg IV daily (mica)" },
+      { name: "Fluconazole", dose: "800 mg IV ×1, then 400 mg IV daily", note: "Stable, no recent azole exposure" },
+    ],
+    alternatives: [
+      { name: "Liposomal amphotericin B", dose: "3–5 mg/kg IV daily", note: "Severe, refractory, CNS involvement" },
+    ],
+    duration: "14 days post source control / catheter removal (PD)",
+    pearls: [
+      "PD-associated: REMOVE catheter promptly",
+      "Source control essential — surgical or IR drainage",
+      "Echinocandins penetrate peritoneum well; fluconazole if susceptible isolate",
+      "Cover Candida empirically in recurrent perforation, immunocompromise, recent broad-spectrum antibiotics",
+    ],
+  },
+  {
+    id: "tinea",
+    name: "Tinea (Corporis / Cruris / Pedis)",
+    category: "fungal",
+    indication: "Dermatophyte skin infection — annular scaly plaques (corporis), groin (cruris), interdigital/moccasin (pedis)",
+    firstLine: [
+      { name: "Topical terbinafine 1%", dose: "Apply BID × 1–2 weeks (corporis/cruris); 1–4 weeks (pedis)" },
+      { name: "Topical clotrimazole 1%", dose: "Apply BID × 2–4 weeks" },
+    ],
+    alternatives: [
+      { name: "Oral terbinafine", dose: "250 mg PO daily × 2–4 weeks", note: "Extensive, refractory, or moccasin tinea pedis" },
+      { name: "Oral itraconazole", dose: "200 mg PO daily × 1–2 weeks", note: "Alternative oral" },
+      { name: "Oral griseofulvin", dose: "500 mg PO daily × 4–8 weeks", note: "Tinea capitis (peds preferred)" },
+    ],
+    duration: "Topical: 2–4 weeks; Oral: 2–4 weeks (longer for nail/scalp)",
+    pearls: [
+      "Tinea capitis or onychomycosis — ORAL therapy required",
+      "Avoid combo steroid+antifungal creams (clotrimazole-betamethasone) — worsen, recur",
+      "Confirm with KOH / fungal culture if uncertain",
+      "Examine feet in tinea cruris — common reservoir",
+    ],
+  },
+  {
+    id: "otomycosis",
+    name: "Otomycosis",
+    category: "fungal",
+    indication: "Fungal otitis externa — pruritus, debris, often Aspergillus or Candida",
+    firstLine: [
+      { name: "Cleaning + topical clotrimazole 1% solution", dose: "5 drops BID × 7–14 days" },
+      { name: "Topical acetic acid 2%", dose: "5 drops TID × 7 days", note: "Adjunct or alternative" },
+    ],
+    alternatives: [
+      { name: "Topical ciclopirox 0.77%", dose: "BID × 14 days" },
+      { name: "Oral itraconazole or voriconazole", note: "Refractory or invasive (rare immunocompromised)" },
+    ],
+    duration: "7–14 days topical",
+    pearls: [
+      "Microsuction/aural toilet by ENT removes fungal mass — antifungal works after",
+      "Avoid aminoglycoside drops — promote fungal overgrowth",
+      "Diabetics and immunocompromised — rule out malignant/invasive otitis externa",
+      "Aspergillus niger most common — visible black spores",
+    ],
+  },
+  {
+    id: "aspergillosis",
+    name: "Invasive Pulmonary Aspergillosis / Tracheobronchitis",
+    category: "fungal",
+    indication: "Invasive aspergillosis in immunocompromised — neutropenic, transplant, severe COVID/influenza",
+    firstLine: [
+      { name: "Voriconazole", dose: "6 mg/kg IV q12h ×2 (load), then 4 mg/kg IV q12h or 200 mg PO BID", note: "Therapeutic level 1–5.5 mg/L" },
+      { name: "Isavuconazole", dose: "200 mg IV/PO q8h × 6 doses (load), then 200 mg daily", note: "Equivalent efficacy; fewer interactions" },
+    ],
+    alternatives: [
+      { name: "Liposomal amphotericin B", dose: "3–5 mg/kg IV daily", note: "Voriconazole intolerance / mucormycosis concern" },
+      { name: "Posaconazole", dose: "300 mg IV/PO BID day 1, then 300 mg daily", note: "Salvage / step-down" },
+      { name: "Add echinocandin", note: "Salvage combination — caspofungin or micafungin" },
+    ],
+    duration: "≥6–12 weeks (until immune recovery, lesion resolution)",
+    pearls: [
+      "Galactomannan and beta-D-glucan support diagnosis",
+      "CT chest: halo sign (early), air crescent (late)",
+      "Voriconazole many drug interactions (CYP3A4) — esp. tacrolimus, sirolimus",
+      "Tracheobronchitis: bronchoscopy + nebulized amphotericin adjunct",
+    ],
+  },
+  {
+    id: "histoplasmosis",
+    name: "Severe / Disseminated Histoplasmosis",
+    category: "fungal",
+    indication: "Severe pulmonary or disseminated — immunocompromised, AIDS, endemic exposure (Ohio/Mississippi valleys)",
+    firstLine: [
+      { name: "Liposomal amphotericin B", dose: "3 mg/kg IV daily × 1–2 weeks (induction)" },
+      { name: "Itraconazole", dose: "200 mg PO TID × 3 days, then 200 mg PO BID × ≥12 months", note: "Step-down / mild" },
+    ],
+    alternatives: [
+      { name: "Itraconazole alone", dose: "200 mg PO BID × ≥12 months", note: "Mild–moderate disease" },
+      { name: "Posaconazole or voriconazole", note: "Salvage" },
+    ],
+    duration: "Severe: AmB 1–2 wks, then itra ≥12 months; Mild: itra ≥6–12 months",
+    pearls: [
+      "Check itraconazole levels — variable absorption",
+      "Suppression for AIDS until CD4 >150 ×6 months on ART",
+      "Histo urine + serum antigen — sensitive for diagnosis",
+      "Add steroids for severe ARDS-pattern pulmonary histoplasmosis",
+    ],
+  },
+  {
+    id: "blastomycosis",
+    name: "Blastomycosis",
+    category: "fungal",
+    indication: "Pulmonary, cutaneous, or disseminated Blastomyces dermatitidis — endemic Midwest, Great Lakes, southeast US",
+    firstLine: [
+      { name: "Liposomal amphotericin B", dose: "3–5 mg/kg IV daily × 1–2 weeks", note: "Severe, CNS, or disseminated" },
+      { name: "Itraconazole", dose: "200 mg PO TID × 3 days, then 200 mg PO BID × 6–12 months", note: "Step-down / mild–moderate" },
+    ],
+    alternatives: [
+      { name: "Voriconazole or fluconazole (high dose)", note: "CNS disease — better CNS penetration" },
+    ],
+    duration: "Pulmonary mild: 6–12 months itra; Severe: AmB 1–2 wks → itra ≥12 months; CNS: ≥12 months",
+    pearls: [
+      "Cutaneous lesions ulcerative/verrucous — biopsy diagnostic",
+      "ARDS-form pulmonary blasto — high mortality; AmB",
+      "Pregnancy: AmB only (azoles teratogenic)",
+      "Verify itraconazole levels (random > 1 mg/L)",
+    ],
+  },
+  {
+    id: "coccidioidomycosis",
+    name: "Severe / Disseminated Coccidioidomycosis (incl. Meningitis)",
+    category: "fungal",
+    indication: "Severe pulmonary, disseminated, or meningeal cocci — endemic SW US; immunocompromised, pregnant, ethnic risk",
+    firstLine: [
+      { name: "Fluconazole", dose: "400–800 mg PO/IV daily (severe) or 800 mg daily (meningitis — lifelong)" },
+      { name: "Liposomal amphotericin B", dose: "3–5 mg/kg IV daily", note: "Severe or refractory; pregnancy" },
+    ],
+    alternatives: [
+      { name: "Itraconazole", dose: "200 mg PO BID-TID", note: "Bone/joint disease" },
+      { name: "Voriconazole or posaconazole", note: "Refractory disseminated" },
+      { name: "Intrathecal AmB", note: "Meningitis salvage" },
+    ],
+    duration: "Severe pulmonary: 3–6 mo min; Disseminated: ≥12 mo; Meningitis: LIFELONG",
+    pearls: [
+      "Meningitis treatment is LIFELONG — relapse uniform if stopped",
+      "Pregnancy: AmB only (azoles teratogenic)",
+      "Hydrocephalus common in meningitis — VP shunt often required",
+      "Eosinophilia + erythema nodosum + travel to SW US = consider",
+    ],
+  },
+  {
+    id: "fungal-endophthalmitis",
+    name: "Fungal Endophthalmitis",
+    category: "fungal",
+    indication: "Intraocular fungal infection — endogenous (candidemia) or exogenous (post-surgical, trauma, intravitreal injection)",
+    firstLine: [
+      { name: "Voriconazole", dose: "6 mg/kg IV q12h ×2, then 4 mg/kg IV q12h" },
+      { name: "Intravitreal voriconazole or amphotericin B", note: "By ophthalmology — sight-threatening" },
+    ],
+    alternatives: [
+      { name: "Liposomal amphotericin B", dose: "3–5 mg/kg IV daily" },
+      { name: "Fluconazole 400–800 mg daily", note: "Susceptible Candida only" },
+      { name: "Vitrectomy", note: "Vitreous involvement / refractory" },
+    ],
+    duration: "4–6 weeks minimum; longer if vitreous or refractory",
+    pearls: [
+      "Dilated fundoscopy in EVERY candidemia patient — at diagnosis + 2 weeks",
+      "Endogenous: Candida most common; Aspergillus in IVDU",
+      "Vitrectomy + intravitreal antifungal for vitritis",
+      "Voriconazole has best ocular penetration among azoles",
+    ],
+  },
+  {
+    id: "fungal-keratitis",
+    name: "Fungal Keratitis",
+    category: "fungal",
+    indication: "Corneal fungal infection — Fusarium (contact lens), Aspergillus, Candida; trauma with vegetation in tropics",
+    firstLine: [
+      { name: "Topical natamycin 5%", dose: "1 drop q1h while awake × 1 week, then taper", note: "First-line for filamentous (Fusarium, Aspergillus)" },
+      { name: "Topical voriconazole 1%", dose: "1 drop q1h", note: "Alternative or refractory; better for Aspergillus/Candida" },
+    ],
+    alternatives: [
+      { name: "Oral voriconazole", dose: "200 mg PO BID", note: "Severe / deep stromal" },
+      { name: "Intrastromal/intracameral voriconazole", note: "By ophthalmology — refractory" },
+      { name: "Therapeutic keratoplasty", note: "Salvage" },
+    ],
+    duration: "Topical ≥6–12 weeks; PO 6–12 weeks for severe",
+    pearls: [
+      "Urgent corneal scraping for KOH, Gram, fungal culture before therapy",
+      "Avoid topical steroids — accelerate disease",
+      "Contact lens wearers — Fusarium most common",
+      "Confocal microscopy can confirm filaments",
+    ],
+  },
+  {
+    id: "fusariosis",
+    name: "Disseminated Fusariosis",
+    category: "fungal",
+    indication: "Invasive Fusarium in profoundly immunocompromised — fungemia, skin nodules, sinopulmonary; neutropenic hosts",
+    firstLine: [
+      { name: "Voriconazole", dose: "6 mg/kg IV q12h ×2, then 4 mg/kg IV q12h" },
+      { name: "Liposomal amphotericin B", dose: "5 mg/kg IV daily" },
+      { name: "Combination", note: "Voriconazole + ampho or echinocandin in salvage" },
+    ],
+    alternatives: [
+      { name: "Posaconazole", dose: "300 mg IV/PO BID day 1, then 300 mg daily", note: "Salvage" },
+      { name: "Isavuconazole", dose: "Standard dosing", note: "Limited data" },
+    ],
+    duration: "≥6–12 weeks; until immune recovery and lesion resolution",
+    pearls: [
+      "Resistant to many antifungals — combination often needed",
+      "Skin nodules (often nail-source) → biopsy / culture rapidly",
+      "Recovery from neutropenia critical — G-CSF/GM-CSF",
+      "High mortality — early ID/heme involvement",
+    ],
+  },
+  {
+    id: "scedosporium",
+    name: "Scedosporium / Lomentospora Infection",
+    category: "fungal",
+    indication: "Scedosporium apiospermum / Lomentospora prolificans — near-drowning, immunocompromised; pulmonary, CNS, disseminated",
+    firstLine: [
+      { name: "Voriconazole", dose: "6 mg/kg IV q12h ×2, then 4 mg/kg IV q12h", note: "Best evidence for S. apiospermum" },
+    ],
+    alternatives: [
+      { name: "Posaconazole or isavuconazole", note: "Alternatives" },
+      { name: "Combination antifungals + surgery", note: "L. prolificans often pan-resistant — salvage" },
+      { name: "Olorofim", note: "Investigational; Scedosporium activity" },
+    ],
+    duration: "Until immune recovery and source resolved (often months)",
+    pearls: [
+      "AMPHOTERICIN B INEFFECTIVE — do not use empirically",
+      "L. prolificans: extremely poor prognosis — combo therapy + surgical debridement",
+      "Near-drowning aspirations — consider in post-drowning pneumonia",
+      "Send susceptibilities — tailored therapy essential",
+    ],
+  },
+  {
+    id: "malassezia-fungemia",
+    name: "Malassezia Fungemia",
+    category: "fungal",
+    indication: "Catheter-associated fungemia in patients on lipid-containing TPN, esp. neonates / immunocompromised",
+    firstLine: [
+      { name: "Remove catheter", note: "Cornerstone of therapy" },
+      { name: "Liposomal amphotericin B", dose: "3–5 mg/kg IV daily × 1–2 weeks (or until clearance)" },
+      { name: "Hold lipid infusions", note: "Lipid-dependent organism" },
+    ],
+    alternatives: [
+      { name: "Fluconazole", dose: "6–12 mg/kg/day IV/PO", note: "Variable activity — confirm susceptibility" },
+      { name: "Voriconazole", note: "Some isolates resistant to fluconazole" },
+    ],
+    duration: "≥14 days from first negative culture",
+    pearls: [
+      "Requires SPECIAL MEDIA (olive oil overlay) — alert lab if suspected",
+      "Catheter removal + stop lipids = often curative",
+      "Echinocandins poorly active — avoid as monotherapy",
+      "Skin colonizer normally — pathogenic in TPN-dependent hosts",
+    ],
+  },
+
+  // ── ANTIPARASITIC ───────────────────────────────────────────────────────
+  {
+    id: "pediculosis",
+    name: "Pediculosis (Lice)",
+    category: "parasitic",
+    indication: "Head, body, or pubic lice — pruritus, nits visible on hair shafts",
+    firstLine: [
+      { name: "Permethrin 1% cream rinse", dose: "Apply ×10 min, rinse; repeat in 7–10 days" },
+      { name: "Topical ivermectin 0.5% lotion", dose: "Apply ×10 min ×1 (no repeat needed)" },
+    ],
+    alternatives: [
+      { name: "Malathion 0.5% lotion", dose: "Apply 8–12h ×1; repeat at 7–9 days" },
+      { name: "Spinosad 0.9% suspension", dose: "Apply ×10 min ×1" },
+      { name: "Oral ivermectin", dose: "200–400 mcg/kg PO ×1; repeat in 7–10 days", note: "Resistance, severe" },
+    ],
+    duration: "Topical single application + repeat at 7–10 days; oral as above",
+    pearls: [
+      "Wet combing alone effective for some — reduces resistance pressure",
+      "Wash linens, towels in hot water; bag non-washables ×2 weeks",
+      "Treat all close contacts simultaneously",
+      "Public lice → screen for STIs",
+    ],
+  },
+  {
+    id: "cutaneous-larva-migrans",
+    name: "Cutaneous Larva Migrans",
+    category: "parasitic",
+    indication: "Serpiginous, pruritic skin track from hookworm larvae (Ancylostoma); beach/sand exposure in tropics",
+    firstLine: [
+      { name: "Ivermectin", dose: "200 mcg/kg PO ×1 (may repeat)" },
+      { name: "Albendazole", dose: "400 mg PO daily × 3–7 days" },
+    ],
+    alternatives: [
+      { name: "Topical thiabendazole 10–15%", note: "Localized lesion" },
+    ],
+    duration: "Single dose ivermectin or 3–7 days albendazole",
+    pearls: [
+      "Self-limited but treatment shortens course and relieves pruritus",
+      "Warn travelers — protective footwear on beaches (Caribbean, SE Asia)",
+    ],
+  },
+  {
+    id: "toxoplasmosis",
+    name: "Toxoplasmosis",
+    category: "parasitic",
+    indication: "Toxoplasmic encephalitis (HIV/CD4 <100), congenital, ocular, or severe immunocompromise",
+    firstLine: [
+      { name: "Pyrimethamine + Sulfadiazine + Leucovorin", dose: "Pyr 200 mg PO ×1 then 50–75 mg daily; Sulfa 1.0–1.5g PO QID; Leuco 10–25 mg PO daily" },
+    ],
+    alternatives: [
+      { name: "TMP-SMX", dose: "5 mg/kg TMP IV/PO BID", note: "Equivalent in CNS toxo; preferred when pyrimethamine unavailable" },
+      { name: "Pyrimethamine + Clindamycin + Leucovorin", note: "Sulfa allergy" },
+      { name: "Atovaquone", dose: "1.5g PO BID", note: "Salvage / sulfa intolerance" },
+    ],
+    duration: "≥6 weeks acute; chronic suppression in HIV until CD4 >200 ×6 months",
+    pearls: [
+      "AIDS + ring-enhancing lesion → empiric toxo, expect response in 2 weeks",
+      "Brain biopsy if no response by 14 days",
+      "Pregnancy: spiramycin (early) → pyrimethamine-sulfa after 18 weeks; consult MFM/ID",
+      "Initiate ART per HIV guidelines — IRIS risk",
+    ],
+  },
+  {
+    id: "cryptosporidiosis",
+    name: "Cryptosporidiosis",
+    category: "parasitic",
+    indication: "Persistent watery diarrhea — immunocompetent (self-limited) or AIDS / immunocompromised (severe, prolonged)",
+    firstLine: [
+      { name: "Nitazoxanide", dose: "500 mg PO BID × 3 days", pedsDose: "100 mg BID (1–3 yo); 200 mg BID (4–11 yo) × 3 days", note: "Immunocompetent" },
+      { name: "ART + Nitazoxanide", note: "AIDS — restoring immunity is most important" },
+    ],
+    alternatives: [
+      { name: "Paromomycin", dose: "500 mg PO QID", note: "Adjunct — limited efficacy" },
+    ],
+    duration: "3 days (immunocompetent); prolonged courses in AIDS until CD4 >100",
+    pearls: [
+      "Bovine contact and waterborne — pool/farm exposure",
+      "AFB-stained stool or PCR for diagnosis",
+      "Contact precautions in healthcare; chlorine-resistant — boiled/filtered water",
+      "Untreated AIDS: severe wasting, biliary disease",
+    ],
+  },
+  {
+    id: "amebic-colitis",
+    name: "Amebic Colitis",
+    category: "parasitic",
+    indication: "E. histolytica colitis — bloody diarrhea, abdominal pain; travel/endemic exposure",
+    firstLine: [
+      { name: "Metronidazole", dose: "750 mg PO TID × 7–10 days", pedsDose: "35–50 mg/kg/day div TID" },
+      { name: "Paromomycin", dose: "25–35 mg/kg/day PO div TID × 7 days", note: "Luminal eradication — REQUIRED after metronidazole" },
+    ],
+    alternatives: [
+      { name: "Tinidazole", dose: "2g PO daily × 3–5 days", note: "Better tolerated than metronidazole" },
+      { name: "Diloxanide furoate or iodoquinol", note: "Alternative luminal agents" },
+    ],
+    duration: "Tissue: 7–10 days; Luminal: 7 days (sequential)",
+    pearls: [
+      "ALWAYS follow with luminal agent — eradicate cysts to prevent recurrence",
+      "Distinguish from non-pathogenic E. dispar (PCR or antigen)",
+      "Stool O&P low sensitivity — antigen or PCR preferred",
+      "Avoid steroids — fulminant colitis can mimic UC",
+    ],
+  },
+  {
+    id: "amebic-liver-abscess",
+    name: "Amebic Liver Abscess",
+    category: "parasitic",
+    indication: "Solitary right lobe abscess; fever, RUQ pain; travel to endemic area; serology positive",
+    firstLine: [
+      { name: "Metronidazole", dose: "750 mg PO/IV TID × 7–10 days" },
+      { name: "Paromomycin", dose: "25–35 mg/kg/day PO div TID × 7 days", note: "Luminal eradication after metronidazole" },
+    ],
+    alternatives: [
+      { name: "Tinidazole", dose: "2g PO daily × 3–5 days" },
+    ],
+    duration: "Tissue: 7–10 days; Luminal: 7 days (sequential)",
+    pearls: [
+      "Drainage usually NOT needed — antibiotics alone resolve >90%",
+      "Drain if: large abscess, left lobe (rupture into pericardium risk), no response in 5–7 days, secondary bacterial infection",
+      "Serology nearly 100% sensitive — confirm diagnosis",
+      "Pyogenic abscess differential — culture aspirate if drained",
+    ],
+  },
+  {
+    id: "strongyloidiasis",
+    name: "Strongyloidiasis (incl. Hyperinfection)",
+    category: "parasitic",
+    indication: "Strongyloides stercoralis — chronic abdominal/skin (eosinophilia) or hyperinfection with steroids/HTLV-1",
+    firstLine: [
+      { name: "Ivermectin", dose: "200 mcg/kg PO daily × 1–2 days (uncomplicated); daily until 2 weeks of negative stools (hyperinfection)" },
+    ],
+    alternatives: [
+      { name: "Albendazole", dose: "400 mg PO BID × 7 days", note: "Less effective; alternative" },
+      { name: "Subcutaneous ivermectin", note: "Hyperinfection / severe; veterinary formulation under FDA EA-IND" },
+    ],
+    duration: "Uncomplicated: 1–2 days; Hyperinfection: until negative stool ×2 weeks",
+    pearls: [
+      "SCREEN BEFORE STEROIDS or chemo in at-risk (lived in endemic area) — fatal hyperinfection risk",
+      "Hyperinfection: GN bacteremia/meningitis (gut translocation) — add broad antibiotics",
+      "Eosinophilia may be absent in hyperinfection — does not exclude",
+      "Reduce/stop immunosuppression if possible",
+    ],
+  },
+  {
+    id: "neurocysticercosis",
+    name: "Neurocysticercosis",
+    category: "parasitic",
+    indication: "Taenia solium CNS cysts — seizures, hydrocephalus; pork exposure / endemic Latin America, Africa, Asia",
+    firstLine: [
+      { name: "Albendazole", dose: "15 mg/kg/day PO div BID × 10–14 days (max 1.2g/day)" },
+      { name: "Praziquantel", dose: "50 mg/kg/day PO div TID × 10–14 days", note: "Add to albendazole for ≥2 viable cysts" },
+      { name: "Dexamethasone or prednisone", note: "Co-administer to reduce inflammation" },
+    ],
+    alternatives: [
+      { name: "Anti-epileptics", note: "AEDs as needed for seizures" },
+      { name: "Surgical / VP shunt", note: "Hydrocephalus — neurosurgical" },
+    ],
+    duration: "10–14 days antiparasitic; steroids tapered over weeks",
+    pearls: [
+      "Calcified cysts — no antiparasitic; treat seizures only",
+      "Active cysts + edema — antiparasitic + steroid",
+      "Ocular or spinal cysts — surgical first; antiparasitic precipitates inflammation",
+      "Screen family / household for Taenia carriage",
+    ],
+  },
+  {
+    id: "chagas",
+    name: "Chagas Disease (T. cruzi)",
+    category: "parasitic",
+    indication: "Acute, congenital, reactivation, or chronic indeterminate Chagas; endemic Latin America",
+    firstLine: [
+      { name: "Benznidazole", dose: "5–7 mg/kg/day PO div BID × 60 days", pedsDose: "5–10 mg/kg/day div BID × 60 days" },
+      { name: "Nifurtimox", dose: "8–10 mg/kg/day PO div TID × 60–90 days", note: "Alternative; more side effects" },
+    ],
+    alternatives: [
+      { name: "Symptomatic / cardiac care", note: "Established cardiomyopathy — antiparasitic less effective" },
+    ],
+    duration: "60 days benznidazole; 60–90 days nifurtimox",
+    pearls: [
+      "Acute, congenital, reactivation: treat all",
+      "Chronic indeterminate or early cardiac: treat in adults <50 (BENEFIT trial — nuanced)",
+      "Reactivation in HIV / transplant — high parasitemia, severe",
+      "Drug accessed via CDC in US",
+    ],
+  },
+  {
+    id: "leishmaniasis",
+    name: "Leishmaniasis (Cutaneous / Mucosal / Visceral)",
+    category: "parasitic",
+    indication: "Cutaneous (CL), mucocutaneous (MCL), or visceral (kala-azar/VL); travel to Mediterranean, ME, S. Asia, S. America",
+    firstLine: [
+      { name: "Liposomal amphotericin B", dose: "VL: 3 mg/kg IV days 1–5, 14, 21 (immunocompetent); CL/MCL: 3 mg/kg IV ×7 doses" },
+      { name: "Miltefosine", dose: "2.5 mg/kg/day PO div BID × 28 days (max 50 mg BID)", note: "Approved for L. donovani VL, L. braziliensis MCL" },
+    ],
+    alternatives: [
+      { name: "Sodium stibogluconate (pentavalent antimonial)", note: "Historic standard; CDC access" },
+      { name: "Pentamidine", note: "Cutaneous; salvage VL" },
+      { name: "Cryotherapy / paromomycin topical", note: "Localized CL of low complexity" },
+    ],
+    duration: "VL: 5–10 days liposomal AmB; CL/MCL: 7+ days IV or 28 days miltefosine",
+    pearls: [
+      "Species, region, host immune status all dictate regimen — coordinate with CDC / tropical medicine",
+      "Visceral: hepatosplenomegaly, pancytopenia, cachexia",
+      "Mucosal: months/years after CL — destructive nasal/oral",
+      "HIV co-infection: poor response, relapse common",
+    ],
+  },
+  {
+    id: "schistosomiasis",
+    name: "Schistosomiasis (incl. Katayama Fever)",
+    category: "parasitic",
+    indication: "Acute (Katayama) or chronic (hepatic, urinary, intestinal); freshwater exposure",
+    firstLine: [
+      { name: "Praziquantel", dose: "40 mg/kg PO ×1 (S. mansoni, haematobium); 60 mg/kg div BID × 1 day (S. japonicum)" },
+    ],
+    alternatives: [
+      { name: "Steroids + delayed praziquantel", note: "Acute Katayama — steroids first, PZQ 4–6 wks later" },
+      { name: "Oxamniquine", note: "S. mansoni — limited availability" },
+    ],
+    duration: "Single dose praziquantel (or one day for japonicum)",
+    pearls: [
+      "Praziquantel only kills mature worms — give at 6–8 weeks post-exposure or repeat",
+      "Acute Katayama: prednisone 20–40 mg/day × 5 days, then delayed PZQ",
+      "Neuroschistosomiasis: PZQ + steroids + neurosurgery if needed",
+      "Endemic in sub-Saharan Africa, parts of S. America, ME, China",
+    ],
+  },
+  {
+    id: "african-trypanosomiasis",
+    name: "African Trypanosomiasis (Sleeping Sickness)",
+    category: "parasitic",
+    indication: "T. brucei gambiense (W/Central Africa) or rhodesiense (E. Africa) — chancre, hemolymphatic, then CNS",
+    firstLine: [
+      { name: "Fexinidazole", dose: "PO daily × 10 days (weight-based)", note: "T.b. gambiense — first-line for hemolymphatic and 1st-stage CNS" },
+      { name: "Pentamidine", dose: "4 mg/kg IM/IV daily × 7 days", note: "T.b. gambiense early stage" },
+      { name: "Suramin", note: "T.b. rhodesiense early stage" },
+    ],
+    alternatives: [
+      { name: "NECT (nifurtimox-eflornithine combination)", note: "Late-stage T.b. gambiense" },
+      { name: "Melarsoprol", note: "Late-stage T.b. rhodesiense — toxic, 5% mortality" },
+    ],
+    duration: "10 days fexinidazole; varies by stage / drug",
+    pearls: [
+      "LP REQUIRED for staging — CSF WBC and trypanosomes",
+      "Stage determines drug — different toxicity/efficacy",
+      "CDC consult for medication access",
+      "T.b. rhodesiense more acute, often fatal; T.b. gambiense indolent",
+    ],
+  },
+  {
+    id: "naegleria",
+    name: "Primary Amebic Meningoencephalitis (Naegleria)",
+    category: "parasitic",
+    indication: "Naegleria fowleri PAM — fulminant meningoencephalitis after warm freshwater nasal exposure",
+    firstLine: [
+      { name: "Amphotericin B (IV + intrathecal)", dose: "1.5 mg/kg/day IV ×3 days then 1 mg/kg/day; IT 1.5 mg q24h then qod" },
+      { name: "Miltefosine", dose: "50 mg PO TID (≥45 kg) or 2.5 mg/kg/day div BID (peds) × 28 days" },
+      { name: "Add: Rifampin, Fluconazole, Azithromycin, Dexamethasone", note: "CDC-recommended combination protocol" },
+    ],
+    alternatives: [
+      { name: "Therapeutic hypothermia (32–34°C)", note: "Considered adjunct" },
+    ],
+    duration: "≥28 days combination therapy",
+    pearls: [
+      "Mortality >97% — rare survivors received early aggressive combo with miltefosine",
+      "Call CDC EOC (770-488-7100, 24/7) — drug access",
+      "Wet mount of fresh CSF shows motile trophozoites — DO NOT REFRIGERATE specimen",
+      "Differentiate from bacterial meningitis — neutrophilic CSF, low glucose mimics",
+    ],
+  },
+  {
+    id: "acanthamoeba-keratitis",
+    name: "Acanthamoeba Keratitis",
+    category: "parasitic",
+    indication: "Severe corneal infection — contact lens wear (esp. tap-water exposure), trauma; pain out of proportion, ring infiltrate",
+    firstLine: [
+      { name: "Topical PHMB (polyhexamethylene biguanide) 0.02%", dose: "1 drop q1h × 48–72h, then taper", note: "± topical chlorhexidine 0.02%" },
+      { name: "Topical chlorhexidine 0.02%", dose: "1 drop q1h" },
+      { name: "Topical propamidine 0.1% or hexamidine 0.1%", note: "Combination with biguanide" },
+    ],
+    alternatives: [
+      { name: "Oral miltefosine", note: "Severe / refractory" },
+      { name: "Therapeutic keratoplasty", note: "Salvage" },
+    ],
+    duration: "≥6–12 months topical (long course)",
+    pearls: [
+      "Ophthalmology / cornea specialist immediately — sight-threatening",
+      "Confocal microscopy / corneal culture (non-nutrient agar with E. coli overlay) confirm",
+      "Contact lens hygiene history critical — tap water rinsing typical",
+      "Slow response — treatment is months",
+    ],
+  },
+  {
+    id: "baylisascaris",
+    name: "Baylisascaris Larva Migrans",
+    category: "parasitic",
+    indication: "Raccoon roundworm visceral/neural/ocular larva migrans — encephalitis (rare, often fatal)",
+    firstLine: [
+      { name: "Albendazole", dose: "25–50 mg/kg/day PO × 10–20 days (or longer)" },
+      { name: "Steroids", note: "High-dose to control inflammation" },
+    ],
+    alternatives: [
+      { name: "Mebendazole or ivermectin", note: "Limited evidence" },
+    ],
+    duration: "20+ days plus steroid taper",
+    pearls: [
+      "Pediatric pica + raccoon latrine exposure → high suspicion",
+      "Ocular larva migrans — laser photocoagulation if visible",
+      "Serology via CDC; treatment must be early — neuro damage often irreversible",
+    ],
+  },
+  {
+    id: "echinococcosis",
+    name: "Echinococcosis / Hydatid Disease",
+    category: "parasitic",
+    indication: "Liver, lung, brain cysts from E. granulosus (cystic) or E. multilocularis (alveolar); endemic exposure",
+    firstLine: [
+      { name: "Albendazole", dose: "10–15 mg/kg/day PO div BID with fatty meal × ≥3–6 months (cystic) or ≥2 years (alveolar)" },
+    ],
+    alternatives: [
+      { name: "Praziquantel", dose: "40 mg/kg/day PO", note: "Add to albendazole perioperatively" },
+      { name: "PAIR (Puncture-Aspiration-Injection-Reaspiration)", note: "Hepatic cysts — alternative to surgery" },
+      { name: "Surgical resection", note: "Large or symptomatic cysts" },
+    ],
+    duration: "Cystic: 3–6 months; Alveolar: ≥2 years (often lifelong)",
+    pearls: [
+      "Anaphylaxis risk on cyst rupture — never aspirate without preparation",
+      "Albendazole 4 days pre-PAIR/surgery + ≥1 month post",
+      "Alveolar (E. multilocularis) — locally invasive, 'cancer-like' — aggressive surgery + lifelong albendazole",
+      "CT/MRI characterizes cysts; serology supports",
+    ],
+  },
+];

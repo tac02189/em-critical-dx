@@ -1,10 +1,10 @@
 {
-  "name": "EM Critical Dx",
-  "short_name": "EM Crit Dx",
-  "description": "EM bedside reference for rare critical diagnoses.",
+  "name": "Pocket Resus",
+  "short_name": "Pocket Resus",
+  "description": "Bedside emergency medicine reference for critical diagnoses, antibiotics, and drips.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#000000",
   "theme_color": "#0a0a0a",
   "orientation": "portrait",
   "icons": [

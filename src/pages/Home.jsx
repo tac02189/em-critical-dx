@@ -1,224 +1,176 @@
-import { useEffect, useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, Search, Star, X } from "lucide-react";
-import Header from "../components/Header";
-import DiagnosisCard from "../components/DiagnosisCard";
-import { DIAGNOSES } from "../data/diagnoses";
-import { CATEGORIES } from "../data/categories";
-import { useStarred } from "../hooks/useStarred";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { AlertTriangle, Pill, Droplets, Syringe } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
+import { useThemeCtx } from "../App";
+
+const SECTIONS = [
+  {
+    path: "/critical-dx",
+    icon: AlertTriangle,
+    label: "Critical Diagnoses",
+    description: "Rare emergencies with time-critical treatments",
+    color: "#fca5a5",
+    accent: "rgba(252,165,165,0.12)",
+    border: "rgba(252,165,165,0.25)",
+  },
+  {
+    path: "/antibiotics",
+    icon: Pill,
+    label: "Antibiotics",
+    description: "Empiric coverage by syndrome and organism",
+    color: "#86efac",
+    accent: "rgba(134,239,172,0.12)",
+    border: "rgba(134,239,172,0.25)",
+  },
+  {
+    path: "/drips",
+    icon: Droplets,
+    label: "Continuous Drips",
+    description: "Vasopressors, sedation, and infusion dosing",
+    color: "#7dd3fc",
+    accent: "rgba(125,211,252,0.12)",
+    border: "rgba(125,211,252,0.25)",
+  },
+  {
+    path: "/dx/anticoagulation-reversal",
+    icon: Syringe,
+    label: "Anticoagulation Reversal",
+    description: "Emergent reversal of warfarin, DOACs, and heparin",
+    color: "#f472b6",
+    accent: "rgba(244,114,182,0.12)",
+    border: "rgba(244,114,182,0.25)",
+  },
+];
 
 export default function Home() {
-  const { isStarred, toggle } = useStarred();
-  const [query, setQuery] = useState("");
-  const [activeCat, setActiveCat] = useState(null);
-  const [starsOnly, setStarsOnly] = useState(false);
-  const [collapsedCats, setCollapsedCats] = useState(new Set());
-
-  // Auto-expand everything when filters/search are active
-  useEffect(() => {
-    setCollapsedCats(new Set());
-  }, [query, activeCat, starsOnly]);
-
-  function toggleCollapse(catId) {
-    setCollapsedCats((prev) => {
-      const next = new Set(prev);
-      next.has(catId) ? next.delete(catId) : next.add(catId);
-      return next;
-    });
-  }
-
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return DIAGNOSES.filter((dx) => {
-      if (starsOnly && !isStarred(dx.id)) return false;
-      if (activeCat && dx.category !== activeCat) return false;
-      if (q) return dx.name.toLowerCase().includes(q) || (dx.subtitle ?? "").toLowerCase().includes(q);
-      return true;
-    });
-  }, [query, activeCat, starsOnly, isStarred]);
-
-  const grouped = useMemo(() => {
-    const map = {};
-    CATEGORIES.forEach((c) => { map[c.id] = []; });
-    filtered.forEach((dx) => { if (map[dx.category]) map[dx.category].push(dx); });
-    return CATEGORIES.filter((c) => map[c.id].length > 0).map((c) => ({ cat: c, items: map[c.id] }));
-  }, [filtered]);
+  const navigate = useNavigate();
+  const { theme, toggle } = useThemeCtx();
+  const isDark = theme === "dark";
 
   return (
-    <div className="flex flex-col min-h-screen" style={{ background: "var(--bg)" }}>
-      <Header title="Critical Diagnoses" subtitle="Emergency Medicine" />
-
-      {/* Sticky search + filters */}
-      <div
-        className="sticky z-20 px-3 pt-1 pb-2 flex flex-col gap-2"
+    <div
+      className="flex flex-col min-h-screen"
+      style={{ background: "var(--bg)" }}
+    >
+      {/* Header */}
+      <header
+        className="sticky top-0 z-30 px-4 py-3 flex items-center justify-between"
         style={{
-          top: "calc(64px + env(safe-area-inset-top, 0px))",
-          background: "var(--bg)",
+          background: "var(--header-bg)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
           borderBottom: "1px solid var(--border-subtle)",
+          paddingTop: "calc(0.75rem + env(safe-area-inset-top, 0px))",
         }}
       >
-        <div
-          className="flex items-center gap-2 rounded-lg px-2.5"
-          style={{ background: "var(--bg-input)", border: "1px solid var(--border)", height: 36 }}
-        >
-          <Search size={14} className="shrink-0" style={{ color: "var(--text-faint)" }} />
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search diagnoses…"
-            className="flex-1 bg-transparent outline-none"
-            style={{ fontSize: 13, color: "var(--text-primary)", caretColor: "#F1B82D" }}
+        <div>
+          <p
+            className="font-display"
+            style={{
+              fontSize: 26,
+              fontWeight: 700,
+              letterSpacing: "0.04em",
+              color: "var(--text-primary)",
+              lineHeight: 1,
+            }}
+          >
+            POCKET RESUS
+          </p>
+          <div style={{ height: 2, width: 84, background: "#c1272d", marginTop: 5 }} />
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span
+            className="shimmer-dot w-1.5 h-1.5 rounded-full"
+            style={{ background: "#F1B82D", display: "inline-block" }}
           />
-          {query && (
-            <button onClick={() => setQuery("")} style={{ color: "var(--text-faint)" }}>
-              <X size={13} />
-            </button>
-          )}
-        </div>
-
-        {/* Filter chips */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5" style={{ scrollbarWidth: "none" }}>
-          {/* Stars */}
-          <button
-            onClick={() => { setStarsOnly((v) => !v); setActiveCat(null); }}
-            className="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-full font-semibold transition-all"
+          <motion.button
+            whileTap={{ scale: 0.85 }}
+            onClick={toggle}
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            className="flex items-center justify-center rounded-full"
             style={{
-              fontSize: 11,
-              background: starsOnly ? "rgba(241,184,45,0.15)" : "var(--bg-subtle)",
-              border: starsOnly ? "1px solid rgba(241,184,45,0.4)" : "1px solid var(--border-mid)",
-              color: starsOnly ? "#F1B82D" : "var(--text-muted)",
+              width: 34, height: 34,
+              background: "var(--bg-subtle)",
+              border: "1px solid var(--border-mid)",
+              color: isDark ? "#F1B82D" : "#6b7280",
             }}
           >
-            <Star size={11} fill={starsOnly ? "#F1B82D" : "none"} />
-            Starred
-          </button>
-
-          {/* All */}
-          <button
-            onClick={() => { setActiveCat(null); setStarsOnly(false); }}
-            className="shrink-0 px-2.5 py-1 rounded-full font-semibold transition-all"
-            style={{
-              fontSize: 11,
-              background: activeCat === null && !starsOnly ? "#F1B82D" : "var(--bg-subtle)",
-              border: activeCat === null && !starsOnly ? "1px solid #F1B82D" : "1px solid var(--border-mid)",
-              color: activeCat === null && !starsOnly ? "#0a0a0a" : "var(--text-muted)",
-            }}
-          >
-            All
-          </button>
-
-          {CATEGORIES.map((c) => {
-            const active = activeCat === c.id;
-            return (
-              <button
-                key={c.id}
-                onClick={() => { setActiveCat(active ? null : c.id); setStarsOnly(false); }}
-                className="shrink-0 px-2.5 py-1 rounded-full font-semibold transition-all"
-                style={{
-                  fontSize: 11,
-                  background: active ? `${c.color}22` : "var(--bg-subtle)",
-                  border: active ? `1px solid ${c.color}55` : "1px solid var(--border-mid)",
-                  color: active ? c.color : "var(--text-muted)",
-                }}
-              >
-                {c.short}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Results */}
-      <div className="flex-1 px-4 pb-8 pt-2">
-        {grouped.length > 0 && (
-          <div className="flex justify-end pt-1 pb-0.5">
-            <button
-              onClick={() => {
-                const allCollapsed = grouped.every(({ cat }) => collapsedCats.has(cat.id));
-                setCollapsedCats(allCollapsed ? new Set() : new Set(grouped.map(({ cat }) => cat.id)));
-              }}
-              className="text-xs transition-colors"
-              style={{ color: "var(--text-faint)" }}
-              onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-muted)"}
-              onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-faint)"}
-            >
-              {grouped.every(({ cat }) => collapsedCats.has(cat.id)) ? "Expand all" : "Collapse all"}
-            </button>
-          </div>
-        )}
-        <AnimatePresence mode="popLayout">
-          {grouped.length === 0 ? (
             <motion.div
-              key="empty"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="flex flex-col items-center justify-center py-20 gap-3"
-              style={{ color: "var(--text-faint)" }}
+              key={theme}
+              initial={{ rotate: -30, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              transition={{ duration: 0.2 }}
             >
-              <Star size={32} strokeWidth={1.2} />
-              <p className="text-sm">
-                {starsOnly ? "No starred diagnoses yet." : "No results found."}
-              </p>
+              {isDark ? <Sun size={15} /> : <Moon size={15} />}
             </motion.div>
-          ) : (
-            grouped.map(({ cat, items }) => {
-              const isCollapsed = collapsedCats.has(cat.id);
-              return (
-                <motion.div key={cat.id} layout>
-                  {/* Category header — tappable accordion trigger */}
-                  <button
-                    onClick={() => toggleCollapse(cat.id)}
-                    className="w-full flex items-center gap-2 mb-3 mt-5 first:mt-1"
-                  >
-                    <div className="w-2 h-2 rounded-full shrink-0" style={{ background: cat.color }} />
-                    <span
-                      className="font-display font-semibold uppercase"
-                      style={{ fontSize: 11, color: cat.color, letterSpacing: "0.1em" }}
-                    >
-                      {cat.label}
-                    </span>
-                    <div className="flex-1 h-px" style={{ background: `${cat.color}22` }} />
-                    <span className="text-xs mr-1" style={{ color: "var(--text-dim)" }}>{items.length}</span>
-                    <motion.span
-                      animate={{ rotate: isCollapsed ? -90 : 0 }}
-                      transition={{ duration: 0.2 }}
-                      style={{ color: "var(--text-dim)", display: "flex" }}
-                    >
-                      <ChevronDown size={14} />
-                    </motion.span>
-                  </button>
+          </motion.button>
+        </div>
+      </header>
 
-                  {/* Collapsible cards */}
-                  <motion.div
-                    initial={false}
-                    animate={{ height: isCollapsed ? 0 : "auto", opacity: isCollapsed ? 0 : 1 }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                    style={{ overflow: "hidden" }}
-                  >
-                    <div className="grid grid-cols-2 gap-3 pb-1">
-                      <AnimatePresence mode="popLayout">
-                        {items.map((dx) => (
-                          <DiagnosisCard
-                            key={dx.id}
-                            dx={dx}
-                            isStarred={isStarred(dx.id)}
-                            onToggleStar={toggle}
-                          />
-                        ))}
-                      </AnimatePresence>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              );
-            })
-          )}
-        </AnimatePresence>
+      {/* Section cards */}
+      <div className="flex-1 flex flex-col gap-4 px-4 pt-6 pb-8">
+        {SECTIONS.map(({ path, icon: Icon, label, description, color, accent, border }) => (
+          <motion.button
+            key={path}
+            onClick={() => navigate(path)}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 350, damping: 28 }}
+            className="w-full text-left rounded-2xl flex items-center gap-4"
+            style={{
+              background: accent,
+              border: `1px solid ${border}`,
+              padding: "20px 20px",
+              minHeight: 88,
+            }}
+          >
+            <div
+              className="shrink-0 flex items-center justify-center rounded-xl"
+              style={{
+                width: 48, height: 48,
+                background: `${color}22`,
+                border: `1px solid ${color}44`,
+              }}
+            >
+              <Icon size={22} style={{ color }} strokeWidth={1.8} />
+            </div>
+
+            <div className="flex-1 min-w-0">
+              <p
+                className="font-display font-semibold"
+                style={{ fontSize: 17, color: "var(--text-primary)", letterSpacing: "0.01em" }}
+              >
+                {label}
+              </p>
+              <p
+                className="mt-0.5 leading-snug"
+                style={{ fontSize: 13, color: "var(--text-muted)" }}
+              >
+                {description}
+              </p>
+            </div>
+
+            <svg
+              width="16" height="16" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" strokeWidth="2"
+              strokeLinecap="round" strokeLinejoin="round"
+              style={{ color: "var(--text-dim)", flexShrink: 0 }}
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </motion.button>
+        ))}
       </div>
 
       <div
         className="px-4 py-3 text-center text-xs"
-        style={{ color: "var(--text-dim)", borderTop: "1px solid var(--border-subtle)", paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom, 0px))" }}
+        style={{
+          color: "var(--text-dim)",
+          borderTop: "1px solid var(--border-subtle)",
+          paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom, 0px))",
+        }}
       >
         For educational use only — verify all doses before clinical application.
       </div>
