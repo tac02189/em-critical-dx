@@ -5378,6 +5378,276 @@ export const DIAGNOSES = [
       },
     ],
   },
+
+  {
+    id: "lightning-strike",
+    name: "Lightning Strike",
+    subtitle: "Reverse triage — resuscitate the apneic/pulseless first",
+    category: "env",
+    tldr: [
+      {
+        heading: "Reverse triage",
+        items: [
+          "**Resuscitate the apneic/pulseless FIRST** — opposite of standard mass-casualty triage",
+          "Lightning arrest is usually primary asystole (often self-resolves) or hypoxic arrest from prolonged respiratory paralysis — both highly survivable with prompt CPR/ventilation",
+          "Living victims rarely deteriorate acutely; concentrate resources on those in arrest",
+        ],
+      },
+      {
+        heading: "Immediate ED actions",
+        items: [
+          "Standard ACLS — defibrillate VF/pVT; high-quality CPR; epinephrine per ACLS for asystole/PEA",
+          "C-spine precautions until cleared (blast/fall mechanism, opisthotonic contraction)",
+          "**Do NOT volume-load like high-voltage electrical** — deep tissue injury and rhabdo are uncommon; aggressive fluids worsen cerebral edema",
+          "`IVF`: titrate to UOP `0.5–1 mL/kg/h` adults (`1–2 mL/kg/h` pediatric); only escalate if true rhabdo, large burns, or crush component",
+          "Continuous cardiac monitoring **× 24 h** even if asymptomatic at presentation",
+        ],
+      },
+      {
+        heading: "Targeted exam",
+        items: [
+          "Full skin exam for **Lichtenberg figures** (pathognomonic fern/feather-like erythema; not true burns; fade within 24 h)",
+          "**TM exam** — rupture in ~50%; CSF otorrhea suggests basilar skull fracture",
+          "Neuro exam — document **keraunoparalysis** (transient cold, mottled, pulseless, paralyzed limbs that resolve over hours — do not mistake for compartment syndrome)",
+          "Ocular exam (acute corneal injury; cataracts develop weeks–years later — document baseline)",
+          "Look for entry/exit burns at contact points, especially under metal jewelry, zippers, watches",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "ECG + troponin, CBC, BMP, CK/myoglobin, UA (rhabdo screen), coags, lactate",
+          "CT head if AMS, LOC, focal deficit, seizure, or unwitnessed event",
+          "Skeletal imaging for fall/blast-mechanism injury",
+          "Pregnancy test in any female of reproductive age; fetal monitoring if pregnant",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Mechanisms of injury",
+        items: [
+          "**Direct strike** (3–5%): highest mortality; current passes through victim",
+          "**Contact** (3–5%): victim touching an object that is struck (tree, fence, phone, plumbing)",
+          "**Side flash / splash** (~30%): current jumps from primary target to nearby victim",
+          "**Ground current / step voltage** (~50%, most common): current spreads radially through earth; potential difference between feet drives current up one leg and down the other",
+          "**Upward streamer**: current rises from victim toward storm cloud without completing the main bolt",
+          "**Blunt / blast trauma**: shockwave from rapid air heating (thunder) — TM rupture, fractures, contusions, blown-off clothing",
+        ],
+      },
+      {
+        heading: "Why lightning ≠ high-voltage electrical injury",
+        items: [
+          "**Flashover phenomenon**: most current travels OVER the skin (in 1–2 ms), not through deep tissues → superficial burns, less internal injury",
+          "Rhabdomyolysis and compartment syndrome are **uncommon** (vs. routine in high-voltage AC)",
+          "Aggressive Parkland-style fluid resuscitation is NOT indicated and is harmful",
+          "Fasciotomy/amputation rarely needed",
+          "Different beast clinically — do not extrapolate from electrical-burn protocols",
+        ],
+      },
+      {
+        heading: "Cardiac effects",
+        items: [
+          "Massive DC countershock → simultaneous myocardial depolarization → **asystole**",
+          "Cardiac automaticity often resumes spontaneously within minutes",
+          "**Secondary arrest**: medullary respiratory center paralysis → prolonged apnea → hypoxic VF/asystole if no ventilation provided",
+          "Arrhythmias: sinus tach, AF, transient ST/T changes, prolonged QT; troponin elevation common but usually small",
+          "Stunned myocardium / takotsubo-pattern LV dysfunction reported — get an echo if hemodynamically unstable",
+        ],
+      },
+      {
+        heading: "Neurologic effects",
+        items: [
+          "**Keraunoparalysis (Charcot paralysis)**: transient cold, mottled, pulseless, often lower-extremity paralysis from autonomic dysregulation + vascular spasm — resolves over hours; do NOT mistake for compartment syndrome or arterial injury",
+          "LOC, amnesia, confusion, agitation are common acutely",
+          "Seizures, intracerebral or subarachnoid hemorrhage possible — low threshold for non-contrast CT head",
+          "**Delayed sequelae** ('post-lightning syndrome'): peripheral neuropathy, chronic pain, sleep disturbance, neurocognitive deficits, depression/PTSD",
+        ],
+      },
+      {
+        heading: "Cutaneous findings",
+        items: [
+          "**Lichtenberg figures**: pathognomonic ferning/feathering erythema from electron shower along skin; not true burns; fade within 24 h",
+          "Superficial linear / punctate burns at sweat lines or where metal jewelry/zippers/coins were worn",
+          "Full-thickness burns rare except at direct contact points",
+          "Clothing may be blown off — steam from instantaneous sweat vaporization",
+        ],
+      },
+      {
+        heading: "Other organ effects",
+        items: [
+          "**TM rupture in ~50%** — also ossicular disruption, basilar skull fracture, sensorineural hearing loss, vertigo",
+          "**Ocular**: corneal abrasion acutely; **cataracts in up to 6%** (weeks–years later — schedule ophthalmology follow-up)",
+          "Musculoskeletal: fractures/dislocations from opisthotonic contraction or fall (shoulder dislocations classic)",
+          "Pregnancy: fetal demise common with maternal cardiac arrest; otherwise often well-tolerated — fetal monitoring still indicated",
+        ],
+      },
+      {
+        heading: "Disposition",
+        items: [
+          "**Admit / telemetry × 24 h** if: any LOC, arrhythmia, abnormal ECG, burn, neuro deficit, persistent symptoms, pregnancy, or direct strike mechanism",
+          "Discharge possible if: brief witnessed strike, normal ECG, normal exam, no LOC, no neuro/cardiac symptoms, reliable follow-up",
+          "Outpatient follow-up: ophthalmology, audiology, neurology / PM&R for cognitive sequelae",
+          "Counsel about delayed symptoms — cataracts, neurocognitive deficits, chronic pain, PTSD",
+        ],
+      },
+      {
+        heading: "Prognosis & pearls",
+        items: [
+          "Overall mortality ~10% — far lower than high-voltage electrical",
+          "Cardiac arrest survival much higher than other arrest etiologies **if early CPR + ventilation** — this is the basis for reverse triage",
+          "Long-term morbidity (neurocognitive, chronic pain, PTSD) is significant in survivors — set expectations early",
+          "Lightning kills via cardiac/respiratory arrest, NOT burns — fluid and burn management are secondary considerations",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 217", "Davis et al, WMS Practice Guidelines (Wilderness Environ Med 2014)", "Cooper & Andrews, UpToDate: Environmental & weapon-related electrical injuries", "LITFL Lightning Injury"],
+      },
+    ],
+  },
+
+  {
+    id: "scuba-diving-injuries",
+    name: "Scuba Diving Injuries",
+    subtitle: "Decompression illness, AGE, barotrauma",
+    category: "env",
+    tldr: [
+      {
+        heading: "Recognize decompression illness (DCI)",
+        items: [
+          "**DCI = DCS + AGE** — treat the same in the ED; do not delay HBO to differentiate",
+          "**Any new neuro/cardiopulmonary symptom within 24 h of a dive is DCI until proven otherwise** — even 'just fatigue' or paresthesias",
+          "**AGE**: dramatic — LOC, stroke-like deficit, seizure within minutes of surfacing (pulmonary barotrauma → arterial gas)",
+          "**DCS Type I**: joint pain ('bends'), skin (cutis marmorata), lymphatic — usually delayed hours",
+          "**DCS Type II**: spinal cord (low back pain → paraplegia, urinary retention), brain, inner ear (vertigo, hearing loss), pulmonary ('chokes')",
+        ],
+      },
+      {
+        heading: "Immediate stabilization",
+        items: [
+          "**100% FiO₂ via non-rebreather at 15 L/min** — washes out nitrogen, accelerates bubble resorption; continue until HBO available",
+          "**Supine flat** — NOT Trendelenburg / NOT left lateral (Durant) — old teaching, now contraindicated (raises ICP, worsens cerebral edema)",
+          "`IVF`: NS or LR `1 L bolus` then maintenance — divers are dehydrated (immersion diuresis + nitrogen-induced osmotic shifts); target UOP `1–2 mL/kg/h`",
+          "Avoid PPV/intubation if possible (worsens pulmonary barotrauma); if needed, use lowest pressures and PEEP",
+          "Treat pneumothorax with finger thoracostomy / chest tube BEFORE recompression",
+        ],
+      },
+      {
+        heading: "Recompression / hyperbaric (HBO)",
+        items: [
+          "**DAN (Divers Alert Network) Emergency Hotline: +1-919-684-9111** — 24/7; coordinates chamber location and transfer",
+          "**US Navy Treatment Table 6** is standard for DCI — 100% O₂ at 2.8 ATA",
+          "Earlier HBO = better outcome but **benefit exists even days later** — never refuse transfer based on delay alone",
+          "**Transport: stay below 1000 ft (300 m) altitude** OR use pressurized aircraft maintained at sea-level cabin (1 atm) — unpressurized flight worsens bubbles",
+        ],
+      },
+      {
+        heading: "Targeted workup",
+        items: [
+          "Full neuro exam (incl. cerebellar, gait, sensation, **post-void residual / bladder scan** for spinal DCS)",
+          "CXR — pneumothorax, pneumomediastinum, subcutaneous emphysema (pulmonary barotrauma)",
+          "ECG, troponin (AGE can cause coronary embolism)",
+          "CBC, BMP, lactate, coags, CK; ABG if respiratory symptoms",
+          "CT chest if pulmonary barotrauma suspected; CT head before transfer if AMS / focal deficit (but **do not delay HBO** for routine imaging)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Physics & pathophysiology",
+        items: [
+          "**Boyle's law** (P × V = constant): gas in closed spaces expands on ascent → barotrauma (lung, ear, sinus, GI, mask, tooth)",
+          "**Henry's law**: dissolved gas (N₂) leaves solution when ambient pressure drops faster than off-gassing → bubble formation → DCS",
+          "Bubbles cause: mechanical obstruction (arterial, venous, lymphatic), endothelial injury, platelet activation, complement activation, inflammatory cascade",
+          "Risk factors: deep/long dives, rapid ascent, missed decompression stops, PFO (paradoxical arterial bubbles), dehydration, obesity, post-dive exercise, hot showers, flying after diving",
+        ],
+      },
+      {
+        heading: "Arterial gas embolism (AGE)",
+        items: [
+          "**Most lethal dive injury** — from pulmonary barotrauma; alveolar rupture → gas into pulmonary veins → systemic arterial circulation",
+          "Classic: panicked/rapid ascent with breath-holding (CESA gone wrong); can occur from as little as 1–2 m if breath held",
+          "**LOC or stroke-like deficit within 10 min of surfacing = AGE until proven otherwise**",
+          "Brain most affected (buoyant bubbles rise into cerebral circulation when supine/upright) — hemiplegia, aphasia, seizure, coma",
+          "Coronary embolism → ACS, arrest; spinal cord, retinal artery also possible",
+          "**HBO is definitive treatment** — even days later",
+        ],
+      },
+      {
+        heading: "Decompression sickness — Type I (mild)",
+        items: [
+          "**Musculoskeletal ('bends')**: deep, dull, poorly localized joint pain (shoulder, elbow, knee, hip); worse with movement; **relief with BP cuff inflation to 150–200 mmHg over joint** is classic but unreliable",
+          "**Cutaneous**: pruritus, mottled bluish-red rash (cutis marmorata) — often trunk; harbinger of more severe DCS",
+          "**Lymphatic**: localized swelling, peau d'orange",
+          "Onset: usually 1–6 h after surfacing; >90% within 24 h",
+          "Even Type I gets HBO — progression to Type II possible",
+        ],
+      },
+      {
+        heading: "Decompression sickness — Type II (serious)",
+        items: [
+          "**Spinal cord (most common Type II)**: low/mid back pain ('girdle pain'), ascending paresthesias, weakness → paraplegia, urinary retention; lower thoracic > cervical; **check post-void residual**",
+          "**Cerebral**: AMS, ataxia, visual changes, headache, seizure",
+          "**Inner ear ('staggers')**: vertigo, nausea, sensorineural hearing loss, tinnitus — must distinguish from inner-ear barotrauma (which contraindicates HBO unless treated)",
+          "**Pulmonary ('chokes')**: substernal chest pain, dry cough, dyspnea, hypoxia → cardiovascular collapse — venous gas overwhelming pulmonary circulation",
+          "Constitutional: profound fatigue is an early/sole symptom — take seriously",
+        ],
+      },
+      {
+        heading: "Pulmonary barotrauma",
+        items: [
+          "Mechanism: rapid ascent + breath-holding (or air-trapping from asthma/bullae) → alveolar overdistension and rupture",
+          "Spectrum: subcutaneous emphysema (neck crepitus, voice change) → pneumomediastinum (Hamman's crunch, retrosternal chest pain) → pneumothorax → **AGE**",
+          "Tension pneumothorax: needle/finger decompression then chest tube BEFORE recompression — pneumo will expand in chamber on decompression phase",
+          "Asthma and bullae are historical contraindications to diving — controversial currently, but increase risk",
+        ],
+      },
+      {
+        heading: "Middle ear & sinus squeeze (most common dive injury)",
+        items: [
+          "**Middle ear squeeze (barotitis media)**: failure to equalize during descent → TM retraction, hemorrhage, possible rupture — pain, hearing loss, vertigo, blood in ear",
+          "Tx: decongestants, analgesia, avoid diving until resolved; ENT follow-up if TM rupture",
+          "**Inner ear barotrauma**: forceful Valsalva → round/oval window rupture → SNHL, vertigo, tinnitus — **must distinguish from inner-ear DCS** (different treatments; inner-ear barotrauma is a contraindication to recompression unless surgically repaired)",
+          "**Sinus squeeze**: pain over affected sinus, epistaxis; conservative tx",
+          "**Mask / tooth / GI squeeze**: usually minor",
+        ],
+      },
+      {
+        heading: "Other diving injuries",
+        items: [
+          "**Nitrogen narcosis ('rapture of the deep')**: N₂ anesthetic effect at depth (>30 m) — euphoria, impaired judgment; resolves immediately on ascent; not an ED problem",
+          "**Oxygen toxicity (CNS)**: seizure from high pO₂ (tech/rebreather diving); resolves with surfacing; **VENTID** prodrome (Vision, Ears, Nausea, Twitching, Irritability, Dizziness)",
+          "**Immersion pulmonary edema (IPE)**: non-cardiogenic pulmonary edema from cold + exertion + negative-pressure breathing; presents as dyspnea/hemoptysis after dive; supportive care; recurrence common",
+          "**Drowning / near-drowning**: standard ARDS-style management; consider underlying medical cause (arrhythmia, MI, hypoglycemia, seizure, AGE)",
+          "**Marine envenomations**: see Envenomations entry",
+        ],
+      },
+      {
+        heading: "Disposition & transport",
+        items: [
+          "**All DCI → HBO chamber** via DAN coordination — even mild Type I, even delayed presentations",
+          "**Transport altitude < 1000 ft (300 m)** ground; pressurized aircraft at 1 atm cabin for air transport (military C-130 / specialized; commercial jets cabin = ~6000–8000 ft = unsafe)",
+          "Continue 100% O₂, IVF, supine throughout transport",
+          "**Post-HBO**: admit for observation; recurrence possible; arrange diving medicine follow-up; fit-to-dive evaluation before return to diving",
+          "Barotrauma without DCI: ENT follow-up; no diving until resolved + cleared",
+        ],
+      },
+      {
+        heading: "Prevention & post-dive rules",
+        items: [
+          "**No flying after diving**: 12 h after single no-decompression dive; 18 h after multiple/repetitive dives; 24+ h after any decompression dive (DAN guidelines)",
+          "Slow ascent (≤9 m/min) + safety stop (3–5 min at 5 m / 15 ft)",
+          "Hydration, avoid alcohol pre/post dive, avoid hot tubs immediately post-dive",
+          "PFO screening for unexplained / recurrent DCS",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 216", "Vann et al, Lancet 2011 (Decompression Illness)", "DAN Diving Emergency Procedures", "US Navy Diving Manual Rev 7", "LITFL Decompression Illness / Arterial Gas Embolism"],
+      },
+    ],
+  },
 ];
 
 export default DIAGNOSES;
