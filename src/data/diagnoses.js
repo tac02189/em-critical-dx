@@ -5648,6 +5648,5066 @@ export const DIAGNOSES = [
       },
     ],
   },
+
+  // ─── EXPANDED LIBRARY (v2.6) ──────────────────────────────────────────────
+{
+    id: "status-epilepticus",
+    name: "Status Epilepticus",
+    subtitle: "Continuous or recurrent seizures >5 min",
+    category: "neuro",
+    tldr: [
+      {
+        heading: "Time-based ladder (start the clock at seizure onset)",
+        items: [
+          "**0–5 min** — stabilize: airway/O₂, IV access, fingerstick glucose, continuous monitor, place in recovery position; **time the seizure**",
+          "**5 min = treat now** — give first-line benzodiazepine; do NOT wait for it to stop on its own",
+          "**20 min** — if still seizing, give a second-line agent (loading-dose AED)",
+          "**40 min** — refractory SE: intubate and start a continuous anesthetic infusion + continuous EEG",
+        ],
+      },
+      {
+        heading: "First-line — benzodiazepines (give a FULL dose)",
+        items: [
+          "**IV available**: `Lorazepam 0.1 mg/kg IV` (max `4 mg`/dose), may repeat ×1 at 5 min",
+          "**No IV access**: `Midazolam 10 mg IM` (≥40 kg) — per RAMPART, IM midazolam ≥ IV lorazepam for prehospital SE",
+          "Alternatives: `Diazepam 0.15–0.2 mg/kg IV` (max `10 mg`) or `Diazepam 0.5 mg/kg PR`; `Midazolam 0.2 mg/kg intranasal/buccal`",
+          "**Under-dosing benzos is the #1 error** — give the full weight-based dose before escalating",
+          "Peds: `Lorazepam 0.1 mg/kg IV` (max `4 mg`); `Midazolam 0.2 mg/kg IM` (max `10 mg`) or `0.3 mg/kg intranasal`; `Diazepam 0.5 mg/kg PR`",
+        ],
+      },
+      {
+        heading: "Second-line — loading-dose AED (ESETT: 3 agents equally effective)",
+        items: [
+          "**Levetiracetam** `60 mg/kg IV` (max `4500 mg`) over 15 min — fewest interactions, often first choice",
+          "**Fosphenytoin** `20 mg PE/kg IV` (max `1500 mg PE`) at ≤150 mg PE/min — monitor for hypotension/bradycardia",
+          "**Valproate** `40 mg/kg IV` (max `3000 mg`) over 10 min — avoid in hepatic failure, pregnancy, mitochondrial disease",
+          "ESETT showed ~50% seizure cessation with each — pick based on contraindications, not presumed potency",
+        ],
+      },
+      {
+        heading: "Don't-miss reversible causes",
+        items: [
+          "**Hypoglycemia** → `Dextrose 50 mL D50 IV` (peds `D25 2 mL/kg`); give thiamine first if alcohol/malnutrition",
+          "**Eclampsia / pregnancy or postpartum** → `Magnesium sulfate 4–6 g IV` over 15–20 min, then `1–2 g/h` infusion (NOT a standard AED)",
+          "**INH or hydrazine toxicity** → `Pyridoxine (vitamin B6) 1 g per gram INH ingested IV` (empiric `5 g IV` if dose unknown)",
+          "Check Na, Ca, Mg, tox screen, TCA/bupropion exposure, urea; CT head if focal/trauma/new",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Definitions",
+        items: [
+          "**Status epilepticus**: ≥5 min of continuous seizure activity, OR ≥2 seizures without return to baseline in between",
+          "**Refractory SE (RSE)**: persistent seizures despite adequate benzodiazepine + one second-line AED (~40 min)",
+          "**Super-refractory SE (SRSE)**: SE continuing ≥24 h after anesthetic infusion started, or recurring on weaning the anesthetic",
+          "Operational 5-min threshold reflects that GCSE rarely self-terminates and neuronal injury begins early",
+        ],
+      },
+      {
+        heading: "Refractory SE — anesthetic infusions (intubate first)",
+        items: [
+          "**Midazolam**: load `0.2 mg/kg IV`, infuse `0.1–2 mg/kg/h`; titrate to seizure suppression (or burst-suppression on EEG)",
+          "**Propofol**: load `1–2 mg/kg IV`, infuse `30–200 mcg/kg/min`; watch for propofol infusion syndrome at high/prolonged doses",
+          "**Ketamine**: `1–3 mg/kg IV` load then `1–5 mg/kg/h` — NMDA antagonist, useful late when GABA receptors internalize; supports BP",
+          "**Pentobarbital** for SRSE: `5–15 mg/kg IV` load then `0.5–5 mg/kg/h` — profound hypotension, ileus, immunosuppression; vasopressors usually needed",
+          "Goal: seizure cessation or burst-suppression on continuous EEG; maintain ≥24–48 h then wean",
+        ],
+      },
+      {
+        heading: "Nonconvulsive SE (NCSE)",
+        items: [
+          "Suspect in any patient with **persistent altered mental status after a convulsion stops** (subtle SE) or unexplained coma",
+          "Up to ~20% of comatose ICU patients have NCSE — **requires continuous EEG to diagnose**",
+          "Subtle motor signs: rhythmic eye/eyelid twitching, nystagmus, facial/finger jerks",
+          "Treat NCSE with the same benzodiazepine → AED ladder; balance aggressiveness against intubation risk in frail patients",
+        ],
+      },
+      {
+        heading: "Airway and hemodynamics",
+        items: [
+          "Most seizures are self-terminating airway threats — position, suction, O₂; bag only if hypoxic",
+          "Intubation indicated at the refractory stage or for airway protection/hypoxia — **avoid long-acting paralytics** (mask ongoing seizure; use short-acting like succinylcholine or rocuronium and get EEG)",
+          "Anticipate hypotension from fosphenytoin, propofol, and barbiturates — have fluids/pressors ready",
+          "Hyperthermia and lactic acidosis from prolonged motor activity usually self-correct once seizures stop — do not over-treat early lactate",
+        ],
+      },
+      {
+        heading: "Workup and precipitants",
+        items: [
+          "Fingerstick glucose immediately; then Na, Ca, Mg, BUN/Cr, CBC, LFTs, AED levels, tox screen, ammonia if hepatic",
+          "**CT head** for new-onset SE, trauma, focal deficit, anticoagulation, immunocompromise",
+          "**LP** if febrile or immunocompromised — empiric antibiotics ± acyclovir for suspected CNS infection; do not delay treatment for LP",
+          "Common causes: subtherapeutic AED levels (most common in epileptics), alcohol withdrawal, stroke, CNS infection, metabolic, tox (TCA, bupropion, sympathomimetics, INH), tumor, hypoxic-ischemic injury",
+        ],
+      },
+      {
+        heading: "Pediatric considerations",
+        items: [
+          "Same time-based ladder; all doses weight-based with adult maxima",
+          "Febrile SE is common but still treat as SE and search for CNS infection",
+          "Consider **pyridoxine-dependent seizures** in neonates/infants refractory to standard agents: `Pyridoxine 100 mg IV`",
+          "Rectal diazepam and intranasal/buccal midazolam are key when no IV access",
+        ],
+      },
+      {
+        heading: "Pearls and pitfalls",
+        items: [
+          "**Give the full benzo dose** — most 'refractory' SE is actually under-dosed SE",
+          "Pseudostatus (psychogenic nonepileptic): preserved color/vitals, forced eye closure with resistance, asynchronous/pelvic-thrust movements, no postictal confusion — avoid intubation if recognized",
+          "Always give thiamine before/with glucose in alcoholics or malnourished",
+          "If a paralytic was used to intubate, the patient may still be seizing electrically — get continuous EEG",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 171 (Seizures and Status Epilepticus)",
+          "Neurocritical Care Society Guideline for Evaluation and Management of Status Epilepticus (2012)",
+          "Silbergleit et al, RAMPART trial, NEJM 2012",
+          "Kapur et al, ESETT trial, NEJM 2019",
+          "AES Treatment of Convulsive SE Guideline (Glauser et al, 2016)",
+          "LITFL Status Epilepticus",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "ischemic-stroke",
+    name: "Acute Ischemic Stroke",
+    subtitle: "Time-critical reperfusion",
+    category: "neuro",
+    tldr: [
+      {
+        heading: "First moves — time is brain",
+        items: [
+          "**Establish last-known-well (LKW) time** — drives every treatment decision; not the time symptoms were found",
+          "Activate **stroke alert**; fingerstick glucose immediately (hypoglycemia is the classic mimic)",
+          "**Noncontrast CT head STAT** — primary goal is to exclude hemorrhage before any thrombolytic",
+          "Calculate **NIHSS**; two large-bore IVs; weigh patient (dosing is weight-based)",
+          "Add **CTA head/neck ± CT perfusion** to screen for large-vessel occlusion (LVO) eligible for thrombectomy",
+        ],
+      },
+      {
+        heading: "IV thrombolysis (within 4.5 h of LKW)",
+        items: [
+          "**Alteplase** `0.9 mg/kg IV` (max `90 mg`); give **10% as a bolus over 1 min**, remainder infused over 60 min",
+          "**Tenecteplase** `0.25 mg/kg IV` (max `25 mg`) as a single bolus — increasingly preferred, especially if bridging to thrombectomy",
+          "Standard window ≤3 h; extended 3–4.5 h excludes age >80, NIHSS >25, oral anticoagulant use, and combined prior stroke + diabetes",
+          "**No antiplatelet/anticoagulant for 24 h** after lytic; repeat CT at 24 h before starting them",
+        ],
+      },
+      {
+        heading: "Blood pressure targets",
+        items: [
+          "**Before lytic**: must be **<185/110** — `Labetalol 10–20 mg IV` (may repeat) or `Nicardipine 5 mg/h IV` titrated",
+          "**After lytic (×24 h)**: keep **<180/105**",
+          "**No lytic / not a candidate**: permit permissive hypertension — only treat if >220/120 or end-organ injury (lower ~15% in first 24 h)",
+          "Avoid over-correction — abrupt BP drops extend the penumbra into infarct",
+        ],
+      },
+      {
+        heading: "Endovascular thrombectomy (LVO)",
+        items: [
+          "**LVO** (ICA, M1, basilar) → emergent thrombectomy; standard window ≤6 h from LKW",
+          "**Extended window 6–24 h** if favorable imaging (clinical–core mismatch) per **DAWN** and **DEFUSE-3**",
+          "Give IV lytic if eligible — do **not** wait for thrombectomy if within the lytic window (bridge)",
+          "Keep glucose `140–180 mg/dL`; treat fever; NPO until swallow screen passed",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Major contraindications to thrombolysis",
+        items: [
+          "Intracranial hemorrhage on CT; history of any prior ICH; suspected SAH",
+          "Recent (≤3 mo) ischemic stroke, severe head trauma, or intracranial/spinal surgery",
+          "Active internal bleeding; known bleeding diathesis; platelets <100k; INR >1.7; aPTT elevated; therapeutic heparin/LMWH",
+          "DOAC within 48 h (unless reliable normal coagulation assay); BP that cannot be lowered <185/110",
+          "Intracranial neoplasm (intra-axial), AVM, or aneurysm; recent GI/GU bleed (≤21 d); glucose-related deficit that resolves with correction",
+        ],
+      },
+      {
+        heading: "Stroke mimics (rule out before lysing)",
+        items: [
+          "**Hypoglycemia** and hyperglycemia — always check fingerstick first",
+          "**Seizure with Todd's paralysis**; complex/hemiplegic migraine; conversion disorder",
+          "Bell's palsy (forehead involved → peripheral, not stroke); peripheral vertigo",
+          "Sepsis/toxic-metabolic unmasking an old deficit; hypertensive encephalopathy; subdural hematoma",
+        ],
+      },
+      {
+        heading: "Posterior circulation pearls",
+        items: [
+          "Often missed — vertigo, diplopia, dysarthria, dysphagia, ataxia, crossed deficits",
+          "**HINTS exam** distinguishes central from peripheral vertigo (central = normal head-impulse, direction-changing nystagmus, skew deviation)",
+          "Basilar occlusion is catastrophic but treatable — low threshold for CTA and thrombectomy even beyond 6 h",
+          "Noncontrast CT is insensitive for posterior fossa ischemia — clinical suspicion drives angiography",
+        ],
+      },
+      {
+        heading: "Managing thrombolysis complications",
+        items: [
+          "**Symptomatic ICH** (sudden ↓LOC, new headache, BP surge, worsening NIHSS): **stop the infusion**, STAT CT, check fibrinogen/CBC/coags",
+          "Reverse with **`Cryoprecipitate 10 units`** (target fibrinogen >150) ± **`Tranexamic acid 1 g IV`** or aminocaproic acid; neurosurgery consult",
+          "**Orolingual angioedema** (~1–5%, more with ACE inhibitors): stop lytic, secure airway early, give antihistamines + steroids ± epinephrine",
+          "Maintain BP <180/105 to limit hemorrhagic transformation",
+        ],
+      },
+      {
+        heading: "Antithrombotics when NOT lysed",
+        items: [
+          "`Aspirin 160–325 mg PO/PR` within 24–48 h once hemorrhage excluded (delay 24 h if lytic given)",
+          "Minor stroke (NIHSS ≤3) or high-risk TIA: **dual antiplatelet** `Aspirin + Clopidogrel` ×21 days (CHANCE/POINT), then single agent",
+          "Do not acutely anticoagulate most cardioembolic strokes in the ED — risk of hemorrhagic transformation; timing decided by neurology",
+          "Statin therapy and DVT prophylaxis per inpatient pathway",
+        ],
+      },
+      {
+        heading: "Supportive care",
+        items: [
+          "Glucose target `140–180 mg/dL`; treat hypoglycemia immediately; avoid hyperglycemia",
+          "Treat fever (>38°C) with antipyretics — fever worsens outcome",
+          "Maintain euvolemia with isotonic fluids; **avoid hypotonic fluids** (worsen cerebral edema)",
+          "NPO with dysphagia screen before any oral intake/meds; HOB positioning per perfusion vs. aspiration balance",
+        ],
+      },
+      {
+        heading: "Wake-up & unknown-onset stroke",
+        items: [
+          "If LKW unknown (wake-up stroke), use **MRI DWI-FLAIR mismatch** to estimate onset for possible lysis (WAKE-UP trial)",
+          "CT perfusion mismatch can also select late thrombolysis/thrombectomy candidates",
+          "Do not deny reperfusion solely because exact onset is unknown — image to decide",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 167 (Stroke Syndromes)",
+          "AHA/ASA 2019 Guidelines for Early Management of Acute Ischemic Stroke",
+          "NINDS rt-PA Stroke Study, NEJM 1995; ECASS III, NEJM 2008",
+          "DAWN, NEJM 2018; DEFUSE-3, NEJM 2018",
+          "EXTEND-IA TNK (tenecteplase), NEJM 2018",
+          "LITFL Ischaemic Stroke",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "sah-ich",
+    name: "Subarachnoid & Intracerebral Hemorrhage",
+    subtitle: "Spontaneous intracranial bleed",
+    category: "neuro",
+    tldr: [
+      {
+        heading: "Recognize SAH (thunderclap headache)",
+        items: [
+          "**Worst-headache-of-life / thunderclap** (maximal within seconds–1 min) — assume SAH until excluded",
+          "**Noncontrast CT head**: ~100% sensitive within 6 h of onset; **sensitivity decays with time** thereafter",
+          "**Negative CT after 6 h → LP** for **xanthochromia** (most reliable after 12 h) and RBCs that don't clear tube 1→4",
+          "CTA to localize aneurysm once SAH confirmed; grade with **Hunt-Hess** (clinical) and **modified Fisher** (CT blood burden)",
+        ],
+      },
+      {
+        heading: "Aneurysmal SAH — immediate management",
+        items: [
+          "**`Nimodipine 60 mg PO/NG q4h`** ×21 days — reduces delayed cerebral ischemia; hold/space if hypotensive (does NOT treat vasospasm directly, improves outcome)",
+          "**Secure the aneurysm urgently** — endovascular coiling or surgical clipping (coiling preferred when feasible, per ISAT)",
+          "BP control before securing: keep **SBP <140–160** with `Nicardipine` or `Labetalol` titratable infusions",
+          "Reverse any anticoagulation; analgesia/antiemetics; quiet, dark room; neurosurgery + neuro-IR consult",
+        ],
+      },
+      {
+        heading: "Spontaneous ICH — first moves",
+        items: [
+          "Noncontrast CT confirms; estimate volume (ABC/2); grade with the **ICH Score** for prognosis",
+          "**BP target ~`SBP 140` (range 130–150)** — INTERACT2 supported safety of early lowering to <140; ATACH-2 cautions against aggressive <120 (no benefit, more renal injury)",
+          "**Reverse anticoagulation immediately** (see next section) — hematoma expansion is the enemy",
+          "Neurosurgery consult for posterior fossa/cerebellar bleed (>3 cm), hydrocephalus, herniation, or large lobar clot",
+        ],
+      },
+      {
+        heading: "Raised ICP / herniation",
+        items: [
+          "HOB **30°**, midline head, treat pain/agitation, normocapnia, normoglycemia, treat fever",
+          "Acute herniation: **`Hypertonic saline 3% 250 mL IV`** or **`Mannitol 1 g/kg IV`**; brief hyperventilation to PaCO₂ 30–35 as a bridge",
+          "**EVD** for intraventricular hemorrhage with hydrocephalus or depressed consciousness",
+          "Seizure prophylaxis is **not** routine — treat clinical/electrographic seizures only",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "SAH grading and prognosis",
+        items: [
+          "**Hunt-Hess**: I asymptomatic/mild HA → V coma/decerebrate; higher grade = worse prognosis",
+          "**Modified Fisher**: graded by thickness of subarachnoid blood + presence of IVH; predicts vasospasm risk",
+          "**WFNS** scale combines GCS ± motor deficit",
+          "Perimesencephalic (non-aneurysmal) SAH has a benign course but still requires CTA to exclude aneurysm",
+        ],
+      },
+      {
+        heading: "Delayed cerebral ischemia / vasospasm",
+        items: [
+          "Peaks **day 4–14** after aneurysmal SAH — a leading cause of late morbidity",
+          "Nimodipine is the only agent proven to improve outcomes (give for the full 21 days)",
+          "Treat symptomatic vasospasm with **induced hypertension** (only after the aneurysm is secured); endovascular angioplasty/intra-arterial vasodilators for refractory cases",
+          "Avoid hypovolemia and hypotension; maintain euvolemia (prophylactic hypervolemia/triple-H no longer recommended)",
+        ],
+      },
+      {
+        heading: "Reversal of anticoagulation in ICH",
+        items: [
+          "**Warfarin**: **`4-factor PCC` weight/INR-based** + **`Vitamin K 10 mg IV`** (PCC faster/lower-volume than FFP)",
+          "**Dabigatran**: **`Idarucizumab 5 g IV`** (two 2.5 g vials); dialysis if unavailable",
+          "**Factor Xa inhibitors (apixaban/rivaroxaban)**: **`Andexanet alfa`** dosed by agent/timing, or **`4-factor PCC 50 units/kg`** if andexanet unavailable",
+          "**Heparin**: `Protamine 1 mg per 100 units` of heparin given in prior 2–3 h (max 50 mg)",
+          "**Unfractionated LMWH**: protamine partially reverses; check anti-Xa",
+        ],
+      },
+      {
+        heading: "Antiplatelet-associated ICH",
+        items: [
+          "**Routine platelet transfusion is harmful** for antiplatelet-associated spontaneous ICH — **PATCH trial** showed worse outcomes",
+          "**Exception**: consider platelets if the patient is going to neurosurgery/EVD placement",
+          "**Desmopressin (DDAVP) `0.4 mcg/kg IV` ×1** may improve platelet function — reasonable adjunct",
+          "Reverse the underlying anticoagulant if also present",
+        ],
+      },
+      {
+        heading: "ICH Score (mortality estimate)",
+        items: [
+          "GCS 3–4 (+2), 5–12 (+1); ICH volume ≥30 mL (+1); IVH present (+1); infratentorial origin (+1); age ≥80 (+1)",
+          "Score 0 ≈ 0% 30-day mortality up to 5–6 ≈ near-universal mortality",
+          "Useful for communication and disposition — **not a justification for early withdrawal of care** (self-fulfilling prophecy risk)",
+          "Avoid early DNR/withdrawal in the first 24–48 h",
+        ],
+      },
+      {
+        heading: "Surgical and procedural decisions",
+        items: [
+          "**Cerebellar hemorrhage >3 cm**, or with brainstem compression/hydrocephalus → emergent surgical evacuation (do not delay)",
+          "Supratentorial clot evacuation is selective; minimally invasive evacuation under investigation (MISTIE)",
+          "**EVD** for obstructive hydrocephalus from IVH",
+          "Decompressive craniectomy considered for malignant edema/refractory ICP",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "A normal CT does **not** exclude SAH after 6 h — proceed to LP",
+          "Sentinel (warning) headaches precede aneurysm rupture in some patients — take a sudden severe HA seriously even if resolving",
+          "Don't over-lower BP in ICH (no benefit below ~SBP 130–140; harm if aggressive)",
+          "Coagulopathy reversal should never wait for full neuroimaging characterization",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 167–168 (Stroke & Spontaneous SAH)",
+          "AHA/ASA 2022 Guideline for the Management of Spontaneous Intracerebral Hemorrhage",
+          "AHA/ASA 2023 Guideline for Management of Aneurysmal SAH",
+          "INTERACT2, NEJM 2013; ATACH-2, NEJM 2016",
+          "PATCH trial, Lancet 2016; ISAT, Lancet 2002",
+          "Neurocritical Care Society Reversal of Antithrombotics in ICH Guideline 2016",
+          "LITFL Subarachnoid Haemorrhage",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "cord-compression",
+    name: "Acute Spinal Cord Compression",
+    subtitle: "Cord / cauda equina compression emergency",
+    category: "neuro",
+    tldr: [
+      {
+        heading: "Recognize the emergency",
+        items: [
+          "**New or progressive bilateral leg weakness, a sensory level, or bowel/bladder dysfunction = cord compression until excluded**",
+          "**Time-to-decompression drives neurologic outcome** — pre-treatment function is the best predictor of recovery",
+          "Back pain that is worse at night/recumbent, or band-like radicular pain, is a red flag",
+          "Document a precise neuro exam (motor grade, sensory level, reflexes, **rectal tone**, post-void residual) before intervention",
+        ],
+      },
+      {
+        heading: "Malignant epidural spinal cord compression (MESCC)",
+        items: [
+          "**Give steroids immediately on suspicion** — `Dexamethasone 10 mg IV` bolus, then `4 mg IV/PO q6h`",
+          "**Emergent whole-spine MRI with contrast** — skip lesions are common, so image the entire spine, not just the symptomatic level",
+          "Urgent **radiation oncology + spine surgery** consults — surgical decompression + post-op RT beats RT alone for a single area of cord compression (Patchell)",
+          "Most common primaries: breast, lung, prostate, myeloma, lymphoma, renal",
+        ],
+      },
+      {
+        heading: "Cauda equina syndrome (CES)",
+        items: [
+          "Hallmarks: **urinary retention** (most sensitive) with overflow incontinence, **saddle anesthesia**, **bilateral sciatica**, **reduced anal sphincter tone**, erectile dysfunction",
+          "**Emergent lumbar MRI** — usually a large central disc herniation; also tumor, epidural abscess/hematoma",
+          "**Emergent surgical decompression** — outcomes (esp. continence) worsen with delay; do not wait for normal business hours",
+          "Check **post-void residual** — a high PVR supports CES and raises urgency",
+        ],
+      },
+      {
+        heading: "Spinal epidural abscess (SEA)",
+        items: [
+          "Triad (back pain + fever + neuro deficit) is present in **<15%** — low threshold to image",
+          "Risk factors: IV drug use, diabetes, immunosuppression, bacteremia, recent spinal procedure, indwelling catheters",
+          "**MRI with contrast** + blood cultures; start empiric **`Vancomycin 15–20 mg/kg IV` + `Cefepime 2 g IV`** (cover MRSA + gram-negatives)",
+          "Emergent neurosurgery for decompression/drainage if neuro deficit or progression",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Differentiating the syndromes",
+        items: [
+          "**Cord compression** (above L1–L2): UMN signs — hyperreflexia, spasticity, extensor plantar, a clear sensory level",
+          "**Cauda equina** (below conus): LMN signs — areflexia, flaccidity, asymmetric, prominent bladder/bowel and saddle involvement",
+          "**Conus medullaris**: mixed UMN/LMN, early/symmetric sphincter dysfunction, often less leg weakness",
+          "All three are MRI-and-decompression emergencies — the label matters less than the speed",
+        ],
+      },
+      {
+        heading: "Imaging strategy",
+        items: [
+          "**MRI is the test of choice** — with and without gadolinium; image the **whole spine** in malignancy (skip lesions) and infection",
+          "If MRI contraindicated/unavailable: CT myelography",
+          "Plain films and CT can show bony destruction/instability but **cannot exclude** cord/cauda compression",
+          "Do not let imaging logistics delay steroids in MESCC or surgical consultation in CES",
+        ],
+      },
+      {
+        heading: "Steroids — who and how",
+        items: [
+          "**MESCC**: dexamethasone improves pain and may preserve function as a bridge to definitive therapy — `10 mg IV` load then `4 mg q6h`",
+          "High-dose dexamethasone regimens exist but increase complications; moderate dosing is commonly used",
+          "**Traumatic cord injury**: high-dose methylprednisolone is **NOT recommended** (NASCIS controversy, harm outweighs benefit)",
+          "Add a PPI for GI prophylaxis and monitor glucose while on steroids",
+        ],
+      },
+      {
+        heading: "Spinal epidural abscess detail",
+        items: [
+          "Most common organism: **Staph aureus** (incl. MRSA); also gram-negatives, and TB (Pott disease) in endemic/at-risk patients",
+          "Elevated ESR/CRP are sensitive screening labs; **MRI with contrast** is definitive",
+          "Neurologic deterioration can be rapid and irreversible — surgical decompression + culture-directed antibiotics",
+          "Selected stable patients without deficit may be managed medically with close monitoring at a center able to operate emergently",
+        ],
+      },
+      {
+        heading: "Spinal epidural hematoma",
+        items: [
+          "Consider in anticoagulated patients, after neuraxial procedures (epidural/spinal), or in coagulopathy",
+          "Sudden severe back pain + rapidly progressive deficit",
+          "**Reverse anticoagulation urgently** and obtain emergent MRI + neurosurgery for evacuation",
+          "Outcome depends on speed of decompression",
+        ],
+      },
+      {
+        heading: "Disposition and consults",
+        items: [
+          "Engage spine surgery (neurosurgery/ortho-spine) and, for MESCC, radiation oncology **early and in parallel** with imaging",
+          "Foley for retention; monitor for autonomic dysreflexia in high cord lesions",
+          "Admit all; transfer to a center with neurosurgical capability if not available locally",
+          "Reassess and document neuro exam serially — deterioration changes urgency",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Anchoring on 'mechanical back pain' and missing red flags (night pain, fever, retention, saddle numbness, IVDU, cancer history)",
+          "Imaging only the symptomatic level in cancer patients and missing higher skip lesions",
+          "Relying on the classic triads — they are insensitive (SEA triad <15%; full CES picture often late)",
+          "Delaying steroids/consults until MRI is 'confirmed' when suspicion is already high",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 277 (Spinal Cord Disorders) & Ch 279 (Neck and Back Pain)",
+          "Patchell et al, Lancet 2005 (surgery + RT for MESCC)",
+          "NICE Guideline NG234 (Spinal metastases and MSCC, 2023)",
+          "Darouiche RO, NEJM 2006 (Spinal Epidural Abscess)",
+          "LITFL Cauda Equina Syndrome",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "cvst",
+    name: "Cerebral Venous Sinus Thrombosis",
+    subtitle: "Cerebral venous / dural sinus thrombosis",
+    category: "neuro",
+    tldr: [
+      {
+        heading: "When to suspect",
+        items: [
+          "**New, progressive, or thunderclap headache** (most common symptom) — often positional, worse lying down or with Valsalva",
+          "**Headache + seizure**, or headache + focal deficit not fitting an arterial territory, or isolated raised ICP (papilledema, diplopia from CN VI palsy)",
+          "Younger patients, often female; consider in any 'stroke' that crosses arterial boundaries",
+          "**Venous infarcts** are characteristically hemorrhagic and don't respect arterial territories",
+        ],
+      },
+      {
+        heading: "Key risk factors",
+        items: [
+          "**Prothrombotic states**: pregnancy and **postpartum** (highest peripartum period), `OCPs`/estrogen, inherited/acquired thrombophilia, malignancy, nephrotic syndrome",
+          "**Dehydration**, systemic infection, and local infection (mastoiditis, sinusitis, meningitis)",
+          "**Vaccine-induced immune thrombotic thrombocytopenia (VITT)** after adenoviral COVID vaccines — CVST + thrombocytopenia + very high D-dimer",
+          "Head trauma, lumbar puncture, jugular catheterization, inflammatory disease (Behçet, IBD, SLE)",
+        ],
+      },
+      {
+        heading: "Diagnosis",
+        items: [
+          "**CT venography (CTV)** or **MR venography (MRV)** is the confirmatory test — shows the filling defect/absent flow",
+          "Noncontrast CT may show a dense sinus / 'cord sign' or 'empty delta' on contrast — but is often normal; a normal CT does **not** exclude CVST",
+          "**D-dimer** supports the diagnosis but a normal D-dimer does **not** rule it out (especially isolated headache or subacute presentation)",
+          "Identify thrombosed sinus(es): superior sagittal, transverse/sigmoid, straight sinus, cortical veins, deep system",
+        ],
+      },
+      {
+        heading: "Treatment — anticoagulate (even if hemorrhagic)",
+        items: [
+          "**Anticoagulate even in the presence of hemorrhagic venous infarction** — heparin treats the cause and improves outcomes",
+          "**`Therapeutic LMWH (enoxaparin 1 mg/kg SC q12h)`** is preferred over unfractionated heparin in most cases",
+          "Use **`UFH IV`** (weight-based) if the patient is unstable, may need a procedure, or has renal failure",
+          "**VITT exception**: do **NOT** give heparin — use a **non-heparin anticoagulant** (e.g., argatroban, fondaparinux, DOAC) **+ `IVIG 1 g/kg/day` ×2 days**, and avoid platelet transfusion",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Clinical syndromes by location",
+        items: [
+          "**Superior sagittal sinus**: raised ICP, headache, bilateral motor deficits, seizures",
+          "**Transverse/sigmoid sinus**: headache, ear/mastoid pain, isolated intracranial hypertension picture",
+          "**Cavernous sinus**: painful ophthalmoplegia, proptosis, chemosis (often septic — from facial/sinus infection)",
+          "**Deep cerebral veins / straight sinus**: thalamic/basal ganglia edema → rapidly declining consciousness, coma (high mortality)",
+        ],
+      },
+      {
+        heading: "Imaging pearls",
+        items: [
+          "MRI + MRV (or CT + CTV) is the standard; MRI better detects parenchymal changes (venous edema/infarct, hemorrhage)",
+          "Beware mimics on imaging: hypoplastic/asymmetric transverse sinus, arachnoid granulations",
+          "Cortical vein thrombosis can occur with patent sinuses — look specifically if clinical suspicion is high",
+          "Hemorrhagic infarcts in 'odd' (non-arterial) distributions, bilateral parasagittal or temporal lobe bleeds, should prompt venous imaging",
+        ],
+      },
+      {
+        heading: "Anticoagulation details",
+        items: [
+          "Rationale: recanalize the sinus and prevent thrombus propagation; **hemorrhagic transformation is NOT a contraindication**",
+          "Transition to oral anticoagulation (warfarin, or a DOAC per emerging evidence) for **3–12 months**, longer/indefinite if a persistent strong thrombophilia",
+          "Remove provoking factors — stop estrogen-containing contraceptives, rehydrate, treat infection",
+          "Hematology/thrombophilia workup, especially in unprovoked or recurrent cases",
+        ],
+      },
+      {
+        heading: "VITT-associated CVST",
+        items: [
+          "Suspect after a recent adenovirus-vector COVID vaccine (typically 5–30 days) with CVST + **thrombocytopenia** + markedly elevated D-dimer + low fibrinogen",
+          "Confirm with **anti-PF4 ELISA** (HIT antibody assay)",
+          "**Avoid all heparin** and platelet transfusions (may worsen thrombosis)",
+          "Treat with **non-heparin anticoagulation + `IVIG 1 g/kg/day` ×2 days**; involve hematology urgently",
+        ],
+      },
+      {
+        heading: "Endovascular and surgical options",
+        items: [
+          "**Endovascular therapy** (mechanical thrombectomy ± local thrombolysis) is reserved for **clinical deterioration despite adequate anticoagulation** (TO-ACT did not show routine benefit)",
+          "**Decompressive craniectomy** can be **life-saving** for large venous infarct with impending/actual herniation",
+          "Neurology/neuro-IR and neurosurgery involvement for severe or deteriorating cases",
+          "These are rescue measures — anticoagulation remains first-line for nearly all patients",
+        ],
+      },
+      {
+        heading: "Managing complications",
+        items: [
+          "**Raised ICP**: HOB elevation, treat seizures, **`Acetazolamide`** for symptomatic intracranial hypertension/visual threat; **serial visual fields/optic disc** checks; LP or shunt/optic nerve fenestration if vision threatened",
+          "**Seizures**: treat clinical or electrographic seizures with AEDs; prophylaxis reasonable if a supratentorial lesion is present, not universally",
+          "Analgesia for headache; avoid agents that obscure the neuro exam where possible",
+          "Treat the underlying precipitant (infection, dehydration, thrombophilia trigger)",
+        ],
+      },
+      {
+        heading: "Prognosis and pitfalls",
+        items: [
+          "Generally **better prognosis than arterial stroke** if treated; deep venous/straight sinus involvement and coma portend worse outcomes",
+          "**Most over-anchored pitfall**: withholding anticoagulation because of hemorrhage on CT — that is exactly when it is still indicated",
+          "Missing CVST in postpartum or peripartum headache, or attributing it to post-LP/migraine",
+          "Pregnancy is not a contraindication to anticoagulation — **LMWH** is preferred in pregnancy",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 167 (Stroke Syndromes — venous thrombosis)",
+          "AHA/ASA 2011 Scientific Statement: Diagnosis and Management of Cerebral Venous Thrombosis",
+          "ESO Guideline on Cerebral Venous Thrombosis (Ferro et al, 2017)",
+          "ISCVT cohort, Stroke 2004; TO-ACT trial, JAMA Neurology 2020",
+          "ASH 2021 Guidance on VITT (thrombosis with thrombocytopenia syndrome)",
+          "LITFL Cerebral Venous Sinus Thrombosis",
+        ],
+      },
+    ],
+  },
+{
+    id: "massive-pe",
+    name: "Massive / Submassive PE",
+    subtitle: "High-risk pulmonary embolism",
+    category: "cv",
+    tldr: [
+      {
+        heading: "Classify severity (drives therapy)",
+        items: [
+          "**Massive (high-risk)**: sustained hypotension `SBP <90 mmHg` for >15 min, vasopressor requirement, or cardiac arrest",
+          "**Submassive (intermediate-risk)**: normotensive **but** RV dysfunction (echo/CT) and/or biomarker elevation (troponin, BNP)",
+          "**Intermediate-HIGH**: both RV strain on imaging AND positive biomarkers — watch closely, lytic-ready",
+          "**Intermediate-LOW**: only one of imaging/biomarker positive",
+        ],
+      },
+      {
+        heading: "Diagnose fast",
+        items: [
+          "**CTPA** is the gold standard if stable enough to travel",
+          "**Bedside echo** in the unstable patient: RV dilation (RV:LV >0.9), **McConnell sign** (RV free-wall akinesis with apical sparing), **D-sign** (septal flattening, pressure/volume overload), TR jet, dilated non-collapsing IVC",
+          "Too unstable for CT + echo shows RV strain = treat empirically as massive PE",
+          "ECG: sinus tach (most common), S1Q3T3, RV strain (TWI V1–V4), new RBBB",
+        ],
+      },
+      {
+        heading: "Massive PE → reperfuse NOW",
+        items: [
+          "**Systemic thrombolysis** — `Alteplase (tPA) 100 mg IV over 2 h`; hold/reduce concurrent heparin infusion during the bolus per protocol",
+          "**Cardiac arrest from PE**: `Alteplase 50 mg IV push` (may repeat 50 mg); **continue CPR 60–90 min** after lytic before terminating",
+          "Catheter-directed therapy or surgical embolectomy if lysis contraindicated or fails",
+          "**VA-ECMO** as a bridge in refractory shock/arrest at capable centers",
+        ],
+      },
+      {
+        heading: "Hemodynamic support — protect the RV",
+        items: [
+          "**Norepinephrine** first-line — `start 0.05 mcg/kg/min`, titrate to MAP ≥65 mmHg (maintains coronary perfusion to the strained RV)",
+          "**Avoid aggressive fluids** — the failing RV is preload-overloaded; >`500 mL` boluses worsen RV distension and septal bowing. Give only small `250 mL` challenges if clearly hypovolemic",
+          "**Avoid intubation if possible** — induction vasodilation + positive-pressure ↑ RV afterload → arrest; if unavoidable use ketamine/etomidate, pressors ready, lowest tidal volumes/PEEP",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Why the RV is the whole story",
+        items: [
+          "Acute clot burden → sudden ↑ pulmonary vascular resistance → the thin-walled RV cannot generate pressure → **RV dilation and failure**",
+          "Dilated RV bows the septum into the LV (D-sign) → ↓LV filling → ↓cardiac output → systemic hypotension → ↓RV coronary perfusion → **spiral of death**",
+          "Therapeutic goals: maintain systemic pressure (norepinephrine), offload the RV (reperfusion), avoid anything that ↑RV afterload (hypoxia, hypercarbia, acidosis, excess PEEP)",
+        ],
+      },
+      {
+        heading: "Anticoagulation",
+        items: [
+          "**Unfractionated heparin** preferred in unstable/possible-lytic patients (rapid off-switch, titratable) — `80 units/kg IV bolus`, then `18 units/kg/h` infusion to therapeutic aPTT/anti-Xa",
+          "LMWH (`enoxaparin 1 mg/kg SC q12h`) or fondaparinux for stable intermediate/low-risk patients",
+          "Start anticoagulation empirically while awaiting imaging if clinical suspicion is high and bleeding risk acceptable",
+        ],
+      },
+      {
+        heading: "Thrombolysis details & contraindications",
+        items: [
+          "Submassive PE: **routine full-dose lysis is NOT standard** — PEITHO showed reduced decompensation but increased major/intracranial bleeding; reserve for those who deteriorate",
+          "Half-dose lytic (`Alteplase 50 mg`) is used by some for intermediate-high risk to reduce bleeding (MOPETT) — institution-dependent",
+          "**Absolute contraindications**: prior ICH, known structural cerebral vascular lesion/malignancy, ischemic stroke <3 mo, active bleeding, recent closed head/spinal trauma, recent intracranial/spinal surgery",
+          "In peri-arrest the bleeding-risk calculus shifts — give the lytic",
+        ],
+      },
+      {
+        heading: "Catheter-directed & surgical options",
+        items: [
+          "**Catheter-directed thrombolysis (CDT)** delivers low-dose lytic locally ± ultrasound assistance — lower bleeding than systemic, needs interventional capability",
+          "**Mechanical / aspiration thrombectomy** (e.g., FlowTriever, Penumbra) — for lytic-contraindicated patients",
+          "**Surgical embolectomy** — massive PE with contraindication to/failure of lysis, or clot-in-transit/right-heart thrombus",
+          "Activate the institutional **PERT (Pulmonary Embolism Response Team)** early for intermediate-high and high-risk PE",
+        ],
+      },
+      {
+        heading: "Cardiac arrest from suspected PE",
+        items: [
+          "Consider PE in PEA arrest with no other explanation, dilated RV on echo, or known risk factors (recent surgery, malignancy, immobility, prior VTE)",
+          "**Empiric thrombolysis**: `Alteplase 50 mg IV push`, may repeat once",
+          "**Prolong CPR 60–90 minutes** after lytic — meaningful neurologically intact survival is reported because the lytic needs time to work",
+          "VA-ECMO (ECPR) is the rescue strategy where available",
+        ],
+      },
+      {
+        heading: "Intubation & ventilation pitfalls",
+        items: [
+          "Induction agents drop preload/afterload and tank an RV-dependent circulation — **peri-intubation arrest is common in massive PE**",
+          "Prefer non-invasive support / high-flow O₂; optimize hemodynamics (start pressors) BEFORE laryngoscopy",
+          "If intubating: ketamine or etomidate, push-dose epinephrine/norepinephrine running, low tidal volume, minimal PEEP, permissive hypercapnia avoided (hypercarbia ↑PVR)",
+        ],
+      },
+      {
+        heading: "Disposition",
+        items: [
+          "High-risk/massive and intermediate-high → ICU, continuous monitoring, lytic-ready",
+          "Intermediate-low → monitored bed with serial assessment",
+          "Low-risk (negative biomarkers, no RV strain, sPESI 0) → consider early discharge on anticoagulation (Hestia criteria) with close follow-up",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 56", "Meyer et al PEITHO Trial, NEJM 2014", "Sharifi et al MOPETT, Am J Cardiol 2013", "AHA Scientific Statement on Massive/Submassive PE 2011", "ESC Pulmonary Embolism Guidelines 2019", "LITFL Pulmonary Embolism"],
+      },
+    ],
+  },
+
+  {
+    id: "cardiac-tamponade",
+    name: "Cardiac Tamponade",
+    subtitle: "Pericardial effusion with hemodynamic compromise",
+    category: "cv",
+    tldr: [
+      {
+        heading: "Recognize",
+        items: [
+          "**Beck's triad**: hypotension + muffled heart sounds + distended neck veins (present in a minority — do not wait for it)",
+          "**Pulsus paradoxus** >10 mmHg (exaggerated inspiratory drop in SBP) — key bedside clue",
+          "Tachycardia, dyspnea, narrow pulse pressure; the patient who is hypotensive with clear lungs and JVD",
+          "ECG: low voltage and **electrical alternans** (beat-to-beat QRS amplitude swing from the heart swinging in fluid)",
+        ],
+      },
+      {
+        heading: "Confirm with echo",
+        items: [
+          "**Diastolic RV free-wall collapse** (specific) and **systolic RA collapse** (sensitive, earliest)",
+          "**Plethoric IVC** — dilated, <50% inspiratory collapse (high right-sided pressures)",
+          "Pericardial effusion (size matters less than rate — rapid small effusions tamponade; chronic large ones may not)",
+          "Exaggerated respiratory variation in mitral/tricuspid inflow (echo equivalent of pulsus paradoxus)",
+        ],
+      },
+      {
+        heading: "Temporize → drain",
+        items: [
+          "**Echo-guided pericardiocentesis** is the definitive temporizing intervention — subxiphoid or apical approach toward the largest fluid pocket; removing even `30–50 mL` can restore output",
+          "**IV fluids as a bridge** — a `500–1000 mL` crystalloid bolus augments RV filling against the constricting pericardium while you prepare to drain (do not rely on this alone)",
+          "Leave a pericardial drain/pigtail catheter in place for re-accumulation",
+        ],
+      },
+      {
+        heading: "Critical avoidances",
+        items: [
+          "**AVOID intubation and positive-pressure ventilation if at all possible** — sedation/induction abolishes the compensatory tachycardia/preload and PPV further drops venous return → **PEA arrest on induction**. Drain first if you can",
+          "Avoid vasodilators and aggressive diuresis (both reduce the preload the patient is depending on)",
+          "**Traumatic / hemopericardium → operating room** (surgical window/sternotomy); needle drainage is only a stopgap because blood re-accumulates and clots",
+          "**Type A aortic dissection with tamponade → emergent OR**, NOT routine large-volume drainage (controlled pericardiocentesis only if in extremis to bridge to surgery)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Pericardial pressure rises until it equals then exceeds cardiac chamber diastolic pressure → impaired diastolic filling → ↓stroke volume → obstructive shock",
+          "**Rate of accumulation matters more than volume** — `~150 mL` of rapidly accumulating blood can tamponade; chronically `>1–2 L` may be tolerated as the pericardium stretches",
+          "Compensation is via tachycardia and ↑filling pressure — anything that removes preload (PPV, vasodilation, sedation, diuresis) precipitates collapse",
+          "Pulsus paradoxus: on inspiration, ↑RV filling bows the septum left, further limiting an already constrained LV → inspiratory SBP fall >10 mmHg",
+        ],
+      },
+      {
+        heading: "Causes",
+        items: [
+          "**Trauma / hemopericardium** — penetrating > blunt; surgical emergency",
+          "**Type A aortic dissection** rupturing into pericardium — to OR",
+          "Malignancy (lung, breast, lymphoma) — common cause of large atraumatic effusions",
+          "Infectious pericarditis (viral, bacterial, TB), uremia, post-MI free-wall rupture, post-cardiac surgery/procedure (PCI, pacemaker lead, ablation)",
+          "Connective tissue disease, hypothyroidism (myxedema), post-pericardiotomy syndrome",
+        ],
+      },
+      {
+        heading: "Pericardiocentesis technique",
+        items: [
+          "**Ultrasound guidance** strongly preferred over the blind landmark approach — image the largest, most superficial pocket and the needle track in real time",
+          "Subxiphoid: enter just left of xiphoid, angle toward the left shoulder at ~30–45°; apical approach is often closer to the fluid",
+          "Confirm needle position with agitated-saline contrast if uncertain (microbubbles in the pericardial space, not the chamber)",
+          "Aspirate to clinical improvement; leave a pigtail catheter for ongoing drainage",
+          "Complications: chamber/coronary laceration, arrhythmia, pneumothorax, hepatic injury",
+        ],
+      },
+      {
+        heading: "When NOT to needle-drain",
+        items: [
+          "**Traumatic hemopericardium**: blood clots and re-accumulates — needle drainage is only a bridge; definitive care is surgical (resuscitative thoracotomy if peri-arrest, otherwise OR)",
+          "**Aortic dissection**: large-volume drainage can ↑transmural pressure and accelerate rupture — controlled, minimal aspiration only as a last-ditch bridge to emergent surgery",
+          "Loculated/posterior effusions may not be reachable by needle — surgical window",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Beck's triad is present in the minority — absence does NOT exclude tamponade",
+          "A normal-sized heart on CXR does not rule out acute tamponade (rapid small effusion)",
+          "Tamponade is a **clinical + echo** diagnosis (hemodynamic compromise), not merely the presence of an effusion",
+          "Do not sedate/intubate the borderline patient before draining — many code on induction",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 54", "ESC Guidelines on Pericardial Diseases 2015", "Spodick, NEJM 2003 (Acute Cardiac Tamponade)", "LITFL Cardiac Tamponade"],
+      },
+    ],
+  },
+
+  {
+    id: "cardiogenic-shock",
+    name: "Cardiogenic Shock / MCS",
+    subtitle: "Pump failure with end-organ hypoperfusion",
+    category: "cv",
+    tldr: [
+      {
+        heading: "Recognize",
+        items: [
+          "Hypoperfusion despite adequate volume: `SBP <90 mmHg` (or pressors to maintain it), cool/mottled extremities, altered mentation, oliguria",
+          "**Lactate** and serial lactate clearance track perfusion and prognosis",
+          "**AMI is the most common cause** — get a 12-lead ECG immediately; also consider acute valvular failure, myocarditis, decompensated HF, arrhythmia, tamponade, PE",
+          "**Bedside echo**: LV/RV function, effusion/tamponade, valvular catastrophe, RV infarct pattern, volume status",
+        ],
+      },
+      {
+        heading: "Stage it — SCAI A–E",
+        items: [
+          "**A** At risk (no shock) · **B** Beginning (hypotension/tachy, no hypoperfusion)",
+          "**C** Classic (hypoperfusion, needs pressor/inotrope/mechanical support) · **D** Deteriorating (failing initial support)",
+          "**E** Extremis (refractory/arrest, on multiple supports/CPR)",
+          "Staging guides escalation and predicts mortality — reassess frequently",
+        ],
+      },
+      {
+        heading: "Pharmacologic support",
+        items: [
+          "**Norepinephrine** first-line vasopressor — `start 0.05 mcg/kg/min`, titrate to MAP ≥65 mmHg (lower arrhythmia/mortality vs. dopamine, SOAP II)",
+          "**Add an inotrope** for low output once perfusion pressure restored: **dobutamine** `2–20 mcg/kg/min`, OR **milrinone** `0.125–0.75 mcg/kg/min` (DOREMI: similar outcomes; milrinone accumulates in renal failure and vasodilates)",
+          "Treat the trigger: arrhythmia, ischemia, electrolytes",
+        ],
+      },
+      {
+        heading: "Definitive: open the artery / support the pump",
+        items: [
+          "**Early revascularization for AMI shock** — emergent PCI (or CABG); revascularization improves survival (SHOCK trial)",
+          "**Culprit-vessel-only PCI** in AMI shock with multivessel disease — do NOT do routine immediate complete revascularization (CULPRIT-SHOCK: ↑death/renal failure with multivessel approach)",
+          "Mechanical circulatory support if refractory (see Extended); escalate early rather than after end-organ failure",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Volume — get it right",
+        items: [
+          "**Avoid over-resuscitation**: most cardiogenic shock is volume-replete or overloaded — indiscriminate fluids worsen pulmonary edema and ventricular distension",
+          "**Avoid over-diuresis** in the under-filled patient — can drop output further; use echo/passive-leg-raise to gauge fluid responsiveness",
+          "**RV infarct phenotype is the exception**: RV-dependent, preload-sensitive — these patients NEED fluids (`250–500 mL` boluses) and will crash with nitrates/diuretics; avoid agents that drop preload",
+        ],
+      },
+      {
+        heading: "Mechanical circulatory support (MCS)",
+        items: [
+          "**IABP (intra-aortic balloon pump)**: routine use does NOT improve mortality in AMI shock (**IABP-SHOCK II**) — no longer routinely recommended; may have a role in mechanical complications (acute MR, VSD)",
+          "**Impella** (trans-aortic axial-flow): unloads the LV; **DanGer Shock (2024)** showed a mortality benefit in selected STEMI cardiogenic shock — but more bleeding/limb/renal complications; patient selection matters",
+          "**VA-ECMO**: full cardiopulmonary support for biventricular failure / arrest (ECPR); needs LV venting strategy to manage afterload",
+          "Escalate MCS **early** (SCAI C→D) at a shock-capable center before irreversible organ injury",
+        ],
+      },
+      {
+        heading: "RV-predominant cardiogenic shock",
+        items: [
+          "Inferior STEMI with RV involvement, massive PE, or pulmonary hypertension crisis",
+          "**Preload-dependent** — cautious fluids; **avoid nitrates, diuretics, and high PEEP** (all drop RV preload/raise afterload)",
+          "Norepinephrine to maintain coronary perfusion of the RV; add inotrope (dobutamine) for contractility",
+          "Maintain sinus rhythm / AV synchrony — the RV depends on atrial kick",
+        ],
+      },
+      {
+        heading: "Mechanical complications of AMI",
+        items: [
+          "**Papillary muscle rupture** → acute severe MR, flash pulmonary edema, new murmur — surgical emergency, bridge with afterload reduction/IABP",
+          "**Ventricular septal rupture** → new harsh murmur, step-up in oxygen saturation, shock — surgical",
+          "**Free-wall rupture** → tamponade/PEA arrest",
+          "Echo at the bedside identifies these — each changes the operative plan",
+        ],
+      },
+      {
+        heading: "Airway / ventilation",
+        items: [
+          "Positive-pressure can be a double-edged sword: helps the failing LV (↓afterload, ↓preload, recruits alveoli) but harms an RV-dependent circulation",
+          "Optimize hemodynamics before intubation; induction can precipitate arrest in profound shock",
+          "Treat concurrent pulmonary edema with NIV when tolerated",
+        ],
+      },
+      {
+        heading: "Disposition & monitoring",
+        items: [
+          "Cardiology / cath lab activation for ischemic etiology; cardiac ICU admission",
+          "Arterial line for continuous pressure; consider central access for pressors/inotropes",
+          "Serial lactate, urine output, mentation, and echo to track response",
+          "Early transfer to a shock-capable (MCS/cardiac surgery) center if escalation is foreseeable",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 53", "Hochman et al SHOCK Trial, NEJM 1999", "Thiele et al IABP-SHOCK II, NEJM 2012", "Thiele et al CULPRIT-SHOCK, NEJM 2017", "Mathew et al DOREMI, NEJM 2021", "Møller et al DanGer Shock, NEJM 2024", "SCAI Shock Classification (Expert Consensus 2022)", "LITFL Cardiogenic Shock"],
+      },
+    ],
+  },
+
+  {
+    id: "bradycardia-pacing",
+    name: "Symptomatic Bradycardia & Pacing",
+    subtitle: "Unstable bradycardia / high-grade AV block",
+    category: "cv",
+    tldr: [
+      {
+        heading: "Is it unstable?",
+        items: [
+          "Treat the **patient**, not just the number: hypotension, altered mental status, ischemic chest pain, acute heart failure, or shock attributable to the rate",
+          "Asymptomatic bradycardia (e.g., athletic sinus brady) needs no treatment — observe and find the cause",
+          "Get a 12-lead ECG, place pacer pads, establish IV, continuous monitoring",
+        ],
+      },
+      {
+        heading: "First-line drug",
+        items: [
+          "**Atropine** — `1 mg IV push, repeat q3–5 min, max 3 mg` total",
+          "Most effective for sinus bradycardia and AV-nodal (narrow-complex) block",
+          "**Often INEFFECTIVE in Mobitz II and complete (third-degree) heart block** — the block is infranodal; do not delay pacing waiting for atropine to work",
+          "Use cautiously after cardiac transplant (denervated heart — may not respond) and in high-grade block — be ready to pace",
+        ],
+      },
+      {
+        heading: "If atropine fails — chronotropes",
+        items: [
+          "**Epinephrine infusion** — `2–10 mcg/min`, titrate to response; or **push-dose epinephrine** `10–20 mcg IV q2–5 min` as a bridge",
+          "**Dopamine infusion** — `5–20 mcg/kg/min`, titrate",
+          "**Isoproterenol** — `2–10 mcg/min` (pure beta agonist; useful in some toxic/heart-block scenarios, torsades-prone brady)",
+          "Begin transcutaneous pacing in parallel — don't serially fail through every drug first",
+        ],
+      },
+      {
+        heading: "Pacing",
+        items: [
+          "**Transcutaneous pacing (TCP)**: immediate bridge — **sedate/analgese the awake patient** (it is painful), set rate `60–80`, increase output (mA) until capture",
+          "**Confirm BOTH electrical capture (pacer spike → wide QRS) AND mechanical capture (palpable pulse / arterial waveform / pulse-ox plethysmograph that matches the set rate)**",
+          "**False-capture trap**: muscle twitching or ECG artifact can look like capture without a perfusing beat — **always confirm a pulse, ideally with Doppler/arterial line/SpO₂ waveform**, NOT by feeling the chest-wall jerk",
+          "**Transvenous pacing (TVP)** is the definitive bridge if TCP fails, is poorly tolerated, or is needed for prolonged support",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Classify the rhythm",
+        items: [
+          "Sinus bradycardia / sinus node dysfunction (sick sinus)",
+          "**First-degree AV block**: PR >200 ms, benign",
+          "**Mobitz I (Wenckebach)**: progressive PR lengthening → dropped beat; usually nodal, benign, atropine-responsive",
+          "**Mobitz II**: constant PR with sudden dropped beats; **infranodal, unstable, atropine-resistant, high risk of progression to complete block → pace**",
+          "**Third-degree (complete) block**: AV dissociation, escape rhythm; often atropine-resistant → pace and find the cause",
+        ],
+      },
+      {
+        heading: "Reversible causes — find and fix",
+        items: [
+          "**Inferior MI** (RCA supplies the SA/AV node) — bradycardia/block is common; revascularize; may need temporary pacing",
+          "**Hyperkalemia** — peaked T waves, widening QRS, bradycardia → `Calcium gluconate 1–3 g IV` (or `Calcium chloride 1 g IV` via central line) to stabilize the membrane, then shift/eliminate K⁺",
+          "Hypothermia, hypothyroidism (myxedema), hypoxia, raised ICP (Cushing reflex)",
+        ],
+      },
+      {
+        heading: "Toxicologic bradycardia & antidotes",
+        items: [
+          "**Beta-blocker overdose**: `Glucagon 3–10 mg IV bolus` then infusion; high-dose insulin euglycemia therapy (HIET) `1 unit/kg bolus + 0.5–1 unit/kg/h` with dextrose; pressors",
+          "**Calcium-channel blocker overdose**: `Calcium` (gluconate/chloride) boluses, **HIET**, pressors, glucagon adjunct",
+          "**Digoxin toxicity**: `Digoxin-specific Fab (DigiFab)` — empiric `10–20 vials` in arrest/severe; treat hyperkalemia (avoid pushing calcium aggressively — historical 'stone heart' concern, give cautiously)",
+          "**Clonidine/central alpha-2**: supportive; naloxone occasionally tried; atropine for bradycardia",
+        ],
+      },
+      {
+        heading: "Transcutaneous pacing details",
+        items: [
+          "Pad placement: anterior-posterior preferred (sandwiches the heart); set demand mode, rate `60–80`",
+          "Start output low and increase mA until consistent electrical + mechanical capture, then set ~`10%` above threshold",
+          "**Sedation/analgesia is mandatory in the conscious patient** (e.g., fentanyl ± a benzodiazepine, or ketamine) — capture is uncomfortable",
+          "TCP is a temporary bridge only — arrange transvenous pacing or definitive (permanent pacemaker) management",
+        ],
+      },
+      {
+        heading: "Transvenous pacing",
+        items: [
+          "Indicated when TCP fails/poorly tolerated or prolonged pacing is required (e.g., complete block awaiting permanent pacemaker)",
+          "Balloon-tipped wire floated via internal jugular or subclavian into the RV apex; set rate and output, confirm capture on the monitor",
+          "Watch for RV perforation, arrhythmia, lead displacement, infection",
+        ],
+      },
+      {
+        heading: "Pediatric bradycardia",
+        items: [
+          "**Bradycardia in a child is hypoxic until proven otherwise** — **oxygenate and ventilate FIRST**; airway is the priority",
+          "**Start CPR if HR <60 with poor perfusion despite oxygenation/ventilation** (PALS)",
+          "**Epinephrine** `0.01 mg/kg IV/IO (0.1 mL/kg of 1:10,000)` is the first-line drug; **atropine** `0.02 mg/kg` (min 0.1 mg) for vagal/AV-block or organophosphate causes",
+          "Primary cardiac/heart-block bradycardia is uncommon in children — think respiratory and toxic/metabolic causes",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 18", "AHA ACLS Guidelines 2020 (Adult Bradycardia Algorithm)", "AHA PALS Guidelines 2020", "LITFL Bradycardia", "LITFL Transcutaneous Pacing"],
+      },
+    ],
+  },
+{
+    id: "hypertensive-emergency",
+    name: "Hypertensive Emergency",
+    subtitle: "Severe HTN with acute end-organ damage",
+    category: "cv",
+    tldr: [
+      {
+        heading: "Emergency vs. urgency — the critical distinction",
+        items: [
+          "**Hypertensive emergency = SBP >180 or DBP >120 WITH acute target-organ injury** (brain, heart, kidney, aorta, retina, placenta)",
+          "**Asymptomatic severe HTN ('urgency') has NO acute organ damage — do NOT lower BP acutely**; restart/uptitrate oral agents, arrange close follow-up",
+          "Acute organ injury defines the emergency, not the number — a patient at `220/120` with no symptoms is NOT an emergency",
+          "Workup for end-organ damage: ECG + troponin, BMP, UA, neuro exam; CT head / CTA chest per presentation",
+        ],
+      },
+      {
+        heading: "General BP goal (most emergencies)",
+        items: [
+          "**Reduce MAP by ≤25% in the first hour**, then toward `160/100–110` over the next 2–6 h",
+          "**Overshoot causes harm** — abrupt normalization → cerebral, coronary, renal hypoperfusion/ischemia",
+          "Use a **titratable IV infusion + arterial line**; avoid IV boluses of long-acting agents that cause unpredictable drops",
+          "**Exception conditions have their own targets** — aortic dissection, stroke, ICH, eclampsia (see below)",
+        ],
+      },
+      {
+        heading: "Titratable IV agents",
+        items: [
+          "**Nicardipine** — `5 mg/h IV`, titrate by `2.5 mg/h q5–15 min` to max `15 mg/h` (smooth, easy, first-line for most)",
+          "**Clevidipine** — `1–2 mg/h IV`, double q90 sec, usual `4–6 mg/h` (ultra-short t½; lipid emulsion — avoid in soy/egg allergy)",
+          "**Labetalol** — `10–20 mg IV` q10 min, or infusion `0.5–2 mg/min` (combined alpha/beta; avoid in bradycardia, severe asthma, decompensated HF)",
+          "**Esmolol** — `500 mcg/kg IV bolus`, then `50–200 mcg/kg/min` (ultra-short beta-blocker; ideal when HR control needed e.g. dissection)",
+          "**Nitroglycerin** — `start 10–20 mcg/min IV`, titrate up; **preferred for SCAPE / flash pulmonary edema and ACS** (venodilation, coronary dilation)",
+          "**Hydralazine** `10–20 mg IV` — unpredictable, prolonged effect, reflex tachycardia; reserve for pregnancy or when infusion unavailable",
+          "**Nitroprusside** `0.3–0.5 mcg/kg/min` titrating to max `10 mcg/kg/min` — potent but **cyanide/thiocyanate toxicity** with prolonged use, high dose, or renal/hepatic failure; largely supplanted by nicardipine/clevidipine",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Aortic dissection — tightest target",
+        items: [
+          "**Goal SBP <120 mmHg AND HR <60 bpm** — minimize aortic wall shear stress (dP/dt)",
+          "**Beta-blockade FIRST** (`esmolol` or `labetalol`) to control HR, THEN add vasodilator (`nicardipine` or `nitroprusside`) for residual hypertension",
+          "**Never give a vasodilator before rate control** — reflex tachycardia increases shear stress and can propagate the dissection",
+          "Pain control with opioids also lowers catecholamine-driven BP",
+        ],
+      },
+      {
+        heading: "Acute ischemic stroke — permissive hypertension",
+        items: [
+          "**No thrombolysis/thrombectomy planned: permit BP up to `220/120`** — only treat above that (lower ~15% in first 24 h); abrupt lowering extends the ischemic penumbra",
+          "**Eligible for IV thrombolysis (tPA/TNK): lower to <`185/110` before, then keep <`180/105` × 24 h**",
+          "Post-thrombectomy targets individualized with neurology/neuro-IR (often <`180` or lower if good recanalization)",
+          "Use easily titratable agents (`nicardipine`, `clevidipine`, `labetalol`)",
+        ],
+      },
+      {
+        heading: "Intracerebral hemorrhage (ICH)",
+        items: [
+          "**Target SBP ~`140 mmHg`** (acute lowering to 130–150 is safe; INTERACT2, ATACH-2) — reduces hematoma expansion",
+          "Avoid SBP <`130` (no added benefit, possible harm)",
+          "`Nicardipine` or `clevidipine` infusion preferred for smooth control; reverse anticoagulation in parallel",
+        ],
+      },
+      {
+        heading: "Sympathetic crisis — cocaine, amphetamines, MAOI",
+        items: [
+          "**Benzodiazepines FIRST** (`lorazepam 1–2 mg IV` or `diazepam 5–10 mg IV`, repeat) — treat the catecholamine surge at its source",
+          "**Avoid unopposed beta-blockade** — leaves alpha-mediated vasoconstriction/coronary spasm unchecked (theoretical but classically taught; `labetalol` debated, benzos + alpha-blockade safer)",
+          "Refractory hypertension: **`phentolamine 1–5 mg IV`** (alpha-blocker) or `nitroglycerin`/`nicardipine`",
+        ],
+      },
+      {
+        heading: "Pheochromocytoma crisis",
+        items: [
+          "**Alpha-blockade FIRST: `phentolamine 1–5 mg IV` boluses**, or `nicardipine` infusion",
+          "**Never start a beta-blocker before alpha-blockade** — unopposed alpha causes severe vasoconstriction and hypertensive worsening",
+          "Add beta-blocker only after adequate alpha-blockade for reflex tachyarrhythmia",
+        ],
+      },
+      {
+        heading: "Eclampsia / severe pre-eclampsia",
+        items: [
+          "**`Magnesium sulfate 4–6 g IV` load over 15–20 min, then `2 g/h`** — seizure treatment/prophylaxis (not a primary antihypertensive)",
+          "Antihypertensive for SBP ≥`160` or DBP ≥`110`: **`labetalol`, `hydralazine`, or `nicardipine`**",
+          "Goal `140–150 / 90–100` — not lower (preserves uteroplacental perfusion)",
+          "**ACE inhibitors, ARBs, and nitroprusside are contraindicated/avoided in pregnancy**; definitive treatment is delivery",
+        ],
+      },
+      {
+        heading: "Other end-organ syndromes",
+        items: [
+          "**Hypertensive encephalopathy**: headache, AMS, seizures, papilledema; reduce MAP ≤25% with `nicardipine`/`clevidipine` — diagnosis of exclusion (rule out stroke/ICH first)",
+          "**Sympathetic crashing acute pulmonary edema (SCAPE)**: high-dose `nitroglycerin` + NIV (see SCAPE entry)",
+          "**ACS**: `nitroglycerin` ± beta-blocker; treat ischemia",
+          "**Acute renal failure / scleroderma renal crisis**: ACE inhibitor is specifically indicated for scleroderma crisis",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "**Do not treat a number — treat the patient**; asymptomatic severe HTN almost never needs ED IV therapy and lowering it can cause harm",
+          "Avoid oral/sublingual immediate-release **nifedipine** — uncontrolled precipitous drops, MI, and stroke reported",
+          "Always check for the diagnosis-specific target BEFORE picking an agent (dissection and stroke move in opposite directions)",
+          "Nitroprusside: monitor for cyanide toxicity (altered mental status, lactic acidosis) with high dose/prolonged use/renal failure",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 57 (Systemic Hypertension)", "Whelton et al, 2017 ACC/AHA Hypertension Guideline", "Anderson et al, INTERACT2 (NEJM 2013)", "Qureshi et al, ATACH-2 (NEJM 2016)", "LITFL Hypertensive Emergency"],
+      },
+    ],
+  },
+  {
+    id: "stemi-acs",
+    name: "STEMI / ACS",
+    subtitle: "Acute coronary syndrome management",
+    category: "cv",
+    tldr: [
+      {
+        heading: "Immediate actions (all suspected ACS)",
+        items: [
+          "**ECG within 10 min of arrival** and repeat serially / with any symptom change",
+          "**Aspirin `162–325 mg chewed`** (non-enteric-coated) unless true allergy",
+          "Continuous monitoring, IV access, supplemental O₂ **only if SpO₂ <90%** (routine O₂ harmful if not hypoxic)",
+          "Nitroglycerin `0.4 mg SL q5 min` for ischemic pain if not hypotensive — **see RV-infarct caution below**",
+        ],
+      },
+      {
+        heading: "STEMI ECG criteria",
+        items: [
+          "**New ST elevation at the J-point in ≥2 contiguous leads**: ≥`1 mm` in limb leads; precordial ≥`2 mm` (men ≥40 y), ≥`2.5 mm` (men <40 y), ≥`1.5 mm` (women) in V2–V3",
+          "**New LBBB is NOT automatically STEMI** — apply modified Sgarbossa criteria",
+          "Reciprocal ST depression supports true STEMI over mimic",
+          "**Activate cath lab immediately** — do not wait for troponin",
+        ],
+      },
+      {
+        heading: "Reperfusion — time is muscle",
+        items: [
+          "**Primary PCI is preferred: first-medical-contact-to-device <90 min** (PCI-capable center), or **<120 min if transfer required**",
+          "**If PCI cannot be achieved <120 min → fibrinolysis** within 30 min of arrival (door-to-needle), then transfer for PCI",
+          "**Tenecteplase (TNK) weight-based IV bolus** — `<60 kg 30 mg`, `60–69 kg 35 mg`, `70–79 kg 40 mg`, `80–89 kg 45 mg`, `≥90 kg 50 mg`; **give HALF-dose if age ≥75** (reduces ICH)",
+          "Anticoagulate: **`heparin` IV** (or enoxaparin/bivalirudin per protocol)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "STEMI equivalents — do not miss",
+        items: [
+          "**Posterior MI**: ST depression V1–V3 with tall R waves; confirm with **posterior leads V7–V9 (≥`0.5 mm` elevation)** — treat as STEMI",
+          "**de Winter T waves**: upsloping ST depression at J-point with tall symmetric T waves in precordials → proximal LAD occlusion",
+          "**Hyperacute T waves**: broad, tall, symmetric T waves — earliest sign of occlusion, precede ST elevation",
+          "**Wellens syndrome**: biphasic (Type A) or deep symmetric (Type B) T-wave inversions V2–V3 in a pain-free patient → critical LAD stenosis; do NOT stress test, refer for cath",
+          "**Modified Sgarbossa (in LBBB or paced rhythm)**: concordant STE ≥`1 mm`, concordant ST depression ≥`1 mm` V1–V3, OR ST/S ratio ≤−0.25 (discordant STE disproportionate to S wave)",
+        ],
+      },
+      {
+        heading: "Inferior MI + right ventricular infarct",
+        items: [
+          "Inferior STEMI (II, III, aVF) — **obtain right-sided lead `V4R`**; STE in V4R = RV infarction",
+          "**RV infarct is preload-dependent: AVOID nitroglycerin, morphine, and other preload reducers** — can precipitate severe hypotension/arrest",
+          "**Give IV fluid boluses** (`250–500 mL NS`) for hypotension; add inotrope/pressor if refractory",
+          "STE in III > II, with ST depression in I/aVL, suggests RCA (proximal) culprit",
+        ],
+      },
+      {
+        heading: "Antiplatelet & anticoagulation",
+        items: [
+          "**Aspirin `162–325 mg` chewed** for all (then `81 mg` daily)",
+          "**P2Y12 inhibitor timing is often deferred to cardiology** (esp. before known coronary anatomy / possible CABG) — confirm local protocol before loading",
+          "Parenteral anticoagulation for all ACS: `heparin`, enoxaparin, or bivalirudin",
+          "High-risk NSTEMI: GP IIb/IIIa and P2Y12 decisions made with cardiology",
+        ],
+      },
+      {
+        heading: "NSTEMI / UA management",
+        items: [
+          "**NSTEMI = NO lytics** (fibrinolysis offers no benefit and adds risk) — manage with antiplatelet, anticoagulation, anti-ischemics",
+          "**Early invasive strategy** (angiography) within 24–72 h; immediate (<2 h) if refractory ischemia, hemodynamic/electrical instability, or ongoing chest pain",
+          "Anti-ischemic: nitrates, beta-blocker (if no HF/shock/RV infarct/bradycardia)",
+          "Risk-stratify with **HEART score** and serial hs-troponin",
+        ],
+      },
+      {
+        heading: "High-sensitivity troponin & risk scoring",
+        items: [
+          "**Serial hs-troponin** (0 and 1–3 h) detects a rising/falling pattern — a single value cannot rule in/out",
+          "A delta (significant rise or fall) distinguishes acute MI from chronic elevation (CKD, HF, myocarditis)",
+          "**HEART score** (History, ECG, Age, Risk factors, Troponin): 0–3 low risk (<2% MACE), 4–6 moderate, ≥7 high — guides admission vs. accelerated pathway",
+          "Troponin can be normal early — a single negative value in the first hours does not exclude evolving MI",
+        ],
+      },
+      {
+        heading: "Fibrinolysis contraindications (selected)",
+        items: [
+          "**Absolute**: any prior ICH, ischemic stroke <3 months, known structural cerebral vascular lesion or malignant intracranial neoplasm, active bleeding/bleeding diathesis, significant closed head/facial trauma <3 months, suspected aortic dissection",
+          "**Relative**: SBP >`180` or DBP >`110`, ischemic stroke >3 months, recent major surgery/trauma <3 weeks, recent internal bleeding <2–4 weeks, oral anticoagulants, pregnancy",
+          "**If contraindicated → transfer for primary PCI regardless of time**",
+        ],
+      },
+      {
+        heading: "Adjuncts & pitfalls",
+        items: [
+          "**Aortic dissection can mimic STEMI** (RCA involvement → inferior STE) — consider before lytics; lytics in dissection are catastrophic",
+          "Beta-blockers: **withhold if signs of heart failure, low output, shock risk (Killip ≥II), bradycardia, or RV infarct** (COMMIT trial)",
+          "High-dose statin (e.g., `atorvastatin 80 mg`) early",
+          "Cocaine-associated ACS: **benzodiazepines + nitroglycerin; avoid beta-blockers** (unopposed alpha)",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 49 (Acute Coronary Syndromes)", "O'Gara et al, 2013 ACCF/AHA STEMI Guideline", "Amsterdam et al, 2014 AHA/ACC NSTE-ACS Guideline", "Meyers et al, Modified Sgarbossa (Ann Emerg Med 2018)", "LITFL STEMI"],
+      },
+    ],
+  },
+  {
+    id: "aaa-rupture",
+    name: "Ruptured AAA",
+    subtitle: "Abdominal aortic aneurysm rupture",
+    category: "cv",
+    tldr: [
+      {
+        heading: "Recognize — the lethal triad",
+        items: [
+          "**Abdominal/flank/back pain + hypotension + pulsatile abdominal mass** — full triad in only ~50%, so suspect with any two",
+          "**Frequently misdiagnosed as renal colic in patients >60** — 'first kidney stone' over age 60 is a ruptured AAA until proven otherwise",
+          "Also mimics diverticulitis, MSK back pain, GI bleed, syncope — any older patient with abdominal/back pain + hemodynamic instability",
+          "Femoral pulse asymmetry, flank ecchymosis (Grey Turner), syncope are clues",
+        ],
+      },
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Bedside ultrasound** — detects an aneurysm (aorta >`3 cm`) in seconds; **a normal-sized aorta effectively excludes rupture, but US CANNOT exclude rupture itself** (retroperitoneal blood is poorly seen)",
+          "2 large-bore IVs, **type & crossmatch, activate massive transfusion protocol**",
+          "**Vascular surgery STAT** — survival depends on getting to the OR/EVAR, not on ED workup",
+          "Unstable patient → **straight to OR**, do NOT delay for CT",
+        ],
+      },
+      {
+        heading: "Resuscitation — permissive (hypotensive)",
+        items: [
+          "**Permissive hypotension: target SBP ~`70–90 mmHg`** (or a palpable radial pulse / adequate mentation) while awaiting surgery",
+          "**Transfuse blood, NOT crystalloid** — give packed RBCs/MTP; minimize clear fluids",
+          "**Avoid overshooting BP — raising pressure 'pops the clot'**, dislodging the contained retroperitoneal tamponade and causing free rupture/exsanguination",
+          "Reverse anticoagulation; keep the patient calm (pain/agitation spikes BP)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Stable vs. unstable pathway",
+        items: [
+          "**Hemodynamically UNSTABLE + known/visualized AAA → OR immediately** (no CT) — diagnosis is clinical + bedside US",
+          "**Hemodynamically STABLE → CTA abdomen/pelvis** defines anatomy, confirms rupture/leak, and determines EVAR vs. open candidacy",
+          "Never send an unstable patient to CT — patients arrest in the scanner",
+        ],
+      },
+      {
+        heading: "Bedside ultrasound technique",
+        items: [
+          "Measure aorta **outer wall to outer wall** in transverse; **>`3 cm` = aneurysm**, **>`5.5 cm` high rupture risk**",
+          "Scan from epigastrium to bifurcation (just above umbilicus); the aorta lies anterior/left of the vertebral body, IVC to the patient's right",
+          "**US confirms the aneurysm but does NOT confirm or exclude rupture** — a small aneurysm with shock still warrants surgical evaluation",
+          "Free intraperitoneal fluid is a late/poor sign; most rupture is retroperitoneal and sonographically occult",
+        ],
+      },
+      {
+        heading: "Definitive management",
+        items: [
+          "**EVAR (endovascular aneurysm repair)** — lower perioperative mortality, preferred when anatomy suitable and available; increasingly used even for ruptures",
+          "**Open repair** — for unsuitable anatomy or when EVAR unavailable",
+          "Decision and approach are made by vascular surgery — the ED role is recognition, resuscitation, and rapid mobilization",
+        ],
+      },
+      {
+        heading: "Risk factors",
+        items: [
+          "Age >65, male sex, smoking (strongest modifiable factor), hypertension, atherosclerosis, family history, connective-tissue disease",
+          "Rupture risk rises sharply with diameter: >`5.5 cm` warrants elective repair before it ruptures",
+          "Most AAAs are infrarenal and asymptomatic until rupture",
+        ],
+      },
+      {
+        heading: "Resuscitation details",
+        items: [
+          "**Blood is the resuscitation fluid** — activate MTP early; aim for balanced product ratios per local massive transfusion protocol",
+          "**Target the lowest BP compatible with end-organ perfusion** (mentation, radial pulse, SBP ~`70–90`) until the aorta is clamped/stented",
+          "Reverse anticoagulation/antiplatelet agents; correct coagulopathy and hypothermia (lethal triad)",
+          "Minimize handling, pain, and agitation — catecholamine surges raise BP and threaten the contained rupture",
+          "Avoid pressors to chase a number — they raise BP and risk free rupture without fixing the bleeding source",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "**Anchoring on 'renal colic'** in an older patient — get a bedside aortic view before committing to a stone diagnosis",
+          "Attributing pain to MSK/back strain and discharging — a missed AAA is rapidly fatal",
+          "Aggressive crystalloid resuscitation to a 'normal' BP — dilutes clotting factors and dislodges the tamponading clot",
+          "Sending an unstable patient for CT instead of to the OR",
+          "Aortoenteric fistula: AAA (or prior graft) presenting as GI bleed — herald bleed then exsanguination",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 59 (Aneurysmal Disease)", "Chaikof et al, 2018 SVS AAA Practice Guidelines", "IMPROVE Trial (BMJ 2017) — endovascular vs. open for ruptured AAA", "LITFL Abdominal Aortic Aneurysm"],
+      },
+    ],
+  },
+  {
+    id: "acute-limb-ischemia",
+    name: "Acute Limb Ischemia",
+    subtitle: "Sudden arterial occlusion threatening a limb",
+    category: "cv",
+    tldr: [
+      {
+        heading: "Recognize — the 6 Ps",
+        items: [
+          "**Pain** (early, severe, out of proportion), **Pallor**, **Pulselessness**, **Paresthesia**, **Paralysis**, **Poikilothermia** (cold)",
+          "**Paralysis and paresthesia are LATE/ominous findings** — they signal nerve ischemia and an immediately threatened limb",
+          "Sudden onset over hours; compare with the contralateral limb (temperature, pulse, capillary refill)",
+          "Document a baseline neurovascular exam with timestamps — it drives the Rutherford category and urgency",
+        ],
+      },
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Anticoagulate immediately: `unfractionated heparin 80 units/kg IV bolus`, then `18 units/kg/h infusion`** (unless contraindicated) — prevents clot propagation; do not wait for imaging",
+          "**Vascular surgery consult STAT** — time-critical, limb viability falls after **~6 hours** of ischemia",
+          "**Keep the limb dependent and warm; do NOT elevate and do NOT apply heat or ice** — elevation reduces perfusion; external heat raises metabolic demand",
+          "Analgesia, IV access, labs (CK, K⁺, lactate, renal function, coags, type & screen)",
+        ],
+      },
+      {
+        heading: "Imaging & disposition",
+        items: [
+          "**CT angiography** (or arterial duplex Doppler) defines the level and extent of occlusion in viable/marginal limbs",
+          "**Do not delay revascularization of an immediately threatened limb for imaging** — go to OR/angio suite",
+          "ECG/echo to identify cardioembolic source (atrial fibrillation, recent MI with mural thrombus)",
+          "Definitive treatment per Rutherford class and etiology (surgical embolectomy, catheter-directed thrombolysis, or bypass)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Rutherford classification — drives the timeline",
+        items: [
+          "**Class I (viable)**: not immediately threatened; no sensory/motor deficit, audible arterial + venous Doppler — time for imaging and planning",
+          "**Class IIa (marginally threatened)**: minimal sensory loss (toes), no motor deficit; salvageable with prompt treatment — arterial Doppler often inaudible",
+          "**Class IIb (immediately threatened)**: sensory loss beyond toes + rest pain, mild-to-moderate motor deficit; **salvageable only with IMMEDIATE revascularization** — inaudible arterial Doppler",
+          "**Class III (irreversible)**: profound anesthesia + paralysis (rigor), no Doppler signals, skin marbling/blistering → **primary amputation; revascularization is futile and dangerous (reperfusion injury)**",
+        ],
+      },
+      {
+        heading: "Embolic vs. thrombotic",
+        items: [
+          "**Embolic**: sudden, severe (no time to collateralize); source usually **atrial fibrillation**, recent MI (mural thrombus), valvular disease, endocarditis; often a NORMAL contralateral limb and no claudication history",
+          "**Thrombotic (in situ)**: occlusion of pre-existing atherosclerotic disease (**PAD**); more gradual, prior claudication, abnormal contralateral pulses, established collaterals → often less severe ischemia",
+          "Other causes: aortic dissection extending to a limb, popliteal aneurysm thrombosis/embolism, trauma, dissection, paradoxical embolus, hypercoagulable states",
+          "Distinction guides therapy: embolectomy favors embolic; thrombolysis/bypass often favored for thrombotic disease",
+        ],
+      },
+      {
+        heading: "Revascularization options",
+        items: [
+          "**Surgical embolectomy** (Fogarty catheter) — classic for embolic occlusion, esp. IIb",
+          "**Catheter-directed thrombolysis** — for thrombotic occlusion in viable/marginal limbs with time available (Class I–IIa)",
+          "**Surgical bypass** — for extensive atherosclerotic disease not amenable to the above",
+          "**Fasciotomy** at/after revascularization to pre-empt or treat compartment syndrome",
+        ],
+      },
+      {
+        heading: "Reperfusion injury — anticipate the systemic hit",
+        items: [
+          "Restoring flow to ischemic muscle releases **potassium, myoglobin, lactate, and free radicals** into the circulation",
+          "**Hyperkalemia** → peaked T waves/arrhythmia; **rhabdomyolysis** → AKI; metabolic acidosis — monitor ECG, K⁺, CK, renal function and treat aggressively",
+          "**Compartment syndrome** after reperfusion (swelling within fascial planes) — low threshold for fasciotomy; tense compartments, pain on passive stretch",
+          "Severe reperfusion can cause hemodynamic collapse — a 'metabolic storm' on revascularizing a long-ischemic limb",
+        ],
+      },
+      {
+        heading: "Disposition & monitoring",
+        items: [
+          "Immediately/marginally threatened limb (Rutherford IIa/IIb) → **emergent OR or angio suite** for revascularization",
+          "Viable limb (Class I) → urgent vascular admission, anticoagulation, imaging, planned intervention",
+          "Post-revascularization: **serial neurovascular and compartment checks**, telemetry, trend K⁺/CK/renal function for reperfusion sequelae",
+          "Class III (irreversible): vascular surgery for amputation planning; aggressive metabolic support",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "**Elevating the limb** (worsens already-poor perfusion) or **applying heat** (raises metabolic demand) — keep dependent and protect, do not actively warm",
+          "Delaying heparin while awaiting imaging or consults",
+          "Misreading neuropathy or chronic PAD pain as acute ischemia (and vice versa) — the SUDDEN, painful, pulseless, cold limb is the emergency",
+          "Revascularizing a Class III (irreversible) limb — releases lethal potassium/myoglobin load; these limbs need amputation",
+          "Forgetting the cardioembolic workup — many will need long-term anticoagulation for AF",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 60 (Occlusive Arterial Disease)", "Rutherford et al, Recommended Standards (J Vasc Surg 1997)", "Björck et al, 2020 ESVS Acute Limb Ischaemia Guidelines", "LITFL Acute Limb Ischaemia"],
+      },
+    ],
+  },
+{
+    id: "sepsis-septic-shock",
+    name: "Sepsis & Septic Shock",
+    subtitle: "Life-threatening organ dysfunction from infection",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions (Surviving Sepsis Hour-1 bundle)",
+        items: [
+          "**Measure lactate** — remeasure in 2–4 h if initial `> 2 mmol/L` to track clearance",
+          "**Blood cultures × 2 BEFORE antibiotics** — but do NOT delay antibiotics to obtain them",
+          "**Broad-spectrum antibiotics within 1 h** — within 1 h for shock; for sepsis without shock, ideally within 1 h and no later than 3 h",
+          "**Crystalloid `30 mL/kg IV` for hypotension or lactate `≥ 4 mmol/L`** — begin immediately, reassess after",
+          "**Start vasopressors** if MAP `< 65 mmHg` during or after fluids — do not wait for full 30 mL/kg if patient is crashing",
+        ],
+      },
+      {
+        heading: "Vasopressors & steroids",
+        items: [
+          "**Norepinephrine** — first-line; start `0.05–0.1 mcg/kg/min`, titrate to MAP `≥ 65 mmHg`",
+          "**Vasopressin** `0.03 units/min` (fixed dose) — add when norepinephrine `≈ 0.25–0.5 mcg/kg/min` to spare catecholamine",
+          "**Epinephrine** — third-line add-on `0.05 mcg/kg/min` titrated for refractory shock",
+          "**Hydrocortisone `200 mg/day IV`** (`50 mg q6h` or infusion) for shock refractory to fluids + vasopressors",
+          "Start peripheral norepinephrine via good proximal IV while central access obtained — do not delay pressors for a central line",
+        ],
+      },
+      {
+        heading: "Source & support",
+        items: [
+          "**Identify and control the source** — imaging, drain abscess, remove infected lines/devices, debride within `6–12 h`",
+          "**Balanced crystalloid** (LR, Plasma-Lyte) preferred over `0.9% saline` (SMART, BaSICS)",
+          "Reassess volume dynamically — passive leg raise, IVC, stroke-volume response; avoid blind repeat boluses",
+          "Vasopressor-resistant shock: check ionized calcium, cortisol axis, and reconsider source control",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: ["ICU for septic shock / rising lactate / vasopressor need; serial lactate clearance guides resuscitation"],
+      },
+    ],
+    extended: [
+      {
+        heading: "Definitions (Sepsis-3)",
+        items: [
+          "**Sepsis** = life-threatening organ dysfunction from dysregulated host response to infection → **SOFA increase `≥ 2`** from baseline",
+          "**Septic shock** = sepsis + vasopressor requirement to keep MAP `≥ 65 mmHg` AND lactate `> 2 mmol/L` **despite adequate fluid resuscitation**",
+          "**qSOFA** (RR `≥ 22`, SBP `≤ 100`, altered mentation; ≥2 = higher risk) is a **bedside prompt to act, NOT a screening gate** — do not use it to rule out sepsis",
+          "SIRS criteria remain useful for raising suspicion but are nonspecific",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "Fever or hypothermia, tachycardia, tachypnea, altered mentation, hypotension",
+          "Warm shock (vasodilated, bounding pulses) early; cold shock (clamped, mottled) later or in children",
+          "Mottled knees / prolonged cap refill / cool extremities = poor perfusion even if BP 'normal'",
+          "Elderly and immunocompromised may lack fever — low threshold",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "Lactate, blood cultures × 2 (separate sites), CBC, CMP, coags/fibrinogen, procalcitonin",
+          "Source studies: UA/urine culture, CXR, sputum, wound cultures; CT for occult intra-abdominal/soft-tissue source",
+          "Consider LP, point-of-care echo (sepsis-induced cardiomyopathy), and lines/hardware as sources",
+        ],
+      },
+      {
+        heading: "Empiric antibiotics (adult, source-directed)",
+        items: [
+          "**Community, unknown source**: `Cefepime 2 g IV` or `Piperacillin-tazobactam 4.5 g IV`",
+          "**Add Vancomycin** (weight-based, ~`15–20 mg/kg IV`) if MRSA risk, line infection, severe soft-tissue, or shock",
+          "**Neutropenic / Pseudomonas risk**: antipseudomonal beta-lactam (cefepime, pip-tazo, or meropenem `1 g IV q8h`)",
+          "De-escalate once cultures/sensitivities return; source control is as important as the drug",
+        ],
+      },
+      {
+        heading: "PEDS sepsis (Surviving Sepsis pediatric 2020)",
+        items: [
+          "**Fluids `10–20 mL/kg` boluses, REASSESS after each** for hepatomegaly, rales, worsening work of breathing — stop if signs of overload; in non-ICU settings without intensive monitoring, give maintenance and start pressors rather than repeated boluses",
+          "**Epinephrine `0.05–0.3 mcg/kg/min` is often first-line**, especially in cold shock; norepinephrine for warm/vasodilated shock",
+          "**Weight-based antibiotics**: e.g. `Ceftriaxone 50–75 mg/kg IV` (max 2 g) ± `Vancomycin 15 mg/kg IV`",
+          "**Treat hypoglycemia** `D10 5 mL/kg` and **hypocalcemia** promptly — both worsen pediatric myocardial function",
+          "Hydrocortisone `1–2 mg/kg` (max `50 mg`) for catecholamine-refractory shock / suspected adrenal insufficiency",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "**Do not delay antibiotics to obtain cultures or imaging** in shock — every hour of delay raises mortality",
+          "Under-resuscitation AND over-resuscitation both harm — titrate dynamically rather than chase a fixed CVP",
+          "Lactate can be elevated from beta-agonists, seizures, or hepatic clearance failure — interpret in context but treat the patient",
+          "Missing source control (abscess, empyema, infected hardware) → antibiotics alone will fail",
+          "Relative adrenal insufficiency under-recognized — add hydrocortisone before piling on a third pressor",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Surviving Sepsis Campaign Guidelines 2021 (Evans et al, Crit Care Med 2021)",
+          "Singer et al, Sepsis-3 Consensus, JAMA 2016",
+          "Weiss et al, Surviving Sepsis Pediatric Guidelines 2020",
+          "Tintinalli 9e Ch 151 (Sepsis)",
+          "LITFL Sepsis Definitions and Management",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "meningitis-encephalitis",
+    name: "Bacterial Meningitis & Encephalitis",
+    subtitle: "CNS infection emergency",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Do NOT delay antibiotics for CT or LP** — give empiric antibiotics + dexamethasone immediately, then image/tap",
+          "**Dexamethasone `0.15 mg/kg IV` (max `10 mg`) BEFORE or WITH first antibiotic dose** — benefit is pneumococcal; stop if not pneumococcus",
+          "Draw blood cultures × 2 before antibiotics if it causes no delay",
+          "**Add Acyclovir `10 mg/kg IV q8h`** (ideal body weight) if any encephalitis features — altered mental status, seizures, focal deficits",
+          "Droplet precautions until meningococcus / H. influenzae excluded",
+        ],
+      },
+      {
+        heading: "Empiric antibiotics (adult)",
+        items: [
+          "**Ceftriaxone `2 g IV q12h`** (covers S. pneumoniae, N. meningitidis)",
+          "**+ Vancomycin** weight-based `15–20 mg/kg IV q8–12h` (target trough `15–20`) — resistant pneumococcus",
+          "**+ Ampicillin `2 g IV q4h`** if `age > 50`, immunocompromised, pregnant, alcoholic, or neonate — **Listeria** coverage",
+          "**Post-neurosurgical / penetrating trauma / shunt**: **Cefepime `2 g IV q8h` (or Meropenem) + Vancomycin** for Pseudomonas and staph",
+          "Continue dexamethasone `q6h × 4 days` ONLY if S. pneumoniae confirmed",
+        ],
+      },
+      {
+        heading: "CT-before-LP criteria",
+        items: [
+          "Image first if: **immunocompromised, prior CNS disease, new seizure, papilledema, altered consciousness, or focal neuro deficit**",
+          "Otherwise LP can proceed without CT — antibiotics ALWAYS first regardless",
+          "Check platelets/coags; correct coagulopathy before LP",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: ["ICU for shock, depressed consciousness, status, or rapidly progressive course; admit all confirmed bacterial meningitis"],
+      },
+    ],
+    extended: [
+      {
+        heading: "CSF interpretation",
+        items: [
+          "**Bacterial**: opening pressure high, **WBC `1,000–5,000` neutrophil-predominant**, **glucose `< 40` (CSF:serum `< 0.4`)**, protein `> 200`, Gram stain often positive",
+          "**Viral (aseptic)**: WBC `10–500` **lymphocyte-predominant**, normal glucose, mildly high protein",
+          "**HSV encephalitis**: lymphocytic pleocytosis, **RBCs / xanthochromia** (hemorrhagic temporal lobe), high protein, normal glucose — send **CSF HSV PCR**",
+          "**Fungal/TB**: lymphocytic, very low glucose, very high protein — send cryptococcal antigen, AFB, opening pressure",
+          "A normal CT does not exclude high ICP — defer LP clinically if herniation risk",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "Classic triad (fever, neck stiffness, altered mental status) present in minority — absence does NOT exclude",
+          "Headache, photophobia, vomiting; **petechial/purpuric rash → meningococcemia** (medical emergency)",
+          "Kernig / Brudzinski / jolt accentuation insensitive — do not rely on them",
+          "**Encephalitis** = altered mentation/behavior, seizures, focal deficits (HSV favors temporal lobe → aphasia, personality change)",
+          "Infants: bulging fontanelle, poor feeding, irritability, paradoxical irritability when held",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "LP: cell count + differential, glucose, protein, Gram stain + culture, opening pressure",
+          "CSF multiplex PCR panel (incl HSV, enterovirus, S. pneumoniae, N. meningitidis); HSV PCR can be falsely negative in first 24–72 h — repeat if suspicion high",
+          "Blood cultures × 2, CBC, CMP, coags, lactate, glucose, procalcitonin",
+          "MRI brain for encephalitis (temporal lobe changes in HSV); EEG if seizures",
+        ],
+      },
+      {
+        heading: "PEDS dosing",
+        items: [
+          "**Ceftriaxone `100 mg/kg/day IV` (div q12–24h, max 4 g/day)** + **Vancomycin `15 mg/kg IV q6h` (`60 mg/kg/day`)**",
+          "**AVOID ceftriaxone in neonates** (kernicterus, Ca precipitation) — use **Cefotaxime `50 mg/kg IV q6–8h`** instead",
+          "**Neonates (≤ 1 month)**: **Ampicillin `50–100 mg/kg IV q6–8h` + Cefotaxime + Acyclovir `20 mg/kg IV q8h`** (HSV, GBS, E. coli, Listeria)",
+          "**Acyclovir (children)** `10–15 mg/kg IV q8h`; **Dexamethasone `0.15 mg/kg IV q6h`** mainly for H. influenzae type b",
+          "Add **Ampicillin** in young infants for Listeria as above",
+        ],
+      },
+      {
+        heading: "Post-exposure prophylaxis (meningococcal)",
+        items: [
+          "**Close contacts** (household, daycare, direct secretion exposure, healthcare without mask during airway management) need PEP ASAP",
+          "**Rifampin `600 mg PO q12h × 2 days`** (peds `10 mg/kg`), OR **Ciprofloxacin `500 mg PO ×1`**, OR **Ceftriaxone `250 mg IM ×1`** (`125 mg` if `< 15 yr`; preferred in pregnancy)",
+          "Notify public health; index case stays on droplet precautions ≥ 24 h after effective antibiotics",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "**Antibiotics before LP is correct** — yield of CSF culture drops but Gram stain/PCR and patient survival matter more",
+          "Forgetting Listeria coverage (ampicillin) in elderly/immunocompromised/pregnant is a classic miss",
+          "Forgetting acyclovir for encephalitis — untreated HSV mortality `> 70%`",
+          "Dexamethasone only helps if given before/with first dose — late dosing is useless",
+          "Petechiae + fever = meningococcemia until proven otherwise — antibiotics in minutes, isolate, PEP contacts",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "IDSA Practice Guidelines for Bacterial Meningitis (Tunkel et al, 2004; HSV encephalitis 2008)",
+          "de Gans & van de Beek, Dexamethasone in Bacterial Meningitis, NEJM 2002",
+          "Tintinalli 9e Ch 175 (CNS Infections)",
+          "AAP Red Book (pediatric dosing)",
+          "LITFL Meningitis",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "infective-endocarditis",
+    name: "Infective Endocarditis",
+    subtitle: "Endocardial / valve infection",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**THREE sets of blood cultures from separate venipuncture sites BEFORE antibiotics** — spaced over time if hemodynamically stable",
+          "In sepsis/shock or acute valve failure, do NOT delay antibiotics — draw the 3 sets rapidly then treat empirically",
+          "**TTE first**, then **TEE** (far more sensitive for vegetations, abscess, prosthetic valves)",
+          "ECG on arrival and serially — **new conduction block suggests perivalvular/root abscess**",
+          "Early cardiology + cardiac surgery + ID involvement",
+        ],
+      },
+      {
+        heading: "Empiric antibiotics",
+        items: [
+          "**Native valve**: **Vancomycin** weight-based `15–20 mg/kg IV q8–12h` **+ Ceftriaxone `2 g IV q24h`** (± **Gentamicin `1 mg/kg IV q8h`** for synergy in selected cases)",
+          "**Prosthetic valve**: **Vancomycin + Gentamicin `1 mg/kg IV q8h` + Rifampin `300–450 mg PO/IV q8h`** (rifampin for biofilm; start after bactericidal levels)",
+          "**IVDU / suspected MRSA**: vancomycin-based regimen covering S. aureus",
+          "Tailor to cultures/sensitivities and valve type with ID — these are starting points only",
+        ],
+      },
+      {
+        heading: "Modified Duke criteria (clinical Dx)",
+        items: [
+          "**Definite** = 2 major, OR 1 major + 3 minor, OR 5 minor",
+          "**Major**: (1) typical organism in 2 separate cultures (or persistently positive); (2) endocardial involvement — vegetation, abscess, new partial dehiscence of prosthetic valve, or **new valvular regurgitation**",
+          "**Minor**: predisposition (valve disease, IVDU), fever `≥ 38°C`, vascular phenomena, immunologic phenomena, single positive culture not meeting major",
+          "Negative cultures do not exclude — consider fastidious/HACEK and prior antibiotics",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: ["Admit all; ICU for heart failure, septic emboli, conduction block, or hemodynamic instability; prolonged IV antibiotics (4–6 weeks)"],
+      },
+    ],
+    extended: [
+      {
+        heading: "Organisms",
+        items: [
+          "**Staphylococcus aureus** (incl **MRSA**) — most common overall; acute, aggressive, prosthetic and IVDU disease",
+          "**Viridans group streptococci** — subacute native-valve disease, often after dental source",
+          "**Enterococci** — GU/GI source, elderly",
+          "**HACEK** group (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) — fastidious, culture-negative pitfall",
+          "**Coagulase-negative staph** — prosthetic valves, especially early postop",
+          "**IVDU → right-sided tricuspid** S. aureus endocarditis with septic pulmonary emboli",
+        ],
+      },
+      {
+        heading: "Peripheral stigmata",
+        items: [
+          "**Janeway lesions** — painless hemorrhagic macules on palms/soles (septic emboli)",
+          "**Osler nodes** — painful violaceous nodules on finger/toe pads (immune complex)",
+          "**Roth spots** — retinal hemorrhages with pale centers",
+          "**Splinter hemorrhages** under nails; petechiae (conjunctival, mucosal)",
+          "New or changing murmur; splenomegaly in subacute disease",
+        ],
+      },
+      {
+        heading: "Complications",
+        items: [
+          "**Heart failure from acute valve destruction** — leading cause of death and #1 surgical indication",
+          "**Septic emboli → embolic stroke** (left-sided), splenic/renal infarcts, mycotic aneurysm",
+          "**Perivalvular abscess → heart block** (watch PR interval / new AV block)",
+          "**Mycotic aneurysm** (cerebral, aortic) — risk of catastrophic rupture",
+          "**Septic pulmonary emboli** in right-sided/IVDU disease — multiple cavitary nodules on CT chest",
+          "Glomerulonephritis (immune complex), persistent bacteremia",
+        ],
+      },
+      {
+        heading: "Surgical indications",
+        items: [
+          "**Heart failure from valve dysfunction** (acute severe AR/MR) — most common reason for surgery",
+          "**Uncontrolled infection**: perivalvular abscess, new heart block, persistent bacteremia/fever despite appropriate antibiotics",
+          "**Large vegetation `> 10 mm` with embolic event**, or recurrent emboli on therapy",
+          "**Prosthetic valve endocarditis**, fungal endocarditis, or highly resistant organism",
+          "Early surgery often improves outcome — do not wait to 'complete' antibiotics first",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "**Three sets of blood cultures from separate sites** before antibiotics",
+          "TTE → TEE; CBC, CMP, ESR/CRP, UA (hematuria), lactate",
+          "ECG (serial — conduction abnormalities = abscess); CXR (septic emboli)",
+          "CT brain/chest/abdomen for embolic complications; MRA/CTA if mycotic aneurysm suspected",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "**Drawing only 1–2 cultures, or drawing after antibiotics** → culture-negative endocarditis and missed diagnosis",
+          "Normal TTE does NOT rule out IE — proceed to TEE when suspicion is high",
+          "New AV block on ECG = perivalvular abscess until proven otherwise — urgent surgical evaluation",
+          "Right-sided IE in IVDU may have a clear chest exam but florid septic pulmonary emboli on CT",
+          "Antibiotic prophylaxis is now only for highest-risk cardiac conditions undergoing specific procedures (AHA)",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "AHA Scientific Statement: Infective Endocarditis (Baddour et al, Circulation 2015)",
+          "ESC Guidelines for Endocarditis 2023",
+          "Li et al, Modified Duke Criteria, Clin Infect Dis 2000",
+          "Tintinalli 9e Ch 152 (Endocarditis and Valvular Heart Disease)",
+          "LITFL Infective Endocarditis",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "toxic-shock-syndrome",
+    name: "Toxic Shock Syndrome",
+    subtitle: "Staph / Strep superantigen-mediated shock",
+    category: "infect",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**SOURCE CONTROL FIRST** — remove tampon / nasal or wound packing immediately; **debride/explore necrotizing soft-tissue source urgently**",
+          "Aggressive crystalloid resuscitation — massive capillary leak; large volumes often needed",
+          "**Start vasopressors (norepinephrine)** early for fluid-refractory hypotension",
+          "Blood cultures (often negative in staph TSS) + wound/site cultures before antibiotics",
+          "ICU admission — rapid multi-organ failure",
+        ],
+      },
+      {
+        heading: "Antibiotics (anti-toxin + cell-wall agent)",
+        items: [
+          "**Clindamycin `900 mg IV q8h`** — **suppresses toxin/superantigen production** (Eagle effect); cornerstone of both staph and strep TSS",
+          "**Staph TSS**: **Clindamycin + Vancomycin `15–20 mg/kg IV` + Piperacillin-tazobactam `4.5 g IV`** (broad until source/organism known)",
+          "**Strep TSS**: **Penicillin G `4 million units IV q4h` (or Ceftriaxone `2 g IV`) + Clindamycin `900 mg IV q8h`**",
+          "**IVIG** for severe streptococcal TSS / necrotizing fasciitis — neutralizes circulating superantigen (`1–2 g/kg`, regimens vary)",
+          "Continue clindamycin until hemodynamically stable and toxin burden controlled",
+        ],
+      },
+      {
+        heading: "Staph vs Strep",
+        items: [
+          "**Staph TSS**: tampon use, nasal/wound packing, surgical wounds; **diffuse erythroderma → desquamation of palms/soles at 1–2 weeks**; **cultures often NEGATIVE**",
+          "**Strep TSS**: necrotizing soft-tissue infection or bacteremia; **severe pain out of proportion**; **very high mortality (`30–70%`)**; cultures often positive",
+          "Both: high fever, hypotension, multi-organ involvement, superantigen-driven",
+        ],
+      },
+      {
+        heading: "Dispo",
+        items: ["ICU; emergent surgical consult for any necrotizing source; mortality far higher for streptococcal TSS"],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "**Superantigens** (staph **TSST-1** / enterotoxins; strep **pyrogenic exotoxins SPE-A/B/C**) bypass normal antigen processing",
+          "Bind MHC-II and T-cell receptor directly → massive nonspecific T-cell activation (up to `20%` of T-cells)",
+          "**Cytokine storm** (TNF, IL-1, IL-2, IFN-γ) → capillary leak, vasodilation, distributive shock, multi-organ failure",
+          "Toxin effect explains shock even when bacterial burden/cultures are low",
+        ],
+      },
+      {
+        heading: "CDC clinical case definition (Staph TSS)",
+        items: [
+          "**Temperature `≥ 38.9°C`**",
+          "**Diffuse macular erythroderma** (sunburn-like rash)",
+          "**Desquamation 1–2 weeks after onset**, classically palms and soles",
+          "**Hypotension** (SBP `≤ 90` adults, or orthostatic drop)",
+          "**Multisystem involvement — `≥ 3` organ systems**: GI (vomiting/diarrhea), muscular (CK `> 2×`), mucous membranes (hyperemia), renal, hepatic, hematologic (platelets `< 100k`), CNS (altered mentation without focal deficit)",
+          "Negative serologies for measles/RMSF/lepto; blood/CSF cultures negative except possibly S. aureus",
+        ],
+      },
+      {
+        heading: "Recognition",
+        items: [
+          "Abrupt high fever, diffuse 'sunburn' rash, hypotension, vomiting/diarrhea, myalgias",
+          "Strawberry tongue, conjunctival injection, mucosal hyperemia",
+          "**Strep TSS clue: pain out of proportion + rapidly spreading erythema/edema, bullae, crepitus → necrotizing fasciitis**",
+          "Late desquamation of palms/soles (staph) — often after discharge",
+          "Confusion/altered mentation without focal neurologic deficit",
+        ],
+      },
+      {
+        heading: "Workup",
+        items: [
+          "CBC (thrombocytopenia), CMP (renal/hepatic), CK (myositis/rhabdo), coags/DIC panel, lactate",
+          "Blood cultures (positive in most strep, often negative in staph), site/wound cultures, vaginal swab",
+          "Imaging (CT/MRI) for deep soft-tissue/necrotizing source; do not let imaging delay the OR if exam is convincing",
+          "Bedside exploration of wounds; remove all foreign material",
+        ],
+      },
+      {
+        heading: "Supportive care & dispo",
+        items: [
+          "Aggressive isotonic crystalloid for capillary-leak shock; reassess for pulmonary edema as leak resolves and fluid mobilizes",
+          "**Norepinephrine** first-line vasopressor for refractory hypotension; add vasopressin/epinephrine as needed",
+          "Monitor and support failing organs: AKI (may need RRT), DIC, ARDS, hepatic dysfunction",
+          "ICU for all; repeat surgical debridement for necrotizing strep source as often as needed",
+          "Counsel: avoid high-absorbency tampons / prolonged tampon use; staph TSS can recur",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "**Failing to look for and remove the source** (retained tampon, forgotten nasal packing) — antibiotics alone will not reverse shock",
+          "**Cell-wall agents alone in heavy inoculum strep are less effective (Eagle effect)** — always add clindamycin for toxin suppression",
+          "Underestimating streptococcal TSS / necrotizing fasciitis — **surgical debridement is lifesaving and must not be delayed**",
+          "Attributing the rash to a drug reaction or simple viral exanthem and missing impending shock",
+          "Desquamation appears late — its absence early does not exclude TSS",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "IDSA Skin & Soft Tissue Infection Guidelines (Stevens et al, 2014)",
+          "CDC Toxic Shock Syndrome Case Definitions (staphylococcal & streptococcal)",
+          "Lappin & Ferguson, Gram-positive toxic shock syndromes, Lancet Infect Dis 2009",
+          "Tintinalli 9e Ch 150 (Toxic Shock Syndromes)",
+          "LITFL Toxic Shock Syndrome",
+        ],
+      },
+    ],
+  },
+{
+    id: "dka-hhs",
+    name: "DKA & HHS",
+    subtitle: "Hyperglycemic emergencies",
+    category: "endo",
+    tldr: [
+      {
+        heading: "Diagnostic criteria",
+        items: [
+          "**DKA**: glucose `>250 mg/dL`, pH `<7.3`, bicarb `<18 mEq/L`, positive ketones (serum beta-hydroxybutyrate preferred), **elevated anion gap**",
+          "**HHS**: glucose `>600 mg/dL`, effective osm `>320 mOsm/kg`, pH `>7.3`, bicarb `>18`, minimal/absent ketones, **profound dehydration** (often `8–10 L` deficit)",
+          "Overlap exists — ~`1/3` of patients have features of both; HHS carries higher mortality (`5–20%`) from severe volume depletion and comorbidity",
+          "Effective osm = `2 × Na + glucose/18`; correct measured Na by adding `1.6 mEq/L` per `100 mg/dL` glucose above 100 (use `2.4` if glucose >400)",
+        ],
+      },
+      {
+        heading: "1. FLUIDS FIRST (before insulin)",
+        items: [
+          "**Start isotonic fluids immediately** — `NS 15–20 mL/kg/h` (≈`1–1.5 L` in first hour); restoring volume alone drops glucose substantially",
+          "After initial bolus, switch by corrected sodium: high/normal Na → `0.45% NaCl 250–500 mL/h`; low Na → continue `NS 250–500 mL/h`",
+          "Add `dextrose` (D5 to fluids) once glucose `<200 mg/dL` (DKA) or `<300 mg/dL` (HHS) so insulin can continue clearing ketones without hypoglycemia",
+          "**PEDS**: avoid aggressive bolus — `10 mL/kg` over 1 h (max `20 mL/kg`), then maintenance; over-resuscitation drives cerebral edema",
+        ],
+      },
+      {
+        heading: "2. CHECK POTASSIUM BEFORE INSULIN",
+        items: [
+          "**K+ `<3.3 mEq/L` → HOLD insulin**, replace `K+ 10–20 mEq/h` first (insulin drives K+ intracellularly → fatal arrhythmia)",
+          "K+ `3.3–5.2` → start insulin AND add `20–30 mEq KCl` to each liter of fluid; target `4–5 mEq/L`",
+          "K+ `>5.2` → start insulin, no potassium yet; recheck `q2h`",
+          "Total-body potassium is always depleted in DKA even when serum K+ looks normal/high",
+        ],
+      },
+      {
+        heading: "3. Insulin + endpoints",
+        items: [
+          "`Regular insulin 0.1 units/kg IV bolus`, then `0.1 units/kg/h` infusion — OR no-bolus `0.14 units/kg/h` (equally effective)",
+          "Target glucose fall `50–75 mg/dL/h`; if not falling, double the rate (verify hydration first)",
+          "**Continue insulin until the ANION GAP closes / ketones clear — NOT until glucose normalizes**; this is the most common error",
+          "**PEDS**: NO insulin bolus; start `0.05–0.1 units/kg/h` only after first fluid hour",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "**DKA**: absolute/relative insulin deficiency + counter-regulatory hormones → lipolysis → free fatty acids → hepatic ketogenesis (beta-hydroxybutyrate, acetoacetate) → high anion-gap metabolic acidosis",
+          "**HHS**: residual insulin suppresses ketogenesis but not hyperglycemia → osmotic diuresis → extreme dehydration + hyperosmolarity → obtundation; develops over days",
+          "Both: glucosuria-driven osmotic diuresis depletes water, Na, K, phosphate, magnesium",
+          "DKA classically type 1 / younger; HHS classically type 2 / elderly — but either presentation can occur in either type",
+        ],
+      },
+      {
+        heading: "Identify the precipitant ('the I's')",
+        items: [
+          "**Infection** (most common — pneumonia, UTI, sepsis) — fever may be absent; check lactate, cultures, CXR",
+          "**Infarction / Ischemia** — MI, stroke, mesenteric ischemia; get ECG + troponin in all older or high-risk patients",
+          "**Insulin nonadherence / Insufficient dosing** — pump failure, cost, missed doses (a leading cause in young type 1)",
+          "**Iatrogenic / Intoxication** — steroids, atypical antipsychotics, alcohol, cocaine, new diabetes onset",
+          "**SGLT2 inhibitor → euglycemic DKA** — ketoacidosis with glucose `<250 mg/dL`; check ketones/gas even when glucose is near-normal; hold the drug",
+        ],
+      },
+      {
+        heading: "Sodium bicarbonate — almost never",
+        items: [
+          "**Give bicarb ONLY if pH `<6.9`**: `100 mEq in 400 mL sterile water + 20 mEq KCl` over 2 h, recheck",
+          "No proven benefit at pH `≥6.9`; risks paradoxical CNS acidosis, hypokalemia, delayed ketone clearance, and cerebral edema (especially peds)",
+          "Acidosis corrects as insulin halts ketogenesis and bicarbonate regenerates — treat the cause, not the number",
+        ],
+      },
+      {
+        heading: "Pediatric cerebral edema",
+        items: [
+          "**Leading cause of DKA death in children** — onset typically `4–12 h` into treatment",
+          "Risk factors: younger age, new-onset DM, severe acidosis/hypocapnia, high BUN, rapid osmolar shifts, bicarbonate use",
+          "**Avoid fluid boluses, avoid insulin bolus, correct glucose/osm gradually**",
+          "Warning signs: headache, recurrent vomiting, lethargy/declining mental status, bradycardia + hypertension, incontinence",
+          "**Treat AMS immediately — do NOT wait for CT**: `Mannitol 0.5–1 g/kg IV` over 20 min, OR `3% hypertonic saline 2.5–5 mL/kg` over 10–15 min; elevate head, reduce fluid rate",
+        ],
+      },
+      {
+        heading: "Monitoring & phosphate/magnesium",
+        items: [
+          "Recheck glucose `q1h`; electrolytes/venous gas `q2–4h`; venous pH tracks arterial well (no need for ABG)",
+          "Phosphate replacement only if `<1 mg/dL` or cardiac/respiratory dysfunction — routine replacement offers no benefit and causes hypocalcemia",
+          "Magnesium often low — replace if symptomatic or refractory hypokalemia",
+          "Follow beta-hydroxybutyrate (the dominant ketone); urine ketones and nitroprusside lag and can mislead",
+        ],
+      },
+      {
+        heading: "Resolution & transition to subcutaneous insulin",
+        items: [
+          "**DKA resolved**: glucose `<200` PLUS two of — bicarb `≥15`, venous pH `>7.3`, anion gap `≤12`",
+          "**HHS resolved**: normal osmolality and mental status, glucose `<250–300`",
+          "**Overlap SC long-acting insulin 1–2 h BEFORE stopping the drip** — stopping abruptly without overlap reprecipitates DKA (no SC depot yet)",
+          "Restart home regimen if known diabetic; if new, `0.5–0.6 units/kg/day` total as a starting estimate",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Giving insulin before knowing the K+ — can cause lethal hypokalemic arrhythmia",
+          "Stopping insulin when glucose normalizes but the gap is still open — ketogenesis continues",
+          "Missing euglycemic DKA on an SGLT2 inhibitor because glucose looked acceptable",
+          "Aggressive fluids/bicarb in a child → cerebral edema",
+          "Anchoring on hyperglycemia and missing the precipitant (sepsis, MI)",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 224 (Diabetic Emergencies)",
+          "ADA Consensus Statement — Hyperglycemic Crises in Adult Patients (2009; updated 2024)",
+          "ISPAD Clinical Practice Consensus Guidelines — DKA in Children (2022)",
+          "LITFL Diabetic Ketoacidosis",
+        ],
+      },
+    ],
+  },
+  {
+    id: "severe-hyponatremia",
+    name: "Severe Symptomatic Hyponatremia",
+    subtitle: "Symptomatic / severe low sodium",
+    category: "meta",
+    tldr: [
+      {
+        heading: "Triage by symptoms, not the number",
+        items: [
+          "**Severe symptoms (seizure, coma, obtundation, vomiting, respiratory arrest) → treat NOW with hypertonic saline** regardless of how low the Na is",
+          "Mild/moderate symptoms (headache, nausea, confusion) → controlled correction + workup",
+          "Send paired **serum + urine osmolality and urine sodium** before fluids — they define the cause",
+          "Correct measured Na for hyperglycemia: add `2.4 mEq/L` per `100 mg/dL` glucose above 100 (pseudohyponatremia from hyperglycemia/hyperlipidemia)",
+        ],
+      },
+      {
+        heading: "Emergent — symptomatic hypertonic saline",
+        items: [
+          "**`3% saline 100–150 mL IV bolus over 10 min`** — repeat `×2–3` at 10-min intervals until symptoms improve OR Na rises `4–6 mEq/L`",
+          "Goal of the bolus is to **stop seizures / reverse herniation**, not to normalize sodium",
+          "Peds: `3% saline 2–4 mL/kg` bolus over 10–15 min (max ~`100–150 mL`), repeatable",
+          "A `4–6 mEq/L` rise reliably aborts neurologic emergencies — further acute correction is unnecessary and dangerous",
+        ],
+      },
+      {
+        heading: "Hard correction limit (ODS prevention)",
+        items: [
+          "**LIMIT total rise to `≤6–8 mEq/L per 24 h`** (some use `≤8`; `≤6` if high-risk) and `≤18 mEq/L per 48 h`",
+          "**Osmotic demyelination (ODS/CPM) risk highest in**: chronic hyponatremia, alcoholics, malnourished, hypokalemic, advanced liver disease, low body weight",
+          "Recheck Na `q2h` early — chronic/volume-depleted patients can autocorrect explosively once the stimulus is removed",
+          "Replacing potassium also raises sodium — count it toward the daily limit",
+        ],
+      },
+      {
+        heading: "DDAVP clamp & re-lowering",
+        items: [
+          "**Proactive DDAVP clamp** in high-risk overcorrection: `Desmopressin 1–2 mcg IV q6–8h` to fix free-water clearance, then raise Na controllably with `3% saline`",
+          "**Overcorrected (Na rose too fast)?** Re-lower with `D5W 3 mL/kg/h` ± `Desmopressin 2–4 mcg IV` to bring Na back into the target trajectory",
+          "Overcorrection is reversible if caught early — recheck frequently and act",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Hyponatremia is a disorder of **water balance**, not sodium balance — excess free water relative to solute",
+          "Acute (<48 h): brain has not adapted → cerebral edema, seizures, herniation → aggressive correction justified and safe",
+          "Chronic (>48 h): brain extrudes osmoles to adapt → rapid correction shrinks neurons → **osmotic demyelination**",
+          "Most hospital hyponatremia is hypotonic; ADH (appropriate or inappropriate) prevents free-water excretion",
+        ],
+      },
+      {
+        heading: "Diagnostic approach — osmolality then volume",
+        items: [
+          "**Step 1 — serum osm**: low (<275) = true hypotonic hyponatremia; normal/high → pseudohyponatremia (hyperlipidemia/paraproteinemia) or hyperglycemia/mannitol",
+          "**Step 2 — volume status**: hypovolemic vs euvolemic vs hypervolemic",
+          "**Step 3 — urine osm**: `<100 mOsm/kg` → primary polydipsia, beer potomania, tea-and-toast (appropriately dilute urine); `>100` → ADH active",
+          "**Step 4 — urine Na**: `<20–30 mEq/L` → hypovolemia or CHF/cirrhosis (avid Na retention); `>30–40` → SIADH, diuretics, salt-wasting, adrenal insufficiency",
+        ],
+      },
+      {
+        heading: "Causes by volume status",
+        items: [
+          "**Hypovolemic** (UNa <20): GI/renal losses, third-spacing; **UNa >20**: thiazides, salt-wasting, mineralocorticoid deficiency (adrenal insufficiency)",
+          "**Euvolemic**: **SIADH** (CNS, pulmonary, malignancy, drugs — SSRIs, carbamazepine), hypothyroidism, glucocorticoid deficiency, primary polydipsia",
+          "**Hypervolemic** (edematous, UNa <20): **CHF, cirrhosis**, nephrotic syndrome — effective arterial volume is low → ADH on",
+          "**Beer potomania / tea-and-toast**: low solute intake limits free-water excretion despite massive water load — autocorrects fast (high ODS risk)",
+          "**Thiazides** — a classic and frequently missed culprit, especially in elderly women",
+        ],
+      },
+      {
+        heading: "Treatment by category",
+        items: [
+          "**Hypovolemic**: `NS` to restore volume — turns off ADH; watch for brisk autocorrection (apply DDAVP clamp prophylactically)",
+          "**SIADH (euvolemic)**: fluid restriction `<1 L/day`; `3% saline` if symptomatic; loop diuretic adjunct; salt tabs / urea for chronic outpatient management",
+          "**Hypervolemic (CHF/cirrhosis)**: water restriction + treat underlying disease + loop diuretic; vaptans selectively in specialist hands",
+          "**Vasopressin antagonists (vaptans)** and demeclocycline are NOT for the acute ED setting — risk of overcorrection",
+        ],
+      },
+      {
+        heading: "Monitoring",
+        items: [
+          "Recheck Na `q1–2h` while giving `3% saline`, then `q4–6h` once stable",
+          "Track cumulative rise against the 24 h and 48 h ceilings — restart the clock conceptually at each measurement",
+          "Strict ins/outs; a sudden large urine output ('autocorrection' / aquaresis) signals impending overcorrection → act before the next Na results",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Treating the number instead of the patient — an asymptomatic chronic Na of 118 does not need a bolus",
+          "Forgetting that K+ repletion raises Na and counts toward the limit",
+          "Missing brisk free-water diuresis after volume repletion → overcorrection → ODS days later",
+          "Using maintenance hypotonic fluids in a hyponatremic patient (worsens it)",
+          "Not correcting measured Na for severe hyperglycemia before acting",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 19 (Fluids and Electrolytes)",
+          "Expert Panel Recommendations — Diagnosis and Treatment of Hyponatremia (Am J Med 2013, Verbalis et al)",
+          "European Clinical Practice Guideline on Hyponatraemia (2014)",
+          "LITFL Hyponatraemia",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acute-liver-failure",
+    name: "Acute Liver Failure",
+    subtitle: "Hepatic failure with encephalopathy + coagulopathy",
+    category: "meta",
+    tldr: [
+      {
+        heading: "Definition & immediate actions",
+        items: [
+          "**ALF = INR `≥1.5` + any-grade hepatic encephalopathy, in a patient WITHOUT pre-existing cirrhosis, illness `<26 weeks`**",
+          "Check glucose, lactate, ammonia, INR/coags, LFTs, **acetaminophen level**, viral hepatitis serologies, pregnancy test, tox screen",
+          "**Treat hypoglycemia aggressively** — `D50 25–50 mL IV`, then `D10` infusion; hypoglycemia is common and worsens encephalopathy",
+          "**Call a transplant center EARLY** — outcome depends on timely transfer before grade III–IV encephalopathy",
+        ],
+      },
+      {
+        heading: "N-acetylcysteine — give early",
+        items: [
+          "**Acetaminophen is the leading cause of ALF** — start `NAC` for any suspected APAP toxicity (use the Rumack-Matthew nomogram, but do not withhold while waiting)",
+          "**NAC also benefits NON-acetaminophen ALF** with early-grade (I–II) encephalopathy — improves transplant-free survival",
+          "IV NAC: `150 mg/kg` over 1 h → `50 mg/kg` over 4 h → `100 mg/kg` over 16 h (or continuous until improvement/transplant)",
+        ],
+      },
+      {
+        heading: "Cerebral edema is the major killer (grade III–IV)",
+        items: [
+          "**Intubate for airway protection** in grade III–IV encephalopathy; elevate **head of bed 30°**, keep head midline",
+          "**AVOID hypotonic fluids** — use isotonic; target Na `145–150 mEq/L` with hypertonic saline in high-risk patients",
+          "Surge in ICP / herniation: `3% saline` to Na `145–155`, OR `Mannitol 0.5–1 g/kg IV` (if not in renal failure)",
+          "Treat seizures (worsen ICP); avoid prophylactic anticonvulsants; minimize stimulation/fever",
+        ],
+      },
+      {
+        heading: "Coagulopathy — do NOT routinely correct",
+        items: [
+          "**Do NOT give prophylactic FFP/products to 'fix' the INR** — INR is the key prognostic marker (King's College) and balanced rebalanced hemostasis is usually intact",
+          "**Correct only for active bleeding or before an invasive procedure**",
+          "`Vitamin K 10 mg IV` once (rules out nutritional/cholestatic component)",
+          "Stress-ulcer prophylaxis (PPI/H2 blocker); transfuse platelets/products only as needed",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Etiology",
+        items: [
+          "**Acetaminophen** — most common in US/UK; dose-dependent or staggered supratherapeutic; check level + give NAC",
+          "**Idiosyncratic drug reaction** — antibiotics, antiepileptics, anti-TB drugs, herbals (kava, green tea extract), Amanita mushroom",
+          "**Viral** — Hepatitis A, B (± D), E (severe in pregnancy); HSV (treat with acyclovir); rarely others",
+          "**Vascular/other** — Budd-Chiari, ischemic 'shock liver', autoimmune hepatitis, Wilson disease, **HELLP / acute fatty liver of pregnancy**, heat stroke, malignant infiltration",
+        ],
+      },
+      {
+        heading: "King's College Criteria (transplant listing)",
+        items: [
+          "**Acetaminophen ALF**: arterial pH `<7.3` after resuscitation — OR all three of (INR `>6.5` [PT `>100 s`], creatinine `>3.4 mg/dL`, grade III–IV encephalopathy)",
+          "Lactate `>3.5 mmol/L` early (or `>3.0` post-resuscitation) is an additional adverse marker in APAP ALF",
+          "**Non-acetaminophen ALF**: INR `>6.5` alone — OR any 3 of (age `<10` or `>40`, unfavorable etiology [non-A non-B hepatitis, drug, Wilson], jaundice-to-encephalopathy `>7 days`, INR `>3.5`, bilirubin `>17.5 mg/dL`)",
+          "Meeting criteria → emergent transplant evaluation; survival without transplant is poor",
+        ],
+      },
+      {
+        heading: "Encephalopathy grading (West Haven)",
+        items: [
+          "**Grade I**: mild confusion, altered sleep, subtle tremor",
+          "**Grade II**: lethargy, disorientation, asterixis",
+          "**Grade III**: marked confusion, somnolent but rousable, gross disorientation",
+          "**Grade IV**: coma — high cerebral edema/herniation risk; mandates intubation + ICP-protective care",
+        ],
+      },
+      {
+        heading: "Supportive ICU management",
+        items: [
+          "Hemodynamics: norepinephrine for distributive shock; consider relative adrenal insufficiency → `Hydrocortisone 200–300 mg/day`",
+          "AKI is common (hepatorenal, ATN, APAP) — early CRRT (also controls ammonia/temperature)",
+          "Empiric broad-spectrum antibiotics if any sign of infection — sepsis precipitates multi-organ failure; low threshold given immune dysfunction",
+          "Ammonia `>150–200 mcmol/L` predicts cerebral edema — supports ICP-directed measures",
+          "**Lactulose is of limited value in ALF and may cause bowel distension** — it is the mainstay for CIRRHOTIC encephalopathy, not classic ALF",
+        ],
+      },
+      {
+        heading: "Hepatic encephalopathy in CIRRHOSIS (the common ED scenario — distinct from ALF)",
+        items: [
+          "**Find and treat the precipitant**: **GI bleed**, **infection / SBP** (do a diagnostic paracentesis), **constipation**, electrolyte derangement (hypokalemia, alkalosis), dehydration/diuretics, **sedatives**, dietary protein load, TIPS",
+          "**`Lactulose 25 mL PO/NG q1–2h` until bowel movement, then titrate to `2–3 soft stools/day`** (rectal `300 mL in 700 mL water` retention enema if obtunded/can't take PO)",
+          "**Add `Rifaximin 550 mg PO BID`** — reduces recurrence; adjunct to lactulose",
+          "Avoid over-sedation; protein restriction is NOT recommended (worsens catabolism) — these patients usually have intact synthetic function unlike ALF",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Reflexively transfusing FFP to normalize INR — masks prognosis and rarely needed without bleeding",
+          "Hypotonic maintenance fluids → worsens cerebral edema",
+          "Missing a treatable cause: HSV (acyclovir), Amanita (NAC/silibinin), Wilson, pregnancy-related (deliver)",
+          "Delaying transplant-center contact until the patient is already herniating",
+          "Confusing cirrhotic hepatic encephalopathy (lactulose, usually no edema) with true ALF (cerebral edema, avoid lactulose)",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 80 (Hepatic Disorders)",
+          "AASLD Position Paper — Management of Acute Liver Failure (2011, updated guidance)",
+          "AASLD/ACG Practice Guidance — Hepatic Encephalopathy in Chronic Liver Disease (2014)",
+          "LITFL Acute Liver Failure",
+        ],
+      },
+    ],
+  },
+  {
+    id: "pheochromocytoma-crisis",
+    name: "Pheochromocytoma Crisis",
+    subtitle: "Catecholamine crisis",
+    category: "endo",
+    tldr: [
+      {
+        heading: "Recognize the crisis",
+        items: [
+          "Classic paroxysm: **severe headache + palpitations + diaphoresis + episodic/sustained hypertension** (the triad is ~90% specific when present with HTN)",
+          "**Multisystem catecholamine crisis**: hypertensive encephalopathy, MI / Takotsubo cardiomyopathy, malignant arrhythmia, flash pulmonary edema, and paradoxically **cardiogenic shock**",
+          "Often triggered by drugs, anesthesia/surgery, tumor manipulation, or contrast — ask about prior spells",
+          "Send **plasma free metanephrines** (or 24-h urine fractionated metanephrines) before treatment confounds them",
+        ],
+      },
+      {
+        heading: "CRITICAL: alpha-blockade BEFORE beta-blockade",
+        items: [
+          "**NEVER give a beta-blocker first** — blocking beta-2 vasodilation leaves alpha-mediated vasoconstriction **unopposed → hypertensive crisis, pulmonary edema, death**",
+          "This includes labetalol (predominantly beta activity) — **do not reach for it reflexively in this setting**",
+          "Establish alpha-blockade/vasodilation FIRST, then add a beta-blocker only if needed for tachyarrhythmia",
+        ],
+      },
+      {
+        heading: "Control the blood pressure (alpha / vasodilators)",
+        items: [
+          "**`Phentolamine 1–5 mg IV bolus`** (alpha-blocker), repeat q5–10 min titrated to BP; peds `0.05–0.1 mg/kg`",
+          "**`Nicardipine 5 mg/h IV`** infusion (titrate to `15 mg/h`) — easy, titratable; or **`Nitroprusside 0.3–0.5 mcg/kg/min`** titrated for refractory crisis",
+          "**`Magnesium sulfate 2 g IV`** then infusion — inhibits catecholamine release, vasodilates, antiarrhythmic (excellent adjunct)",
+        ],
+      },
+      {
+        heading: "Volume + then beta-blockade if needed",
+        items: [
+          "**Volume repletion** — patients are chronically vasoconstricted and intravascularly depleted; give isotonic fluids to prevent precipitous hypotension as alpha tone falls",
+          "**Beta-blocker ONLY after adequate alpha-blockade** for persistent tachyarrhythmia: `Esmolol 25–50 mcg/kg/min` (titratable) is preferred",
+          "Be ready for **abrupt hypotension** after tumor devascularization or as catecholamines clear — have fluids/pressors available",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Catecholamine-secreting tumor of adrenal medulla (pheochromocytoma) or extra-adrenal sympathetic ganglia (paraganglioma) — secretes epinephrine, norepinephrine, ± dopamine",
+          "'Rule of 10s' (classic, imperfect): ~10% extra-adrenal, ~10% bilateral, ~10% malignant, ~10% familial (now known higher — up to 40% have a germline mutation: MEN2, VHL, NF1, SDHx)",
+          "Crisis = massive catecholamine surge overwhelming receptor regulation → vasoconstriction, tachyarrhythmia, myocardial toxicity, and catecholamine cardiomyopathy",
+          "Sustained catecholamine excess contracts plasma volume → patients are 'dry' and crash when vasodilated without preload",
+        ],
+      },
+      {
+        heading: "Catecholamine cardiomyopathy & shock",
+        items: [
+          "Catecholamine toxicity → **Takotsubo / stress cardiomyopathy**, myocarditis, demand ischemia, and acute systolic failure",
+          "**Pheochromocytoma multisystem crisis**: encephalopathy + hyperthermia + multi-organ dysfunction + hemodynamic instability (mortality very high)",
+          "Shock may be cardiogenic (pump failure) OR from sudden loss of vasoconstriction — echo helps; mechanical support (ECMO/IABP) is a bridge in fulminant catecholamine cardiomyopathy",
+          "Hyperthermia and lactic acidosis can mimic sepsis or thyroid storm — keep pheo on the differential for unexplained labile HTN + end-organ damage",
+        ],
+      },
+      {
+        heading: "Triggers & drugs to AVOID",
+        items: [
+          "**Beta-blockers without alpha-blockade** (unopposed alpha) — the cardinal error",
+          "**Dopamine antagonists / antiemetics** (metoclopramide, droperidol), **glucagon**, **histamine-releasing agents**",
+          "**Sympathomimetics & stimulants** (cocaine, amphetamines, ephedrine, decongestants), abrupt clonidine withdrawal",
+          "Unprepared anesthesia/surgery, tumor palpation, IV contrast, certain TCAs/MAOIs, high-dose steroids",
+        ],
+      },
+      {
+        heading: "Diagnosis",
+        items: [
+          "**Plasma free metanephrines** — highest sensitivity; draw supine, avoid confounders; or **24-h urine fractionated metanephrines + catecholamines** (high specificity)",
+          "Markedly elevated levels (>3–4× ULN) are highly suggestive; mild elevations need confirmation (stress, drugs cause false positives)",
+          "**Imaging AFTER biochemical confirmation**: CT/MRI abdomen/pelvis to localize; functional imaging (MIBG, DOTATATE PET) if occult or metastatic",
+          "Do not let imaging or confirmatory labs delay treatment of an active crisis",
+        ],
+      },
+      {
+        heading: "Definitive management",
+        items: [
+          "**Surgical resection is curative** — but only after adequate preoperative blockade",
+          "**Preoperative alpha-blockade `10–14 days`**: `Phenoxybenzamine` (irreversible, noncompetitive) titrated up, OR a selective alpha-1 blocker (doxazosin)",
+          "Add a **beta-blocker only after alpha-blockade is established** to control reflex tachycardia",
+          "Liberalize **salt and fluid intake** preoperatively to re-expand the contracted plasma volume and prevent post-resection hypotension",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "Giving labetalol/metoprolol for 'hypertensive emergency' before recognizing pheo → unopposed alpha catastrophe",
+          "Aggressive BP control without volume repletion → sudden severe hypotension",
+          "Mistaking catecholamine cardiomyopathy/shock for primary sepsis or ACS and missing the source",
+          "Sending metanephrines after starting confounding drugs, or ordering imaging before biochemical confirmation",
+          "Discharging a 'resolved' paroxysm without arranging biochemical workup and endocrine/surgical follow-up",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 227 (Adrenal Insufficiency and Adrenal Crisis / endocrine emergencies)",
+          "Endocrine Society Clinical Practice Guideline — Pheochromocytoma and Paraganglioma (2014)",
+          "Lenders et al, Lancet 2005 — Phaeochromocytoma",
+          "LITFL Phaeochromocytoma",
+        ],
+      },
+    ],
+  },
+{
+    id: "acetaminophen-toxicity",
+    name: "Acetaminophen Toxicity",
+    subtitle: "Paracetamol overdose / hepatotoxicity",
+    category: "tox",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "Determine **time of ingestion** and whether single acute vs staggered/repeated supratherapeutic",
+          "Toxic single acute dose: **>150 mg/kg** (or **>7.5–10 g** in an adult)",
+          "Draw **4-hour post-ingestion acetaminophen level** (earliest interpretable on nomogram), plus AST/ALT, INR, BMP, lipase, VBG, lactate, and a co-ingestant screen (salicylate, ethanol)",
+          "**Activated charcoal `1 g/kg PO/NG` (max ~50 g)** if presenting within `4 h` and airway intact — most useful within `1–2 h`",
+        ],
+      },
+      {
+        heading: "Rumack-Matthew nomogram",
+        items: [
+          "Plot the **4-hour level** against the treatment line starting at **`150 mcg/mL` at 4 h** (the '150 line'); values ON or ABOVE the line require NAC",
+          "Nomogram is **only valid for a single acute ingestion with a known time**, from 4–24 h post-ingestion",
+          "**Do NOT use the nomogram** for staggered ingestions, unknown time, sustained-release, or presentation >24 h — treat based on dose history and labs instead",
+          "When time is uncertain, treat the most pessimistic plausible ingestion time",
+        ],
+      },
+      {
+        heading: "Give N-acetylcysteine (NAC) if",
+        items: [
+          "4-hour level **above the nomogram treatment line**",
+          "**Unknown time of ingestion** or **staggered/repeated supratherapeutic** ingestion with detectable level or elevated AST/ALT",
+          "Late presentation (>8–24 h) with toxic dose history, even if level pending — **do not wait for the level**",
+          "Any **elevated aminotransferases** attributable to acetaminophen, or evidence of **acute liver failure** (encephalopathy, coagulopathy)",
+        ],
+      },
+      {
+        heading: "NAC dosing (IV 21-h regimen)",
+        items: [
+          "Loading: **`N-acetylcysteine 150 mg/kg IV over 60 min`**",
+          "Then **`50 mg/kg IV over 4 h`**",
+          "Then **`100 mg/kg IV over 16 h`**",
+          "Oral alternative: **`140 mg/kg PO load`, then `70 mg/kg PO q4h × 17 doses`**",
+          "Most effective if started **within 8 h** of ingestion — but **give regardless of delay** (still benefits late and in established hepatotoxicity)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Four clinical phases",
+        items: [
+          "**Phase I (0–24 h)**: asymptomatic or nonspecific — nausea, vomiting, malaise, diaphoresis; labs often normal (a well-appearing patient does NOT exclude lethal ingestion)",
+          "**Phase II (24–72 h)**: RUQ pain, rising AST/ALT and INR, oliguria; clinical improvement may be deceptive while transaminases climb",
+          "**Phase III (72–96 h)**: peak hepatotoxicity — fulminant hepatic failure, jaundice, encephalopathy, coagulopathy, lactic acidosis, AKI; AST/ALT may exceed 10,000 IU/L; this is the period of peak mortality",
+          "**Phase IV (4 d–2 wk)**: recovery with hepatic regeneration in survivors, or progression to death",
+        ],
+      },
+      {
+        heading: "Mechanism — NAPQI / glutathione",
+        items: [
+          "Most acetaminophen is conjugated (glucuronidation/sulfation); a small fraction is oxidized by **CYP2E1** to the toxic electrophile **NAPQI** (N-acetyl-p-benzoquinone imine)",
+          "NAPQI is normally detoxified by **hepatic glutathione**; in overdose glutathione is depleted (<30% of stores) and NAPQI binds hepatocyte proteins → centrilobular (zone 3) necrosis",
+          "**NAC replenishes glutathione**, provides sulfhydryl substrate, and has nonspecific antioxidant/microcirculatory benefit in established liver failure",
+          "Risk increased by CYP2E1 induction (chronic alcohol, isoniazid, rifampin) and glutathione depletion (malnutrition, fasting, chronic alcohol)",
+        ],
+      },
+      {
+        heading: "Do NOT stop NAC blindly at 21 h",
+        items: [
+          "The 21-h IV course is a **historical minimum, not a guaranteed endpoint** — reassess before stopping",
+          "**Continue NAC** (repeat/extend the third bag: `100 mg/kg/16 h` or `6.25 mg/kg/h`) if at the end of the protocol the **acetaminophen level remains detectable, AST/ALT still rising, or INR/encephalopathy worsening**",
+          "Endpoints to discontinue: **undetectable acetaminophen AND improving transaminases AND INR <1.5–2.0** with clinical improvement",
+          "Premature cessation in a still-rising patient is a recognized cause of preventable hepatic failure",
+        ],
+      },
+      {
+        heading: "Massive & extended-release ingestions",
+        items: [
+          "**Massive ingestion** (e.g., level far above the '300 line', or reported >500 mg/kg / very high serum levels) may overwhelm standard NAC → consider **doubling the NAC infusion rate** and early toxicology/transplant-center consultation",
+          "Massive overdose can cause **early coma and lactic acidosis** (mitochondrial toxicity) within hours — before transaminitis — mimicking other poisonings",
+          "**Extended-release (ER)** preparations: absorption is delayed/erratic — obtain a 4-h level AND a **repeat level ~4–6 h later**; treat if EITHER is above the line",
+          "Co-ingestants slowing GI motility (anticholinergics, opioids) similarly prolong absorption — recheck levels",
+        ],
+      },
+      {
+        heading: "King's College criteria (transplant referral)",
+        items: [
+          "**Arterial pH <7.30** after fluid resuscitation, OR",
+          "**ALL three** of: **INR >6.5** (PT >100 s), **creatinine >3.4 mg/dL**, AND **grade III/IV hepatic encephalopathy**",
+          "**Lactate >3.5 mmol/L** early (or >3.0 after resuscitation) is an adjunct predictor of poor outcome",
+          "Meeting criteria → **emergent transplant-center transfer**; refer EARLY rather than waiting for full criteria",
+        ],
+      },
+      {
+        heading: "Special populations & co-ingestants",
+        items: [
+          "Pregnancy: acetaminophen crosses the placenta and fetal liver makes NAPQI — **treat the mother aggressively; NAC is safe in pregnancy**",
+          "Chronic alcohol use / malnutrition: lower toxic threshold — have a low threshold to treat",
+          "Anticholinergic/opioid co-ingestion delays gastric emptying → delayed peak; salicylate co-ingestion alters acid-base interpretation",
+          "**Always consult poison control / medical toxicology** (US: 1-800-222-1222) for staggered, massive, ER, pediatric, or pregnant cases",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "A normal exam and normal initial labs in Phase I do NOT exclude a lethal ingestion — the level and dose history govern",
+          "Acetaminophen is a hidden component of many combination analgesics/cold remedies — screen for it in every overdose",
+          "Anaphylactoid reactions to IV NAC (flushing, urticaria, bronchospasm) are usually rate-related — **slow/pause the infusion and give antihistamines; do not abandon NAC**",
+          "Do not delay NAC waiting on the level when the dose history is clearly toxic or presentation is late",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 190", "ACMT Position Statement on IV Acetylcysteine (2021)", "Rumack & Matthew nomogram, Pediatrics 1975", "LITFL Paracetamol Toxicity"],
+      },
+    ],
+  },
+
+  {
+    id: "alcohol-withdrawal",
+    name: "Alcohol Withdrawal / DTs",
+    subtitle: "Alcohol withdrawal & delirium tremens",
+    category: "tox",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Thiamine `500 mg IV` BEFORE any glucose** to prevent Wernicke encephalopathy (give thiamine first if both are needed)",
+          "Check BMP, Mg, phosphate, glucose; assess for the precipitant (infection, trauma, pancreatitis, GI bleed) and co-ingestion",
+          "Place on monitor; treat agitation/seizures with **benzodiazepines**, not antipsychotics",
+          "Identify severity early — prior DTs or withdrawal seizure predicts a severe course",
+        ],
+      },
+      {
+        heading: "Symptom-triggered benzodiazepines (first-line)",
+        items: [
+          "Use **CIWA-Ar-guided, symptom-triggered dosing** (fewer total benzos, shorter course than fixed schedules)",
+          "**Diazepam `5–10 mg IV`** q5–10 min titrated to light sedation (long-acting, self-tapering)",
+          "**Lorazepam `2–4 mg IV`** q10–15 min — preferred in **significant liver disease or elderly** (no active metabolites)",
+          "**Chlordiazepoxide `50–100 mg PO`** for mild outpatient/ward withdrawal in stable patients",
+          "Escalate doses rapidly for refractory agitation — there is no fixed ceiling in true DTs",
+        ],
+      },
+      {
+        heading: "Benzo-resistant — phenobarbital",
+        items: [
+          "Add **phenobarbital** when escalating benzo doses fail (acts on GABA-A independent of the benzodiazepine site and on glutamate)",
+          "Loading strategy: **`10 mg/kg IV` over 30 min** (or incremental `130–260 mg IV` q15–30 min to effect)",
+          "Watch for respiratory depression / oversedation, especially when stacked on large benzo totals",
+          "Reduces ICU admission and need for mechanical ventilation when used early",
+        ],
+      },
+      {
+        heading: "Refractory DTs",
+        items: [
+          "**Intubate** and start **propofol** infusion (GABA-A agonist + NMDA antagonist) for refractory cases",
+          "**Dexmedetomidine** is an **adjunct** for autonomic hyperactivity — it does NOT prevent seizures and must not replace GABAergic therapy",
+          "Continuous monitoring; treat hyperthermia and rhabdomyolysis aggressively",
+          "**DTs mortality up to ~5–15% untreated**, falling to ~1–4% with modern ICU care",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Timeline of withdrawal",
+        items: [
+          "**Tremor / minor withdrawal (6–24 h)**: tremulousness, anxiety, tachycardia, hypertension, diaphoresis, nausea, headache",
+          "**Withdrawal seizures (12–48 h)**: generalized tonic-clonic, usually single or brief flurry; precede DTs in ~⅓ of progressors",
+          "**Alcoholic hallucinosis (12–48 h)**: visual/tactile/auditory hallucinations with an **intact sensorium and normal vitals** (distinguishes from DTs)",
+          "**Delirium tremens (48–96 h, up to ~7 d)**: delirium with clouded consciousness PLUS severe autonomic instability — fever, tachycardia, hypertension, profuse diaphoresis, agitation",
+        ],
+      },
+      {
+        heading: "CIWA-Ar scale",
+        items: [
+          "10-item scale scoring nausea/vomiting, tremor, sweating, anxiety, agitation, tactile/auditory/visual disturbance, headache, and orientation",
+          "**<8–10 minimal**, **10–18 moderate**, **>18 severe** withdrawal",
+          "Drives symptom-triggered benzo dosing; reassess frequently (e.g., q1h) during active treatment",
+          "**Unreliable** in intubated, aphasic, delirious, or non-communicative patients — use a sedation/clinical endpoint instead (e.g., RASS)",
+        ],
+      },
+      {
+        heading: "Thiamine & Wernicke",
+        items: [
+          "Glucose loading without thiamine can **precipitate Wernicke encephalopathy** (ophthalmoplegia, ataxia, confusion) in the thiamine-depleted",
+          "Give **thiamine `500 mg IV` (typically TID for 2–3 days)** in suspected Wernicke; `100 mg IV/IM` is adequate prophylaxis in lower-risk patients",
+          "Always sequence **thiamine before/with dextrose**, but do NOT withhold lifesaving glucose in documented hypoglycemia",
+          "Untreated Wernicke can progress to irreversible Korsakoff syndrome",
+        ],
+      },
+      {
+        heading: "Electrolyte & nutritional repletion",
+        items: [
+          "**Magnesium**: replete `1–2 g IV` (chronic depletion is near-universal; corrects refractory hypokalemia and lowers seizure threshold)",
+          "**Potassium** and **phosphate**: replete actively — watch for **refeeding syndrome** with nutrition",
+          "**Folate** and a multivitamin (banana bag) for chronic malnutrition",
+          "Correct volume depletion with balanced crystalloid; monitor glucose closely",
+        ],
+      },
+      {
+        heading: "Phenytoin is ineffective",
+        items: [
+          "**Phenytoin does NOT prevent or treat alcohol withdrawal seizures** — the mechanism is GABA/NMDA imbalance, not a cortical focus",
+          "**Benzodiazepines are the treatment** for withdrawal seizures and the prophylaxis against recurrence",
+          "Reserve antiepileptics for a known independent seizure disorder",
+          "A first withdrawal seizure with focal features, prolonged postictal state, or trauma warrants **CT head** and broader workup",
+        ],
+      },
+      {
+        heading: "Distinguish seizure causes",
+        items: [
+          "Withdrawal seizures are **generalized, brief, and early (12–48 h)**; status epilepticus or focal seizures suggest another etiology",
+          "Always consider **head trauma (subdural), CNS infection, hypoglycemia, hyponatremia, and toxic co-ingestants** in a 'withdrawal' seizure",
+          "Low threshold for non-contrast head CT in first seizure, focal deficit, persistent AMS, or anticoagulated patients",
+          "Recheck glucose and sodium with any seizure",
+        ],
+      },
+      {
+        heading: "Disposition & pitfalls",
+        items: [
+          "**Admit/ICU** for DTs, refractory withdrawal, benzo requirement escalating, significant comorbidity, or unstable vitals",
+          "**DTs is a clinical diagnosis** requiring delirium PLUS autonomic instability — pure hallucinosis with normal sensorium is not DTs",
+          "Anchoring on 'just withdrawal' misses sepsis, GI bleed, pancreatitis, intracranial hemorrhage — search for the precipitant",
+          "Beta-blockers/clonidine may mask autonomic signs without treating the underlying GABAergic deficit — use only as adjuncts",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 185", "ASAM Clinical Practice Guideline on Alcohol Withdrawal Management (2020)", "Mayo-Smith, JAMA 1997 (symptom-triggered therapy)", "LITFL Alcohol Withdrawal"],
+      },
+    ],
+  },
+
+  {
+    id: "lithium-toxicity",
+    name: "Lithium Toxicity",
+    subtitle: "Acute vs chronic lithium poisoning",
+    category: "tox",
+    tldr: [
+      {
+        heading: "Immediate actions",
+        items: [
+          "Send **serum lithium level** (and a repeat in 2 h to define the trend), BMP, creatinine, TSH, ECG; therapeutic range is `0.6–1.2 mEq/L`",
+          "Determine pattern: **acute, chronic, or acute-on-chronic** — this drives both severity and dialysis thresholds",
+          "**Restore volume with isotonic crystalloid (NS)** — euvolemia maximizes renal lithium clearance",
+          "**Stop nephrotoxic/lithium-retaining drugs**: NSAIDs, thiazides, ACE inhibitors/ARBs",
+        ],
+      },
+      {
+        heading: "Decontamination",
+        items: [
+          "**Activated charcoal does NOT bind lithium** — do not give it (unless needed for a co-ingestant)",
+          "**Whole-bowel irrigation** with polyethylene glycol for large **sustained-/extended-release** ingestions (consider for confirmed massive ingestion)",
+          "Gastric lavage only for very recent massive ingestion in select cases",
+          "**Sodium polystyrene sulfonate (Kayexalate)** can bind lithium but risks hypokalemia — not standard",
+        ],
+      },
+      {
+        heading: "Hemodialysis — strongly consider if",
+        items: [
+          "**Level >4.0 mEq/L** in acute poisoning (regardless of symptoms)",
+          "**Level >2.5 mEq/L** with **severe symptoms** (seizures, decreased consciousness, life-threatening dysrhythmia) OR **renal failure**",
+          "Significant **neurologic or cardiac toxicity** at any level not expected to fall below `1.0 mEq/L` with supportive care in ~36 h",
+          "**Call nephrology early**; HD efficiently removes lithium (small, unbound, low volume of distribution)",
+        ],
+      },
+      {
+        heading: "Watch for rebound",
+        items: [
+          "Lithium redistributes out of cells (and from SR tablets) after HD → **post-dialysis rebound rise** in serum level",
+          "**Recheck the level 6–8 h after HD** and be prepared to **repeat dialysis**",
+          "Neurologic recovery often LAGS behind the falling level — clinical improvement may be slow",
+          "Continue IV fluids between/after sessions",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Acute vs chronic vs acute-on-chronic",
+        items: [
+          "**Acute** (overdose in a lithium-naive patient): high serum levels but lithium hasn't yet entered the CNS → prominent **GI symptoms (nausea, vomiting, diarrhea)**, relatively less early neurotoxicity",
+          "**Chronic** (accumulation in a maintenance patient, e.g., dehydration/AKI/drug interaction): **toxic at much LOWER serum levels** with **worse neurologic toxicity** because tissue/CNS levels are already high",
+          "**Acute-on-chronic**: maintenance patient takes an extra/overdose load — features and risk overlap, often severe",
+          "Implication: **a 'normal' or only mildly elevated level can still be severely toxic in chronic poisoning**",
+        ],
+      },
+      {
+        heading: "Clinical features",
+        items: [
+          "Neuro (dose-limiting): **coarse tremor, ataxia, dysarthria, hyperreflexia, myoclonus, AMS, seizures**; severe → coma",
+          "GI: nausea, vomiting, diarrhea (prominent in acute)",
+          "Renal: **nephrogenic diabetes insipidus** (polyuria, hypernatremia, dehydration that further raises levels) and chronic tubulointerstitial nephropathy",
+          "Cardiac: T-wave flattening/inversion, QT prolongation, sinus node dysfunction, rarely Brugada-pattern; bradydysrhythmias",
+          "Endocrine: hypothyroidism, hyperparathyroidism/hypercalcemia with chronic use",
+        ],
+      },
+      {
+        heading: "SILENT syndrome",
+        items: [
+          "**SILENT** = Syndrome of Irreversible Lithium-Effectuated NeuroToxicity",
+          "**Persistent neurologic deficits** (cerebellar dysfunction, ataxia, dementia, extrapyramidal signs) lasting **>2 months** after lithium is cleared",
+          "Risk rises with prolonged/severe toxicity and with **concurrent hyperthermia or neuroleptic exposure** — avoid letting patients stay toxic",
+          "Underscores treating aggressively and early, especially in chronic toxicity",
+        ],
+      },
+      {
+        heading: "Why the level correlates poorly (acutely)",
+        items: [
+          "Lithium distributes slowly into cells and the CNS → **early high serum levels overstate, and chronic levels understate, tissue burden**",
+          "**Serial levels** define the trend and the ingestion type far better than a single value",
+          "Use a **gap of ~2 h between draws**; rising levels after an acute ingestion suggest ongoing absorption (SR product)",
+          "Interpret every level against the clinical picture and the acute-vs-chronic pattern",
+        ],
+      },
+      {
+        heading: "Fluids & renal clearance",
+        items: [
+          "Lithium is **handled like sodium** by the proximal tubule — volume depletion and low sodium drive avid lithium reabsorption",
+          "**Correct hypovolemia and any hyponatremia with NS** to enhance excretion; avoid overly hypotonic fluids",
+          "Maintain good urine output; treat nephrogenic DI-related water losses",
+          "There is **no role for forced diuresis or 'alkalinization'** for lithium",
+        ],
+      },
+      {
+        heading: "Drug interactions that precipitate toxicity",
+        items: [
+          "**NSAIDs** ↓ renal prostaglandins → ↓ lithium clearance",
+          "**Thiazide diuretics** → volume contraction and enhanced proximal reabsorption",
+          "**ACE inhibitors / ARBs** → reduced GFR and lithium clearance",
+          "Dehydration, low-sodium diet, AKI, and metronidazole likewise raise levels — **review the med list and hold offending agents**",
+        ],
+      },
+      {
+        heading: "Disposition & pitfalls",
+        items: [
+          "**Admit** symptomatic patients and any chronic toxicity; ICU for neuro/cardiac toxicity or pending dialysis",
+          "**Do not anchor on the absolute number** — a chronically poisoned patient with a level of `1.8 mEq/L` and ataxia/AMS can be sicker than an acute ingestion at `3.0 mEq/L`",
+          "SR formulations cause delayed/rising levels — recheck and consider WBI",
+          "Discharge only after a clear downward trend, resolving symptoms, normal renal function, and identification/correction of the precipitant; involve toxicology",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 184", "EXTRIP Workgroup lithium recommendations (2015)", "Baird-Gunning, J Intensive Care Med 2017 (lithium toxicity review)", "LITFL Lithium Toxicity"],
+      },
+    ],
+  },
+
+  {
+    id: "hellp-syndrome",
+    name: "HELLP Syndrome",
+    subtitle: "Hemolysis, Elevated LFTs, Low Platelets",
+    category: "ob",
+    tldr: [
+      {
+        heading: "Recognize it",
+        items: [
+          "A severe variant of **pre-eclampsia with severe features** — but **may be normotensive and lack proteinuria** in up to ~15–20%",
+          "Classic complaint: **RUQ or epigastric pain**, nausea/vomiting, malaise; often mistaken for gastritis/biliary disease/hepatitis",
+          "Send **CBC with smear, LDH, haptoglobin, AST/ALT, bilirubin, creatinine, uric acid, coags/fibrinogen, type & screen**",
+          "Occurs antepartum (≥28 wk most common) AND **postpartum** (up to ~7 days after delivery) — keep it on the differential after birth",
+        ],
+      },
+      {
+        heading: "Diagnostic labs (Tennessee criteria)",
+        items: [
+          "**Hemolysis**: schistocytes on smear, **`LDH >600 IU/L`**, **low haptoglobin**, indirect hyperbilirubinemia (`total bili ≥1.2 mg/dL`)",
+          "**Elevated LFTs**: **`AST/ALT ≥70 IU/L`** (often higher)",
+          "**Low platelets**: **`platelets <100,000/µL`**",
+          "Partial/incomplete HELLP (some but not all criteria) still warrants the same vigilance",
+        ],
+      },
+      {
+        heading: "Stabilize the mother",
+        items: [
+          "**Magnesium sulfate `4–6 g IV` load over 15–20 min, then `1–2 g/hr`** for seizure prophylaxis (and if eclamptic)",
+          "Treat severe-range BP (**SBP ≥160 or DBP ≥110**): **labetalol**, **hydralazine**, or **nicardipine** (see Eclampsia entry for dosing)",
+          "Two large-bore IVs, monitor UOP; **type & screen / crossmatch** and have blood products available",
+          "**Call OB/MFM immediately** and arrange continuous fetal monitoring",
+        ],
+      },
+      {
+        heading: "Definitive treatment = DELIVERY",
+        items: [
+          "**Delivery is the only cure** — there is no medical therapy that reverses HELLP",
+          "**≥34 weeks** (or maternal/fetal instability, DIC, infarct/hematoma, abruption, nonreassuring status at any GA): **deliver promptly**",
+          "**<34 weeks AND stable**: **antenatal corticosteroids** (`betamethasone 12 mg IM q24h × 2`) for fetal lung maturity, then deliver — typically within ~24–48 h",
+          "Mode of delivery per obstetric indication; HELLP itself is not an automatic cesarean",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Same antiangiogenic/endothelial cascade as pre-eclampsia (sFlt-1, soluble endoglin) → **microangiopathic hemolytic anemia** from RBC shearing in damaged microvasculature",
+          "Periportal/sinusoidal fibrin deposition and hepatocellular necrosis → transaminitis and capsular distension (the RUQ pain)",
+          "Platelet activation and consumption → thrombocytopenia, which can progress to **DIC**",
+          "End-organ ischemia drives the hepatic, renal, and hematologic injury",
+        ],
+      },
+      {
+        heading: "Platelet transfusion thresholds",
+        items: [
+          "**Transfuse for platelets `<20,000/µL`** (high spontaneous bleeding risk) regardless of mode",
+          "**Transfuse for `<50,000/µL` before cesarean** or with active bleeding/operative delivery",
+          "Vaginal delivery generally tolerated down to ~`20,000–30,000/µL` if not actively bleeding",
+          "Platelets are consumed rapidly — give immediately pre-procedure and have additional units ready",
+        ],
+      },
+      {
+        heading: "Hepatic complications",
+        items: [
+          "**Subcapsular hepatic hematoma** — sudden severe RUQ/shoulder pain, hypotension; confirm with **bedside US/CT** if stable",
+          "**Hepatic rupture** is catastrophic — **DO NOT palpate deeply or transport carelessly**; emergent surgery/IR, massive transfusion, multidisciplinary team",
+          "Sudden hemodynamic collapse in HELLP = ruptured hematoma until proven otherwise",
+          "Hepatic infarction and hypoglycemia (impending failure) also occur",
+        ],
+      },
+      {
+        heading: "Other complications",
+        items: [
+          "**DIC** (~20%): falling fibrinogen, rising D-dimer/INR — treat with FFP, **cryoprecipitate/fibrinogen** (target fibrinogen >150–200 mg/dL), platelets",
+          "**Placental abruption** with hemorrhage and fetal compromise",
+          "**Acute kidney injury** (acute tubular necrosis), pulmonary edema/ARDS",
+          "**Eclampsia**, stroke, and (rarely) maternal death",
+        ],
+      },
+      {
+        heading: "Differential diagnosis",
+        items: [
+          "**TTP/HUS**: more profound thrombocytopenia, prominent renal failure (HUS) or neuro signs (TTP), **normal-ish LFTs**, ADAMTS13 deficiency (TTP) — treatment is **plasma exchange**, not delivery",
+          "**Acute fatty liver of pregnancy (AFLP)**: **hypoglycemia, marked hyperbilirubinemia, coagulopathy, elevated ammonia, AKI**, encephalopathy; meets Swansea criteria — delivery + supportive care",
+          "Other mimics: viral/drug hepatitis, cholecystitis, antiphospholipid syndrome, severe gastroenteritis",
+          "Distinguishing matters: **plasma exchange for TTP/HUS vs delivery for HELLP/AFLP** changes management entirely",
+        ],
+      },
+      {
+        heading: "Postpartum HELLP",
+        items: [
+          "Can present or worsen **after delivery (typically <48 h, up to ~7 days)** — often more severe and more likely to need additional therapy",
+          "Continue magnesium for ~24 h postpartum (or 24 h after the last seizure)",
+          "Consider **dexamethasone** for refractory/worsening postpartum HELLP per local MFM practice (evidence for routine steroids to improve maternal outcomes is limited)",
+          "Most lab abnormalities begin to improve within 48–96 h after delivery — failure to improve should prompt reconsideration of TTP/HUS/AFLP",
+        ],
+      },
+      {
+        heading: "Pitfalls",
+        items: [
+          "**Normotension/absent proteinuria does NOT exclude HELLP** — anchor on the labs and the pain",
+          "RUQ pain in a pregnant or recently pregnant patient is HELLP/hepatic hematoma until proven otherwise — get LFTs and platelets",
+          "**Methylergonovine is contraindicated** if hypertensive (use other uterotonics for atony)",
+          "Do not over-resuscitate with crystalloid (pulmonary edema risk); avoid intramuscular injections and atraumatic with profound thrombocytopenia",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 103", "ACOG Practice Bulletin 222: Gestational Hypertension and Preeclampsia (2020)", "Sibai, Obstet Gynecol 2004 (HELLP review)", "LITFL HELLP Syndrome"],
+      },
+    ],
+  },
+
+  {
+    id: "amniotic-fluid-embolism",
+    name: "Amniotic Fluid Embolism",
+    subtitle: "Catastrophic peripartum collapse + DIC",
+    category: "ob",
+    tldr: [
+      {
+        heading: "Recognize the syndrome",
+        items: [
+          "**Sudden cardiovascular collapse + profound hypoxemia + DIC** during labor, delivery, or the immediate postpartum period (usually within minutes of delivery/membrane rupture)",
+          "Often preceded by **acute dyspnea, agitation/sense of doom, seizure**, then hypotension and arrest",
+          "**Clinical diagnosis of exclusion** — there is no confirmatory test; do not delay resuscitation to confirm",
+          "Exclude mimics in parallel: hemorrhage, pulmonary embolism, eclampsia, anaphylaxis, sepsis, air embolism, MI, anesthetic complication",
+        ],
+      },
+      {
+        heading: "Resuscitate — ACLS + obstetric modifications",
+        items: [
+          "**High-quality CPR** and **early intubation with 100% O₂**; expect difficult hemodynamics",
+          "**Left uterine displacement** (manual or left lateral tilt) to relieve aortocaval compression if **≥20 wk** / gravid uterus at/above the umbilicus",
+          "Two large-bore IVs/IO; treat dysrhythmias per ACLS; avoid excessive crystalloid (RV is failing)",
+          "**Call OB, anesthesia, neonatology, massive transfusion, and ECMO/perfusion teams NOW**",
+        ],
+      },
+      {
+        heading: "Perimortem cesarean delivery",
+        items: [
+          "If maternal arrest and **uterus ≥20 wk** (at/above umbilicus): **deliver within 4–5 minutes of arrest** ('4-minute rule')",
+          "Improves **maternal** resuscitation (relieves aortocaval compression, restores venous return) AND fetal outcome",
+          "Perform **at the bedside** — do NOT move the patient to an OR; continue CPR throughout",
+          "Have neonatal resuscitation ready",
+        ],
+      },
+      {
+        heading: "Treat the DIC / hemorrhage",
+        items: [
+          "**Massive transfusion protocol, balanced 1:1:1** (RBC:FFP:platelets) — DIC is often fulminant and early",
+          "Replace fibrinogen aggressively: **cryoprecipitate / fibrinogen concentrate** to keep fibrinogen **>150–200 mg/dL**",
+          "**Tranexamic acid `1 g IV` over 10 min** for obstetric hemorrhage (repeat `1 g` if bleeding persists)",
+          "Treat uterine atony with uterotonics; serial fibrinogen/coags to guide resuscitation",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology (current model)",
+        items: [
+          "Amniotic fluid/fetal antigens enter the maternal circulation → an **anaphylactoid / abnormal immune and inflammatory response** ('anaphylactoid syndrome of pregnancy'), not simple mechanical embolism",
+          "Massive release of vasoactive/procoagulant mediators → **acute pulmonary vasoconstriction and RV failure** with severe hypoxemia",
+          "**Biphasic hemodynamics**: transient pulmonary hypertension/RV failure → then LV dysfunction and distributive/cardiogenic shock",
+          "Concurrent activation of the coagulation cascade → **consumptive coagulopathy (DIC)**, often the dominant late problem",
+        ],
+      },
+      {
+        heading: "Hemodynamic support",
+        items: [
+          "**Vasopressors** (norepinephrine, vasopressin) for distributive shock; add **inotropes (epinephrine, dobutamine, milrinone)** for cardiogenic/RV failure",
+          "**Manage RV failure / pulmonary hypertension**: avoid hypoxia/hypercarbia/acidosis (all raise PVR); consider **inhaled pulmonary vasodilators (nitric oxide, inhaled prostacyclin)**",
+          "Judicious fluids — an overloaded failing RV worsens; titrate to perfusion with bedside echo",
+          "Continuous bedside echocardiography to track RV/LV function and guide therapy",
+        ],
+      },
+      {
+        heading: "Mechanical support / ECMO",
+        items: [
+          "**VA-ECMO** for refractory cardiogenic shock or arrest — activate the team EARLY given the often-reversible, time-limited nature",
+          "Other options: RVAD, intra-aortic balloon pump, inhaled pulmonary vasodilators as a bridge",
+          "ECMO is complicated by concurrent DIC — coordinate anticoagulation strategy with perfusion/hematology",
+          "Best outcomes reported with rapid escalation at centers with ECMO capability",
+        ],
+      },
+      {
+        heading: "Experimental 'A-OK' regimen",
+        items: [
+          "Investigational adjunct targeting the anaphylactoid/serotonergic response — **A-OK**:",
+          "**Atropine `1 mg IV`** (vagolytic), **Ondansetron `8 mg IV`** (5-HT3 blockade), **Ketorolac `30 mg IV`** (thromboxane inhibition)",
+          "Reported in case series only — **adjunctive, NOT a substitute** for CPR, delivery, transfusion, and hemodynamic support",
+          "Reasonable to consider in refractory cases alongside standard therapy",
+        ],
+      },
+      {
+        heading: "Risk factors & timing",
+        items: [
+          "Advanced maternal age, multiparity, multiple gestation, placenta previa/accreta, abruption",
+          "Operative/instrumented delivery, cesarean, induction of labor, uterine rupture, polyhydramnios, eclampsia",
+          "Most events occur during labor or **within ~30 min of delivery**; can occur with rupture of membranes, amnioinfusion, or termination/curettage",
+          "Risk factors are weak — AFE is largely **unpredictable and unpreventable**",
+        ],
+      },
+      {
+        heading: "Diagnostic criteria & workup",
+        items: [
+          "Supportive (research/Clark) criteria: **sudden cardiorespiratory arrest or hypotension + hypoxia**, **DIC**, **onset during labor/delivery or within 30 min postpartum**, with **no other explanation**",
+          "Labs: coags, fibrinogen, CBC, type & cross, ABG, troponin, lactate — primarily to gauge DIC and exclude alternatives",
+          "Echo (RV strain), CXR (pulmonary edema), ECG (right heart strain/ischemia) support but do not confirm",
+          "Diagnosis remains clinical — treatment must not wait on testing",
+        ],
+      },
+      {
+        heading: "Prognosis & pitfalls",
+        items: [
+          "**Very high mortality** (historically up to ~60–80%; lower with early aggressive care and ECMO) with substantial neurologic morbidity in survivors",
+          "**Do not delay perimortem cesarean** waiting for the OR, ultrasound, or a 'confirmed' diagnosis",
+          "Hemorrhage from DIC can be the lethal feature even after initial cardiopulmonary stabilization — **transfuse and correct coagulopathy aggressively**",
+          "Anticipate fetal compromise; mobilize neonatology early",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 100", "SMFM/Clark Amniotic Fluid Embolism guideline, Am J Obstet Gynecol 2016", "Pacheco et al, AJOG 2020 (AFM Registry / A-OK)", "LITFL Amniotic Fluid Embolism"],
+      },
+    ],
+  },
+
+  {
+    id: "peripartum-cardiomyopathy",
+    name: "Peripartum Cardiomyopathy",
+    subtitle: "Pregnancy-associated systolic heart failure",
+    category: "ob",
+    tldr: [
+      {
+        heading: "Definition & recognition",
+        items: [
+          "**New-onset systolic heart failure with `LVEF <45%`** developing in the **last month of pregnancy through ~5 months postpartum**, with **no other identifiable cause** (diagnosis of exclusion)",
+          "Symptoms overlap normal late pregnancy (dyspnea, edema, fatigue, orthopnea) — **keep a LOW threshold to investigate**",
+          "Get **bedside echo** (LVEF, chamber size, effusion) and **BNP/NT-proBNP** (a normal BNP argues strongly against acute decompensated HF)",
+          "Work up for decompensation triggers and exclude PE, pre-eclampsia, MI, valvular disease, pre-existing cardiomyopathy",
+        ],
+      },
+      {
+        heading: "Acute decompensated HF — initial management",
+        items: [
+          "Sit upright, **supplemental O₂ / NIV** for pulmonary edema and respiratory distress",
+          "**Loop diuretic (furosemide `20–40 mg IV`)** for volume overload (safe in pregnancy and lactation)",
+          "Treat severe hypertension and arrhythmias; continuous monitoring; OB + cardiology + MFM consults",
+          "**Cardiogenic shock** → inotropes/vasopressors, consider early **mechanical circulatory support (ECMO/Impella)** and transfer to an advanced HF center",
+        ],
+      },
+      {
+        heading: "If STILL PREGNANT — avoid fetotoxic drugs",
+        items: [
+          "**AVOID ACE inhibitors, ARBs, ARNI (sacubitril/valsartan), and MRAs (spironolactone)** — fetotoxic/teratogenic",
+          "Afterload reduction instead with **hydralazine + nitrates** (`hydralazine` plus `isosorbide dinitrate`/nitroglycerin)",
+          "**Beta-blocker**: **metoprolol** (β1-selective preferred) or **carvedilol** for rate/neurohormonal control as tolerated",
+          "**Loop diuretic** for congestion; avoid excessive diuresis (preserve uteroplacental perfusion)",
+        ],
+      },
+      {
+        heading: "After delivery — standard GDMT",
+        items: [
+          "Transition to **guideline-directed medical therapy**: **ACE inhibitor/ARB** + beta-blocker + MRA + (where indicated) SGLT2 inhibitor",
+          "**Breastfeeding-compatible ACE inhibitors: enalapril or captopril** (preferred over ARBs while nursing)",
+          "Continue beta-blocker (metoprolol succinate/carvedilol); add MRA once not pregnant",
+          "Arrange close cardiology follow-up with serial echo to track recovery",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Diagnosis of exclusion",
+        items: [
+          "Defined by **timing (last month of pregnancy to ~5 months postpartum)**, **LVEF <45%**, and **absence of another cause** of heart failure",
+          "Exclude: pre-existing/dilated cardiomyopathy, valvular disease, hypertensive heart disease/pre-eclampsia, MI/ischemia, PE, sepsis, thyrotoxicosis",
+          "Most cases present **postpartum**; the LV is often **not dilated** early despite reduced EF",
+          "Echo is the key test; cardiac MRI and ischemic workup as indicated once stabilized",
+        ],
+      },
+      {
+        heading: "Why a low threshold matters",
+        items: [
+          "Normal pregnancy mimics HF — dyspnea on exertion, pedal edema, fatigue, mild orthopnea are all common physiologically",
+          "**Red flags**: orthopnea/PND, resting tachycardia, hypoxia, new murmur/gallop (S3), elevated JVP, frank pulmonary edema, syncope",
+          "Delayed diagnosis worsens outcomes — **send BNP and get an echo** when symptoms exceed expected pregnancy changes",
+          "Postpartum patients re-presenting with dyspnea/fatigue deserve cardiac evaluation, not reflexive 'deconditioning'",
+        ],
+      },
+      {
+        heading: "Anticoagulation",
+        items: [
+          "**Markedly increased thromboembolic risk** (pregnancy/postpartum hypercoagulability PLUS LV dysfunction and stasis)",
+          "**Anticoagulate prophylactically when `LVEF <30–35%`**, and therapeutically for documented LV thrombus or thromboembolism",
+          "Agent by timing: **LMWH or unfractionated heparin during pregnancy** (warfarin is teratogenic, esp. 1st trimester); **warfarin or LMWH acceptable postpartum/lactation**; DOACs generally avoided in pregnancy and lactation",
+          "Coordinate periprocedurally around delivery/neuraxial anesthesia",
+        ],
+      },
+      {
+        heading: "Bromocriptine (investigational)",
+        items: [
+          "Mechanistic rationale: blocks prolactin, whose cleaved **16-kDa antiangiogenic fragment** is implicated in PPCM pathogenesis",
+          "Some trials/registries suggest improved LV recovery (e.g., German cohort) when added to standard HF therapy postpartum",
+          "**Remains investigational/adjunctive**; **must be paired with anticoagulation** (bromocriptine is itself prothrombotic) and **stops lactation**",
+          "Use only in consultation with cardiology/MFM, not as routine ED therapy",
+        ],
+      },
+      {
+        heading: "Arrhythmia, device & MCS",
+        items: [
+          "High risk of ventricular arrhythmias and sudden death while EF is low",
+          "**Wearable cardioverter-defibrillator (LifeVest)** during the early recovery window rather than early permanent ICD — many patients recover EF, avoiding a permanent device",
+          "Defer permanent **ICD/CRT** decisions until after a defined period of optimal medical therapy (typically 3–6 months) reassessing EF",
+          "Refractory shock/end-stage disease → **MCS (ECMO, VAD) and transplant evaluation** at an advanced HF center",
+        ],
+      },
+      {
+        heading: "Prognosis & recovery",
+        items: [
+          "Outcomes vary widely: **many recover LV function (often within 3–6 months)**, but some progress to chronic HF, transplant, or death",
+          "Better prognosis with **higher baseline LVEF (>30–35%)** and smaller LV dimensions at diagnosis",
+          "Continue GDMT and serial echo; **do not stop therapy prematurely** even after apparent recovery without cardiology guidance",
+          "Persistent LV dysfunction predicts worse outcomes with subsequent pregnancy",
+        ],
+      },
+      {
+        heading: "Future-pregnancy counseling",
+        items: [
+          "**Subsequent pregnancy carries a real risk of relapse and worsening LV function**, particularly if EF has not normalized",
+          "**Persistent LVEF <50–55%** → strongly counsel against future pregnancy; even with recovered EF there is residual risk",
+          "Provide effective contraception counseling; **avoid estrogen-containing contraceptives** in significant LV dysfunction (thromboembolic risk)",
+          "Pre-conception cardiology evaluation is essential for any future pregnancy",
+        ],
+      },
+      {
+        heading: "References",
+        items: ["Tintinalli 9e Ch 100", "ESC Position Statement on Peripartum Cardiomyopathy (Sliwa et al, Eur J Heart Fail 2010)", "AHA Scientific Statement: Cardiovascular Considerations in the Peripartum (Circulation 2016)", "LITFL Peripartum Cardiomyopathy"],
+      },
+    ],
+  },
+{
+    id: "necrotizing-fasciitis",
+    name: "Necrotizing Fasciitis",
+    subtitle: "Necrotizing soft-tissue infection",
+    category: "surg",
+    tldr: [
+      {
+        heading: "Recognize early — it is a clinical diagnosis",
+        items: [
+          "**PAIN OUT OF PROPORTION to exam** + rapidly progressive cellulitis + systemic toxicity = NSTI until proven otherwise",
+          "**Late signs (do NOT wait for them)**: crepitus, hemorrhagic/violaceous bullae, dusky skin necrosis, **anesthesia of overlying skin** (cutaneous nerve infarction)",
+          "Skin appearance often lags the deep infection — the fascia is destroyed far beyond visible erythema",
+          "Fever, tachycardia, hypotension, AMS; rapid clinical deterioration over hours",
+        ],
+      },
+      {
+        heading: "Definitive management",
+        items: [
+          "**EMERGENT surgical debridement is both diagnostic and definitive** — call surgery NOW; survival depends on time to OR",
+          "**Imaging must NOT delay surgery** — a sick patient with high suspicion goes to the OR, not the CT scanner",
+          "Aggressive resuscitation: large-bore IV, crystalloid for sepsis, vasopressors as needed, type & screen",
+          "Mark the advancing border; reassess frequently while awaiting OR",
+        ],
+      },
+      {
+        heading: "Empiric antibiotics (broad, immediately)",
+        items: [
+          "`Vancomycin 15–20 mg/kg IV` (MRSA) + `Piperacillin-tazobactam 4.5 g IV` (gram-neg/anaerobe) + `Clindamycin 900 mg IV` (toxin suppression)",
+          "Carbapenem alternative: `Meropenem 1 g IV q8h` in place of piperacillin-tazobactam",
+          "**Clindamycin is key** — suppresses streptococcal/staphylococcal exotoxin and superantigen production (anti-toxin / Eagle effect), independent of bactericidal activity",
+          "Add `Doxycycline 100 mg IV` + `Ceftriaxone 2 g IV` if salt/brackish water exposure (Vibrio) or freshwater (Aeromonas)",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Microbiologic types",
+        items: [
+          "**Type I (polymicrobial)**: most common; mixed aerobes + anaerobes; older/diabetic/immunocompromised; includes **Fournier gangrene** (perineum/genitalia) and post-surgical/diabetic foot infections",
+          "**Type II (monomicrobial)**: Group A Streptococcus (S. pyogenes) ± Staph aureus (incl. MRSA); any age, often healthy; classic 'flesh-eating' rapidly progressive disease; associated with streptococcal toxic shock",
+          "**Type III**: Vibrio vulnificus (salt/brackish water, raw shellfish, cirrhotics) or Aeromonas hydrophila (freshwater, leeches); fulminant, very high mortality",
+          "**Type IV**: fungal (Candida, Mucorales) — immunocompromised, traumatic inoculation",
+          "Clostridial myonecrosis (gas gangrene, C. perfringens) — traumatic or post-op; marked gas, brawny edema, rapid systemic toxicity",
+        ],
+      },
+      {
+        heading: "LRINEC score — adjunct only",
+        items: [
+          "Laboratory Risk Indicator for Necrotizing Fasciitis: CRP, WBC, hemoglobin, sodium, creatinine, glucose",
+          "Score `≥6` suggests higher risk; `≥8` strongly predictive — but **a low score does NOT rule out NSTI**",
+          "**Never use LRINEC to exclude the diagnosis or to defer surgical consultation** — sensitivity is inadequate for a limb/life-threatening disease",
+          "Suggestive labs: hyponatremia (`Na <135`), elevated creatinine, marked leukocytosis or bandemia, lactic acidosis, elevated CK if muscle involved",
+        ],
+      },
+      {
+        heading: "Imaging — only if it will not delay the OR",
+        items: [
+          "**CT with contrast**: fascial-plane thickening/edema, fat stranding, fluid tracking along fascia, soft-tissue gas (gas is specific but frequently ABSENT)",
+          "MRI is sensitive for deep fascial involvement but **too slow** for an unstable patient",
+          "Plain films may show subcutaneous gas (late, insensitive)",
+          "POCUS may show fascial fluid/edema (cobblestoning with deep fluid) — operator-dependent, do not rely on it to exclude",
+          "**Bottom line**: imaging supports the diagnosis in equivocal stable patients but never substitutes for surgical exploration",
+        ],
+      },
+      {
+        heading: "Surgical exploration & debridement",
+        items: [
+          "Operative findings: grayish necrotic fascia, lack of bleeding, **'dishwater' fluid**, easy finger-dissection of tissue planes, thrombosed vessels, absent fascial resistance",
+          "Debride all necrotic tissue back to viable, bleeding tissue — wide margins",
+          "**Mandatory planned re-exploration / repeat debridement at 24–48 h** — necrosis often progresses; serial trips to the OR are the rule, not the exception",
+          "Fournier gangrene may require diverting colostomy/suprapubic catheter; amputation for fulminant limb disease",
+        ],
+      },
+      {
+        heading: "Adjuncts & critical care",
+        items: [
+          "**IVIG** for streptococcal toxic shock syndrome with NSTI — neutralizes circulating superantigens (consider in severe GAS disease)",
+          "Treat as septic shock: source control (surgery) + early antibiotics + hemodynamic resuscitation",
+          "Hyperbaric oxygen is adjunctive at best — **must never delay debridement** and is not available in most EDs",
+          "Monitor for DIC, AKI, and ARDS; transfuse as needed; correct coagulopathy",
+        ],
+      },
+      {
+        heading: "Pearls & pitfalls",
+        items: [
+          "**Pain out of proportion with a benign-appearing exam is the earliest and most important clue** — believe it",
+          "A 'cellulitis' that is rapidly advancing, exquisitely tender, systemically toxic, or failing IV antibiotics is NSTI until excluded surgically",
+          "Diabetics, cirrhotics, IV drug users, the immunocompromised, and the recently post-operative are highest risk",
+          "Do not be reassured by absence of crepitus, bullae, or gas on imaging — these are late or inconsistent findings",
+          "Mortality rises with every hour of delay to debridement — this is a true surgical emergency",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 152 (Soft Tissue Infections)",
+          "IDSA Skin and Soft Tissue Infection Guidelines 2014",
+          "WSES/SIS-E Consensus on Necrotizing Soft Tissue Infections 2018",
+          "Stevens & Bryant, NEJM 2017 (Necrotizing Soft-Tissue Infections)",
+          "LITFL Necrotising Fasciitis",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "mesenteric-ischemia",
+    name: "Mesenteric Ischemia",
+    subtitle: "Acute intestinal ischemia",
+    category: "surg",
+    tldr: [
+      {
+        heading: "Suspect it — the diagnosis is made by thinking of it",
+        items: [
+          "**PAIN OUT OF PROPORTION to exam** in an older or vasculopathic patient = acute mesenteric ischemia until proven otherwise",
+          "Early: severe diffuse/periumbilical pain with a soft, minimally tender abdomen; vomiting/diarrhea; **peritonitis is a LATE sign (transmural infarction)**",
+          "**Lactate and acidosis rise LATE** — a normal lactate does NOT exclude early ischemia; do not be falsely reassured",
+          "Risk: atrial fibrillation, recent MI, CHF, atherosclerosis, hypotension/pressors, hypercoagulable states",
+        ],
+      },
+      {
+        heading: "Immediate actions",
+        items: [
+          "**CT angiography (arterial + venous phase) is the test of choice** — obtain emergently; do not delay for serial labs",
+          "**Systemic anticoagulation**: `Heparin IV bolus 80 units/kg then 18 units/kg/h` infusion (unless contraindicated) once diagnosis suspected/confirmed",
+          "Aggressive crystalloid resuscitation; **minimize vasoconstrictors** (worsen splanchnic ischemia) — if pressor needed, avoid pure alpha-agonists where possible",
+          "NPO, NG decompression if obstructed/vomiting, broad-spectrum antibiotics, type & screen, early surgery/IR consult",
+        ],
+      },
+      {
+        heading: "Empiric antibiotics & resuscitation",
+        items: [
+          "`Piperacillin-tazobactam 4.5 g IV` OR `Ceftriaxone 2 g IV` + `Metronidazole 500 mg IV` — cover gut translocation of enteric flora",
+          "Correct hypovolemia BEFORE adding vasopressors; restore mesenteric perfusion",
+          "**NOMI**: focus on reversing the low-flow state — optimize cardiac output, withdraw/reduce vasoconstrictors, treat the underlying shock",
+          "Resuscitate aggressively — these patients develop profound third-spacing and acidosis",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Subtypes (drive the treatment)",
+        items: [
+          "**SMA embolism (~50%, most common)**: sudden onset; cardiac source (AF, mural thrombus, valvular); emboli often lodge distal to the middle colic artery, sparing the proximal jejunum",
+          "**SMA thrombosis (~25%)**: acute-on-chronic atherosclerosis; preceding **'intestinal angina'** (postprandial pain, food fear, weight loss); occlusion at the SMA origin → extensive infarction",
+          "**Non-occlusive mesenteric ischemia (NOMI, ~20%)**: low-flow state — shock, heart failure, dialysis, vasopressors, cocaine, digoxin; patent vessels with diffuse splanchnic vasoconstriction",
+          "**Mesenteric venous thrombosis (~10%)**: younger patients; hypercoagulable (factor V Leiden, malignancy, OCPs, cirrhosis/portal HTN, recent surgery); **subacute** course over days",
+        ],
+      },
+      {
+        heading: "Diagnosis & imaging",
+        items: [
+          "**CTA abdomen/pelvis** is first-line: arterial filling defect/cutoff, bowel-wall thinning or abnormal enhancement, pneumatosis intestinalis, portomesenteric gas, bowel dilation, mesenteric stranding/edema",
+          "**Avoid oral contrast** — delays the study and obscures mucosal enhancement",
+          "Conventional mesenteric angiography is both diagnostic and therapeutic (endovascular intervention)",
+          "Labs: leukocytosis, hemoconcentration, metabolic acidosis, **elevated lactate (late)**; elevated amylase, phosphate, D-dimer — all nonspecific",
+          "Plain films are insensitive early; 'thumbprinting' and pneumatosis are late findings of infarction",
+        ],
+      },
+      {
+        heading: "Definitive treatment by subtype",
+        items: [
+          "**SMA embolism**: surgical embolectomy or catheter-directed thrombolysis/aspiration; resect frankly necrotic bowel",
+          "**SMA thrombosis**: surgical bypass/endarterectomy or endovascular stenting; revascularize before bowel becomes nonviable",
+          "**NOMI**: catheter-directed intra-arterial vasodilator (e.g., papaverine) + reverse the precipitating low-flow state; surgery only for infarcted bowel",
+          "**Mesenteric venous thrombosis**: anticoagulation is primary therapy; surgery reserved for peritonitis/infarction",
+          "Resect all nonviable bowel; preserve marginal segments for reassessment",
+        ],
+      },
+      {
+        heading: "Second-look laparotomy",
+        items: [
+          "**Planned re-exploration at 24–48 h** after initial resection/revascularization to reassess bowel viability that was equivocal at the first operation",
+          "Allows preservation of borderline bowel initially while avoiding leaving dead bowel behind",
+          "Decision to do a second look is made AT the first operation, not deferred to clinical deterioration",
+        ],
+      },
+      {
+        heading: "Pitfalls & prognosis",
+        items: [
+          "**Mortality is high (~50–80%)** and driven almost entirely by delayed diagnosis — outcomes hinge on early CTA and revascularization",
+          "Do NOT wait for peritonitis, lactic acidosis, or pneumatosis — these signify infarction, when it is often too late",
+          "A soft, benign abdomen with severe pain is the classic and dangerous early presentation",
+          "Consider in any older patient with AF and acute abdominal pain, or any shocked/pressor-dependent patient with new abdominal pain (NOMI)",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 80 (Acute Abdominal Pain) / Ch 60 (Mesenteric Ischemia)",
+          "WSES Guidelines on Acute Mesenteric Ischaemia 2017",
+          "ESVS Clinical Practice Guidelines on Mesenteric Ischaemia 2017",
+          "Clair & Beach, NEJM 2016 (Mesenteric Ischemia)",
+          "LITFL Mesenteric Ischaemia",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "acute-cholangitis",
+    name: "Acute Cholangitis",
+    subtitle: "Biliary obstruction + infection",
+    category: "surg",
+    tldr: [
+      {
+        heading: "Recognize the syndrome",
+        items: [
+          "**Charcot triad**: fever + RUQ pain + jaundice — classic but present in a minority (~50–70%)",
+          "**Reynolds pentad**: Charcot triad + hypotension + altered mental status = **suppurative cholangitis / impending septic shock** — a surgical/endoscopic emergency",
+          "Biliary obstruction + bacterial infection → ascending infection under pressure → bacteremia and sepsis",
+          "Suspect in any septic patient with cholestatic LFTs (high alk phos, GGT, direct bilirubin) ± RUQ pain",
+        ],
+      },
+      {
+        heading: "Immediate actions",
+        items: [
+          "Treat as sepsis: large-bore IV, crystalloid resuscitation, lactate, **blood cultures (×2) AND bile cultures** at time of drainage",
+          "Empiric antibiotics immediately (see dosing) — do not wait for cultures",
+          "**EMERGENT biliary decompression is the definitive treatment** — antibiotics alone do not relieve the obstruction",
+          "NPO, analgesia, antiemetics; consult GI/ERCP and surgery early; correct coagulopathy before intervention",
+        ],
+      },
+      {
+        heading: "Empiric antibiotics",
+        items: [
+          "`Piperacillin-tazobactam 4.5 g IV q6–8h` — covers enteric gram-negatives, enterococcus, anaerobes",
+          "Alternative: `Ceftriaxone 2 g IV` + `Metronidazole 500 mg IV q8h`",
+          "**Severe (Grade III) or healthcare-associated**: carbapenem — `Meropenem 1 g IV q8h` (add `Vancomycin 15–20 mg/kg IV` if MRSA/enterococcal risk)",
+          "Narrow based on blood and bile culture results",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Tokyo Guidelines (TG18) — diagnosis",
+        items: [
+          "**A. Systemic inflammation**: A-1 fever (`>38°C`) and/or rigors; A-2 lab evidence (WBC abnormal, elevated CRP)",
+          "**B. Cholestasis**: B-1 jaundice (`total bilirubin ≥2 mg/dL`); B-2 abnormal LFTs (alk phos, GGT, AST, ALT above upper limit)",
+          "**C. Imaging**: C-1 biliary dilation; C-2 evidence of etiology (stricture, stone, stent)",
+          "**Definite diagnosis**: one item in A + one in B + one in C. **Suspected**: one item in A + one in B or C",
+        ],
+      },
+      {
+        heading: "TG18 severity grading",
+        items: [
+          "**Grade III (severe)**: dysfunction in ≥1 organ system — cardiovascular (vasopressor requirement), neurologic (AMS), respiratory (PaO₂/FiO₂ `<300`), renal (`creatinine >2.0`), hepatic (`INR >1.5`), or hematologic (`platelets <100k`)",
+          "**Grade II (moderate)**: any 2 of — WBC `>12k or <4k`, fever `≥39°C`, age `≥75`, total bilirubin `≥5 mg/dL`, hypoalbuminemia",
+          "**Grade I (mild)**: does not meet criteria for Grade II or III",
+          "Grade drives the urgency of drainage and the breadth of antibiotic coverage",
+        ],
+      },
+      {
+        heading: "Biliary decompression — timing & modality",
+        items: [
+          "**ERCP is first-line** — sphincterotomy + stone extraction and/or stent/nasobiliary drain",
+          "**Grade I/II**: ERCP within 24–48 h (early); **Grade III/refractory sepsis**: urgent decompression as soon as the patient is resuscitated — do not delay",
+          "**If ERCP fails or is not feasible** (e.g., altered anatomy, hilar obstruction): **percutaneous transhepatic cholangiography/drainage (PTC)**",
+          "**Open/surgical decompression** is a last resort when ERCP and PTC fail",
+          "Resuscitate in parallel — but in Reynolds pentad, decompression is the source control that reverses shock",
+        ],
+      },
+      {
+        heading: "Common causes",
+        items: [
+          "**Choledocholithiasis** — most common cause of obstruction",
+          "Benign biliary stricture (post-surgical, chronic pancreatitis, PSC)",
+          "Malignancy — pancreatic head, cholangiocarcinoma, ampullary tumor, periampullary nodes",
+          "**Stent occlusion or migration** — ask about prior biliary stents/ERCP",
+          "Parasitic (Ascaris, Clonorchis) in endemic regions; post-ERCP cholangitis",
+        ],
+      },
+      {
+        heading: "Workup & supportive care",
+        items: [
+          "Labs: CBC, CMP/LFTs, lipase, lactate, coags, blood cultures ×2",
+          "**RUQ ultrasound** first (bile-duct dilation, stones) — but a normal US does NOT exclude cholangitis or a distal stone",
+          "MRCP or EUS if diagnosis unclear and patient stable; CT for complications (abscess, malignancy, perforation)",
+          "Correct coagulopathy (vitamin K/FFP) and thrombocytopenia before ERCP/PTC; monitor for AKI and DIC",
+        ],
+      },
+      {
+        heading: "Pearls & pitfalls",
+        items: [
+          "**Reynolds pentad = decompress emergently** — antibiotics alone will not save a patient with pus under pressure",
+          "Most common organisms: E. coli, Klebsiella, Enterococcus, Enterobacter; consider resistant flora in prior instrumentation",
+          "A normal RUQ ultrasound is common with a small distal CBD stone — clinical suspicion still mandates further imaging/ERCP",
+          "Cholangitis can present as undifferentiated sepsis in the elderly without classic RUQ pain — check LFTs",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 80 (Cholecystitis and Biliary Colic)",
+          "Tokyo Guidelines TG18 (J Hepatobiliary Pancreat Sci 2018) — diagnostic criteria, severity grading, and management bundles",
+          "ASGE Guideline on Role of Endoscopy in Choledocholithiasis 2019",
+          "LITFL Ascending Cholangitis",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "c-diff-toxic-megacolon",
+    name: "Severe C. diff / Toxic Megacolon",
+    subtitle: "Fulminant colitis",
+    category: "surg",
+    tldr: [
+      {
+        heading: "Stratify severity",
+        items: [
+          "**Severe**: WBC `≥15,000` OR serum creatinine `>1.5 mg/dL`",
+          "**Fulminant (formerly severe-complicated)**: hypotension/shock, **ileus**, or **megacolon** — high mortality",
+          "**Toxic megacolon**: colonic dilation `>6 cm` on imaging + systemic toxicity (fever, tachycardia, hypotension, AMS, leukocytosis)",
+          "**Falling stool output is OMINOUS** — it usually signals progression to ileus/megacolon, NOT improvement",
+        ],
+      },
+      {
+        heading: "Stop the offenders & resuscitate",
+        items: [
+          "**STOP the inciting antibiotic(s)** as soon as feasible",
+          "**STOP antimotility agents, opioids, and anticholinergics** — they precipitate ileus and toxic megacolon",
+          "Aggressive IV fluid resuscitation; **correct hypokalemia and other electrolyte derangements** (hypokalemia worsens ileus/dilation)",
+          "Serial abdominal exams + serial imaging; **contact precautions with soap-and-water hand hygiene** (alcohol gel does NOT kill spores)",
+        ],
+      },
+      {
+        heading: "Treatment by severity",
+        items: [
+          "**Fulminant**: `Vancomycin 500 mg PO/NG q6h` + `Metronidazole 500 mg IV q8h`",
+          "**If ileus / megacolon**: ADD `Vancomycin 500 mg in 100 mL saline retention enema PR q6h` (oral vanc may not reach the colon)",
+          "**Non-fulminant initial/recurrent episodes**: `Fidaxomicin 200 mg PO BID` (preferred) or `Vancomycin 125 mg PO QID`",
+          "**Early surgical consultation** for any fulminant disease — do not wait for perforation",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Definitions & severity criteria",
+        items: [
+          "**Non-severe**: WBC `<15,000` and creatinine `<1.5 mg/dL`",
+          "**Severe**: WBC `≥15,000` OR creatinine `>1.5 mg/dL` (IDSA/SHEA)",
+          "**Fulminant**: hypotension/shock, ileus, or toxic megacolon",
+          "**Toxic megacolon**: radiographic transverse/right colon dilation `>6 cm` (or cecum `>9 cm`) PLUS systemic toxicity — a surgical emergency",
+        ],
+      },
+      {
+        heading: "Diagnosis",
+        items: [
+          "Testing only in patients with clinically significant diarrhea (`≥3 unformed stools/24 h`) and no laxatives — do not test formed stool",
+          "**NAAT (PCR)** detects the toxin gene; **GDH + toxin EIA** two-step algorithm confirms active toxin production",
+          "**In ileus, stool may be unobtainable** — send rectal swab for PCR or treat empirically based on clinical picture; do not let a missing stool sample delay therapy",
+          "Imaging: plain abdominal film or CT — colonic dilation, mucosal thumbprinting, 'accordion sign', pericolonic stranding, ascites; CT also evaluates for perforation",
+        ],
+      },
+      {
+        heading: "Pharmacologic management details",
+        items: [
+          "Oral/enteral vancomycin is NOT systemically absorbed — acts locally in the gut lumen",
+          "IV metronidazole reaches the inflamed colon via biliary/transmucosal secretion — **add it (do not use alone) in fulminant disease**",
+          "**IV vancomycin is ineffective** for C. diff colitis (does not enter the gut lumen) — never substitute it for enteral therapy",
+          "Vancomycin retention enema for ileus/megacolon where oral drug cannot reach the distal colon",
+          "Fidaxomicin: lower recurrence than vancomycin; preferred for non-fulminant initial and recurrent episodes",
+        ],
+      },
+      {
+        heading: "Toxic megacolon — recognition & complications",
+        items: [
+          "Triggers: hypokalemia, antimotility/opioid/anticholinergic agents, barium enema, recent colonoscopy, electrolyte derangement",
+          "Signs: abdominal distension, **decreasing diarrhea/stool output (paradoxical 'improvement' = ileus)**, peritoneal signs, worsening toxicity",
+          "Complications: **perforation**, hemorrhage, overwhelming sepsis, multiorgan failure",
+          "Sudden loss of abdominal pain with rising distension or free air = perforation → emergent laparotomy",
+        ],
+      },
+      {
+        heading: "Surgical indications",
+        items: [
+          "**Toxic megacolon**, perforation, peritonitis, bowel necrosis, abdominal compartment syndrome",
+          "Clinical deterioration or failure to improve on maximal medical therapy (typically after ~3–5 days, sooner if worsening)",
+          "Rising lactate, escalating vasopressor requirement, worsening leukocytosis/organ failure",
+          "**Subtotal/total colectomy with end ileostomy** is the standard operation; **diverting loop ileostomy with colonic vancomycin lavage** is a colon-sparing alternative",
+        ],
+      },
+      {
+        heading: "Infection control & supportive care",
+        items: [
+          "**Contact precautions**; gowns and gloves; dedicated equipment; **soap-and-water** hand hygiene (spores resist alcohol-based sanitizer)",
+          "Bleach-based environmental cleaning (sporicidal)",
+          "Avoid PPIs and unnecessary antibiotics; minimize total antibiotic burden",
+          "Monitor and replete potassium and magnesium; treat dehydration and AKI; fecal microbiota transplant for recurrent (not fulminant) disease",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 75 (Diverticulitis/Colitis) / Ch 78 (Antibiotic-Associated Diarrhea)",
+          "IDSA/SHEA Clinical Practice Guidelines for C. difficile Infection 2017 (and 2021 focused update)",
+          "ACG Clinical Guidelines: Prevention, Diagnosis, and Treatment of C. difficile Infections 2021",
+          "ASCRS Clinical Practice Guidelines for C. difficile Colitis 2021",
+          "LITFL Clostridioides difficile / Toxic Megacolon",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "compartment-syndrome",
+    name: "Acute Compartment Syndrome",
+    subtitle: "Limb-threatening compartment pressure",
+    category: "surg",
+    tldr: [
+      {
+        heading: "Recognize early — the early Ps",
+        items: [
+          "**PAIN OUT OF PROPORTION to injury** + **PAIN ON PASSIVE STRETCH of the compartment muscles** = earliest and most reliable signs",
+          "Tense, swollen 'wood-like' compartment; pain refractory to escalating analgesia/opioids",
+          "**Late Ps (do NOT wait for them)**: Paresthesia → Paralysis → Pallor → Pulselessness — these signify irreversible damage",
+          "**A palpable pulse does NOT exclude compartment syndrome** — arterial flow persists until pressures are extreme; never use presence of a pulse to rule it out",
+        ],
+      },
+      {
+        heading: "Immediate actions",
+        items: [
+          "**Remove or bivalve any cast; release/split all circumferential dressings and bandages** down to skin",
+          "**Keep the limb at heart level — do NOT elevate** (elevation lowers arterial inflow and worsens perfusion pressure)",
+          "Treat hypotension (raises perfusion pressure); supplemental O₂; adequate analgesia",
+          "**Emergent orthopedic/surgical consult for fasciotomy** — ischemia window is ~`4–6 h`; irreversible muscle/nerve injury beyond it",
+        ],
+      },
+      {
+        heading: "Measure pressures when exam is unreliable",
+        items: [
+          "Diagnosis is clinical, but **measure compartment pressures** if obtunded, intubated, sedated, pediatric, or equivocal exam",
+          "**Absolute compartment pressure `>30 mmHg`** is concerning",
+          "**Delta pressure (ΔP) = diastolic BP − compartment pressure; ΔP `<30 mmHg` → fasciotomy** (more reliable than absolute pressure)",
+          "Treat rhabdomyolysis and hyperkalemia; obtain CK, BMP, ECG; **serial exams** if not yet operative",
+        ],
+      },
+    ],
+    extended: [
+      {
+        heading: "Pathophysiology",
+        items: [
+          "Pressure within an osteofascial compartment rises above capillary perfusion pressure → ischemia → cell injury → more edema → vicious cycle",
+          "Perfusion is governed by the gradient between diastolic pressure and compartment pressure (ΔP), not by systolic pressure",
+          "Muscle tolerates ~`4 h` of ischemia with little permanent damage; irreversible necrosis by ~`6–8 h`",
+          "Nerve conduction fails early (paresthesia is an earlier sign than pulselessness)",
+        ],
+      },
+      {
+        heading: "Causes & risk factors",
+        items: [
+          "**Tibial (diaphyseal) fracture — most common cause overall**; also forearm fractures (esp. pediatric supracondylar)",
+          "Crush injury; prolonged limb compression (obtunded/down patient); **reperfusion after vascular injury or revascularization**",
+          "**Tight cast or circumferential dressing**; circumferential burns/eschar (escharotomy may be needed)",
+          "Bleeding into a compartment — **anticoagulation or coagulopathy**; high-energy soft-tissue injury; IV infiltration/extravasation; snakebite",
+          "Note: open fractures do NOT protect against compartment syndrome",
+        ],
+      },
+      {
+        heading: "Compartment anatomy",
+        items: [
+          "**Leg has 4 compartments**: anterior (deep peroneal n. — first dorsal webspace sensation, foot dorsiflexion), lateral (superficial peroneal n.), superficial posterior, deep posterior (tibial n.)",
+          "Anterior compartment of the leg is most commonly affected",
+          "Forearm: volar (most commonly involved) and dorsal compartments (± mobile wad)",
+          "Also occurs in thigh, hand, foot, buttock, and abdomen (abdominal compartment syndrome)",
+        ],
+      },
+      {
+        heading: "Fasciotomy",
+        items: [
+          "**Definitive treatment** — emergent complete fasciotomy of all involved compartments releasing the full length of the fascia",
+          "Leg: standard **two-incision (medial + lateral) four-compartment fasciotomy**",
+          "Wounds left open; planned return for debridement and delayed closure/skin grafting",
+          "Delayed/missed fasciotomy on already-necrotic muscle may worsen rhabdomyolysis and sepsis — decision is time-sensitive and clinical",
+        ],
+      },
+      {
+        heading: "Associated systemic injury",
+        items: [
+          "**Rhabdomyolysis**: check CK, BMP, UA; aggressive IV crystalloid to maintain urine output; monitor for AKI",
+          "**Hyperkalemia** from muscle breakdown — obtain ECG, treat per protocol (calcium, insulin/glucose, etc.)",
+          "Myoglobinuria → pigment nephropathy; trend potassium, calcium, phosphate",
+          "Reperfusion may cause acidosis, hyperkalemia, and hemodynamic instability",
+        ],
+      },
+      {
+        heading: "Pearls & pitfalls",
+        items: [
+          "**Pain out of proportion and pain on passive stretch are the earliest, most sensitive findings — act on them**",
+          "**Do NOT rely on the 5 Ps as a screen** — pulselessness and paralysis are end-stage; the limb may already be lost",
+          "Do NOT elevate the limb and do NOT trust an intact distal pulse",
+          "In sedated/intubated/pediatric patients with unreliable exam, **measure pressures and use ΔP** rather than waiting for clinical signs",
+          "When in doubt, consult surgery and trend closely — a missed compartment syndrome is a catastrophic, often litigated outcome",
+        ],
+      },
+      {
+        heading: "References",
+        items: [
+          "Tintinalli 9e Ch 278 (Compartment Syndrome) / Ch 46 (Musculoskeletal Injuries)",
+          "Rotehford et al, AAOS / OTA consensus on Acute Compartment Syndrome",
+          "von Keudell et al, Lancet 2015 (Diagnosis and treatment of acute extremity compartment syndrome)",
+          "LITFL Acute Compartment Syndrome",
+        ],
+      },
+    ],
+  },
+{
+  id: "heat-stroke",
+  name: "Heat Stroke",
+  subtitle: "Core temp >40°C with CNS dysfunction",
+  category: "env",
+  tldr: [
+    {
+      heading: "Recognize — CNS dysfunction is the key",
+      items: [
+        "**Core temp >`40°C` (104°F) PLUS CNS dysfunction** — altered mental status, agitation, ataxia, seizure, or coma",
+        "**CNS involvement is what separates heat stroke from heat exhaustion** — heat exhaustion has intact mentation",
+        "**Exertional**: young/athletes/laborers/military in heat; often still sweating; rhabdo/DIC prominent",
+        "**Classic (non-exertional)**: elderly, chronically ill, psych meds/anticholinergics; epidemic during heat waves; usually anhidrotic (hot, dry skin)",
+        "Measure **core temp by rectal or esophageal probe** — oral/axillary/tympanic are unreliable and underestimate",
+      ],
+    },
+    {
+      heading: "COOL IMMEDIATELY — minutes matter",
+      items: [
+        "**Cooling is the single most important intervention** — duration of hyperthermia drives mortality",
+        "**Exertional → cold/ice-water immersion is the gold standard** (fastest cooling rate); target core ~`39°C` then STOP to avoid overshoot hypothermia",
+        "**Classic / elderly / unstable / can't immerse → evaporative + convective cooling**: strip patient, spray lukewarm water, high-flow fans; add ice packs to neck/axillae/groin",
+        "**Treat shivering** (generates heat, opposes cooling) with `Lorazepam 1-2 mg IV` or `Diazepam 5-10 mg IV`",
+        "**Antipyretics do NOT work** — this is not a hypothalamic setpoint problem; acetaminophen/NSAIDs are useless and may worsen hepatic/renal injury",
+        "**Dantrolene is NOT effective** in heat stroke (reserve for malignant hyperthermia / NMS)",
+      ],
+    },
+    {
+      heading: "Resuscitate and protect organs",
+      items: [
+        "ABCs; intubate for airway protection if obtunded/seizing; high-flow O₂",
+        "**IV crystalloid — aggressive but careful**; most are volume-depleted, but avoid overload (cardiac strain, cerebral/pulmonary edema common)",
+        "Continuous core temp, cardiac monitoring; treat seizures with benzodiazepines",
+        "Send rhabdo/DIC/organ panel early (see workup) — multi-organ failure is the cause of death",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "Heat load (endogenous from exertion ± exogenous from environment) overwhelms thermoregulatory capacity → uncompensated rise in core temperature",
+        "Direct cytotoxicity above ~`40-42°C`: protein denaturation, membrane dysfunction, mitochondrial failure",
+        "**Systemic inflammatory response** (heat acts like a 'thermal sepsis') + gut barrier breakdown → endotoxemia → cytokine storm",
+        "Endothelial injury triggers DIC; the final common pathway is multi-organ dysfunction, NOT the temperature itself once cooled",
+        "**Not a setpoint disorder** — the hypothalamic set point is normal, which is why antipyretics fail",
+      ],
+    },
+    {
+      heading: "Exertional vs classic",
+      items: [
+        "**Exertional**: healthy young person, strenuous activity in heat; rapid onset; sweating often preserved; lactic acidosis, rhabdomyolysis, DIC, AKI, hyper-/hypokalemia, hypoglycemia prominent",
+        "**Classic (non-exertional)**: elderly, infants, debilitated, psychiatric; days of heat exposure; epidemic clustering in heat waves; anhidrosis (hot dry skin) common; precipitated by anticholinergics, antipsychotics, diuretics, beta-blockers, lack of AC",
+        "Both are true emergencies — distinction guides cooling modality (immersion favored in exertional) and anticipated complications",
+      ],
+    },
+    {
+      heading: "Differential diagnosis",
+      items: [
+        "Sepsis / meningitis / encephalitis (fever + AMS) — often coexist; have a low threshold to culture and cover",
+        "**Neuroleptic malignant syndrome** (dopamine antagonists, lead-pipe rigidity) and **serotonin syndrome** (clonus, hyperreflexia) — dantrolene/benzos/cyproheptadine relevant here, NOT in heat stroke",
+        "Malignant hyperthermia (anesthetic exposure) — dantrolene indicated",
+        "Thyroid storm, anticholinergic toxidrome, sympathomimetic (cocaine/MDMA/amphetamine) toxicity, salicylate toxicity, withdrawal (alcohol/baclofen)",
+        "Status epilepticus, intracranial hemorrhage",
+      ],
+    },
+    {
+      heading: "Cooling methods — detail",
+      items: [
+        "**Cold/ice-water immersion**: fastest cooling rate (~`0.15-0.35°C/min`); first-line for exertional heat stroke in young patients; monitor core continuously and remove at ~`38.5-39°C`",
+        "**Evaporative-convective**: tepid water mist + fans; nearly as effective, better tolerated, allows monitoring/resuscitation access; preferred for classic/elderly/unstable patients",
+        "Cold IV fluids, ice packs to groin/axillae/neck as adjuncts",
+        "Endovascular/intravascular cooling catheters or cold gastric/bladder lavage if refractory",
+        "**Stop active cooling at ~`39°C`** to prevent overshoot hypothermia; treat shivering aggressively as it slows cooling",
+      ],
+    },
+    {
+      heading: "Workup",
+      items: [
+        "Core temperature (rectal/esophageal) — continuous",
+        "**CK, urine myoglobin, BMP/CMP (K+, Cr, BUN), LFTs** — rhabdo and hepatic injury",
+        "CBC, **coags + fibrinogen + platelets** (DIC), lactate, VBG/ABG",
+        "Glucose (hypoglycemia in exertional), calcium/phosphate, troponin, ECG",
+        "Urinalysis, pregnancy test; blood cultures if sepsis cannot be excluded",
+        "Consider CT head and LP if AMS does not improve with cooling",
+      ],
+    },
+    {
+      heading: "End-organ complications",
+      items: [
+        "**Rhabdomyolysis → AKI** — fluids, monitor K+; especially exertional",
+        "**DIC** and hepatic injury — transaminases peak at `24-72 h`; fulminant hepatic failure can require transplant",
+        "**ARDS**, myocardial injury, arrhythmia",
+        "Cerebral edema, persistent encephalopathy, cerebellar dysfunction (Purkinje cells are heat-sensitive)",
+        "Electrolyte derangements; lactic acidosis; seizures",
+      ],
+    },
+    {
+      heading: "Disposition & pitfalls",
+      items: [
+        "**Admit all heat stroke to ICU** — risk of delayed multi-organ failure even after temperature normalizes",
+        "Heat exhaustion (normal mentation, core often <`40°C`) → cool, rehydrate, observe, usually dischargeable",
+        "**Pitfall**: relying on tympanic/oral temp — falsely reassuring; always get a rectal/esophageal core temp",
+        "**Pitfall**: giving antipyretics or dantrolene — ineffective and distracts from cooling",
+        "**Pitfall**: delaying cooling for IV access, imaging, or transport — cool first, en route, everywhere",
+        "**Pitfall**: overshoot — failing to stop cooling causes iatrogenic hypothermia",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e Ch 214", "Epstein & Yanovich, NEJM 2019 (Heatstroke)", "Wilderness Medical Society Practice Guidelines for Heat Illness 2019 (Lipman et al)", "LITFL Heat Stroke"],
+    },
+  ],
+},
+{
+  id: "frostbite",
+  name: "Frostbite",
+  subtitle: "Peripheral tissue freezing injury",
+  category: "env",
+  tldr: [
+    {
+      heading: "Before rewarming — critical decisions",
+      items: [
+        "**DO NOT thaw if there is any risk of refreezing** — a refreeze-thaw cycle is far more destructive than remaining frozen; keep frozen until definitive warmth is assured",
+        "**Treat life-threatening hypothermia and trauma FIRST** — rewarm the core before the frostbitten part",
+        "**Do NOT rub/massage the part and avoid dry/radiant heat** (stove, fire, heater) — friction and uneven dry heat cause further injury and burns",
+        "Remove wet/constrictive clothing and jewelry; pad and splint; do not allow walking on thawed feet",
+      ],
+    },
+    {
+      heading: "RAPID REWARMING",
+      items: [
+        "**Immerse in circulating warm water `37-39°C` (99-102°F) for 15-30 min** until the part is pliable and red/purple and distal flush returns",
+        "**Rewarming is extremely painful — give IV opioids** (e.g. `Morphine` or `Fentanyl`) and titrate",
+        "`Ibuprofen 12 mg/kg/day divided BID` (or `400 mg PO q8-12h`) — antiprostaglandin, limits thromboxane-mediated ischemia; start early",
+        "**Update tetanus**; topical `aloe vera` to thawed tissue q6h (thromboxane inhibitor)",
+        "Leave clear/cloudy blisters intact (or aspirate); leave hemorrhagic blisters intact; dry sterile dressings, elevate, separate digits",
+      ],
+    },
+    {
+      heading: "Severe deep frostbite — salvage window",
+      items: [
+        "For deep (proximal interphalangeal or more) frostbite **presenting within `24 h`** with no perfusion after rewarming: consider **thrombolysis (tPA) or `Iloprost`** to dissolve microvascular thrombi and salvage tissue",
+        "Confirm perfusion deficit with angiography or technetium bone/perfusion scan; involve surgery/burn/vascular early",
+        "`Iloprost` (prostacyclin analog) is effective without bleeding risk and useful even beyond the lytic window in some protocols",
+        "**Avoid early amputation** — demarcation takes weeks ('frostbite in January, amputate in July')",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "**Phase 1 — freezing**: extracellular ice crystal formation → intracellular dehydration, electrolyte shifts, direct cellular injury",
+        "**Phase 2 — reperfusion/inflammatory**: on thawing, endothelial damage releases thromboxane A2 and prostaglandins → vasoconstriction, platelet aggregation, microvascular thrombosis → progressive dermal ischemia",
+        "**Refreezing** after thaw forms larger crystals and amplifies thrombosis — the basis for the 'do not thaw if refreezing possible' rule",
+        "Risk factors: alcohol, homelessness, psychiatric illness, prior cold injury, peripheral vascular disease, tobacco, wet/constrictive clothing, high altitude, extremes of age",
+      ],
+    },
+    {
+      heading: "Spectrum & classification",
+      items: [
+        "**Frostnip**: superficial, reversible; no ice crystal/tissue loss; numbness and pallor that resolve with rewarming",
+        "**Superficial frostbite (1st-2nd degree)**: 1st = central pallor with surrounding erythema/edema, no blisters; 2nd = **clear/milky blisters**, edema — usually good outcome",
+        "**Deep frostbite (3rd-4th degree)**: 3rd = **hemorrhagic blisters**, blue-gray skin (deeper injury); 4th = involvement of muscle/tendon/bone, mottled, nonblanching, eventual mummification → tissue loss",
+        "Practical bedside dichotomy: **superficial vs deep** is more useful acutely than the 4-tier grade, which is best assigned after rewarming",
+        "Favorable signs post-thaw: rapid return of sensation/warmth, normal color, clear blisters, intact pinprick",
+      ],
+    },
+    {
+      heading: "Workup",
+      items: [
+        "Clinical diagnosis; assess depth after rewarming",
+        "Core temperature — exclude/treat concurrent hypothermia",
+        "**Technetium-99m bone scan or angiography (CTA / MR angiography)** at `24-72 h` to map tissue viability and guide thrombolysis/surgery",
+        "CBC, BMP, CK (deep injury/compartment), coags before thrombolytics; glucose, alcohol level as indicated",
+        "Imaging for associated trauma; serial photos to track demarcation",
+      ],
+    },
+    {
+      heading: "Definitive management",
+      items: [
+        "Rapid rewarming in `37-39°C` circulating water is the cornerstone; do not interrupt once started",
+        "Analgesia (opioids), ibuprofen, tetanus, topical aloe, blister care as above",
+        "**tPA / thrombolysis** within `24 h` for deep injury with angiographic perfusion deficit and no contraindication — reduces amputation rates",
+        "**`Iloprost`** as an alternative/adjunct (no bleeding risk; some protocols extend to 48 h)",
+        "Whirlpool hydrotherapy, avoidance of weight-bearing, smoking cessation; consider sympathetic blockade in refractory cases",
+        "**Delay amputation/debridement weeks-to-months** until demarcation is clear, except for wet gangrene, uncontrolled infection, or sepsis",
+      ],
+    },
+    {
+      heading: "Disposition",
+      items: [
+        "**Admit** deep/extensive frostbite, candidates for thrombolysis/Iloprost, concurrent hypothermia, or significant comorbidity — ideally a burn/regional cold-injury center",
+        "Superficial frostbite with good post-thaw perfusion may be discharged with close follow-up, wound care, and analgesia if social situation is safe (no refreezing risk)",
+        "Address the root cause — exposure, intoxication, housing — to prevent recurrence",
+      ],
+    },
+    {
+      heading: "Pitfalls & pearls",
+      items: [
+        "**Pitfall**: thawing in the field when refreezing is possible — leave frozen and evacuate",
+        "**Pitfall**: using dry/radiant heat or rubbing the part — causes burns and mechanical injury to frozen tissue",
+        "**Pitfall**: early amputation based on initial appearance — frozen tissue looks devastating but may demarcate favorably",
+        "**Pitfall**: missing concurrent hypothermia — always check a core temperature",
+        "**Pearl**: 'frostbite in January, amputate in July' — patience and demarcation prevent over-resection",
+        "**Pearl**: the lytic window is short (`<24 h`) — recognize deep injury early to enable salvage",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e Ch 216", "Wilderness Medical Society Practice Guidelines for Frostbite 2019 (McIntosh et al)", "Handford et al, BMJ 2020 (Frostbite review)", "LITFL Frostbite"],
+    },
+  ],
+},
+{
+  id: "drowning",
+  name: "Drowning / Submersion",
+  subtitle: "Submersion / immersion injury",
+  category: "env",
+  tldr: [
+    {
+      heading: "Airway-focused resuscitation — HYPOXIA is the killer",
+      items: [
+        "**The primary insult is hypoxia — prioritize ventilation and oxygenation FIRST**, before chest compressions in the drowning victim",
+        "**Give rescue breaths/ventilations first**, then standard CPR (A-B-C orientation, not C-A-B, for drowning arrest)",
+        "High-flow O₂; **early positive-pressure ventilation / intubation** for inadequate ventilation, severe hypoxia, or AMS; add PEEP for pulmonary edema",
+        "**Do NOT perform abdominal thrusts or attempt to 'drain water' from the lungs** — ineffective, delays ventilation, and causes aspiration of gastric contents",
+      ],
+    },
+    {
+      heading: "Resuscitate, rewarm, find the cause",
+      items: [
+        "**C-spine precautions ONLY if a trauma mechanism is suspected** (diving, fall, surf, MVC) — routine immobilization otherwise hinders airway management",
+        "**Hypothermia frequently coexists** — measure core temp and rewarm; **'not dead until warm and dead'** — continue resuscitation until normothermic",
+        "**ECMO** for refractory hypoxemia/cardiac arrest, especially with severe hypothermia",
+        "**Identify the precipitant**: seizure, arrhythmia/**long QT**, syncope, MI, hypoglycemia, intoxication, trauma, suicide attempt, child abuse",
+      ],
+    },
+    {
+      heading: "Terminology & risk stratification",
+      items: [
+        "**Use only 'drowning' (fatal or nonfatal)** — abandon obsolete terms 'dry/wet/secondary/near-drowning' and 'delayed drowning'",
+        "Severity is driven by **degree and duration of hypoxia**; salt vs fresh water does NOT change ED management",
+        "Risk of **delayed pulmonary edema / ARDS** — symptomatic patients (or abnormal exam, cough, or low SpO₂) need observation",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Definition & pathophysiology",
+      items: [
+        "**Drowning** = process of respiratory impairment from submersion/immersion in liquid; outcomes are death, morbidity, or no morbidity",
+        "Sequence: submersion → breath-holding → laryngospasm → hypoxia → loss of laryngospasm → aspiration → surfactant washout/dysfunction → **alveolar collapse, V/Q mismatch, non-cardiogenic pulmonary edema (ARDS)**",
+        "Hypoxemia drives multi-organ injury: **hypoxic-ischemic brain injury** (chief determinant of outcome), myocardial dysfunction, AKI, DIC",
+        "Salt- vs fresh-water electrolyte/osmotic theories are clinically irrelevant — both cause surfactant dysfunction and hypoxia; aspirated volumes are usually small",
+        "**Immersion syndrome**: sudden cold-water immersion → vagal/dysrhythmic arrest or cold-shock gasp reflex with aspiration",
+      ],
+    },
+    {
+      heading: "Prehospital & resuscitation specifics",
+      items: [
+        "**In-water rescue breathing** by trained rescuers can begin before extraction; do not delay ventilation",
+        "Reverse the usual order — **ventilation precedes compressions** because the arrest is hypoxic, not cardiac",
+        "Routine cervical immobilization is **not** recommended absent a trauma mechanism (low yield, impedes airway)",
+        "Vomiting is very common during resuscitation — have suction ready; log-roll to clear airway",
+        "Defibrillate VF/pVT per ACLS; correct hypoxia, hypothermia, hypoglycemia, and electrolytes",
+      ],
+    },
+    {
+      heading: "ED workup",
+      items: [
+        "Continuous SpO₂, **core temperature**, cardiac monitoring",
+        "**CXR** (may lag clinical findings), ABG/VBG, lactate",
+        "**ECG** (look for **long QT**, Brugada, ischemia), troponin",
+        "BMP, glucose, CBC, coags; CK if prolonged immersion",
+        "**Tox screen, ethanol** and pregnancy test as indicated; consider CT head/C-spine if trauma or unexplained AMS",
+        "POCUS lungs (B-lines) and cardiac function as adjunct",
+      ],
+    },
+    {
+      heading: "Respiratory management",
+      items: [
+        "Titrate O₂ to SpO₂ ≥`94%`; non-invasive ventilation (CPAP/BiPAP) for the awake hypoxic patient who can protect their airway",
+        "**Intubate with lung-protective settings + PEEP** for ARDS-pattern failure; manage as ARDS (low tidal volume `6 mL/kg`)",
+        "Bronchospasm → inhaled beta-agonists",
+        "**Antibiotics are NOT routine** — reserve for grossly contaminated water (sewage, stagnant) or established pneumonia; **steroids are not indicated**",
+        "ECMO for refractory hypoxemia despite optimal ventilation",
+      ],
+    },
+    {
+      heading: "Observation & disposition",
+      items: [
+        "**Truly asymptomatic with normal exam, normal SpO₂, and normal lung sounds → observe `4-8 h`, then discharge** with return precautions",
+        "**Any symptoms** (cough, dyspnea, hypoxia, abnormal auscultation, AMS) → admit/monitor; deterioration usually manifests within `4-8 h`, not days later",
+        "ICU for intubation, significant hypoxia, AMS, dysrhythmia, or hemodynamic instability",
+        "Counsel that significant delayed deterioration beyond the observation window is rare in the asymptomatic patient (basis for abandoning 'secondary drowning')",
+      ],
+    },
+    {
+      heading: "Prognosis",
+      items: [
+        "Outcome is determined chiefly by **duration of hypoxia and time to effective ventilation** — neurologic injury dominates",
+        "Favorable: short submersion, early bystander CPR, return of spontaneous circulation in the field, **icy-water immersion in children** (rapid protective hypothermia → rare intact survival after prolonged submersion)",
+        "Poor: prolonged submersion (>`10 min`), prolonged resuscitation/asystole, fixed dilated pupils, persistent coma, severe acidosis",
+        "Avoid early neuro-prognostication in the hypothermic patient — rewarm first",
+      ],
+    },
+    {
+      heading: "Pitfalls & pearls",
+      items: [
+        "**Pitfall**: starting compressions before ventilation in drowning arrest — reverses the priority for a hypoxic arrest",
+        "**Pitfall**: abdominal thrusts / inversion to 'expel water' — causes aspiration and delays oxygenation",
+        "**Pitfall**: routine C-spine immobilization without a trauma mechanism — impedes the airway with little benefit",
+        "**Pitfall**: discharging before identifying WHY they drowned — seizure, long QT, arrhythmia, hypoglycemia, intoxication, abuse",
+        "**Pitfall**: terminating resuscitation in a cold patient — 'not dead until warm and dead'",
+        "**Pearl**: salt vs fresh water does not change management",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e Ch 209", "Szpilman et al, NEJM 2012 (Drowning)", "Utstein-style drowning definitions (Idris et al, Circulation 2003)", "AHA 2020 Guidelines (Drowning)", "LITFL Drowning"],
+    },
+  ],
+},
+{
+  id: "crao",
+  name: "Central Retinal Artery Occlusion",
+  subtitle: "Sudden painless monocular vision loss",
+  category: "ophth",
+  tldr: [
+    {
+      heading: "Recognize — 'stroke of the eye'",
+      items: [
+        "**Acute, painless, severe monocular vision loss** (count-fingers to light perception), often profound",
+        "Afferent pupillary defect (RAPD) in the affected eye",
+        "Fundoscopy: **pale/whitened retina with a CHERRY-RED SPOT** at the fovea; **'box-carring'** (segmented retinal arterial blood column)",
+        "**This is a stroke equivalent / retinal ischemic stroke**, not just an eye problem",
+      ],
+    },
+    {
+      heading: "ACTIVATE THE STROKE PATHWAY",
+      items: [
+        "**Treat as an acute stroke — activate stroke team, emergent neurology/neuro-ophthalmology, and obtain MRI brain (DWI)** plus carotid/vascular imaging",
+        "**Time-critical** — retinal tolerance to ischemia is only a few hours; act immediately",
+        "**Screen everyone ≥`50` for giant cell arteritis**: send **ESR + CRP** (± platelets); if GCA suspected, give **high-dose steroids immediately** (see GCA entry) — do not wait",
+        "Admit for expedited stroke workup (echo, telemetry, vascular risk factors) — high short-term risk of cerebral stroke",
+      ],
+    },
+    {
+      heading: "Acute eye-directed measures (low/uncertain evidence)",
+      items: [
+        "Attempted dislodgement: **ocular digital massage**, lowering IOP with `Acetazolamide 500 mg IV/PO` and topical `Timolol 0.5%`, anterior chamber paracentesis",
+        "Hypercarbia/vasodilation: rebreathing into a bag or **carbogen** (95% O₂ / 5% CO₂)",
+        "**These have weak evidence and should NOT delay the stroke pathway/thrombolysis evaluation**",
+        "**Intravenous/intra-arterial thrombolysis (tPA)** within the time window may be considered at select stroke centers — emerging, center-dependent",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "Occlusion of the central retinal artery (a branch of the ophthalmic artery, itself the first branch of the internal carotid) → inner retinal ischemic infarction",
+        "**Embolic** (carotid atherosclerosis most common; also cardiac — AF, valvular, endocarditis), **thrombotic**, **arteritic (giant cell arteritis)**, or vasospastic",
+        "Cherry-red spot = thin foveal retina perfused by the underlying choroid showing through the surrounding edematous, ischemic (pale) inner retina",
+        "Retinal neurons tolerate ischemia poorly — irreversible damage within roughly `90-240 min` in primate models",
+      ],
+    },
+    {
+      heading: "Clinical features & subtypes",
+      items: [
+        "**CRAO**: profound monocular loss, RAPD, diffuse retinal pallor, cherry-red spot, box-carring",
+        "**Branch retinal artery occlusion (BRAO)**: sectoral field loss with a wedge of retinal pallor along one arteriole; embolic plaques (Hollenhorst) may be visible",
+        "**Cilioretinal artery sparing**: ~`25%` retain a small island of central vision (cilioretinal artery arises from the choroidal circulation)",
+        "Transient monocular vision loss (**amaurosis fugax**) is a warning of impending CRAO/stroke — work up urgently",
+        "Painful vision loss suggests an alternative (acute angle closure, optic neuritis, GCA with ischemic optic neuropathy)",
+      ],
+    },
+    {
+      heading: "Differential diagnosis",
+      items: [
+        "**Central retinal vein occlusion** ('blood and thunder' — diffuse hemorrhages, dilated tortuous veins) — different management",
+        "**Giant cell arteritis / arteritic anterior ischemic optic neuropathy** — must exclude in ≥50",
+        "Retinal detachment, vitreous hemorrhage, optic neuritis",
+        "Acute angle-closure glaucoma (painful, red eye, mid-dilated pupil)",
+        "Occipital/cortical stroke (usually bilateral fields, no RAPD), functional vision loss",
+      ],
+    },
+    {
+      heading: "Workup",
+      items: [
+        "**Bedside visual acuity, pupils (RAPD), dilated fundoscopy / POCUS of the eye**",
+        "**ESR, CRP, platelets** — GCA screen in all patients ≥50 (and younger with suggestive symptoms)",
+        "**MRI brain with DWI** (often shows concurrent silent infarcts), MRA/CTA head and neck, **carotid duplex**",
+        "**ECG, echocardiography, telemetry** for cardioembolic source; CBC, lipids, HbA1c, coagulation/hypercoagulable workup in the young",
+        "Ophthalmology: fluorescein angiography, OCT to confirm and characterize",
+      ],
+    },
+    {
+      heading: "Management & treatment",
+      items: [
+        "**Stroke-pathway evaluation and admission** is the priority — secondary stroke prevention saves brain and the other eye",
+        "Eye-directed measures (massage, IOP-lowering, carbogen) may be trialed but have **low-quality evidence** and must not delay systemic stroke care",
+        "**Thrombolysis (IV/IA tPA)** within the window is an active area of practice at comprehensive stroke centers — consider per local protocol",
+        "**If GCA**: immediate high-dose corticosteroids to protect the fellow eye; arrange temporal artery biopsy",
+        "Treat the underlying source: antiplatelet/anticoagulation, carotid intervention, risk-factor modification per stroke neurology",
+      ],
+    },
+    {
+      heading: "Disposition & prognosis",
+      items: [
+        "**Admit** for stroke workup and monitoring — markedly elevated 7-90 day risk of ischemic stroke and contralateral events",
+        "**Visual prognosis is generally poor** — most have permanent severe deficit; recovery more likely with cilioretinal sparing or very early intervention",
+        "Urgent neuro-ophthalmology and stroke neurology follow-up; aggressive vascular risk-factor management",
+      ],
+    },
+    {
+      heading: "Pitfalls & pearls",
+      items: [
+        "**Pitfall**: treating CRAO as 'just an eye problem' — it is a stroke; failing to image the brain and vessels misses a treatable embolic source",
+        "**Pitfall**: missing GCA in the older patient — costs the fellow eye; always send ESR/CRP and treat empirically if suspected",
+        "**Pitfall**: spending precious minutes on low-evidence ocular maneuvers while delaying the stroke pathway/tPA decision",
+        "**Pearl**: amaurosis fugax = a TIA of the eye — work it up as urgently as a TIA",
+        "**Pearl**: a cherry-red spot also appears in some storage diseases, but in an adult with acute monocular loss it means CRAO",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["AHA/ASA Scientific Statement on CRAO (Mac Grory et al, Stroke 2021)", "Tintinalli 9e Ch 241", "American Academy of Ophthalmology Preferred Practice Pattern — Retinal/Ophthalmic Artery Occlusion", "LITFL Central Retinal Artery Occlusion"],
+    },
+  ],
+},
+{
+  id: "globe-rupture",
+  name: "Globe Rupture & Retrobulbar Hemorrhage",
+  subtitle: "Sight-threatening orbital emergencies",
+  category: "ophth",
+  tldr: [
+    {
+      heading: "Globe rupture — recognize",
+      items: [
+        "**Positive Seidel sign** (fluorescein stream of aqueous from the wound), **teardrop/peaked pupil** pointing toward the defect",
+        "**Low/soft IOP, 360° bullous subconjunctival hemorrhage, extruded brown uveal tissue, shallow anterior chamber, hyphema, severe vision loss**",
+        "Mechanism: penetrating trauma, high-velocity projectile, or severe blunt force; maintain high suspicion with any periorbital trauma",
+        "**Suspect intraocular foreign body** with any high-velocity mechanism (grinding, hammering, blast)",
+      ],
+    },
+    {
+      heading: "Globe rupture — management (protect, don't pressure)",
+      items: [
+        "**Place a RIGID EYE SHIELD immediately — NO patch, NO pressure, no manipulation** (any pressure can extrude intraocular contents)",
+        "**Do NOT measure IOP (no tonometry) and do NOT instill drops, ointment, or gel** into the eye",
+        "**NPO, elevate head of bed ~`30°`**; control pain, nausea, and agitation to **prevent Valsalva and IOP spikes** — `Ondansetron 4 mg IV`, analgesia, gentle sedation",
+        "**IV broad-spectrum antibiotics** (e.g. `Vancomycin` + `Ceftazidime`; consider adding coverage for Bacillus in soil/vegetable injuries) to prevent endophthalmitis; **update tetanus**",
+        "**Emergent ophthalmology consult** for operative repair; orbital **CT (thin-cut)** to assess globe and rule out foreign body — **avoid MRI if metallic FB possible**",
+      ],
+    },
+    {
+      heading: "Retrobulbar hemorrhage — recognize & ACT",
+      items: [
+        "**Orbital compartment syndrome**: **proptosis, markedly elevated IOP, severe pain, vision loss, afferent pupillary defect (RAPD)**, tense/'rock-hard' globe, ophthalmoplegia",
+        "**This is a clinical diagnosis — perform EMERGENT LATERAL CANTHOTOMY AND CANTHOLYSIS at the bedside; DO NOT wait for CT**",
+        "Sight is lost within ~`60-120 min` of optic nerve/retinal ischemia — minutes matter",
+        "After decompression: ophthalmology, control IOP/BP, reverse coagulopathy, treat the source",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Globe rupture — pathophysiology & signs",
+      items: [
+        "Full-thickness defect of the cornea and/or sclera from penetrating injury or blunt force raising intraocular pressure until the wall fails (often at the limbus or behind rectus insertions)",
+        "**Seidel test**: fluorescein at the wound is diluted into a clear rivulet by leaking aqueous under cobalt-blue light",
+        "**Peaked/teardrop pupil**: iris plugs the wound and points toward it; also iris/uveal prolapse (dark tissue on the surface)",
+        "Hypotony (low IOP), shallow anterior chamber, hyphema, vitreous hemorrhage, decreased acuity, relative afferent pupillary defect",
+        "**360° (bullous) subconjunctival hemorrhage** after blunt trauma is occult-rupture until proven otherwise",
+      ],
+    },
+    {
+      heading: "Globe rupture — workup",
+      items: [
+        "Visual acuity (document early for medicolegal/prognostic reasons), gross exam under good light",
+        "**Orbital CT thin-cut (1-2 mm)** — globe contour change, intraocular air, lens dislocation, **foreign body localization**, associated fractures",
+        "**Avoid ocular ultrasound and any pressure** on a suspected open globe; **avoid MRI if a metallic foreign body is possible**",
+        "Do NOT remove impaled objects — stabilize in place and shield around them",
+        "Address associated injuries (the orbit is rarely the only one in high-velocity trauma)",
+      ],
+    },
+    {
+      heading: "Globe rupture — definitive management",
+      items: [
+        "Rigid shield, NPO, HOB up, antiemetics, analgesia, anxiolysis to avoid IOP spikes",
+        "**IV broad-spectrum antibiotics** for endophthalmitis prophylaxis (vancomycin + ceftazidime or a fluoroquinolone; add gram-positive/Bacillus coverage for organic/soil contamination)",
+        "Tetanus update; avoid topical agents and topical anesthetics",
+        "**Emergent ophthalmology** for surgical exploration and primary repair, typically within `24 h`; manage as a potential sympathetic ophthalmia risk long-term",
+        "Consider antiemetic and stool softener to minimize straining postoperatively",
+      ],
+    },
+    {
+      heading: "Retrobulbar hemorrhage — pathophysiology",
+      items: [
+        "Hemorrhage into the closed retrobulbar (intraconal) space (trauma, retrobulbar block, sinus/orbital surgery, anticoagulation, spontaneous) → rapid rise in orbital pressure",
+        "**Orbital compartment syndrome**: pressure compresses and stretches the optic nerve and central retinal artery → ischemic optic neuropathy and retinal ischemia",
+        "The orbit is bounded by bone and the orbital septum/canthal tendons anteriorly; releasing the **lateral canthal tendon** acutely expands the compartment",
+        "Vision loss is time-dependent — irreversible after roughly `90-120 min` of severe ischemia",
+      ],
+    },
+    {
+      heading: "Lateral canthotomy & cantholysis — technique",
+      items: [
+        "Indications: acute vision loss/RAPD with proptosis and **IOP typically >`40 mmHg`** (or clinically tense orbit) after retrobulbar hemorrhage — **treat clinically, do not await imaging**",
+        "Anesthetize the lateral canthus with `Lidocaine with epinephrine`; crush the lateral canthus with a hemostat for `~1 min` to reduce bleeding",
+        "**Canthotomy**: incise the lateral canthus horizontally ~`1-2 cm` to the orbital rim with scissors",
+        "**Cantholysis (the key step)**: retract the lower lid, strum and cut the **inferior crus of the lateral canthal tendon** (point scissors toward the patient's nose/chin); the lower lid should swing free",
+        "**Reassess IOP and acuity**; release the superior crus if pressure remains elevated; ophthalmology follow-up for definitive care",
+      ],
+    },
+    {
+      heading: "Disposition & associated care",
+      items: [
+        "**Both entities → emergent ophthalmology and admission**",
+        "Retrobulbar hemorrhage: after decompression, control IOP (consider `Acetazolamide`, topical IOP-lowering, mannitol per ophtho), reverse anticoagulation, manage BP and pain",
+        "Globe rupture: OR for repair; ICU/observation depending on associated trauma; long-term ophthalmology follow-up",
+        "Counsel on guarded visual prognosis depending on injury severity and time to treatment",
+      ],
+    },
+    {
+      heading: "Pitfalls & pearls",
+      items: [
+        "**Pitfall (globe)**: measuring IOP, instilling drops/ointment, or applying a pressure patch — any pressure can extrude ocular contents",
+        "**Pitfall (globe)**: ocular ultrasound on an open globe, or MRI with a possible metallic foreign body",
+        "**Pitfall (retrobulbar)**: waiting for a CT before canthotomy — orbital compartment syndrome is a clinical diagnosis and sight is lost in minutes",
+        "**Pitfall**: missing the diagnosis in the multitrauma patient where the eye exam is deferred",
+        "**Pearl**: cantholysis (cutting the inferior crus), not the skin incision, is what actually decompresses the orbit",
+        "**Pearl**: a teardrop pupil points toward the rupture site",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e Ch 241 (Eye Emergencies)", "Roberts & Hedges' Clinical Procedures in Emergency Medicine (Lateral Canthotomy)", "American Academy of Ophthalmology — Open Globe / Orbital Compartment Syndrome", "LITFL Lateral Canthotomy & Cantholysis"],
+    },
+  ],
+},
+{
+  id: "giant-cell-arteritis",
+  name: "Giant Cell Arteritis",
+  subtitle: "Temporal arteritis — vision-threatening vasculitis",
+  category: "rheum",
+  tldr: [
+    {
+      heading: "Recognize",
+      items: [
+        "**Age ≥`50`** (almost never younger) with **new headache** (often temporal), **scalp tenderness**, and prominent/tender temporal artery",
+        "**JAW CLAUDICATION** — jaw pain/fatigue with chewing — is the most specific symptom",
+        "**Visual symptoms = emergency**: amaurosis fugax, diplopia, or sudden vision loss (anterior ischemic optic neuropathy → permanent blindness)",
+        "Overlap with **polymyalgia rheumatica** (proximal girdle pain/stiffness) and constitutional symptoms (fever, weight loss, fatigue, malaise)",
+        "**Markedly elevated ESR and/or CRP** (CRP is more sensitive; both can rarely be normal — do not exclude if high suspicion)",
+      ],
+    },
+    {
+      heading: "TREAT NOW — do not wait for biopsy",
+      items: [
+        "**Start high-dose corticosteroids immediately on clinical suspicion** — vision loss is preventable but irreversible once established",
+        "**No visual symptoms**: `Prednisone 40-60 mg PO daily` (≈`1 mg/kg/day`)",
+        "**Any visual symptoms or vision loss**: `IV Methylprednisolone 500-1000 mg daily x3 days`, then transition to oral prednisone",
+        "Add **`Aspirin 81 mg PO daily`** (reduces ischemic/visual events) unless contraindicated; start GI and bone prophylaxis (PPI, calcium/vitamin D)",
+        "**Steroids do NOT alter biopsy histology for `1-2 weeks`** — so treating first does not compromise the diagnosis",
+      ],
+    },
+    {
+      heading: "Confirm & disposition",
+      items: [
+        "**Temporal artery biopsy within `1-2 weeks`** of starting steroids (gold standard; skip lesions occur — a long segment / bilateral biopsy improves yield)",
+        "Temporal artery / large-vessel **ultrasound ('halo' and 'compression' signs)** is an increasingly used noninvasive adjunct",
+        "**Admit** for vision loss/threat and IV steroids; otherwise urgent rheumatology + ophthalmology follow-up",
+        "**`Tocilizumab`** (IL-6 inhibitor) as a steroid-sparing agent for relapsing/refractory disease or to limit steroid toxicity",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "Granulomatous large- and medium-vessel vasculitis of the aorta and its branches, with predilection for the **extracranial branches of the external carotid** (superficial temporal, ophthalmic, posterior ciliary arteries)",
+        "T-cell and macrophage-mediated inflammation with multinucleated **giant cells** → intimal hyperplasia → luminal occlusion → ischemia",
+        "Occlusion of the **posterior ciliary arteries** causes **arteritic anterior ischemic optic neuropathy (AION)** — the mechanism of blindness",
+        "Strongly associated with **polymyalgia rheumatica**; both are diseases of older adults, women > men, higher in Northern European populations",
+      ],
+    },
+    {
+      heading: "Clinical features",
+      items: [
+        "**Headache** (new, persistent, temporal or diffuse), **scalp tenderness** (pain combing hair), temporal artery tenderness/nodularity/decreased pulse",
+        "**Jaw claudication** (most specific) and rarely tongue/limb claudication; jaw or tongue necrosis in severe disease",
+        "**Visual**: transient monocular loss (amaurosis fugax) is a warning of impending permanent loss; AION, central retinal artery occlusion, diplopia from cranial nerve ischemia",
+        "Constitutional: low-grade fever (cause of **FUO** in the elderly), weight loss, fatigue, anorexia, depression",
+        "Large-vessel involvement: limb claudication, asymmetric pulses/BP, aortic aneurysm/dissection (late), bruits",
+      ],
+    },
+    {
+      heading: "Diagnosis & workup",
+      items: [
+        "**ESR (often >`50 mm/h`, may be very high) and CRP** — order both; combined they are highly sensitive but can rarely be normal",
+        "CBC (normocytic anemia, thrombocytosis), LFTs (mild alk phos elevation), consider IL-6",
+        "**Temporal artery biopsy** (≥`1-2 cm` segment) within `1-2 weeks` — gold standard; segmental 'skip lesions' cause false negatives",
+        "**Vascular ultrasound** ('halo' sign = hypoechoic wall edema; non-compressible artery); MRI/MRA, CTA, or PET-CT for large-vessel disease",
+        "2022 ACR/EULAR classification criteria incorporate clinical, lab, biopsy, and imaging features",
+      ],
+    },
+    {
+      heading: "Differential diagnosis",
+      items: [
+        "Non-arteritic anterior ischemic optic neuropathy, central retinal artery occlusion (non-arteritic), other causes of acute vision loss",
+        "Tension/migraine/cluster headache, trigeminal neuralgia, cervical spondylosis",
+        "Other vasculitides (Takayasu in younger patients, ANCA-associated), infection/sepsis (FUO), malignancy",
+        "Temporomandibular joint disorder (jaw pain), dental disease",
+        "Polymyalgia rheumatica without arteritis; elderly-onset rheumatoid arthritis",
+      ],
+    },
+    {
+      heading: "Treatment detail",
+      items: [
+        "**Vision intact**: `Prednisone 40-60 mg PO daily`, continued until symptoms resolve and inflammatory markers normalize, then slow taper over `12-24 months`",
+        "**Vision threatened/lost or diplopia**: **`IV Methylprednisolone 500-1000 mg daily x3 days`** then high-dose oral prednisone; goal is to protect the fellow eye (recovery of lost vision is uncommon)",
+        "**`Aspirin 81 mg daily`** unless contraindicated; PPI for GI prophylaxis; calcium + vitamin D ± bisphosphonate for steroid-induced osteoporosis",
+        "**`Tocilizumab`** (IL-6R inhibitor; GiACTA trial) reduces relapse and cumulative steroid dose — steroid-sparing for refractory/relapsing disease or steroid intolerance",
+        "Monitor and counsel on steroid toxicity: hyperglycemia, hypertension, infection, mood, osteoporosis; never stop abruptly",
+      ],
+    },
+    {
+      heading: "Disposition",
+      items: [
+        "**Admit** for any visual symptoms/loss (IV steroids, urgent ophthalmology) and for systemic complications",
+        "Without visual involvement: start oral steroids in the ED, arrange **urgent rheumatology referral and temporal artery biopsy within `1-2 weeks`**, ophthalmology follow-up",
+        "Strict return precautions: any vision change, jaw/tongue symptoms, new neuro deficit",
+        "Long-term monitoring for relapse and for **thoracic aortic aneurysm/dissection**",
+      ],
+    },
+    {
+      heading: "Pitfalls & pearls",
+      items: [
+        "**Pitfall**: withholding steroids to 'wait for the biopsy' — this risks irreversible, potentially **bilateral blindness**; treat first, biopsy within `1-2 weeks`",
+        "**Pitfall**: excluding GCA because the ESR is normal — CRP or clinical picture may still indicate disease; order both markers",
+        "**Pitfall**: missing GCA as a cause of fever of unknown origin or isolated visual symptoms in the elderly",
+        "**Pearl**: jaw claudication and diplopia are among the strongest predictors of a positive biopsy",
+        "**Pearl**: untreated, the fellow eye is at high risk of involvement within days — high-dose steroids are protective and urgent",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["2022 ACR/EULAR Classification Criteria for Giant Cell Arteritis", "Stone et al, NEJM 2017 (GiACTA — tocilizumab)", "Tintinalli 9e Ch 281", "BSR Guideline on the Management of Giant Cell Arteritis 2020 (Mackie et al)", "LITFL Giant Cell Arteritis"],
+    },
+  ],
+},
+{
+  id: "caps",
+  name: "Catastrophic Antiphospholipid Syndrome (CAPS)",
+  subtitle: "Rapid multi-organ thrombotic microangiopathy",
+  category: "rheum",
+  tldr: [
+    {
+      heading: "Recognize — rare and rapidly fatal",
+      items: [
+        "**Rapid (<`1 week`) multi-organ small-vessel thrombosis** involving ≥3 organs/systems in a patient with antiphospholipid antibodies",
+        "Targets **kidney (most common — AKI, malignant HTN), lung (ARDS, PE), brain (encephalopathy, stroke, seizure), heart (microvascular MI), skin (livedo, digital/skin necrosis, purpura)**",
+        "Often a known APS/lupus patient, but can be the first presentation",
+        "**High mortality (~`30-50%`)** — recognize early and escalate aggressively",
+      ],
+    },
+    {
+      heading: "Look for the trigger",
+      items: [
+        "**Identify and treat a precipitant** in most cases: **infection** (most common), **surgery/trauma/procedures**, **anticoagulation withdrawal or subtherapeutic INR**, malignancy, pregnancy/puerperium, lupus flare, drugs",
+        "**Send cultures and start empiric antibiotics** if infection is plausible — treating the trigger is part of therapy",
+        "Restore/continue anticoagulation that may have been interrupted",
+      ],
+    },
+    {
+      heading: "TRIPLE THERAPY — start immediately",
+      items: [
+        "**(1) Therapeutic anticoagulation** — `IV unfractionated Heparin` (titrated to therapeutic aPTT), preferred for titratability/reversibility in the unstable patient",
+        "**(2) High-dose corticosteroids** — `IV Methylprednisolone 1000 mg daily x3 days` (pulse), then taper",
+        "**(3) Plasma exchange and/or IVIG** — **plasmapheresis** (removes antibodies/cytokines) and/or **`IVIG 0.4 g/kg/day x5 days`** (`2 g/kg` total)",
+        "**Refractory/severe → `Rituximab` or `Eculizumab`** (especially with TMA features or coexisting microangiopathy)",
+        "Consult **rheumatology and hematology** emergently; ICU-level care",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "Antiphospholipid antibodies (**lupus anticoagulant, anticardiolipin, anti-β2-glycoprotein I**) on a background of endothelial activation → widespread **small-vessel (microvascular) thrombosis**",
+        "A 'thrombotic storm' with a **cytokine storm / SIRS** component, often ignited by a trigger ('second hit', e.g. infection) → rapidly progressive multi-organ ischemia",
+        "Distinct from classic APS (which causes discrete large-vessel venous/arterial clots) — CAPS is dominated by diffuse microthrombi and TMA",
+        "Complement activation contributes — the rationale for **eculizumab** in refractory disease",
+      ],
+    },
+    {
+      heading: "Classification / diagnostic criteria",
+      items: [
+        "**Definite CAPS** requires all 4: (1) involvement of **≥3 organs/systems**; (2) onset **<`1 week`**; (3) **histopathologic small-vessel occlusion** in ≥1 organ; (4) **laboratory confirmation of antiphospholipid antibodies**",
+        "**Probable CAPS** when 3 of the 4 are met (e.g., only 2 organs, antibodies not yet confirmable, or biopsy unobtainable)",
+        "Antibody positivity should be **confirmed ≥`12 weeks` apart**, which is often not feasible acutely — do not delay treatment for confirmation",
+        "Maintain a high index of suspicion in any APS/SLE patient who deteriorates across multiple organs",
+      ],
+    },
+    {
+      heading: "Clinical features by organ",
+      items: [
+        "**Renal**: AKI, proteinuria, hypertension/malignant HTN (most commonly affected organ)",
+        "**Pulmonary**: ARDS, alveolar hemorrhage, pulmonary embolism",
+        "**Neurologic**: encephalopathy, stroke, seizures, altered mental status",
+        "**Cardiac**: microvascular myocardial ischemia/infarction, valvular dysfunction, heart failure",
+        "**Cutaneous**: livedo reticularis, skin/digital necrosis, purpura, splinter hemorrhages",
+        "Also adrenal hemorrhage/insufficiency, GI infarction, peripheral thrombosis",
+      ],
+    },
+    {
+      heading: "Workup",
+      items: [
+        "**Antiphospholipid panel**: lupus anticoagulant, anticardiolipin IgG/IgM, anti-β2-glycoprotein I IgG/IgM",
+        "CBC (**thrombocytopenia**, anemia), **peripheral smear for schistocytes** (TMA), LDH, haptoglobin, reticulocytes, fibrinogen, D-dimer, PT/aPTT (lupus anticoagulant can paradoxically prolong aPTT)",
+        "CMP/renal function, urinalysis, troponin, ECG, ABG; **blood/urine cultures** for the trigger",
+        "Imaging directed by organ involvement: CT chest/abdomen, CT/MRI brain, echocardiography",
+        "**Biopsy** (skin/kidney) when feasible shows microvascular thrombosis (supports the diagnosis) — but do not delay therapy",
+      ],
+    },
+    {
+      heading: "Differential diagnosis (overlapping TMAs)",
+      items: [
+        "**TTP** (ADAMTS13 <`10%`; pentad of MAHA, thrombocytopenia, neuro, renal, fever) — send ADAMTS13",
+        "**HIT** (recent heparin, falling platelets, thrombosis) — 4T score, HIT antibodies; relevant since heparin is used in CAPS",
+        "**DIC** (consumptive coagulopathy — low fibrinogen, high D-dimer, prolonged PT/aPTT)",
+        "**Severe sepsis / septic shock**, malignant hypertension, scleroderma renal crisis, atypical HUS",
+        "These entities **overlap and may coexist** with CAPS — overlap does not exclude it; involve hematology early",
+      ],
+    },
+    {
+      heading: "Management detail & disposition",
+      items: [
+        "**ICU admission**; supportive organ support (ventilation, dialysis, vasopressors) as needed",
+        "**Triple therapy** (anticoagulation + pulse corticosteroids + plasma exchange and/or IVIG) is the backbone — start without waiting for confirmatory antibody testing",
+        "**Treat the trigger** — antibiotics for infection, source control, correction of subtherapeutic anticoagulation; avoid stopping anticoagulation",
+        "**Refractory disease**: `Rituximab` (B-cell depletion) or `Eculizumab` (complement C5 inhibition, especially with TMA features); cyclophosphamide if associated active SLE",
+        "Caution: do not give IVIG and plasma exchange simultaneously in a way that removes the IVIG — coordinate sequencing with the consultants",
+      ],
+    },
+    {
+      heading: "Pitfalls & pearls",
+      items: [
+        "**Pitfall**: attributing multi-organ failure to sepsis alone and missing CAPS — they can coexist; both may need treating at once",
+        "**Pitfall**: delaying triple therapy to await confirmatory (12-week) antibody testing — treat on clinical suspicion",
+        "**Pitfall**: stopping anticoagulation (or letting INR drift subtherapeutic) in an APS patient — a classic CAPS trigger",
+        "**Pearl**: a falling platelet count plus schistocytes in an APS/SLE patient with multi-organ failure should prompt immediate hematology/rheumatology involvement",
+        "**Pearl**: the lupus anticoagulant can prolong the aPTT, complicating heparin titration — coordinate monitoring (anti-Xa) with hematology",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Asherson Criteria — International Consensus Statement on CAPS (Asherson et al, Lupus 2003)", "Cervera et al, CAPS Registry / Diagnosis & Management (J Autoimmun)", "2023 ACR/EULAR Antiphospholipid Syndrome Classification Criteria", "Tintinalli 9e Ch 233 (Rheumatologic Emergencies)", "LITFL Catastrophic Antiphospholipid Syndrome"],
+    },
+  ],
+},
+{
+  id: "anaphylaxis",
+  name: "Anaphylaxis",
+  subtitle: "Severe systemic hypersensitivity reaction",
+  category: "allergy",
+  tldr: [
+    {
+      heading: "Give epinephrine NOW — first-line, do not delay",
+      items: [
+        "**Epinephrine is the ONLY first-line drug and the only one that reduces mortality** — give immediately, before antihistamines/steroids/labs",
+        "`Epinephrine 0.3-0.5 mg (0.01 mg/kg, max 0.5 mg) IM` into the **anterolateral thigh (vastus lateralis)**; repeat **q5-15 min** as needed",
+        "Peds: `Epinephrine 0.01 mg/kg IM` (max single dose `0.3 mg`); autoinjector `0.15 mg` for `<25-30 kg`, `0.3 mg` for `>=25-30 kg`",
+        "**IM, NOT SC or IV-push** — SC absorption is erratic; IV push of `1:1000` concentration causes myocardial ischemia, arrhythmia, death",
+        "**Delayed epinephrine is the leading cause of fatal anaphylaxis** — when in doubt, give it",
+      ],
+    },
+    {
+      heading: "Position & airway",
+      items: [
+        "**Lay patient SUPINE with legs elevated** — do NOT let them sit or stand up; sudden upright posture causes 'empty ventricle' / empty vena cava syndrome and sudden death",
+        "Pregnant: left lateral decubitus; respiratory distress: position of comfort but avoid sudden upright",
+        "High-flow O2; **prepare for early intubation** if stridor, hoarseness, lip/tongue swelling, or oropharyngeal angioedema — the airway can close within minutes",
+        "Have a **difficult-airway plan / surgical airway kit** ready before the airway distorts",
+      ],
+    },
+    {
+      heading: "Diagnostic criteria (any ONE)",
+      items: [
+        "**Acute onset** (minutes-hours) of skin/mucosal involvement (hives, itch-flush, swollen lips/tongue) **PLUS** either respiratory compromise OR hypotension/end-organ dysfunction",
+        "**>=2 organ systems** involved rapidly after exposure to a *likely* allergen (skin/mucosa, respiratory, CV/hypotension, persistent GI symptoms)",
+        "**Hypotension** alone after exposure to a *known* allergen for that patient (e.g. `SBP <90` adult, or >30% drop from baseline)",
+        "GI symptoms (crampy pain, vomiting) can be the cardinal sign of severe reaction — do not dismiss",
+      ],
+    },
+    {
+      heading: "Refractory / adjuncts",
+      items: [
+        "Hypotension: `Crystalloid 1-2 L IV` bolus (peds `20 mL/kg`), repeat; large volume shifts occur from capillary leak",
+        "Refractory to repeat IM dosing -> **`Epinephrine infusion`** `0.05-0.2 mcg/kg/min` IV titrated (push-dose `10-20 mcg` as bridge)",
+        "**On a beta-blocker and refractory -> `Glucagon 1-5 mg IV` over 5 min**, then `5-15 mcg/min` infusion (bypasses beta-receptor)",
+        "Adjuncts are **SECONDARY and do not replace epinephrine**: `Diphenhydramine 25-50 mg IV` (H1), `Famotidine 20 mg IV` (H2), `Methylprednisolone 125 mg IV` (steroid)",
+        "**Steroids do NOT reliably prevent biphasic reactions** — do not rely on them; they were once routine but evidence does not support it",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "IgE-mediated mast-cell/basophil degranulation (most common) -> histamine, tryptase, leukotrienes, prostaglandins, PAF",
+        "Non-IgE / direct mast-cell activation (anaphylactoid): radiocontrast, opioids, vancomycin ('red man' overlap), NSAIDs — clinically identical, treat the same",
+        "Effects: vasodilation + capillary leak (distributive shock, up to 35% intravascular volume can shift in minutes), bronchospasm, mucosal/laryngeal edema, increased GI motility",
+        "Common triggers: foods (peanut, tree nut, shellfish, egg, milk), Hymenoptera stings, drugs (beta-lactams, NSAIDs), latex, perioperative agents; **idiopathic** in a meaningful fraction",
+      ],
+    },
+    {
+      heading: "Recognition pitfalls",
+      items: [
+        "**Up to 10-20% of anaphylaxis has NO skin findings** — absence of hives does NOT exclude it, especially in hypotensive/shocked patients",
+        "Can mimic: acute asthma, vasovagal syncope (bradycardia + pallor, NO urticaria/pruritus), scombroid, panic attack, ACE-inhibitor angioedema, septic/cardiogenic shock",
+        "Scombroid (histamine fish poisoning) mimics anaphylaxis but is toxin-mediated — responds to antihistamines",
+        "**Hereditary / ACE-inhibitor angioedema does NOT respond to epinephrine/steroids/antihistamines** — bradykinin-mediated; different treatment pathway",
+      ],
+    },
+    {
+      heading: "Epinephrine — dosing & cautions",
+      items: [
+        "IM `1:1000` (`1 mg/mL`) concentration; IV infusion uses dilute `1:10,000` or further-diluted push-dose — **never push undiluted `1:1000` IV**",
+        "Anterolateral thigh achieves faster, higher peak levels than deltoid or SC",
+        "No absolute contraindication in true anaphylaxis — benefit outweighs risk even in elderly/CAD",
+        "Repeated doses needed in ~10-20%; if >=2-3 doses required, start an infusion and consider ICU",
+        "Most adverse 'epinephrine' events stem from dosing/route error (IV bolus of IM-concentration drug) — be deliberate about concentration",
+      ],
+    },
+    {
+      heading: "Adjunctive therapy",
+      items: [
+        "**H1 antihistamine** (`Diphenhydramine 25-50 mg IV`, peds `1 mg/kg`): treats hives/itch ONLY — no effect on airway, BP, or mortality; do not give first",
+        "**H2 antihistamine** (`Famotidine 20 mg IV`): added benefit for cutaneous symptoms",
+        "**Corticosteroids** (`Methylprednisolone 1-2 mg/kg IV` or `Prednisone 50 mg PO`): slow onset, theoretical biphasic prevention not reliably supported",
+        "**Bronchospasm**: nebulized `Albuterol`; **refractory hypotension on beta-blocker**: glucagon (+ antiemetic, as glucagon causes vomiting -> aspiration risk)",
+        "Inhaled `Epinephrine`/racemic epinephrine nebulizer can adjunct upper-airway edema while preparing definitive airway",
+      ],
+    },
+    {
+      heading: "Biphasic reactions & observation",
+      items: [
+        "**Biphasic reaction**: recurrence (typically within `1-12 h`, can be up to `72 h`) after initial resolution without re-exposure — occurs in ~1-20%",
+        "Risk factors: severe initial reaction, >1 epinephrine dose required, delayed first epinephrine, hypotension, laryngeal edema",
+        "**Observe `4-6 h`** for mild-moderate reactions that respond promptly; **longer observation/admit** for severe reactions, those needing repeated epi, infusion, refractory features, or unreliable access to care",
+        "No validated observation period reliably excludes biphasic reaction — disposition is a clinical judgment",
+      ],
+    },
+    {
+      heading: "Disposition & discharge",
+      items: [
+        "**Prescribe TWO epinephrine autoinjectors** and demonstrate/teach use before discharge (single device sometimes insufficient; one may misfire)",
+        "Short course of antihistamine +/- steroid for residual symptoms (does not replace autoinjector)",
+        "**Allergy/immunology referral** for trigger identification, testing, and possible immunotherapy",
+        "Action plan: avoid identified trigger; carry autoinjector at all times; call EMS after any use",
+        "Admit/ICU: refractory hypotension, ongoing airway edema, infusion requirement, significant comorbidity (cardiac, severe asthma)",
+      ],
+    },
+    {
+      heading: "Special populations & pearls",
+      items: [
+        "**Beta-blocked patients**: may be epinephrine-resistant -> glucagon; also blunted compensatory tachycardia",
+        "Pregnancy: epinephrine is first-line and indicated — untreated maternal anaphylaxis is more dangerous to fetus than the drug; left lateral position",
+        "Serum **tryptase** (drawn `1-3 h` from onset) can support diagnosis retrospectively but **must never delay treatment** and a normal value does not exclude anaphylaxis",
+        "Mast cell disorders / prior severe reaction = higher risk; lower threshold to treat and admit",
+        "**The two fatal errors are: not giving epinephrine, and letting the patient stand/sit up.** Give epi IM, lay them flat.",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e (Anaphylaxis & Acute Allergic Reactions)", "Shaker et al, Anaphylaxis 2020 Practice Parameter Update (JACI 2020)", "WAO Anaphylaxis Guidance 2020", "Campbell & Kelso, UpToDate: Anaphylaxis Emergency Treatment", "LITFL Anaphylaxis"],
+    },
+  ],
+},
+{
+  id: "sjs-ten",
+  name: "SJS / TEN",
+  subtitle: "Stevens-Johnson syndrome / toxic epidermal necrolysis",
+  category: "derm",
+  tldr: [
+    {
+      heading: "Immediate actions",
+      items: [
+        "**STOP the offending drug immediately** — this is the single most important intervention and improves survival; earlier withdrawal = lower mortality",
+        "**Disposition to a BURN UNIT or ICU** — care parallels major burns; early transfer improves outcomes",
+        "Aggressive fluid + electrolyte resuscitation for transepidermal losses (less than burns of equal area, but substantial)",
+        "Early **ophthalmology** consult for any ocular involvement (vision-threatening, prevents synechiae/scarring)",
+        "Handle skin minimally and aseptically; gentle wound care; warm the room (impaired thermoregulation)",
+      ],
+    },
+    {
+      heading: "Recognize it",
+      items: [
+        "**Painful skin** (pain often out of proportion to visible findings, an early clue) + **>=2 mucosal surfaces** involved (oral, ocular, urogenital)",
+        "Prodrome: fever, malaise, sore throat, stinging eyes `1-3 days` before rash",
+        "Dusky/targetoid macules -> coalescing erythema -> **flaccid bullae and sheet-like epidermal sloughing**",
+        "**Positive Nikolsky sign** (lateral pressure shears epidermis) and Asboe-Hansen sign (bulla extends with pressure)",
+      ],
+    },
+    {
+      heading: "Classify by BSA detachment",
+      items: [
+        "**SJS**: epidermal detachment **`<10%` BSA**",
+        "**SJS/TEN overlap**: **`10-30%` BSA**",
+        "**TEN**: **`>30%` BSA** — highest mortality",
+        "**SCORTEN** (within 24 h) estimates mortality: age `>40`, malignancy, HR `>120`, BSA `>10%`, BUN `>28 mg/dL`, glucose `>252 mg/dL`, bicarbonate `<20 mEq/L`",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "Severe cutaneous adverse reaction (SCAR): drug-triggered, T-cell-mediated keratinocyte apoptosis/necroptosis -> full-thickness epidermal necrosis",
+        "Key mediators: **granulysin** (from cytotoxic T cells/NK cells — major effector), Fas-FasL, perforin/granzyme",
+        "SJS and TEN are a **spectrum of the same disease**, distinguished only by BSA of detachment",
+        "Strong HLA associations (e.g. HLA-B*15:02 with carbamazepine in Han Chinese; HLA-B*58:01 with allopurinol) — basis for pre-prescription screening in some populations",
+      ],
+    },
+    {
+      heading: "Common culprit drugs",
+      items: [
+        "**Sulfonamide antibiotics** (TMP-SMX), **anticonvulsants** (lamotrigine, carbamazepine, phenytoin, phenobarbital)",
+        "**Allopurinol** (a leading cause, dose-related), **NSAIDs** (oxicam class), **nevirapine** and other antiretrovirals",
+        "Onset typically **`4 days-4 weeks`** after starting the culprit (faster on re-exposure)",
+        "Also: Mycoplasma pneumoniae (esp. in children — 'Mycoplasma-induced rash and mucositis'), rarely vaccines",
+      ],
+    },
+    {
+      heading: "Workup",
+      items: [
+        "Clinical diagnosis; **skin biopsy** confirms (full-thickness epidermal necrosis, subepidermal split) and excludes mimics",
+        "CBC, CMP (electrolytes, renal, LFTs, glucose, bicarbonate — for SCORTEN), CRP, blood cultures if septic",
+        "Calculate **BSA detached** (use 'sloughed or Nikolsky-positive' skin, not just erythema) and **SCORTEN**",
+        "Assess all mucosal surfaces: oral, ocular, nasal, pharyngeal/respiratory, esophageal, urogenital, anal",
+      ],
+    },
+    {
+      heading: "Differential diagnosis",
+      items: [
+        "**Staphylococcal scalded skin syndrome (SSSS)**: children/infants, toxin-mediated, **NO mucosal involvement**, split is subcorneal (superficial) — biopsy distinguishes",
+        "**DRESS**: facial edema, eosinophilia, prominent organ involvement, less mucosal sloughing",
+        "**Erythema multiforme major**: typical raised target lesions, acral predominance, usually infection-driven (HSV) — distinct entity, much better prognosis",
+        "**Acute generalized exanthematous pustulosis (AGEP)**, toxic shock, thermal/chemical burns, paraneoplastic pemphigus, autoimmune bullous disease",
+      ],
+    },
+    {
+      heading: "Supportive care (the cornerstone)",
+      items: [
+        "**Fluid/electrolyte resuscitation**: titrate to urine output; losses are large but typically less than equivalent-BSA burns",
+        "**Temperature control** (impaired barrier -> heat loss), nutritional support (high catabolic demand; early enteral feeding)",
+        "**Wound care**: non-adherent dressings, avoid unnecessary debridement of detached-but-adherent epidermis (acts as biologic dressing)",
+        "**Analgesia** (skin is exquisitely painful), meticulous **infection surveillance** — sepsis is the leading cause of death",
+        "**Avoid prophylactic systemic antibiotics** — they do not prevent infection and select resistant organisms; treat documented infection only (surveillance cultures of skin/lines)",
+      ],
+    },
+    {
+      heading: "Mucosal & multidisciplinary care",
+      items: [
+        "**Ophthalmology** (daily): lubrication, lysis of adhesions, amniotic membrane for severe cases — prevents blindness/symblepharon",
+        "**Urology/Gynecology**: genital involvement -> prevent strictures/adhesions (catheter, barrier, dilators)",
+        "Oral care (antiseptic rinses), ENT for nasal/pharyngeal, GI if dysphagia/esophageal involvement, pulmonology if airway sloughing",
+        "Multidisciplinary burn-team model is standard",
+      ],
+    },
+    {
+      heading: "Adjunctive immunomodulation (controversial)",
+      items: [
+        "**No therapy has definitively proven mortality benefit** in trials; supportive care + drug withdrawal remain the foundation",
+        "**Cyclosporine** `3-5 mg/kg/day` — most favorable recent evidence; may slow progression",
+        "**Etanercept** (anti-TNF) — promising data, increasingly used",
+        "**IVIG** and **systemic corticosteroids** — conflicting evidence; steroids especially debated (possible infection/sepsis risk); decisions are center-specific",
+        "Coordinate immunomodulation with dermatology/burn specialists — do not start unilaterally in the ED",
+      ],
+    },
+    {
+      heading: "Disposition, prognosis & pearls",
+      items: [
+        "**Admit all** — burn unit/ICU for TEN, overlap, high SCORTEN, or significant mucosal involvement",
+        "Mortality: SJS ~`1-5%`, TEN up to ~`25-50%`; death usually from sepsis/multiorgan failure",
+        "Long-term sequelae: ocular scarring/blindness, cutaneous scarring/dyspigmentation, nail loss, urogenital strictures, chronic dry eyes",
+        "**Document the culprit drug as a lifelong allergy** and counsel patient to avoid the whole class — re-exposure is faster and more severe",
+        "**Pearl**: severe mucositis + painful skin + a new drug in the last month = SJS/TEN until proven otherwise; stop the drug before you finish the workup",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e (Generalized Skin Disorders / Life-Threatening Dermatoses)", "Bastuji-Garin et al, SCORTEN (J Invest Dermatol 2000)", "Creamer et al, UK SJS/TEN Management Guidelines (Br J Dermatol 2016)", "Gonzalez-Herrada et al, Cyclosporine in SJS/TEN (J Invest Dermatol 2017)", "LITFL Stevens-Johnson Syndrome / TEN"],
+    },
+  ],
+},
+{
+  id: "dress-syndrome",
+  name: "DRESS Syndrome",
+  subtitle: "Drug reaction w/ eosinophilia & systemic symptoms",
+  category: "derm",
+  tldr: [
+    {
+      heading: "Immediate actions",
+      items: [
+        "**STOP the culprit drug immediately** — the essential first step; continued exposure worsens organ injury",
+        "**Assess for organ involvement** — DRESS is a *systemic* illness, not just a rash; check LFTs, renal function, cardiac and respiratory status",
+        "Admit (often ICU if hemodynamic, cardiac, or significant hepatic involvement)",
+        "Supportive care: fluids, electrolytes, temperature control, skin care; treat organ-specific complications",
+      ],
+    },
+    {
+      heading: "Recognize it — long latency",
+      items: [
+        "**Onset is LATE: `2-8 weeks` after starting the culprit drug** (unlike most drug rashes) — a key distinguishing feature; do not anchor on recent meds only",
+        "Classic tetrad: **fever** (often `>38.5C`), **morbilliform rash**, **FACIAL EDEMA** (characteristic), and **lymphadenopathy**",
+        "Labs: **eosinophilia** (`>700/uL`) and/or **atypical lymphocytes**",
+        "**Organ involvement** — most commonly the liver (hepatitis); this defines severity and drives mortality",
+      ],
+    },
+    {
+      heading: "Treatment",
+      items: [
+        "**Systemic corticosteroids** for significant organ involvement: `Prednisone 0.5-1 mg/kg/day` (or IV `Methylprednisolone` equivalent), with a **slow taper over weeks-months**",
+        "**Taper too fast -> relapse/flare** — DRESS has a prolonged, fluctuating course",
+        "No culprit, no re-challenge: document drug as a lifelong allergy and avoid cross-reacting agents",
+        "Severe/refractory or steroid-sparing: cyclosporine, IVIG (case-based, specialist-directed)",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "Delayed (Type IV) T-cell-mediated drug hypersensitivity with marked **eosinophil** activation",
+        "**Viral reactivation is central**: HHV-6 (classic), also HHV-7, EBV, CMV — reactivation correlates with flares and worse course; consider testing HHV-6",
+        "Genetic HLA associations (e.g. HLA-B*58:01 with allopurinol; HLA-B*15:02/HLA-A*31:01 with carbamazepine)",
+        "The long latency reflects the time to mount a T-cell response + viral reactivation",
+      ],
+    },
+    {
+      heading: "Culprit drugs",
+      items: [
+        "**Anticonvulsants**: carbamazepine, phenytoin, phenobarbital, lamotrigine (aromatic anticonvulsant hypersensitivity)",
+        "**Allopurinol** (esp. with renal impairment / high starting dose), **sulfonamides** (TMP-SMX, sulfasalazine)",
+        "**Vancomycin**, **minocycline**, **dapsone**, antiretrovirals (abacavir, nevirapine)",
+        "Onset `2-8 weeks` after initiation — review the full medication timeline, not just the past few days",
+      ],
+    },
+    {
+      heading: "Clinical features & organ involvement",
+      items: [
+        "**Liver (most common)**: transaminitis/hepatitis -> can progress to fulminant hepatic failure (the usual cause of death)",
+        "**Kidney**: acute interstitial nephritis / AKI (esp. allopurinol, certain antibiotics)",
+        "**Heart**: myocarditis (eosinophilic) — can be fulminant; check troponin/ECG/echo if any cardiac symptoms",
+        "**Lung**: interstitial pneumonitis, ARDS; **thyroid**: thyroiditis (often delayed)",
+        "Facial edema and skin involvement can be striking; rash may progress toward erythroderma",
+      ],
+    },
+    {
+      heading: "Diagnosis — RegiSCAR criteria",
+      items: [
+        "**RegiSCAR** scoring uses: fever `>38.5C`, lymphadenopathy (>=2 sites), eosinophilia, atypical lymphocytes, skin involvement (extent/features/biopsy), organ involvement, and resolution `>15 days`",
+        "Score stratifies as no / possible / probable / definite DRESS",
+        "Labs: CBC with differential (eosinophils, atypical lymphocytes), CMP/LFTs, renal function, troponin, TSH, UA",
+        "Consider HHV-6 PCR/serology; skin biopsy supportive but non-specific",
+      ],
+    },
+    {
+      heading: "Differential diagnosis",
+      items: [
+        "**SJS/TEN**: prominent mucosal sloughing, Nikolsky+, less eosinophilia/facial edema",
+        "**AGEP**: rapid onset, numerous sterile pustules, neutrophilia, short course",
+        "Acute viral exanthem, hypereosinophilic syndrome, lymphoma, Kawasaki (peds), sepsis, acute interstitial nephritis from other cause",
+        "**Simple morbilliform drug eruption**: lacks fever, facial edema, eosinophilia, and organ involvement — benign by comparison",
+      ],
+    },
+    {
+      heading: "Management details",
+      items: [
+        "Mild (skin + minimal lab abnormality, no major organ involvement): topical corticosteroids + supportive care may suffice; monitor closely",
+        "Moderate-severe organ involvement: **systemic steroids `0.5-1 mg/kg/day` prednisone-equivalent**, taper over **`6-12 weeks`** (or longer) guided by labs",
+        "Fulminant hepatitis -> hepatology + transplant evaluation; eosinophilic myocarditis -> cardiology/ICU",
+        "**Avoid empiric antibiotics/anticonvulsants** that could be additional culprits or cross-react; reconcile meds carefully",
+        "Serial monitoring of CBC, LFTs, renal function, troponin through the taper",
+      ],
+    },
+    {
+      heading: "Disposition, course & late sequelae",
+      items: [
+        "**Admit** all suspected DRESS; ICU for hepatic failure, myocarditis, or hemodynamic instability",
+        "Prolonged, **relapsing course** over weeks-months even after stopping the drug — counsel patient and arrange close follow-up",
+        "**Late AUTOIMMUNE sequelae**: autoimmune **thyroiditis** (Graves/Hashimoto), **type 1 diabetes**, lupus, autoimmune hepatitis — can appear months later",
+        "**Arrange long-term follow-up with thyroid and glucose monitoring** even after recovery",
+        "Mortality ~`10%`, usually from hepatic failure",
+      ],
+    },
+    {
+      heading: "Pearls & pitfalls",
+      items: [
+        "**Pitfall**: dismissing it as a simple drug rash — the systemic/organ involvement is what kills",
+        "**Pitfall**: stopping/tapering steroids too quickly -> flare with viral reactivation",
+        "The drug was likely started **weeks** ago — anchoring only on recently added meds misses the culprit",
+        "Eosinophilia may lag the rash — recheck the CBC if initial differential is unremarkable but suspicion is high",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e (Life-Threatening Dermatoses / Drug Eruptions)", "Kardaun et al, RegiSCAR DRESS validation (Br J Dermatol 2013)", "Husain, Reddy & Schwartz, DRESS review (J Am Acad Dermatol 2013)", "LITFL DRESS Syndrome"],
+    },
+  ],
+},
+{
+  id: "testicular-torsion",
+  name: "Testicular Torsion",
+  subtitle: "Surgical scrotal emergency",
+  category: "gu",
+  tldr: [
+    {
+      heading: "Time-critical — act now",
+      items: [
+        "**Testicular salvage falls sharply after `6 h`** of ischemia: near-100% salvage `<6 h`, drops markedly by `12 h`, and is rare beyond `24 h`",
+        "**Call urology/surgery IMMEDIATELY on clinical suspicion — do NOT delay consult or surgery to obtain imaging**",
+        "Keep patient **NPO** and prepare for the OR while workup proceeds",
+        "Sudden severe unilateral scrotal/testicular pain, often with nausea/vomiting and lower abdominal pain",
+      ],
+    },
+    {
+      heading: "Exam findings",
+      items: [
+        "**High-riding and/or horizontally-lying ('bell-clapper') testis**, often swollen and exquisitely tender diffusely",
+        "**Absent cremasteric reflex** on the affected side (sensitive but not perfectly specific)",
+        "**Negative Prehn sign** (pain NOT relieved by scrotal elevation — relief suggests epididymitis instead)",
+        "Abnormal transverse lie of the contralateral testis hints at bilateral bell-clapper anatomy",
+      ],
+    },
+    {
+      heading: "Risk-stratify & image (without delaying surgery)",
+      items: [
+        "**TWIST score** (Testicular Workup for Ischemia and Suspected Torsion): testis swelling (2), hard testis (2), absent cremasteric reflex (1), nausea/vomiting (1), high-riding testis (1) — high score may permit going straight to OR",
+        "**Color Doppler ultrasound**: decreased/absent intratesticular flow; whirlpool sign of the cord — high accuracy but operator-dependent",
+        "**Normal Doppler flow does NOT fully exclude torsion** (intermittent/partial torsion) — clinical judgment overrides",
+        "**Do NOT let imaging delay definitive surgery** when suspicion is high",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology & epidemiology",
+      items: [
+        "Twisting of the spermatic cord -> venous obstruction -> congestion -> arterial compromise -> ischemic infarction of the testis",
+        "**Bell-clapper deformity** (testis not anchored to tunica vaginalis; lies transversely, free to rotate) is the key predisposing anatomy and is often **bilateral**",
+        "**Bimodal age distribution**: neonatal period and **peak in puberty/adolescence (`~12-18 yr`)**; can occur at any age",
+        "Often occurs at rest or wakes patient from sleep (cremasteric contraction); may follow trauma or activity",
+      ],
+    },
+    {
+      heading: "Types",
+      items: [
+        "**Intravaginal** (most common, older children/adolescents): torsion within the tunica vaginalis, associated with bell-clapper deformity",
+        "**Extravaginal** (neonates): entire cord and tunica twist — testis often already infarcted at birth; presents as a firm, painless, discolored scrotal mass",
+        "**Intermittent torsion/detorsion**: recurrent brief episodes of severe pain with spontaneous resolution — refer for elective orchiopexy (high risk of completed torsion)",
+      ],
+    },
+    {
+      heading: "Differential diagnosis",
+      items: [
+        "**Epididymitis/orchitis**: more gradual onset, fever/dysuria, positive Prehn, **present** cremasteric reflex, increased Doppler flow",
+        "**Torsion of the appendix testis** ('**blue dot sign**' at upper pole): localized tenderness, normal testicular lie/flow — managed supportively",
+        "**Incarcerated/strangulated inguinal hernia**, scrotal trauma/hematoma, Henoch-Schonlein purpura (scrotal involvement), idiopathic scrotal edema",
+        "When in doubt between torsion and epididymitis, **treat as torsion** — the cost of a missed torsion is loss of the testis",
+      ],
+    },
+    {
+      heading: "Manual detorsion (temporizing bridge only)",
+      items: [
+        "**A bridge to surgery, NOT a substitute** — orchiopexy is still required",
+        "Classic technique: detorse **medial-to-lateral, like 'opening a book'** (for the patient's right testis, rotate counterclockwise; left, clockwise) — most torsions twist inward",
+        "**Relief of pain and lower lie suggests success**; if pain worsens, rotate the opposite direction (some twist >360 degrees or laterally)",
+        "Consider procedural analgesia/sedation or cord block; confirm reperfusion with Doppler if available — but still go to OR",
+      ],
+    },
+    {
+      heading: "Definitive management",
+      items: [
+        "**Emergent surgical exploration** with **detorsion** of the affected testis",
+        "**Bilateral orchiopexy** (fix BOTH testes — the contralateral side shares the predisposing bell-clapper anatomy)",
+        "**Orchiectomy** if the testis is clearly nonviable after detorsion (necrotic, no return of perfusion)",
+        "Neonatal torsion: urgent urology involvement; management (timing/exploration) individualized, with attention to the contralateral testis",
+      ],
+    },
+    {
+      heading: "Workup adjuncts",
+      items: [
+        "Urinalysis (often normal in torsion; pyuria suggests epididymitis/UTI)",
+        "Do not routinely delay for extensive labs in a clear-cut case",
+        "Document time of symptom onset precisely — it directly informs salvage likelihood and urgency",
+      ],
+    },
+    {
+      heading: "Disposition & pearls",
+      items: [
+        "All confirmed/suspected torsion -> **OR**; appendage torsion and uncomplicated epididymitis -> outpatient with return precautions",
+        "**Pearl**: in any boy/young man with acute abdominal pain, **examine the scrotum** — torsion can present as isolated abdominal pain and is frequently missed",
+        "**Pitfall**: attributing scrotal pain to epididymitis in an adolescent without confirming flow — adolescents get torsion, not epididymitis, far more often",
+        "**Pitfall**: waiting for ultrasound when the diagnosis is clinically clear — every minute reduces salvage",
+        "Counsel about possible orchiectomy and the need to fix the other side before surgery",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e (Male Genital Problems)", "Sharp et al, Testicular Torsion review (Am Fam Physician 2013)", "AUA/EAU Pediatric Urology guidance on acute scrotum", "Sheth et al, TWIST score validation (J Urol 2014)", "LITFL Testicular Torsion"],
+    },
+  ],
+},
+{
+  id: "fournier-gangrene",
+  name: "Fournier Gangrene",
+  subtitle: "Necrotizing fasciitis of the perineum/genitalia",
+  category: "gu",
+  tldr: [
+    {
+      heading: "Immediate actions — surgical emergency",
+      items: [
+        "**Emergent surgical consult (urology/general surgery) for wide debridement — this is the ONLY definitive treatment** and the strongest determinant of survival",
+        "**Do NOT delay the OR for imaging or to 'observe'** — necrotizing infection spreads along fascia in hours",
+        "Aggressive resuscitation: large-bore IV access, crystalloid, treat septic shock (lactate, blood cultures, early source control)",
+        "Start **broad-spectrum IV antibiotics immediately** (do not wait for cultures) — see antibiotic section",
+      ],
+    },
+    {
+      heading: "Recognize it early",
+      items: [
+        "**PAIN OUT OF PROPORTION** to exam findings is the classic early red flag — may precede visible skin changes",
+        "Necrotizing soft-tissue infection of the **perineum, genitalia, and/or perianal region**",
+        "**Crepitus** (subcutaneous gas), **foul/feculent odor**, dusky or necrotic skin, bullae, rapidly advancing erythema",
+        "**Systemic toxicity out of proportion** to local findings: fever, tachycardia, hypotension, AMS -> septic shock",
+      ],
+    },
+    {
+      heading: "Antibiotics (broad, immediate)",
+      items: [
+        "**`Piperacillin-tazobactam 4.5 g IV q6-8h`** (or a carbapenem) for gram-negatives/anaerobes",
+        "**PLUS `Vancomycin 15-20 mg/kg IV`** for MRSA coverage",
+        "**PLUS `Clindamycin 900 mg IV q8h`** — adds anti-toxin / antitoxigenic effect (suppresses exotoxin production), important in necrotizing infection",
+        "Polymicrobial in most cases (mixed aerobes + anaerobes); narrow later based on operative cultures",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "Necrotizing fasciitis originating in the perineum/genitalia; infection tracks along Colles, Dartos, Scarpa, and Buck fascial planes — spread can far exceed the visible skin involvement",
+        "Endarteritis obliterans of subcutaneous vessels -> thrombosis -> tissue ischemia/necrosis -> rapid progression",
+        "**Typically polymicrobial** (E. coli, Bacteroides, streptococci, anaerobes, enterococci); less often monomicrobial (Group A Strep, Clostridium)",
+        "Source is often perianal/colorectal, urogenital (urethral stricture, instrumentation), or cutaneous",
+      ],
+    },
+    {
+      heading: "Risk factors",
+      items: [
+        "**Diabetes mellitus** (the most common comorbidity), immunosuppression (HIV, chemotherapy, steroids, transplant)",
+        "**Alcohol use disorder**, **obesity**, malnutrition, advanced age",
+        "Local: perirectal abscess/fistula, urologic infection/instrumentation, scrotal/perineal trauma, recent surgery, indwelling catheter",
+        "Can occur in women (vulvar/perineal) and children, though classically described in men",
+      ],
+    },
+    {
+      heading: "Diagnosis & scoring",
+      items: [
+        "**Primarily a clinical diagnosis** — high suspicion mandates surgical exploration; do not let a 'reassuring' early exam falsely reassure you",
+        "**LRINEC score** (CRP, WBC, Hgb, sodium, creatinine, glucose) may support suspicion but **cannot rule out** necrotizing infection",
+        "Labs: CBC, CMP, lactate, CRP, coags, blood cultures, blood gas; often hyponatremia, leukocytosis, AKI, hyperglycemia",
+        "**Hard signs**: crepitus, skin necrosis/bullae, gas on imaging, pain out of proportion, rapid progression",
+      ],
+    },
+    {
+      heading: "Imaging (must NOT delay surgery)",
+      items: [
+        "**CT** best defines anatomic extent and source (soft-tissue gas, fascial thickening/fluid, abscess) and aids operative planning",
+        "Plain films/POCUS may show subcutaneous gas but are insensitive — **absence of gas does NOT exclude** necrotizing infection",
+        "**If the diagnosis is clinically evident, proceed to the OR — imaging is for the stable patient or to map extent, never a reason to wait**",
+      ],
+    },
+    {
+      heading: "Definitive surgical management",
+      items: [
+        "**Early, aggressive, wide surgical debridement of all nonviable tissue** — repeat as needed",
+        "**Usually requires MULTIPLE serial debridements** (return to OR every `24-48 h`) until tissue is viable",
+        "**Diverting colostomy** for fecal contamination/perianal source; **suprapubic catheter** for urethral involvement/urinary diversion",
+        "Reconstruction (skin grafts/flaps) later once infection controlled; testes are usually spared (separate blood supply) and can be preserved",
+      ],
+    },
+    {
+      heading: "Adjuncts & critical care",
+      items: [
+        "ICU-level support: vasopressors for septic shock, glucose control, correction of coagulopathy/electrolytes",
+        "**Hyperbaric oxygen** is adjunctive (debated) and must **never delay** surgical debridement or resuscitation",
+        "IVIG considered in Group A Strep / toxic-shock-associated necrotizing infection (specialist-directed)",
+        "Nutritional support given the high catabolic state and large wounds",
+      ],
+    },
+    {
+      heading: "Disposition, prognosis & pearls",
+      items: [
+        "**Admit to ICU**; surgery + critical care co-management",
+        "**High mortality** (commonly cited ~`20-40%`, higher with delayed surgery, septic shock, or extensive disease)",
+        "Worse outcomes with delayed debridement, advanced age, immunosuppression, and large body-surface involvement",
+        "**Pearl**: pain out of proportion + systemic toxicity + a perineal/genital source = necrotizing infection until disproven — get a surgeon, not just a CT",
+        "**Pitfall**: treating apparent 'cellulitis' or a 'simple abscess' with antibiotics alone while a necrotizing process advances",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e (Soft Tissue Infections / Necrotizing Soft Tissue Infections)", "Stevens et al, IDSA Skin & Soft Tissue Infection Guidelines (Clin Infect Dis 2014)", "Wong et al, LRINEC score (Crit Care Med 2004)", "LITFL Necrotising Fasciitis"],
+    },
+  ],
+},
+{
+  id: "tension-pneumothorax",
+  name: "Tension Pneumothorax",
+  subtitle: "Obstructive shock from intrapleural air under pressure",
+  category: "resp",
+  tldr: [
+    {
+      heading: "CLINICAL diagnosis — decompress NOW",
+      items: [
+        "**This is a clinical diagnosis — DO NOT wait for a CXR.** Treating before imaging is correct when the patient is unstable",
+        "Classic triad: **respiratory distress + hypotension + unilateral absent breath sounds**",
+        "**IMMEDIATE needle (or finger) decompression**, followed by tube thoracostomy",
+        "In the crashing/arresting or intubated patient, go straight to **finger thoracostomy**",
+      ],
+    },
+    {
+      heading: "Decompression technique",
+      items: [
+        "**Needle decompression with a long large-bore angiocath (`14 G, >=5 cm`)** — standard catheters often too short to reach the pleura in adults",
+        "**Site options**: `2nd intercostal space, midclavicular line` OR `4th-5th ICS, anterior/mid-axillary line`",
+        "**The lateral (`4th-5th ICS, axillary`) site is now preferred in adults** — thinner chest wall, higher success, fewer failures than the anterior site",
+        "Insert just **above the rib** (neurovascular bundle runs below each rib); a rush of air confirms it",
+        "**Needle decompression is temporizing only -> definitive `chest tube (tube thoracostomy)` must follow**",
+      ],
+    },
+    {
+      heading: "Watch the ventilated patient",
+      items: [
+        "**Positive-pressure ventilation rapidly worsens a tension pneumothorax** — air is forced in under pressure",
+        "**Sudden hypotension/desaturation/rising airway pressures right after intubation = tension pneumothorax until proven otherwise**",
+        "Any sudden decompensation on the vent -> check breath sounds, consider DOPE (Displacement, Obstruction, Pneumothorax, Equipment)",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "**One-way valve**: air enters the pleural space on inspiration but cannot escape -> progressive accumulation under positive pressure",
+        "Rising intrapleural pressure collapses the ipsilateral lung, then shifts the mediastinum, **kinking the great veins and reducing venous return** -> obstructive shock",
+        "Hypoxia (lung collapse/shunt) + obstructive shock (impaired preload) -> rapid cardiovascular collapse if untreated",
+        "Death is from circulatory collapse, not just hypoxia — hence the urgency to relieve the pressure",
+      ],
+    },
+    {
+      heading: "Etiologies",
+      items: [
+        "**Traumatic**: penetrating or blunt chest injury (most common in trauma settings)",
+        "**Iatrogenic**: central line placement (subclavian/IJ), thoracentesis, transthoracic/transbronchial biopsy, barotrauma",
+        "**Ventilated patients**: positive-pressure/barotrauma, especially high pressures or obstructive lung disease",
+        "**Spontaneous**: primary (tall thin young smokers, ruptured bleb) or secondary (COPD, asthma, cystic lung disease, PJP) — tension less common but possible",
+      ],
+    },
+    {
+      heading: "Clinical findings",
+      items: [
+        "**Early/reliable**: severe respiratory distress, hypoxia, hypotension/shock, tachycardia, **unilateral decreased/absent breath sounds**",
+        "**Late and INCONSISTENT (do not wait for them)**: **tracheal deviation away** from the affected side, **distended neck veins (JVD)**, hyperresonance to percussion",
+        "JVD may be ABSENT if the patient is hypovolemic (e.g. concurrent hemorrhage)",
+        "In trauma/arrest, decreased breath sounds + hemodynamic instability is enough to act",
+      ],
+    },
+    {
+      heading: "Imaging (only if stable / to confirm)",
+      items: [
+        "**Do not delay decompression in an unstable patient to obtain any imaging**",
+        "**POCUS** (lung ultrasound): absent lung sliding, absent comet tails, **'lung point'** (specific) — fast and bedside-available",
+        "CXR: large pneumothorax with mediastinal shift and contralateral deviation, depressed hemidiaphragm",
+        "CT is most sensitive but reserved for the **stable** patient — never the crashing one",
+      ],
+    },
+    {
+      heading: "Needle decompression — caveats",
+      items: [
+        "**Failure is common** if the catheter is too short, kinks, or clots, or with a thick chest wall (especially the anterior site) — failure does NOT exclude tension",
+        "If clinical suspicion persists after a 'successful' needle, proceed to **finger thoracostomy / chest tube**",
+        "Lateral approach (`4th-5th ICS, anterior-axillary`) reaches the pleura more reliably in adults",
+        "A non-tension simple pneumothorax converted by an unnecessary needle still needs a chest tube — but missing a true tension is far more dangerous",
+      ],
+    },
+    {
+      heading: "Definitive management",
+      items: [
+        "**Tube thoracostomy (`chest tube`)** is definitive; connect to underwater seal +/- suction",
+        "**Finger thoracostomy** (blunt dissection into the pleura at `4th-5th ICS, anterior-axillary`) is preferred in the **intubated/positive-pressure or arrested** patient and reliably relieves tension",
+        "Admit; observe lung re-expansion on follow-up CXR; persistent air leak -> thoracic surgery",
+        "Treat the underlying cause (e.g. trauma laparotomy/thoracotomy, manage ventilator pressures)",
+      ],
+    },
+    {
+      heading: "Special situations & pitfalls",
+      items: [
+        "**Traumatic arrest / peri-arrest**: perform **bilateral finger thoracostomies** as part of the resuscitation",
+        "**Pitfall**: ordering a CXR on a hypotensive patient with absent breath sounds instead of decompressing",
+        "**Pitfall**: using a standard (short) IV catheter that never reaches the pleura — use a long `14 G >=5 cm` device",
+        "**Pitfall**: forgetting the chest tube after needle decompression — the needle is a bridge, not a cure",
+        "Consider tension promptly in any deteriorating ventilated or post-central-line patient",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e (Pneumothorax / Thoracic Trauma)", "ATLS 10th Edition (Advanced Trauma Life Support)", "Inaba et al, optimal needle decompression site (J Trauma 2011)", "LITFL Tension Pneumothorax"],
+    },
+  ],
+},
+{
+  id: "smoke-inhalation",
+  name: "Smoke Inhalation / Airway Burn",
+  subtitle: "Inhalation injury, CO & cyanide toxicity",
+  category: "resp",
+  tldr: [
+    {
+      heading: "AIRWAY first — intubate EARLY",
+      items: [
+        "**The airway can close fast — once edema sets in, intubation becomes very difficult. Secure it EARLY, before obstruction.**",
+        "**Early intubation** for: **stridor, hoarseness/voice change, soot in mouth/nares, facial or oropharyngeal burns, singed nasal/facial hair, drooling, or progressive swelling**",
+        "Apply high-flow / **`100% O2`** by non-rebreather to all suspected victims immediately",
+        "Use the **largest ET tube available** (anticipates bronchoscopy, suctioning, and airway swelling); have difficult-airway and surgical-airway backup ready",
+      ],
+    },
+    {
+      heading: "CARBON MONOXIDE",
+      items: [
+        "**Standard pulse oximetry is FALSELY NORMAL in CO poisoning** (it cannot distinguish carboxyhemoglobin from oxyhemoglobin) — **measure carboxyhemoglobin by co-oximetry** (venous or arterial)",
+        "Treat with **`100% O2`** (non-rebreather or via ETT): shortens COHb half-life from ~`4-5 h` (room air) to ~`60-90 min`",
+        "Symptoms: headache, nausea, dizziness -> confusion, syncope, seizure, coma (poor correlation between level and severity)",
+        "**Hyperbaric O2 (HBO)** considerations: **COHb `>25%`** (or `>20%` in pregnancy/cardiac disease), **LOC/syncope, neurologic deficit, cardiac ischemia, severe acidosis**, and **pregnancy with COHb `>15%`**",
+      ],
+    },
+    {
+      heading: "CYANIDE — treat empirically when suspected",
+      items: [
+        "**Suspect cyanide** in closed-space/enclosed fire with **altered mental status + lactate `>10 mmol/L` + hemodynamic instability / refractory shock** (CO and cyanide often coexist)",
+        "**`Hydroxocobalamin 5 g IV`** over ~15 min empirically (peds **`70 mg/kg IV`**); repeat dose may be given for severe/persistent toxicity",
+        "**In smoke inhalation, AVOID sodium-nitrite-based kits** — nitrite-induced methemoglobinemia further impairs O2-carrying capacity in a patient who may already have high COHb",
+        "Hydroxocobalamin turns urine/skin/secretions red and can interfere with co-oximetry/colorimetric labs — note it",
+      ],
+    },
+    {
+      heading: "Breathing & resuscitation",
+      items: [
+        "**Bronchospasm/wheeze -> nebulized bronchodilators** (`Albuterol`)",
+        "Carbonaceous (sooty) sputum and progressive hypoxemia signal lower-airway/parenchymal injury",
+        "Concurrent **cutaneous/thermal burns -> fluid resuscitation** (e.g. Parkland-guided), but inhalation injury increases fluid needs — titrate to urine output",
+        "Anticipate **ARDS**; lung-protective ventilation; nebulized **heparin + N-acetylcysteine** protocols are used at some burn centers for inhalation injury",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Three mechanisms of injury",
+      items: [
+        "**Upper-airway thermal injury**: heat causes supraglottic edema (the glottis protects the lower airway) -> rapid, life-threatening obstruction",
+        "**Lower-airway/parenchymal chemical injury**: combustion products (aldehydes, acrolein, ammonia, HCl, oxides) -> mucosal injury, bronchospasm, cast formation, pneumonitis, ARDS (often delayed hours-days)",
+        "**Systemic asphyxiant toxicity**: **carbon monoxide** and **cyanide** impair oxygen delivery/utilization",
+        "Steam (vs dry heat) can carry heat to the lower airways and cause distal thermal injury",
+      ],
+    },
+    {
+      heading: "Airway assessment & management",
+      items: [
+        "**Indicators of impending obstruction (low threshold to intubate)**: facial/neck burns, singed nasal hair, **soot in the oropharynx/nares**, hoarseness, stridor, drooling, dysphagia, full-thickness perioral burns",
+        "**Fiberoptic/laryngoscopic visualization** of supraglottic edema/soot guides the decision when available",
+        "**Delay risks total airway loss** — swelling progresses over hours and is worsened by fluid resuscitation; err toward early definitive airway",
+        "Maintain elevated head of bed; avoid unnecessary delay for transfer if airway is threatened",
+      ],
+    },
+    {
+      heading: "Carbon monoxide — details",
+      items: [
+        "CO binds hemoglobin with ~200-250x the affinity of O2 -> profound left-shift of the dissociation curve + impaired cellular respiration (cytochrome binding)",
+        "**Pulse oximetry reads normal/high** (cannot tell COHb from O2Hb); diagnose with **co-oximetry (carboxyhemoglobin level)** — a SpCO pulse co-oximeter can screen",
+        "Normal COHb `<3%` (nonsmokers) / up to ~`10%` (smokers); symptom severity correlates poorly with level — treat the patient",
+        "**Delayed neurologic sequelae** (cognitive deficits, parkinsonism, neuropsychiatric changes) can occur days-weeks later — part of the HBO rationale; counsel and arrange follow-up",
+      ],
+    },
+    {
+      heading: "Cyanide — details",
+      items: [
+        "Released from combustion of plastics, wool, silk, synthetics; inhibits cytochrome c oxidase -> halts oxidative phosphorylation -> **anaerobic metabolism / lactic acidosis** despite adequate oxygenation",
+        "Clues: enclosed-space fire, **AMS/coma, seizures, cardiovascular collapse, severe high-anion-gap lactic acidosis (lactate `>=10 mmol/L`)**",
+        "**`Hydroxocobalamin 5 g IV`** (binds cyanide -> renally excreted cyanocobalamin) is the preferred antidote in fire victims — safe even if cyanide later unconfirmed",
+        "**Avoid the nitrite component** of the cyanide antidote kit (sodium nitrite) in smoke-inhalation victims: induced methemoglobinemia compounds impaired O2 delivery when COHb is already elevated; **sodium thiosulfate** is a safer co-adjunct if a kit is used",
+      ],
+    },
+    {
+      heading: "Workup",
+      items: [
+        "**Co-oximetry (COHb, MetHb)** — not standard pulse ox; **lactate** (cyanide surrogate), ABG/VBG, BMP, CBC",
+        "ECG and troponin (CO-mediated cardiac ischemia/strain)",
+        "**CXR** (often initially normal; infiltrates/ARDS evolve over hours-days)",
+        "Bronchoscopy can grade inhalation injury and clear casts/soot; consider pregnancy test in women of childbearing age (alters CO/HBO thresholds)",
+      ],
+    },
+    {
+      heading: "Pulmonary management",
+      items: [
+        "**Bronchodilators** for bronchospasm; aggressive **pulmonary toilet / suctioning** for casts and carbonaceous debris",
+        "**Nebulized heparin + N-acetylcysteine** (with bronchodilator) is used at many burn centers to reduce cast formation and improve clearance",
+        "**Lung-protective ventilation** for ARDS (low tidal volume); escalate to advanced modes/ECMO at specialty centers if refractory",
+        "Serial reassessment — lower-airway and parenchymal injury frequently **worsen over the first 24-72 h**",
+      ],
+    },
+    {
+      heading: "Disposition & transfer",
+      items: [
+        "**Refer to a burn center** for significant inhalation injury, large cutaneous burns, or combined injury (per American Burn Association criteria)",
+        "**Admit/ICU** for intubation, significant CO/cyanide toxicity, hypoxemia, or large burns",
+        "Mild exposure, asymptomatic, normal COHb after `100% O2`, and reassuring airway exam may be observed and discharged with follow-up",
+        "Arrange HBO transfer early when criteria are met (time-sensitive) — do not let it delay airway/cyanide management",
+      ],
+    },
+    {
+      heading: "Pearls & pitfalls",
+      items: [
+        "**Pitfall**: trusting a normal pulse-ox SpO2 in a fire victim — it misses CO entirely; get co-oximetry",
+        "**Pitfall**: waiting for respiratory failure before intubating a patient with airway-burn signs — secure it early",
+        "**Pearl**: enclosed fire + AMS + lactate `>=10` -> give **hydroxocobalamin** empirically; do not wait for a cyanide level (assays are slow)",
+        "**Pitfall**: giving a nitrite-based cyanide kit to a smoke-inhalation patient — methemoglobinemia + carboxyhemoglobinemia together can be lethal",
+        "Always look for **concurrent thermal/cutaneous burns and traumatic injuries** (escape from fire)",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e (Inhalation Injuries; Carbon Monoxide; Cyanide)", "American Burn Association Inhalation Injury / Burn Referral Criteria", "Borron et al, Hydroxocobalamin for smoke-inhalation cyanide poisoning (Ann Emerg Med 2007)", "Weaver et al, HBO for CO poisoning (NEJM 2002)", "LITFL Carbon Monoxide; LITFL Cyanide"],
+    },
+  ],
+},
 ];
 
 export default DIAGNOSES;
