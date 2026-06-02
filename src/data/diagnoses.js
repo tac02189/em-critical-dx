@@ -32,7 +32,6 @@ export const DIAGNOSES = [
           "Physostigmine — may cause asystole",
           "Flumazenil — lowers seizure threshold",
           "Class IA/IC antiarrhythmics (procainamide, flecainide)",
-          "Physostigmine",
         ],
       },
       {
@@ -2666,7 +2665,7 @@ export const DIAGNOSES = [
           "Antibiotics CONTRAINDICATED for confirmed STEC (worsens outcomes)",
           "Plasma exchange NOT routinely beneficial for STEC-HUS (unlike TTP)",
           "Antimotility drugs (loperamide), NSAIDs CONTRAINDICATED — worsen kidney injury and toxin clearance",
-          "**Atypical HUS**: eculizumab (5 mg/kg IV weekly ×4, then maintenance) — must vaccinate for meningococcus or give prophylactic antibiotics (ceftriaxone, penicillin)",
+          "**Atypical HUS**: eculizumab — adult/≥40 kg `900 mg IV weekly ×4, then 1200 mg q2 weeks` (peds weight-banded per nephrology) — must vaccinate for meningococcus or give prophylactic antibiotics (ceftriaxone, penicillin)",
           "Ravulizumab — longer-acting alternative to eculizumab",
           "**Pneumococcal HUS**: treat infection, plasma exchange may help; do NOT use plasma (contains anti-T antibodies)",
         ],
@@ -3186,7 +3185,7 @@ export const DIAGNOSES = [
         heading: "Hyperuricemia",
         items: [
           "**Rasburicase** (drug of choice for severe) — `0.2 mg/kg IV once`; converts uric acid → allantoin (highly soluble); onset 4 h; **contraindicated in G6PD deficiency** (causes hemolysis/methemoglobinemia)",
-          "**Allopurinol** (prophylaxis/mild-moderate) — `300 mg PO TID`; blocks uric acid production; takes days to work; less effective once TLS established",
+          "**Allopurinol** (prophylaxis/mild-moderate) — `300 mg PO daily` (titrate to max 800 mg/day; or 100 mg/m² q8h); reduce in renal impairment; blocks uric acid production; takes days to work; less effective once TLS established",
           "**Do NOT give allopurinol and rasburicase together** — rasburicase degrades xanthine (allopurinol's substrate) → xanthine nephropathy",
         ],
       },
@@ -4377,7 +4376,7 @@ export const DIAGNOSES = [
       {
         heading: "Drugs & doses (CDC combination protocol)",
         items: [
-          "**Amphotericin B** — `1.5 mg/kg/day IV ×3 days, then 1 mg/kg/day` + `1.5 mg intrathecal q24h ×2 days, then qod`",
+          "**Amphotericin B** — `1.5 mg/kg/day IV ×3 days, then 1 mg/kg/day` + intrathecal `1.5 mg q24h ×2 days, then 1 mg qod ×8 days`",
           "**Miltefosine** — `50 mg PO TID` (≥45 kg) or `2.5 mg/kg/day div BID` (peds) × 28 days",
           "**Rifampin** `10 mg/kg/day IV/PO` + **Fluconazole** `10 mg/kg/day IV/PO` + **Azithromycin** `10 mg/kg/day IV/PO`",
           "**Dexamethasone** `0.6 mg/kg/day IV div q6h` for cerebral edema",
@@ -10606,7 +10605,7 @@ export const DIAGNOSES = [
         "**Standard pulse oximetry is FALSELY NORMAL in CO poisoning** (it cannot distinguish carboxyhemoglobin from oxyhemoglobin) — **measure carboxyhemoglobin by co-oximetry** (venous or arterial)",
         "Treat with **`100% O2`** (non-rebreather or via ETT): shortens COHb half-life from ~`4-5 h` (room air) to ~`60-90 min`",
         "Symptoms: headache, nausea, dizziness -> confusion, syncope, seizure, coma (poor correlation between level and severity)",
-        "**Hyperbaric O2 (HBO)** considerations: **COHb `>25%`** (or `>20%` in pregnancy/cardiac disease), **LOC/syncope, neurologic deficit, cardiac ischemia, severe acidosis**, and **pregnancy with COHb `>15%`**",
+        "**Hyperbaric O2 (HBO)** considerations: **COHb `>25%`** (or `>20%` with cardiac disease), **LOC/syncope, neurologic deficit, cardiac ischemia, severe acidosis**, and **pregnancy with COHb `>15-20%`**",
       ],
     },
     {

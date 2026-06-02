@@ -258,7 +258,7 @@ export const DRIPS = [
     concentration: "10 mg/100 mL NS = 0.1 mg/mL",
     dose: {
       start: "0.2–0.5 mg/h",
-      range: "0.5–3 mg/h",
+      range: "0.2–3 mg/h",
       max: "Individualize — titrate to effect",
       titration: "Increase by 0.5 mg/h q30–60 min",
     },
@@ -520,7 +520,7 @@ export const DRIPS = [
     altNames: "Activase",
     category: "other",
     indication: "Ischemic stroke (eligible); massive PE with hemodynamic compromise; STEMI if no PCI available",
-    concentration: "Reconstitute per indication: 100 mg vial (2 mg/mL after reconstitution)",
+    concentration: "Reconstitute per indication: 100 mg vial + 100 mL sterile water = 1 mg/mL (may dilute 1:1 with NS/D5W to 0.5 mg/mL)",
     dose: {
       start: "Stroke: 0.9 mg/kg (max 90 mg); 10% as IV bolus over 1 min, rest over 60 min",
       range: "Massive PE: 100 mg IV over 2h; Cardiac arrest PE: 50 mg IV bolus",
@@ -952,7 +952,7 @@ export const DRIPS = [
     altNames: "Giapreza",
     category: "vasopressor",
     indication: "Refractory distributive / vasodilatory shock as a catecholamine-sparing add-on (ATHOS-3)",
-    concentration: "2.5 mg/500 mL = 5 ng/mL",
+    concentration: "2.5 mg/500 mL = 5000 ng/mL (5 mcg/mL)",
     dose: {
       start: "20 ng/kg/min",
       range: "Up to 80 ng/kg/min during the first 3 h, then 40 ng/kg/min or less for maintenance",

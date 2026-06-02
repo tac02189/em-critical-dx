@@ -315,7 +315,7 @@ export const ANTIBIOTICS = [
       { name: "Amoxicillin", dose: "1g PO daily × 10 days", pedsDose: "50 mg/kg/day PO daily × 10 days", note: "Better palatability for peds" },
     ],
     alternatives: [
-      { name: "Cephalexin", dose: "500mg PO BID × 10 days", pedsDose: "40 mg/kg/day div BID", note: "Non-anaphylactic PCN allergy" },
+      { name: "Cephalexin", dose: "500mg PO BID × 10 days", pedsDose: "40 mg/kg/day div BID (max 500 mg/dose)", note: "Non-anaphylactic PCN allergy" },
       { name: "Azithromycin", dose: "500mg PO ×1, then 250mg ×4", pedsDose: "12 mg/kg day 1, then 6 mg/kg days 2–5", note: "Severe PCN allergy" },
     ],
     duration: "10 days (5 days for azithromycin)",
@@ -332,7 +332,7 @@ export const ANTIBIOTICS = [
     category: "ent",
     indication: "Bulging tympanic membrane with effusion, otorrhea, severe symptoms",
     firstLine: [
-      { name: "Amoxicillin", dose: "500mg PO TID (adults)", pedsDose: "80–90 mg/kg/day div BID × 10d (<2yo) / 7d (≥2yo)" },
+      { name: "Amoxicillin", dose: "875mg–1g PO TID (adults, high-dose)", pedsDose: "80–90 mg/kg/day div BID × 10d (<2yo) / 7d (≥2yo)" },
     ],
     alternatives: [
       { name: "Amoxicillin-clavulanate", dose: "875mg PO BID", pedsDose: "90 mg/kg/day amox component div BID", note: "Recent abx, conjunctivitis-otitis, severe" },
@@ -374,7 +374,7 @@ export const ANTIBIOTICS = [
     category: "ent",
     indication: "Symptoms >10 days, OR worsening after improvement, OR severe (fever ≥39°C + purulent rhinorrhea ≥3 days)",
     firstLine: [
-      { name: "Amoxicillin-clavulanate", dose: "875mg PO BID × 5–7 days", pedsDose: "90 mg/kg/day amox component div BID × 10–14 days" },
+      { name: "Amoxicillin-clavulanate", dose: "2g/125mg PO BID × 5–7 days (high-dose ER preferred; 875mg BID if low-risk)", pedsDose: "90 mg/kg/day amox component div BID × 10–14 days" },
     ],
     alternatives: [
       { name: "Doxycycline", dose: "100mg PO BID × 5–7 days", note: "PCN allergy" },
@@ -532,7 +532,7 @@ export const ANTIBIOTICS = [
     indication: "Proptosis, painful eye movements, decreased vision, ophthalmoplegia, chemosis",
     firstLine: [
       { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided", pedsDose: "60 mg/kg/day div q6h" },
-      { name: "Ceftriaxone + Metronidazole", dose: "2g IV q24h + 500mg IV q8h", pedsDose: "Ceftriaxone 50 mg/kg q24h + metronidazole 30 mg/kg/day div q8h" },
+      { name: "Ceftriaxone + Metronidazole", dose: "2g IV q12h + 500mg IV q8h", pedsDose: "Ceftriaxone 50 mg/kg q12h (max 4g/day) + metronidazole 30 mg/kg/day div q8h" },
     ],
     alternatives: [
       { name: "Ampicillin-sulbactam", dose: "3g IV q6h", note: "Alternative to ceftriaxone+metronidazole" },
@@ -909,7 +909,7 @@ export const ANTIBIOTICS = [
     indication: "Pain out of proportion, systemic toxicity, bullae, ecchymosis, crepitus, skin necrosis",
     firstLine: [
       { name: "Vancomycin", dose: "25–30 mg/kg IV load, AUC-guided", pedsDose: "60 mg/kg/day div q6h" },
-      { name: "Piperacillin-tazobactam", dose: "4.5g IV q8h", pedsDose: "100 mg/kg piperacillin q6h" },
+      { name: "Piperacillin-tazobactam", dose: "4.5g IV q6h (or extended infusion)", pedsDose: "100 mg/kg piperacillin q6h" },
       { name: "Clindamycin", dose: "900mg IV q8h", pedsDose: "10–13 mg/kg/dose q8h", note: "CRITICAL — toxin suppression" },
     ],
     alternatives: [
@@ -1000,7 +1000,7 @@ export const ANTIBIOTICS = [
     ],
     alternatives: [
       { name: "Vancomycin", dose: "25–30 mg/kg IV load", note: "Add if MRSA risk or severe" },
-      { name: "Ertapenem", dose: "1g IV q24h", note: "Convenient once-daily; avoid Pseudomonas coverage" },
+      { name: "Ertapenem", dose: "1g IV q24h", note: "Convenient once-daily; lacks Pseudomonas activity — don't use if Pseudomonas risk" },
     ],
     duration: "7–14d skin; 4–6 weeks osteomyelitis",
     pearls: [
@@ -1111,7 +1111,7 @@ export const ANTIBIOTICS = [
     ],
     alternatives: [
       { name: "Nafcillin", dose: "2g IV q4h", pedsDose: "100–200 mg/kg/day div q6h", note: "Confirmed MSSA — superior to vancomycin" },
-      { name: "Daptomycin", dose: "6–10 mg/kg IV q24h", note: "MRSA if vanco MIC ≥2; not for pulmonary IE" },
+      { name: "Daptomycin", dose: "6–10 mg/kg IV q24h", note: "MRSA if vanco MIC ≥2; inactivated by surfactant — not for pneumonia (OK for right-sided IE)" },
     ],
     duration: "4–6 weeks native valve; 6+ weeks prosthetic",
     pearls: [
@@ -1472,10 +1472,10 @@ export const ANTIBIOTICS = [
     indication: "Fever ≥38.0°C in infant 29–60 days; risk-stratify before treatment",
     firstLine: [
       { name: "Ceftriaxone", dose: "50 mg/kg IV q24h (max 2g)", note: "If meningitis ruled out or low risk" },
-      { name: "Ceftriaxone + Vancomycin", dose: "Above + 60 mg/kg/day div q6h", note: "If meningitis confirmed" },
+      { name: "Ceftriaxone + Vancomycin", dose: "Ceftriaxone 100 mg/kg/day (50 mg/kg IV q12h, max 4g) + vancomycin 60 mg/kg/day div q6h", note: "If meningitis confirmed — meningitic ceftriaxone dose" },
     ],
     alternatives: [
-      { name: "Ampicillin + Ceftriaxone", dose: "50 mg/kg q6h + 50 mg/kg q24h", note: "Add ampicillin if Listeria concern (rare in this age)" },
+      { name: "Ampicillin + Ceftriaxone", dose: "Ampicillin 75 mg/kg q6h (300 mg/kg/day) + ceftriaxone 100 mg/kg/day (meningitic doses)", note: "Add ampicillin if Listeria concern (rare in this age)" },
     ],
     duration: "Pending cultures (typically 24–48h if cultures negative)",
     pearls: [
@@ -1558,7 +1558,7 @@ export const ANTIBIOTICS = [
       { name: "Flucytosine", dose: "25 mg/kg PO QID", note: "Induction × 2 weeks" },
     ],
     alternatives: [
-      { name: "Fluconazole", dose: "800mg PO daily × 8 weeks", note: "Consolidation phase after induction" },
+      { name: "Fluconazole", dose: "400mg PO daily × 8 weeks (IDSA; 800mg WHO alternative)", note: "Consolidation phase after induction" },
       { name: "Fluconazole maintenance", dose: "200–400mg PO daily ≥1 year", note: "Until immune reconstitution" },
     ],
     duration: "Induction 2 wk, consolidation 8 wk, maintenance ≥1 year",
@@ -2314,7 +2314,7 @@ export const ANTIBIOTICS = [
     indication: "Aneurysm with infectious etiology — fever, bacteremia, focal pain; rapidly expanding aneurysm",
     firstLine: [
       { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided" },
-      { name: "Ceftriaxone", dose: "2g IV q12h" },
+      { name: "Ceftriaxone", dose: "2g IV q24h" },
     ],
     alternatives: [
       { name: "Piperacillin-tazobactam + Vancomycin", note: "Healthcare-associated" },
@@ -2656,8 +2656,8 @@ export const ANTIBIOTICS = [
     indication: "Pseudomembranous pharyngitis ± cutaneous; bull neck; unvaccinated, travel-associated",
     firstLine: [
       { name: "Diphtheria antitoxin (DAT)", dose: "20,000–120,000 units IM/IV (CDC)", note: "Most important — call CDC" },
-      { name: "Erythromycin", dose: "500 mg PO/IV QID × 14 days", pedsDose: "40–50 mg/kg/day div" },
-      { name: "Penicillin G", dose: "Procaine 600,000 units IM q12h × 14 days" },
+      { name: "Erythromycin", dose: "500 mg PO/IV QID × 14 days", pedsDose: "40–50 mg/kg/day div (max 2g/day)" },
+      { name: "Penicillin G", dose: "Procaine 600,000 units IM q24h (>10 kg); 300,000 units IM q24h (≤10 kg) × 14 days" },
     ],
     alternatives: [
       { name: "Azithromycin", dose: "500 mg PO daily × 14 days" },
@@ -3348,7 +3348,7 @@ export const ANTIBIOTICS = [
     indication: "Serpiginous, pruritic skin track from hookworm larvae (Ancylostoma); beach/sand exposure in tropics",
     firstLine: [
       { name: "Ivermectin", dose: "200 mcg/kg PO ×1 (may repeat)" },
-      { name: "Albendazole", dose: "400 mg PO daily × 3–7 days" },
+      { name: "Albendazole", dose: "400 mg PO daily × 3 days (may give as single dose)" },
     ],
     alternatives: [
       { name: "Topical thiabendazole 10–15%", note: "Localized lesion" },
@@ -3469,7 +3469,7 @@ export const ANTIBIOTICS = [
     firstLine: [
       { name: "Albendazole", dose: "15 mg/kg/day PO div BID × 10–14 days (max 1.2g/day)" },
       { name: "Praziquantel", dose: "50 mg/kg/day PO div TID × 10–14 days", note: "Add to albendazole for ≥2 viable cysts" },
-      { name: "Dexamethasone or prednisone", note: "Co-administer to reduce inflammation" },
+      { name: "Dexamethasone or prednisone", note: "Start BEFORE/with antiparasitic to blunt inflammatory surge; funduscopic exam to exclude intraocular cysts first" },
     ],
     alternatives: [
       { name: "Anti-epileptics", note: "AEDs as needed for seizures" },
@@ -3510,7 +3510,7 @@ export const ANTIBIOTICS = [
     indication: "Cutaneous (CL), mucocutaneous (MCL), or visceral (kala-azar/VL); travel to Mediterranean, ME, S. Asia, S. America",
     firstLine: [
       { name: "Liposomal amphotericin B", dose: "VL: 3 mg/kg IV days 1–5, 14, 21 (immunocompetent); CL/MCL: 3 mg/kg IV ×7 doses" },
-      { name: "Miltefosine", dose: "2.5 mg/kg/day PO div BID × 28 days (max 50 mg BID)", note: "Approved for L. donovani VL, L. braziliensis MCL" },
+      { name: "Miltefosine", dose: "2.5 mg/kg/day PO with food × 28 days — 50 mg BID (30–44 kg); 50 mg TID (≥45 kg); max 150 mg/day", note: "Approved for L. donovani VL, L. braziliensis MCL" },
     ],
     alternatives: [
       { name: "Sodium stibogluconate (pentavalent antimonial)", note: "Historic standard; CDC access" },
@@ -3638,7 +3638,7 @@ export const ANTIBIOTICS = [
       { name: "Albendazole", dose: "10–15 mg/kg/day PO div BID with fatty meal × ≥3–6 months (cystic) or ≥2 years (alveolar)" },
     ],
     alternatives: [
-      { name: "Praziquantel", dose: "40 mg/kg/day PO", note: "Add to albendazole perioperatively" },
+      { name: "Praziquantel", dose: "40 mg/kg PO once weekly", note: "Add to albendazole perioperatively" },
       { name: "PAIR (Puncture-Aspiration-Injection-Reaspiration)", note: "Hepatic cysts — alternative to surgery" },
       { name: "Surgical resection", note: "Large or symptomatic cysts" },
     ],
@@ -3777,7 +3777,7 @@ export const ANTIBIOTICS = [
     category: "eye",
     indication: "Neonatal conjunctivitis in the first 4 weeks of life; gonococcal (hyperacute, 24–48h, sight-threatening) vs chlamydial (subacute, 5–14 days)",
     firstLine: [
-      { name: "Ceftriaxone", dose: "—", pedsDose: "25–50 mg/kg IV/IM single dose (max 125 mg)", note: "Gonococcal — single dose; add frequent saline lavage of the eye" },
+      { name: "Ceftriaxone", dose: "—", pedsDose: "25–50 mg/kg IV/IM single dose (max 250 mg)", note: "Gonococcal — single dose; add frequent saline lavage of the eye" },
       { name: "Erythromycin (oral)", dose: "—", pedsDose: "50 mg/kg/day PO div q6h × 14 days", note: "Chlamydial — oral required; topical therapy is inadequate" },
     ],
     alternatives: [
@@ -3937,7 +3937,7 @@ export const ANTIBIOTICS = [
     ],
     alternatives: [
       { name: "Ciprofloxacin", dose: "500mg PO BID × 3 days", note: "Chancroid; avoid in pregnancy and nursing" },
-      { name: "Erythromycin base", dose: "500mg PO QID × 7 days", note: "Chancroid alternative" },
+      { name: "Erythromycin base", dose: "500mg PO TID × 7 days", note: "Chancroid alternative (CDC 2021)" },
     ],
     duration: "LGV 21 days; chancroid single dose (ceftriaxone/azithromycin) or 3–7 days (cipro/erythromycin)",
     pearls: [
@@ -4201,11 +4201,11 @@ export const ANTIBIOTICS = [
     indication: "Endocarditis involving a prosthetic valve. Early (<12 mo): staph, coagulase-negative staph, nosocomial organisms; late (>12 mo) resembles native-valve flora",
     firstLine: [
       { name: "Vancomycin", dose: "25–30 mg/kg IV load, then AUC-guided", pedsDose: "60 mg/kg/day IV div q6h" },
-      { name: "Gentamicin", dose: "3 mg/kg/day IV div q8h", pedsDose: "3 mg/kg/day IV div q8h", note: "Synergy; monitor levels and renal function" },
+      { name: "Gentamicin", dose: "3 mg/kg/day IV div q8h", pedsDose: "3 mg/kg/day IV div q8h", note: "Synergy — first 2 weeks only (vanc + rifampin continue ≥6 wk); monitor levels and renal function" },
       { name: "Rifampin", dose: "300mg PO/IV q8h", pedsDose: "20 mg/kg/day div q8h (max 900mg/day)", note: "For prosthetic material/biofilm; add once bacteremia is clearing" },
     ],
     alternatives: [
-      { name: "Daptomycin", dose: "8–10 mg/kg IV q24h", note: "MRSA alternative to vancomycin; not for pulmonary involvement" },
+      { name: "Daptomycin", dose: "8–10 mg/kg IV q24h", note: "MRSA alternative to vancomycin; inactivated by surfactant — not for pneumonia (OK for right-sided IE)" },
     ],
     duration: "Typically 6 weeks (at least 6 weeks for staphylococcal PVE)",
     pearls: [
