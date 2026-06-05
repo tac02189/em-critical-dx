@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "../components/Header";
@@ -13,6 +14,9 @@ export default function DiagnosisPage() {
   const dx = DIAGNOSES.find((d) => d.id === id);
   const { isStarred, toggle } = useStarred();
   const [view, setView] = useLastView();
+
+  // Open detail pages scrolled to the top (list pages restore their own scroll on back)
+  useLayoutEffect(() => { window.scrollTo(0, 0); }, []);
 
   if (!dx) {
     return (

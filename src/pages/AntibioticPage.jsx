@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import { ANTIBIOTICS, ANTIBIOTIC_CATEGORIES } from "../data/antibiotics";
@@ -9,6 +10,9 @@ const CATEGORY_BY_ID = Object.fromEntries(
 export default function AntibioticPage() {
   const { id } = useParams();
   const ab = ANTIBIOTICS.find((a) => a.id === id);
+
+  // Open detail pages scrolled to the top (list pages restore their own scroll on back)
+  useLayoutEffect(() => { window.scrollTo(0, 0); }, []);
 
   if (!ab) {
     return (

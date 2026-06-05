@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import { DRIPS, DRIP_CATEGORIES } from "../data/drips";
@@ -9,6 +10,9 @@ const CATEGORY_BY_ID = Object.fromEntries(
 export default function DripPage() {
   const { id } = useParams();
   const drip = DRIPS.find((d) => d.id === id);
+
+  // Open detail pages scrolled to the top (list pages restore their own scroll on back)
+  useLayoutEffect(() => { window.scrollTo(0, 0); }, []);
 
   if (!drip) {
     return (
