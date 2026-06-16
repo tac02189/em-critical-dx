@@ -10707,6 +10707,200 @@ export const DIAGNOSES = [
     },
   ],
 },
+{
+  id: "hydroxychloroquine-overdose",
+  name: "Hydroxychloroquine / Chloroquine Overdose",
+  subtitle: "Antimalarial cardiotoxicity — rapidly fatal",
+  category: "tox",
+  tldr: [
+    {
+      heading: "Immediate actions",
+      items: [
+        "IV access × 2, continuous cardiac monitor, 12-lead ECG (watch **QRS** and **QTc**)",
+        "**Intubate early** if large ingestion, altered, or hemodynamically unstable — deterioration is rapid",
+        "**Activated charcoal** `1 g/kg PO/NG` if within 1–2 h and airway protected",
+        "Call Poison Control; this is a true cardiotoxic emergency — escalate before collapse",
+      ],
+    },
+    {
+      heading: "Drugs & doses (Riou regimen)",
+      items: [
+        "**High-dose diazepam** — `2 mg/kg IV over 30 min`, then `1–2 mg/kg/day` infusion; cardioprotective/antiarrhythmic mainstay in severe poisoning",
+        "**Epinephrine** — `0.25 mcg/kg/min` IV infusion, titrate up; counters vasodilation + negative inotropy (preferred vasopressor)",
+        "**Sodium bicarbonate** — `1–2 mEq/kg IV bolus` for QRS >120 ms (Na-channel blockade); goal pH 7.45–7.55",
+        "**Magnesium sulfate** — `2 g IV` for QT prolongation / torsades",
+        "**Lipid emulsion** (refractory collapse) — `Intralipid 20% 1.5 mL/kg IV bolus` over 1 min, then `0.25 mL/kg/min`",
+      ],
+    },
+    {
+      heading: "Potassium — handle with care",
+      items: [
+        "Hypokalemia reflects an **intracellular K⁺ shift, NOT total-body deficit** — and is partly cardioprotective",
+        "Replete **cautiously** only if severe (`K⁺ <2.0–2.5`) or arrhythmia; over-correction causes **rebound hyperkalemia** during recovery",
+        "Trend K⁺ frequently throughout the resuscitation",
+      ],
+    },
+    {
+      heading: "Avoid",
+      items: [
+        "Aggressive potassium repletion — rebound hyperkalemia as K⁺ shifts back out during recovery",
+        "Class IA / IC antiarrhythmics (worsen Na-channel blockade)",
+        "Delaying diazepam / epinephrine / intubation to chase atropine",
+      ],
+    },
+    {
+      heading: "Dispo",
+      items: ["ICU with continuous cardiac monitoring; consider VA-ECMO early for refractory shock/arrest; admit all intentional ingestions"],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "Quinidine-like **fast Na-channel blockade** → wide QRS, myocardial depression, hypotension",
+        "**K⁺-channel blockade** → QTc prolongation, ventricular tachycardia / torsades",
+        "Vasodilation (α-blockade) + negative inotropy → mixed distributive and cardiogenic shock",
+        "Drives K⁺ intracellularly → **hypokalemia that correlates with severity** (and predicts rebound hyperkalemia)",
+        "Hydroxychloroquine is somewhat less cardiotoxic than chloroquine, but the mechanism and management are identical",
+      ],
+    },
+    {
+      heading: "Markers of severe poisoning",
+      items: [
+        "Chloroquine thresholds (apply cautiously to HCQ): ingestion >`5 g`, **SBP <100 mmHg**, or **QRS >0.10–0.12 s** predict death",
+        "Profound hypokalemia tracks with severity",
+        "Onset is fast — cardiac arrest can occur within 1–3 h of ingestion",
+      ],
+    },
+    {
+      heading: "Workup",
+      items: [
+        "Serial **ECG** (QRS, QTc), **BMP** (potassium!), glucose, ABG/VBG, lactate",
+        "Co-ingestant screen: acetaminophen, salicylate; pregnancy test",
+        "Drug levels are not readily available and do not guide acute management",
+      ],
+    },
+    {
+      heading: "Riou regimen detail",
+      items: [
+        "Early **intubation + high-dose diazepam + epinephrine** reduced mortality in severe chloroquine poisoning (Riou, NEJM 1988)",
+        "Diazepam is given for its membrane-stabilizing / antiarrhythmic effect, independent of seizure activity",
+        "Start epinephrine for SBP <100 mmHg or evidence of poor perfusion",
+      ],
+    },
+    {
+      heading: "Pitfalls",
+      items: [
+        "The hypokalemia paradox — treating the number rather than the patient causes lethal rebound hyperkalemia",
+        "Retinopathy is a chronic-therapy effect, not relevant in acute overdose",
+        "Co-administered QT-prolonging drugs (e.g., azithromycin) compound arrhythmia risk",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e (Quinine & Antimalarials)", "Goldfrank's Toxicologic Emergencies — Antimalarials", "Riou et al, NEJM 1988 (severe chloroquine poisoning)", "LITFL Chloroquine / Hydroxychloroquine Toxicity"],
+    },
+  ],
+},
+{
+  id: "sodium-nitrite-nitrate-overdose",
+  name: "Sodium Nitrite / Nitrate Overdose",
+  subtitle: "Oxidizer-induced methemoglobinemia",
+  category: "tox",
+  tldr: [
+    {
+      heading: "Recognize",
+      items: [
+        "**Cyanosis unresponsive to `100% O₂`** + **`SpO₂` plateau ~85%** (saturation gap: low SpO₂ with normal PaO₂) + **chocolate-brown blood**",
+        "Send **co-oximetry** for a true **MetHgb%** — standard pulse oximetry is unreliable",
+        "**Sodium nitrite (NaNO₂)** acts fast (intentional ingestion / 'looks-like-salt' mix-ups); **nitrate (NaNO₃)** is slower and indirect",
+        "NO-mediated **vasodilation** → headache, dizziness, hypotension, syncope; severe cases: seizures, dysrhythmia, shock, death",
+      ],
+    },
+    {
+      heading: "Antidote — Methylene Blue",
+      items: [
+        "`Methylene blue 1–2 mg/kg IV` (1% solution = 10 mg/mL) over 5 min",
+        "Repeat `1 mg/kg IV` q30–60 min PRN (max `7 mg/kg` total); response within 30–60 min",
+        "Indicated for symptomatic patients or MetHgb >20–30%",
+      ],
+    },
+    {
+      heading: "Supportive",
+      items: [
+        "High-flow **`100% O₂`** (helps tissue delivery even though SpO₂ reads falsely low)",
+        "IV fluids + **norepinephrine** for vasodilatory hypotension",
+        "Benzodiazepines for seizures; continuous cardiac monitoring",
+        "Charcoal poorly binds nitrite/nitrate salts — antidote + supportive care take priority over GI decontamination",
+      ],
+    },
+    {
+      heading: "G6PD / refractory",
+      items: [
+        "**Methylene blue is ineffective and risks hemolysis in G6PD deficiency** — use **exchange transfusion** or **hyperbaric O₂**",
+        "High-dose IV **ascorbic acid** is a slower adjunct/alternative when methylene blue is contraindicated",
+      ],
+    },
+    {
+      heading: "Nitrite vs nitrate",
+      items: [
+        "**Sodium nitrite (NaNO₂)** — a potent direct oxidizer → rapid, severe methemoglobinemia + vasodilatory shock; the acute killer (emerging intentional poisonings)",
+        "**Sodium nitrate (NaNO₃)** — far less acutely toxic; causes MetHgb only after gut flora reduce it to nitrite (delayed; classic 'blue baby' from well water in infants)",
+      ],
+    },
+    {
+      heading: "Dispo",
+      items: ["ICU for MetHgb >30% or symptomatic; repeat co-oximetry ~1 h post-antidote; psychiatric evaluation for intentional ingestion. See the **Methemoglobinemia** card."],
+    },
+  ],
+  extended: [
+    {
+      heading: "Pathophysiology",
+      items: [
+        "Nitrite oxidizes hemoglobin iron Fe²⁺ → **Fe³⁺ (methemoglobin)**, which cannot carry O₂ and left-shifts the dissociation curve (remaining Hgb won't release O₂)",
+        "Nitrite is also a nitric-oxide donor → **vasodilation and hypotension**",
+        "Nitrate is poorly oxidizing itself — it must be reduced to nitrite by oral/gut bacteria before causing MetHgb (hence delayed, milder, and prominent in infants)",
+      ],
+    },
+    {
+      heading: "Why nitrite poisoning is rising",
+      items: [
+        "Mail-order **sodium nitrite** marketed/discussed on suicide forums — high-lethality intentional ingestions",
+        "Accidental: curing salt ('pink salt' / Prague powder) mistaken for table salt or MSG",
+        "Small amounts are lethal — rapid onset over minutes to an hour",
+      ],
+    },
+    {
+      heading: "Recognition",
+      items: [
+        "**Saturation gap**: pulse-ox SpO₂ plateaus ~85% while arterial PaO₂ is normal",
+        "Chocolate-brown blood that does not redden on exposure to air",
+        "Cyanosis refractory to oxygen; headache, dyspnea, altered mental status, seizures, hypotension",
+        "Severity tracks MetHgb%: >20–30% symptomatic, >50% severe, >70% often lethal",
+      ],
+    },
+    {
+      heading: "Workup",
+      items: [
+        "**Co-oximetry** (MetHgb%) — the key test; standard pulse ox and calculated SaO₂ are misleading",
+        "VBG/ABG (PaO₂ normal), lactate / metabolic acidosis, BMP, CBC (watch for delayed hemolysis)",
+        "ECG and cardiac monitoring; pregnancy test; screen for co-ingestants in intentional cases",
+      ],
+    },
+    {
+      heading: "Pitfalls",
+      items: [
+        "Being falsely reassured by an SpO₂ that 'only' reads ~85% — true tissue hypoxia can be severe",
+        "Very high cumulative methylene blue doses can paradoxically cause methemoglobinemia",
+        "Methemoglobinemia can recur — re-check co-oximetry after treatment and observe",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e (Methemoglobinemia)", "Goldfrank's Toxicologic Emergencies — Nitrates/Nitrites & Methemoglobinemia", "CDC / published case series on sodium nitrite self-poisoning", "LITFL Methemoglobinemia"],
+    },
+  ],
+},
 ];
 
 export default DIAGNOSES;
