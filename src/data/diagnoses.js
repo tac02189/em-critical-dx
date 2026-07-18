@@ -10901,6 +10901,152 @@ export const DIAGNOSES = [
     },
   ],
 },
+  // ─── AIRWAY / RSI ────────────────────────────────────────────────────────
+{
+  id: "rsi",
+  name: "Rapid Sequence Intubation",
+  subtitle: "Induction, paralysis & peri-intubation pharmacology",
+  category: "resp",
+  tldr: [
+    {
+      heading: "Induction agents (adult IV push)",
+      items: [
+        "**Etomidate** `0.3 mg/kg IV` (typical adult 20–30 mg) — onset 15–45 s, duration 3–12 min; hemodynamically neutral — the default when unsure",
+        "**Ketamine** `1–2 mg/kg IV` (typical 1.5 mg/kg) — onset 45–60 s, duration 10–20 min; bronchodilator + sympathomimetic — first choice in asthma and (dose-reduced) in shock",
+        "**Propofol** `1.5–2 mg/kg IV` — onset 15–45 s, duration 5–10 min; vasodilation + myocardial depression → hypotension; best when hypertensive or in status epilepticus",
+        "**Midazolam** `0.2–0.3 mg/kg IV` (true induction dose) — onset 60–90 s, the slowest of the group; hypotension at full dose; rarely first-line and chronically underdosed",
+      ],
+    },
+    {
+      heading: "Paralytics",
+      items: [
+        "**Succinylcholine** `1.5 mg/kg IV` (total body weight; typical adult 100–150 mg) — onset 45–60 s, duration 6–10 min; `4 mg/kg IM` if no IV access",
+        "Succinylcholine contraindications — **hyperkalemia risk**: burns / crush / denervation / immobilization >72 h, neuromuscular disease, pre-existing hyperK; **personal or family hx of malignant hyperthermia**",
+        "**Rocuronium** `1.2 mg/kg IV` — onset 45–60 s at RSI dose, duration 45–70 min; the default whenever succinylcholine is contraindicated",
+        "**Paralysis outlasts induction** — rocuronium paralyzes far longer than etomidate sedates; start sedation + analgesia immediately after tube confirmation",
+      ],
+    },
+    {
+      heading: "Shock / hemodynamically unstable",
+      items: [
+        "**Halve the induction agent, never the paralytic**: etomidate `0.15 mg/kg` or ketamine `0.5–1 mg/kg`; rocuronium `1.2–1.6 mg/kg` (low cardiac output delays onset)",
+        "**Avoid propofol** in shock; even ketamine can drop BP in the catecholamine-depleted",
+        "**Resuscitate before you intubate** — volume ± pressors first; peri-intubation arrest risk climbs with SBP <90 or shock index >0.8",
+        "**Push-dose epinephrine** `5–20 mcg IV q2–5 min` (0.5–2 mL of a 10 mcg/mL mix)",
+        "**Push-dose phenylephrine** `50–200 mcg IV q1–5 min` (0.5–2 mL of 100 mcg/mL) — when tachycardic",
+        "Post-intubation hypotension: fluids + push-dose pressor as a bridge to a **norepinephrine infusion**",
+      ],
+    },
+    {
+      heading: "Pretreatment (3 min before — selected patients)",
+      items: [
+        "**Fentanyl** `3 mcg/kg IV` slow over 30–60 s — blunts the sympathetic surge in **ICH, aortic dissection, aneurysm**; caution if borderline BP",
+        "**Lidocaine** `1.5 mg/kg IV` — historical for elevated ICP / reactive airway; weak evidence, optional",
+        "**Atropine** `0.02 mg/kg IV` (min 0.1 mg) — no longer routine in peds; give for bradycardia during laryngoscopy or before a repeat succinylcholine dose",
+      ],
+    },
+    {
+      heading: "Pediatric dosing",
+      items: [
+        "Induction: etomidate `0.3 mg/kg` · ketamine `1–2 mg/kg IV` (`4–5 mg/kg IM` if no access) · propofol `2–3 mg/kg` (children need more per kg)",
+        "**Succinylcholine**: infants/small children `2 mg/kg`, adolescents `1.5 mg/kg` · **Rocuronium** `1.2 mg/kg` all ages",
+        "**Atropine** `0.02 mg/kg` (min 0.1 mg) for bradycardia or before repeat succinylcholine",
+        "**Bradycardia during intubation = hypoxia until proven otherwise** — reoxygenate first, then reach for drugs",
+        "Length-based tape (Broselow) beats mental math under stress — use it when available",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Choosing the induction agent",
+      items: [
+        "Undifferentiated / unsure → **etomidate** — most hemodynamically neutral choice",
+        "Shock or sepsis → **ketamine (reduced dose)** or etomidate `0.15 mg/kg`; never full-dose propofol",
+        "Status asthmaticus → **ketamine** — bronchodilation, and it preserves respiratory drive",
+        "Status epilepticus → **propofol** (anticonvulsant) with paralytic; avoid prolonged paralysis masking seizures",
+        "ICH / dissection / hypertensive emergency → **propofol or etomidate + fentanyl pretreatment**",
+        "Agitated hypoxic patient → **delayed sequence intubation**: ketamine `1–1.5 mg/kg` slow IV to permit preoxygenation before the paralytic",
+      ],
+    },
+    {
+      heading: "Etomidate details",
+      items: [
+        "Imidazole sedative-hypnotic; onset 15–45 s, duration 3–12 min; minimal BP effect even in cardiac disease",
+        "Transient adrenal suppression (11β-hydroxylase inhibition) after a single dose — mortality harm never proven; many still prefer ketamine in septic shock",
+        "**Myoclonus** in up to ~30% — benign, brief, can mimic seizure activity",
+        "**No analgesia** — pair with analgesia once the tube is confirmed",
+      ],
+    },
+    {
+      heading: "Ketamine details",
+      items: [
+        "Dissociative agent — analgesia + amnesia with preserved airway reflexes and respiratory drive",
+        "Indirect sympathomimetic: raises HR/BP via catecholamine release — but it is a **direct myocardial depressant** when catecholamines are exhausted (prolonged shock) → reduce to `0.5–1 mg/kg`",
+        "Laryngospasm (mainly peds) — jaw thrust + PPV; paralytic if refractory",
+        "Emergence reactions in adults — small midazolam dose treats; old head-injury/ICP contraindication has been **debunked**",
+      ],
+    },
+    {
+      heading: "Propofol details",
+      items: [
+        "GABA-A agonist; anticonvulsant and lowers ICP — but dose-dependent **vasodilation + negative inotropy** drops MAP (and cerebral perfusion) most in the elderly and hypovolemic",
+        "In fragile patients reduce to `0.5–1 mg/kg` — or pick another agent",
+        "Pain on injection is common (lidocaine flush helps)",
+        "Egg / soy allergy is **not** a contraindication (modern consensus)",
+      ],
+    },
+    {
+      heading: "Succinylcholine — contraindication mechanics",
+      items: [
+        "Depolarizing agent — raises serum K⁺ ~0.5 mEq/L in everyone; upregulated extrajunctional receptors (burns, crush, denervation, immobility, neuromuscular disease) can release **massive K⁺ → arrest**",
+        "The danger window starts **~72 h after injury** and persists months — it is safe in the first hours after an acute burn or cord injury",
+        "Progressive neuromuscular disease (ALS, muscular dystrophy) = contraindicated **indefinitely**; undiagnosed myopathy in children is why many default to rocuronium in peds",
+        "Malignant hyperthermia trigger — personal or family history is an absolute contraindication",
+        "Bradycardia with repeat dosing (especially peds) — atropine `0.02 mg/kg` ready",
+      ],
+    },
+    {
+      heading: "Rocuronium & reversal",
+      items: [
+        "RSI dose is `1.2 mg/kg` — the standard 0.6 mg/kg dose takes too long (~90 s+) for RSI conditions",
+        "Duration 45–70 min at RSI dose (longer in shock or hepatic dysfunction) — **schedule sedation before the patient can become aware while paralyzed**",
+        "**Sugammadex** `16 mg/kg IV` reverses rocuronium in ~3 min — but reversal does not fix a failed airway: a can't-intubate-can't-oxygenate patient needs a **surgical airway**, not a reversal agent",
+        "Dosing weight: succinylcholine by **total** body weight, rocuronium by **ideal** body weight",
+      ],
+    },
+    {
+      heading: "Push-dose pressors — preparation",
+      items: [
+        "**Epinephrine 10 mcg/mL**: draw 9 mL NS into a 10 mL syringe, add `1 mL` of cardiac-amp epi (100 mcg/mL) → give `0.5–2 mL (5–20 mcg) q2–5 min`; onset ~1 min, lasts 5–10 min",
+        "**Phenylephrine 100 mcg/mL**: inject `1 mL` of a 10 mg/mL vial into a 100 mL NS bag, draw up → give `0.5–2 mL (50–200 mcg) q1–5 min`; pure alpha — expect reflex bradycardia",
+        "**Label every syringe** — push-dose concentration errors are a known harm source",
+        "A bridge, not a destination — if more than 1–2 doses are needed, start a **norepinephrine infusion**",
+      ],
+    },
+    {
+      heading: "The 7 Ps — sequence",
+      items: [
+        "**Preparation** — suction on, O₂, two laryngoscopes/tubes, bougie, rescue device, drugs drawn and labeled, waveform capnography",
+        "**Preoxygenation** — 3 min 100% NRB + nasal cannula 15 L/min left on for **apneic oxygenation**; head of bed 30° / ramped",
+        "**Pretreatment** — T–3 min, selected patients only (see TLDR)",
+        "**Paralysis with induction** — induction agent push, immediately followed by the paralytic",
+        "**Positioning** — ear-to-sternal-notch, face plane parallel to ceiling",
+        "**Placement with proof** — continuous waveform capnography is the standard of confirmation",
+        "**Post-intubation management** — analgesia + sedation immediately (see Continuous Drips → Sedation & Analgesia), head of bed 30°, lung-protective volumes 6–8 mL/kg IBW, CXR, OG tube",
+      ],
+    },
+    {
+      heading: "References",
+      items: [
+        "Tintinalli 9e Ch 29 (Tracheal Intubation & Mechanical Ventilation)",
+        "Walls — Manual of Emergency Airway Management 5e",
+        "Weingart & Levitan, Preoxygenation and Prevention of Desaturation (Ann Emerg Med 2012)",
+        "EMCrit — Push-Dose Pressors",
+        "PALS 2020 — pediatric airway pharmacology",
+      ],
+    },
+  ],
+},
 ];
 
 export default DIAGNOSES;

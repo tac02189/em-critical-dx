@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { AlertTriangle, Pill, Droplets, Syringe } from "lucide-react";
+import { AlertTriangle, Pill, Droplets, Syringe, Wind } from "lucide-react";
 import { Sun, Moon } from "lucide-react";
 import { useThemeCtx } from "../App";
 
@@ -40,6 +40,15 @@ const SECTIONS = [
     color: "#f472b6",
     accent: "rgba(244,114,182,0.12)",
     border: "rgba(244,114,182,0.25)",
+  },
+  {
+    path: "/dx/rsi",
+    icon: Wind,
+    label: "Rapid Sequence Intubation",
+    description: "Induction agents, paralytics, and peri-intubation pressors",
+    color: "#5eead4",
+    accent: "rgba(94,234,212,0.12)",
+    border: "rgba(94,234,212,0.25)",
   },
 ];
 
