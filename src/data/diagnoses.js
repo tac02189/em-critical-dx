@@ -10920,19 +10920,19 @@ export const DIAGNOSES = [
     {
       heading: "Paralytics",
       items: [
-        "**Succinylcholine** `1.5 mg/kg IV` (total body weight; typical adult 100–150 mg) — onset 45–60 s, duration 6–10 min; `4 mg/kg IM` if no IV access",
-        "Succinylcholine contraindications — **hyperkalemia risk**: burns / crush / denervation / immobilization >72 h, neuromuscular disease, pre-existing hyperK; **personal or family hx of malignant hyperthermia**",
-        "**Rocuronium** `1.2 mg/kg IV` — onset 45–60 s at RSI dose, duration 45–70 min; the default whenever succinylcholine is contraindicated",
+        "**Succinylcholine** `1.5 mg/kg IV` (total body weight; typical adult 100–150 mg) — onset 45–60 s, duration 6–10 min; `4 mg/kg IM` (**max 150 mg total**) if no IV access — IM onset is slower, ~2–3 min",
+        "Succinylcholine contraindications — **hyperkalemia risk**: burns / crush / denervation / immobilization **>48 h**, neuromuscular disease, pre-existing hyperK; **personal or family hx of malignant hyperthermia**",
+        "**Rocuronium** `1.2 mg/kg IV` (total body weight) — onset 45–60 s at RSI dose, duration 45–70 min; the default whenever succinylcholine is contraindicated",
         "**Paralysis outlasts induction** — rocuronium paralyzes far longer than etomidate sedates; start sedation + analgesia immediately after tube confirmation",
       ],
     },
     {
       heading: "Shock / hemodynamically unstable",
       items: [
-        "**Halve the induction agent, never the paralytic**: etomidate `0.15 mg/kg` or ketamine `0.5–1 mg/kg`; rocuronium `1.2–1.6 mg/kg` (low cardiac output delays onset)",
+        "**Halve the induction agent, never the paralytic**: etomidate `0.15 mg/kg` or ketamine `0.5–1 mg/kg`; rocuronium `1.2–1.6 mg/kg` total body weight (low cardiac output delays onset)",
         "**Avoid propofol** in shock; even ketamine can drop BP in the catecholamine-depleted",
         "**Resuscitate before you intubate** — volume ± pressors first; peri-intubation arrest risk climbs with SBP <90 or shock index >0.8",
-        "**Push-dose epinephrine** `5–20 mcg IV q2–5 min` (0.5–2 mL of a 10 mcg/mL mix)",
+        "**Push-dose epinephrine** `5–20 mcg IV q2–5 min` (0.5–2 mL of a 10 mcg/mL mix — see prep in Extended)",
         "**Push-dose phenylephrine** `50–200 mcg IV q1–5 min` (0.5–2 mL of 100 mcg/mL) — when tachycardic",
         "Post-intubation hypotension: fluids + push-dose pressor as a bridge to a **norepinephrine infusion**",
       ],
@@ -10940,17 +10940,17 @@ export const DIAGNOSES = [
     {
       heading: "Pretreatment (3 min before — selected patients)",
       items: [
-        "**Fentanyl** `3 mcg/kg IV` slow over 30–60 s — blunts the sympathetic surge in **ICH, aortic dissection, aneurysm**; caution if borderline BP",
+        "**Fentanyl** `3 mcg/kg IV` slow over 30–60 s — **consider** (not mandatory) to blunt the sympathetic surge in ICH, aortic dissection, aneurysm; outcome evidence is limited and it can cause hypotension/bradycardia — omit if BP is borderline",
         "**Lidocaine** `1.5 mg/kg IV` — historical for elevated ICP / reactive airway; weak evidence, optional",
-        "**Atropine** `0.02 mg/kg IV` (min 0.1 mg) — no longer routine in peds; give for bradycardia during laryngoscopy or before a repeat succinylcholine dose",
+        "**Atropine** — no longer routine premedication in peds. **Premedication** (AHA): `0.02 mg/kg IV`, no minimum. **Symptomatic bradycardia**: `0.02 mg/kg IV`, min 0.1 mg, **max single dose 0.5 mg**",
       ],
     },
     {
       heading: "Pediatric dosing",
       items: [
-        "Induction: etomidate `0.3 mg/kg` · ketamine `1–2 mg/kg IV` (`4–5 mg/kg IM` if no access) · propofol `2–3 mg/kg` (children need more per kg)",
-        "**Succinylcholine**: infants/small children `2 mg/kg`, adolescents `1.5 mg/kg` · **Rocuronium** `1.2 mg/kg` all ages",
-        "**Atropine** `0.02 mg/kg` (min 0.1 mg) for bradycardia or before repeat succinylcholine",
+        "Induction: etomidate `0.3 mg/kg` · ketamine `1–2 mg/kg IV` (`4–5 mg/kg IM` if no access) · propofol `2.5–3.5 mg/kg` in the healthy child (children need more per kg) — **reduce substantially in the critically ill or hypovolemic**",
+        "**Succinylcholine** (emergency-airway practice, runs higher than product labeling): infants <1 yr / <10 kg `3 mg/kg` · children `2 mg/kg` · adolescent/adult-sized `1.5 mg/kg`. **Rocuronium** `1.2 mg/kg` all ages",
+        "**Atropine** for bradycardia: `0.02 mg/kg` (min 0.1 mg, **max single dose 0.5 mg**); as intubation premedication AHA gives `0.02 mg/kg` with no minimum",
         "**Bradycardia during intubation = hypoxia until proven otherwise** — reoxygenate first, then reach for drugs",
         "Length-based tape (Broselow) beats mental math under stress — use it when available",
       ],
@@ -10962,10 +10962,10 @@ export const DIAGNOSES = [
       items: [
         "Undifferentiated / unsure → **etomidate** — most hemodynamically neutral choice",
         "Shock or sepsis → **ketamine (reduced dose)** or etomidate `0.15 mg/kg`; never full-dose propofol",
-        "Status asthmaticus → **ketamine** — bronchodilation, and it preserves respiratory drive",
+        "Status asthmaticus → **ketamine** — bronchodilation, and respiratory drive is better preserved than with other induction agents (until the paralytic is given)",
         "Status epilepticus → **propofol** (anticonvulsant) with paralytic; avoid prolonged paralysis masking seizures",
         "ICH / dissection / hypertensive emergency → **propofol or etomidate + fentanyl pretreatment**",
-        "Agitated hypoxic patient → **delayed sequence intubation**: ketamine `1–1.5 mg/kg` slow IV to permit preoxygenation before the paralytic",
+        "Agitated hypoxic patient → **delayed sequence intubation**: ketamine `1–1.5 mg/kg` **titrated slowly** IV to permit preoxygenation before the paralytic — rapid push risks apnea, so be set up to intubate and bag immediately",
       ],
     },
     {
@@ -10980,7 +10980,7 @@ export const DIAGNOSES = [
     {
       heading: "Ketamine details",
       items: [
-        "Dissociative agent — analgesia + amnesia with preserved airway reflexes and respiratory drive",
+        "Dissociative agent — analgesia + amnesia with **relatively** preserved airway reflexes and respiratory drive; reflexes are **not reliably protective** (vomiting/aspiration can occur) and rapid IV push can cause apnea",
         "Indirect sympathomimetic: raises HR/BP via catecholamine release — but it is a **direct myocardial depressant** when catecholamines are exhausted (prolonged shock) → reduce to `0.5–1 mg/kg`",
         "Laryngospasm (mainly peds) — jaw thrust + PPV; paralytic if refractory",
         "Emergence reactions in adults — small midazolam dose treats; old head-injury/ICP contraindication has been **debunked**",
@@ -10999,7 +10999,7 @@ export const DIAGNOSES = [
       heading: "Succinylcholine — contraindication mechanics",
       items: [
         "Depolarizing agent — raises serum K⁺ ~0.5 mEq/L in everyone; upregulated extrajunctional receptors (burns, crush, denervation, immobility, neuromuscular disease) can release **massive K⁺ → arrest**",
-        "The danger window starts **~72 h after injury** and persists months — it is safe in the first hours after an acute burn or cord injury",
+        "Receptor upregulation can begin within **24–48 h** — avoid from **~48 h after injury** onward, and the risk persists for **months to years**, until healing and remobilization; it is safe in the first hours after an acute burn or cord injury",
         "Progressive neuromuscular disease (ALS, muscular dystrophy) = contraindicated **indefinitely**; undiagnosed myopathy in children is why many default to rocuronium in peds",
         "Malignant hyperthermia trigger — personal or family history is an absolute contraindication",
         "Bradycardia with repeat dosing (especially peds) — atropine `0.02 mg/kg` ready",
@@ -11010,15 +11010,17 @@ export const DIAGNOSES = [
       items: [
         "RSI dose is `1.2 mg/kg` — the standard 0.6 mg/kg dose takes too long (~90 s+) for RSI conditions",
         "Duration 45–70 min at RSI dose (longer in shock or hepatic dysfunction) — **schedule sedation before the patient can become aware while paralyzed**",
-        "**Sugammadex** `16 mg/kg IV` reverses rocuronium in ~3 min — but reversal does not fix a failed airway: a can't-intubate-can't-oxygenate patient needs a **surgical airway**, not a reversal agent",
-        "Dosing weight: succinylcholine by **total** body weight, rocuronium by **ideal** body weight",
+        "**Sugammadex** — dose by **actual** body weight, guided by block depth: `16 mg/kg` **only** for immediate reversal ~3 min after a single `1.2 mg/kg` rocuronium dose · `4 mg/kg` for deep block · `2 mg/kg` for moderate block (use neuromuscular monitoring where available). Immediate-reversal `16 mg/kg` is **not studied in pediatrics**",
+        "Sugammadex does **not** fix a failed airway — a can't-intubate-can't-oxygenate patient needs a **surgical airway**, not a reversal agent; spontaneous ventilation will not return fast enough to rescue",
+        "Dosing weight: succinylcholine and rocuronium both by **total** body weight for RSI (reliable onset). In obesity, total-body-weight rocuronium prolongs duration, while ideal-body-weight dosing risks inadequate paralysis — **confirm your institution's convention**",
       ],
     },
     {
       heading: "Push-dose pressors — preparation",
       items: [
-        "**Epinephrine 10 mcg/mL**: draw 9 mL NS into a 10 mL syringe, add `1 mL` of cardiac-amp epi (100 mcg/mL) → give `0.5–2 mL (5–20 mcg) q2–5 min`; onset ~1 min, lasts 5–10 min",
-        "**Phenylephrine 100 mcg/mL**: inject `1 mL` of a 10 mg/mL vial into a 100 mL NS bag, draw up → give `0.5–2 mL (50–200 mcg) q1–5 min`; pure alpha — expect reflex bradycardia",
+        "**Epinephrine 10 mcg/mL**: draw 9 mL NS into a 10 mL syringe, add `1 mL` from the **cardiac amp** — `0.1 mg/mL` (1 mg in 10 mL, 1:10,000) → give `0.5–2 mL (5–20 mcg) q2–5 min`; onset ~1 min, lasts 5–10 min",
+        "⚠️ **Do NOT use the anaphylaxis ampule** (`1 mg/mL`, 1:1,000) **for this mix** — it is 10× more concentrated and yields a 100 mcg/mL syringe. This substitution is a documented cause of 10× push-dose overdose",
+        "**Phenylephrine 100 mcg/mL**: **withdraw and discard 1 mL** from a 100 mL NS bag, then inject `1 mL` of the 10 mg/mL vial → give `0.5–2 mL (50–200 mcg) q1–5 min`; pure alpha — expect reflex bradycardia",
         "**Label every syringe** — push-dose concentration errors are a known harm source",
         "A bridge, not a destination — if more than 1–2 doses are needed, start a **norepinephrine infusion**",
       ],
@@ -11027,12 +11029,12 @@ export const DIAGNOSES = [
       heading: "The 7 Ps — sequence",
       items: [
         "**Preparation** — suction on, O₂, two laryngoscopes/tubes, bougie, rescue device, drugs drawn and labeled, waveform capnography",
-        "**Preoxygenation** — 3 min 100% NRB + nasal cannula 15 L/min left on for **apneic oxygenation**; head of bed 30° / ramped",
+        "**Preoxygenation** — 3 min high-flow NRB (delivers high, not truly 100%, FiO₂) + nasal cannula 15 L/min left on for **apneic oxygenation**; head of bed 30° / ramped. If still hypoxemic, escalate to **NIPPV or HFNO** rather than pushing on with an NRB",
         "**Pretreatment** — T–3 min, selected patients only (see TLDR)",
         "**Paralysis with induction** — induction agent push, immediately followed by the paralytic",
         "**Positioning** — ear-to-sternal-notch, face plane parallel to ceiling",
         "**Placement with proof** — continuous waveform capnography is the standard of confirmation",
-        "**Post-intubation management** — analgesia + sedation immediately (see Continuous Drips → Sedation & Analgesia), head of bed 30°, lung-protective volumes 6–8 mL/kg IBW, CXR, OG tube",
+        "**Post-intubation management** — analgesia + sedation immediately (see Continuous Drips → Sedation & Analgesia), head of bed 30°, lung-protective volumes 6–8 mL/kg **predicted** body weight (PBW), CXR, OG tube",
       ],
     },
     {
