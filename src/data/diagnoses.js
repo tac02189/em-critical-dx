@@ -10920,7 +10920,7 @@ export const DIAGNOSES = [
     {
       heading: "Paralytics",
       items: [
-        "**Succinylcholine** `1.5 mg/kg IV` (total body weight; typical adult 100–150 mg) — onset 45–60 s, duration 6–10 min; `4 mg/kg IM` (**max 150 mg total**) if no IV access — IM onset is slower, ~2–3 min",
+        "**Succinylcholine** `1.5 mg/kg IV` (total body weight; typical adult 100–150 mg) — onset 45–60 s, duration 6–10 min; `3–4 mg/kg IM` (**max 150 mg**) if no IV access — IM onset is slower, ~2–3 min",
         "Succinylcholine contraindications — **hyperkalemia risk**: burns / crush / denervation / immobilization **>48 h**, neuromuscular disease, pre-existing hyperK; **personal or family hx of malignant hyperthermia**",
         "**Rocuronium** `1.2 mg/kg IV` (total body weight) — onset 45–60 s at RSI dose, duration 45–70 min; the default whenever succinylcholine is contraindicated",
         "**Paralysis outlasts induction** — rocuronium paralyzes far longer than etomidate sedates; start sedation + analgesia immediately after tube confirmation",
@@ -10949,7 +10949,10 @@ export const DIAGNOSES = [
       heading: "Pediatric dosing",
       items: [
         "Induction: etomidate `0.3 mg/kg` · ketamine `1–2 mg/kg IV` (`4–5 mg/kg IM` if no access) · propofol `2.5–3.5 mg/kg` in the healthy child (children need more per kg) — **reduce substantially in the critically ill or hypovolemic**",
-        "**Succinylcholine** (emergency-airway practice, runs higher than product labeling): infants <1 yr / <10 kg `3 mg/kg` · children `2 mg/kg` · adolescent/adult-sized `1.5 mg/kg`. **Rocuronium** `1.2 mg/kg` all ages",
+        "**Succinylcholine** (FDA label — emergency intubation only): infants / small children `2 mg/kg IV` · older children & adolescents `1 mg/kg IV` · IM when no vein `3–4 mg/kg` (**max 150 mg**). **Rocuronium** `1.2 mg/kg` all ages",
+        "Effective succinylcholine dose can **exceed weight-based prediction** — the adult 0.6 mg/kg equivalent is ~`2–3 mg/kg` in neonates and infants ≤6 months, and ~`1–2 mg/kg` in infants up to 2 years",
+        "⚠️ **Boxed warning — reserve for emergency use.** Hyperkalemic rhabdomyolysis in undiagnosed myopathy (e.g. Duchenne) can cause ventricular dysrhythmias, cardiac arrest and death; **routine elective use in children is contraindicated**",
+        "IV bolus can cause **profound bradycardia or (rarely) asystole** — more common and more severe than in adults, and worse after a **second dose**; anticholinergic (atropine) pretreatment may reduce it",
         "**Atropine** for bradycardia: `0.02 mg/kg` (min 0.1 mg, **max single dose 0.5 mg**); as intubation premedication AHA gives `0.02 mg/kg` with no minimum",
         "**Bradycardia during intubation = hypoxia until proven otherwise** — reoxygenate first, then reach for drugs",
         "Length-based tape (Broselow) beats mental math under stress — use it when available",
@@ -11001,6 +11004,8 @@ export const DIAGNOSES = [
         "Depolarizing agent — raises serum K⁺ ~0.5 mEq/L in everyone; upregulated extrajunctional receptors (burns, crush, denervation, immobility, neuromuscular disease) can release **massive K⁺ → arrest**",
         "Receptor upregulation can begin within **24–48 h** — avoid from **~48 h after injury** onward, and the risk persists for **months to years**, until healing and remobilization; it is safe in the first hours after an acute burn or cord injury",
         "Progressive neuromuscular disease (ALS, muscular dystrophy) = contraindicated **indefinitely**; undiagnosed myopathy in children is why many default to rocuronium in peds",
+        "**Pediatric boxed warning** — routine elective use in children is contraindicated; reserve for emergency intubation, immediate airway control (laryngospasm, difficult airway, full stomach), or IM use when no vein is accessible",
+        "**If a healthy-appearing child arrests within minutes of a dose** — treat immediately for **hyperkalemia**, and treat concurrently for **malignant hyperthermia** if signs are present",
         "Malignant hyperthermia trigger — personal or family history is an absolute contraindication",
         "Bradycardia with repeat dosing (especially peds) — atropine `0.02 mg/kg` ready",
       ],
@@ -11046,6 +11051,198 @@ export const DIAGNOSES = [
         "EMCrit — Push-Dose Pressors",
         "PALS 2020 — pediatric airway pharmacology",
       ],
+    },
+  ],
+},
+  // ─── GENITOURINARY (additional) ──────────────────────────────────────────
+{
+  id: "priapism",
+  name: "Priapism",
+  subtitle: "Ischemic priapism is a compartment syndrome of the penis",
+  category: "gu",
+  tldr: [
+    {
+      heading: "Ischemic vs non-ischemic — decide this first",
+      items: [
+        "**Ischemic (low-flow) — the emergency.** Painful, fully rigid corpora with a soft glans and spongiosum; a **compartment syndrome** — treat it like testicular torsion, not a clinic problem",
+        "**Non-ischemic (high-flow) — not an emergency.** Painless, only partially rigid, usually days after perineal/straddle trauma (arterial-lacunar fistula)",
+        "**Cavernosal blood gas settles it** — ischemic: pH `<7.25`, pO₂ `<30 mmHg`, pCO₂ `>60 mmHg`, dark blood. Non-ischemic looks arterial and bright red",
+        "Duration drives outcome — intervene by **`4 h`**; beyond `24–48 h` expect smooth-muscle necrosis, fibrosis and permanent erectile dysfunction",
+      ],
+    },
+    {
+      heading: "Treatment — ischemic priapism",
+      items: [
+        "**1. Anesthetise** — dorsal penile nerve block with lidocaine **without epinephrine**",
+        "**2. Aspirate** — `16–18 G` needle into the corpus cavernosum **laterally at the 3 or 10 o'clock position**; withdraw dark blood, irrigate with NS if needed",
+        "**3. Intracavernosal phenylephrine** — `100–500 mcg` every `3–5 min`, reassessing, for up to ~`1 h` (dilute to `100–500 mcg/mL`)",
+        "**Monitor BP and HR** during injections — phenylephrine is absorbed systemically; use the low end in children, coronary disease, or MAOI use",
+        "The corpora communicate — **one side is usually enough**",
+        "Still rigid after aspiration + sympathomimetic → **urology now** for a surgical shunt",
+      ],
+    },
+    {
+      heading: "Special situations",
+      items: [
+        "**Sickle cell disease** — the commonest cause in boys. Give hydration, oxygen, analgesia ± exchange transfusion, but **do NOT delay aspiration and phenylephrine** — systemic therapy alone does not decompress the corpora",
+        "Common drug causes: **intracavernosal alprostadil/papaverine**, trazodone, antipsychotics, SSRIs, cocaine, PDE-5 inhibitors",
+        "**Stuttering priapism** — recurrent self-limited episodes, typical of sickle cell; needs urology follow-up and a prevention plan",
+        "Non-ischemic: ice and observation; definitive care is **selective arterial embolization** — aspiration and phenylephrine are **not** indicated",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Why ischemic priapism is time-critical",
+      items: [
+        "Veno-occlusive — outflow stops and cavernosal blood becomes hypoxic, hypercarbic and acidotic inside a closed compartment",
+        "As ischemia progresses the smooth muscle stops responding to sympathomimetics, which is why late presentations fail medical therapy",
+        "`<4 h` usually reversible · `4–24 h` aspirate + sympathomimetic, still salvageable · `>24–48 h` necrosis and fibrosis begin",
+        "Beyond ~`36 h` of ischemia, permanent erectile dysfunction is the rule rather than the exception",
+      ],
+    },
+    {
+      heading: "Aspiration & injection technique",
+      items: [
+        "Sterile prep, then dorsal penile block with **plain** lidocaine (never with epinephrine)",
+        "Insert a `16–18 G` butterfly or angiocath into the corpus cavernosum **laterally at the 3 or 10 o'clock position**, mid-shaft",
+        "**Avoid the ventral midline** (urethra) and the **dorsal midline** (neurovascular bundle)",
+        "Aspirate until bright red blood returns; NS irrigation helps clear sludged blood",
+        "Hold pressure and apply a compression dressing afterwards to limit hematoma",
+      ],
+    },
+    {
+      heading: "Phenylephrine — preparation & cautions",
+      items: [
+        "Dilute to `100–500 mcg/mL` — e.g. `1 mL` of the 10 mg/mL vial into `99 mL` NS gives `100 mcg/mL`",
+        "Inject `100–500 mcg` (about `1 mL` of the 100 mcg/mL mix) every `3–5 min`, reassessing between doses, for up to ~`1 h`",
+        "**Monitor BP and HR** — systemic absorption causes hypertension and reflex bradycardia",
+        "Preferred agent because it is **pure alpha-1** with minimal beta effect",
+        "Lower doses in children, coronary artery disease, uncontrolled hypertension, or MAOI use",
+      ],
+    },
+    {
+      heading: "Non-ischemic (high-flow) priapism",
+      items: [
+        "Blunt perineal or penile trauma creates an **arterial-lacunar fistula** — often presenting days after the injury",
+        "Painless, partially rigid, well-oxygenated cavernosal blood — the tissue is **not** ischemic",
+        "Colour duplex ultrasound confirms the fistula",
+        "Definitive management is **selective arterial embolization**; many resolve with observation and ice",
+        "Aspiration and intracavernosal sympathomimetics are not indicated and may cause harm",
+      ],
+    },
+    {
+      heading: "Workup & underlying causes",
+      items: [
+        "Cavernosal blood gas is the key ED test; colour duplex US when the picture is unclear",
+        "CBC, reticulocytes ± haemoglobin electrophoresis if sickle cell is possible and not already known",
+        "Drug history — intracavernosal agents, PDE-5 inhibitors, trazodone, antipsychotics, SSRIs, cocaine",
+        "Also consider hyperleukocytosis/leukemia, myeloma, pelvic malignancy and spinal cord injury",
+      ],
+    },
+    {
+      heading: "Pitfalls",
+      items: [
+        "Treating a sickle cell patient with fluids and analgesia alone while the corpora stay ischemic",
+        "Discharging a rigid, painful priapism to clinic follow-up — it is a compartment syndrome",
+        "Injecting a **non-ischemic** priapism with phenylephrine",
+        "Using lidocaine **with epinephrine** for the penile block",
+        "Failing to monitor BP during repeated phenylephrine dosing",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["AUA Guideline — Priapism (Ischemic and Non-Ischemic)", "Tintinalli 9e (Male Genital Problems)", "EAU Guidelines — Sexual and Reproductive Health", "LITFL Priapism"],
+    },
+  ],
+},
+{
+  id: "paraphimosis",
+  name: "Paraphimosis",
+  subtitle: "Trapped retracted foreskin — reduce it now",
+  category: "gu",
+  tldr: [
+    {
+      heading: "Recognise it",
+      items: [
+        "Retracted foreskin **stuck proximal to the glans** behind a constricting band; the glans is swollen and tender and the foreskin will not come forward",
+        "**A true emergency** — the band obstructs venous and lymphatic return → progressive edema → arterial compromise → **glans necrosis**",
+        "**Not phimosis.** Phimosis is a foreskin that will not *retract* (usually not urgent). Paraphimosis is a foreskin that will not go *back*",
+        "**Most cases are iatrogenic** — foreskin left retracted after catheterisation, cleaning or examination. **Always replace the foreskin afterwards**",
+      ],
+    },
+    {
+      heading: "Reduce it — sequence",
+      items: [
+        "**Analgesia first** — dorsal penile nerve block with lidocaine **without epinephrine**, ± procedural sedation in children",
+        "**Squeeze the edema out** — firm circumferential compression of the glans for `5–10 min` before attempting reduction; this step does most of the work",
+        "**Manual reduction** — both thumbs on the glans, index and middle fingers behind the constricting band; push the glans back **through** the ring while drawing the foreskin forward over it",
+        "**Osmotic adjunct** if edema is stubborn — granulated sugar packed over the glans, or gauze soaked in `50%` dextrose, for `1–2 h`",
+        "**Hyaluronidase** `1 mL` (150 units/mL) injected into the edematous prepuce disperses fluid and aids reduction",
+        "**Puncture (Dundee) technique** — several `21 G` punctures through the edematous foreskin, then compress to express fluid and reduce",
+      ],
+    },
+    {
+      heading: "When reduction fails",
+      items: [
+        "**Emergent urology** — a **dorsal slit** releases the constricting band and is definitive when tissue is threatened",
+        "Do not keep making repeated forceful attempts — each one worsens edema and tissue injury",
+        "Dusky, black or insensate glans = **necrosis** — immediate urology, do not delay",
+        "After successful reduction, document that the foreskin was replaced and discuss elective circumcision",
+      ],
+    },
+  ],
+  extended: [
+    {
+      heading: "Manual reduction — detail",
+      items: [
+        "Get analgesia right first — reduction hurts, and a fighting patient defeats the attempt",
+        "Compress the glans firmly and continuously for `5–10 min` to drive edema proximally",
+        "Place both thumbs on the glans with the index and middle fingers of both hands behind the constricting ring",
+        "Apply **steady, sustained** pressure rather than sudden force — push the glans through the ring as the fingers draw the foreskin distally",
+        "Confirm the foreskin sits fully forward afterwards, and document it",
+      ],
+    },
+    {
+      heading: "Adjuncts when edema blocks reduction",
+      items: [
+        "**Osmotic** — granulated sugar over the glans and prepuce, or gauze soaked in `50%` dextrose, left `1–2 h` under a light dressing",
+        "**Compression** — elastic (Coban) wrap applied distal-to-proximal for `5–10 min`",
+        "**Cold** — ice in a glove or a cold pack; avoid frank freezing injury",
+        "**Hyaluronidase** — `1 mL` (150 units/mL) into the edematous prepuce; particularly useful in children",
+        "**Puncture / Dundee technique** — roughly `5–20` punctures with a `21 G` needle through edematous foreskin, then compress to express fluid",
+      ],
+    },
+    {
+      heading: "Dorsal slit & definitive care",
+      items: [
+        "If reduction fails or the glans is compromised, the constricting band must be **incised** — dorsal slit under local block",
+        "Performed by urology where available; EM physicians perform it when tissue is threatened and urology is not at hand",
+        "Circumcision is the definitive prevention and is usually arranged electively afterwards",
+        "Admit or arrange urgent urology for necrosis, infection, or urinary retention",
+      ],
+    },
+    {
+      heading: "Prevention & special groups",
+      items: [
+        "**The commonest cause is iatrogenic** — always reduce the foreskin after catheterisation, cleaning or examination",
+        "Highest risk: children, elderly and cognitively impaired patients, and anyone recently catheterised",
+        "Chronic balanoposthitis, diabetes and repeated retraction predispose by scarring the ring",
+        "In children, sedation plus hyaluronidase or the puncture technique often avoids theatre",
+      ],
+    },
+    {
+      heading: "Pitfalls",
+      items: [
+        "Confusing it with **phimosis** and discharging the patient",
+        "Repeated forceful attempts without analgesia or edema reduction — each attempt worsens swelling",
+        "Not looking under the foreskin in a catheterised or confused patient with penile pain",
+        "Missing early necrosis in a dusky, insensate glans",
+      ],
+    },
+    {
+      heading: "References",
+      items: ["Tintinalli 9e (Male Genital Problems)", "Roberts & Hedges — Clinical Procedures in Emergency Medicine (Paraphimosis reduction, Dorsal slit)", "EAU / AUA paediatric urology guidance", "LITFL Paraphimosis"],
     },
   ],
 },
