@@ -101,7 +101,15 @@ html, body, #root {
   color: var(--gold);
   padding: 1px 6px;
   border-radius: 4px;
-  white-space: nowrap;
+  /* A dose that runs off the side of a phone is worse than one that wraps, so a
+     chip too wide for the column must stay inside it. `normal` wraps only when the
+     chip does not fit, so short ranges like "10–20 mL/kg" are left intact; the
+     inline-block + max-width keeps a wrapped chip one rounded box rather than two
+     torn fragments. Content is also kept short enough that this rarely triggers. */
+  display: inline-block;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 /* ── Shimmer dot ──────────────────────────────────────── */

@@ -198,7 +198,7 @@ export const DIAGNOSES = [
       {
         heading: "First-line antidotes",
         items: [
-          "**Calcium** — `Calcium chloride 1 g IV (10 mL of 10% solution)` or `Calcium gluconate 3 g IV`; repeat q3–5 min × 3–4; then infusion `0.2–0.4 mEq/kg/hr`",
+          "**Calcium** — Calcium chloride `1 g IV` (10 mL of 10% solution) or `Calcium gluconate 3 g IV`; repeat q3–5 min × 3–4; then infusion `0.2–0.4 mEq/kg/hr`",
           "**High-dose insulin euglycemia (HIE)** — `Regular insulin 1 unit/kg IV bolus`, then `1 unit/kg/hr infusion`; D50 bolus + dextrose infusion to maintain glucose 100–250; check glucose q15–30 min; check K+ q30–60 min",
           "**Norepinephrine** — vasopressor of choice for hypotension; titrate to MAP >65",
         ],
@@ -588,8 +588,8 @@ export const DIAGNOSES = [
         heading: "Antidote — give empirically if suspected",
         items: [
           "**Hydroxocobalamin (Cyanokit)** — first-line, safe in fire victims: `5 g IV over 15 min` (adult); pediatric `70 mg/kg IV`; can repeat × 2 for maximum `15 g` total",
-          "**Sodium thiosulfate** (adjunct) — `12.5 g (50 mL of 25% solution) IV over 10–20 min`; safe to combine with hydroxocobalamin",
-          "**Sodium nitrite** — `300 mg (10 mL of 3% solution) IV over 5–15 min` — use if hydroxocobalamin unavailable; **avoid in smoke inhalation** (methemoglobin on top of CO-Hgb worsens O₂ carrying capacity)",
+          "**Sodium thiosulfate** (adjunct) — `12.5 g` (50 mL of 25% solution) IV over `10–20 min`; safe to combine with hydroxocobalamin",
+          "**Sodium nitrite** — `300 mg` (10 mL of 3% solution) IV over `5–15 min` — use if hydroxocobalamin unavailable; **avoid in smoke inhalation** (methemoglobin on top of CO-Hgb worsens O₂ carrying capacity)",
         ],
       },
       {
@@ -1084,7 +1084,7 @@ export const DIAGNOSES = [
       {
         heading: "Poison → Antidote → Dose",
         items: [
-          "**Acetaminophen** → N-Acetylcysteine → `150 mg/kg IV over 1 h, then 50 mg/kg over 4 h, then 100 mg/kg over 16 h`",
+          "**Acetaminophen** → N-Acetylcysteine → `150 mg/kg IV over 1 h`, then `50 mg/kg over 4 h`, then `100 mg/kg over 16 h`",
           "**Opioid** → Naloxone → `0.4–2 mg IV/IM/IN` q2–3 min (infusion: 2/3 of reversal dose per hour)",
           "**Benzodiazepine** → Flumazenil → `0.2 mg IV q1 min` (max 1 mg); **avoid if seizure risk or TCA co-ingestion**",
           "**Warfarin** → Vitamin K + 4F-PCC → `Vitamin K 10 mg IV slow`; `4F-PCC per INR-based dosing`",
@@ -3595,7 +3595,7 @@ export const DIAGNOSES = [
         heading: "Nitroglycerin — the key drug (push hard)",
         items: [
           "`NTG 400–800 mcg SL q3–5 min` while establishing IV",
-          "`IV NTG: start 100–200 mcg/min, titrate rapidly to 400 mcg/min`; don't be timid",
+          "IV NTG: start `100–200 mcg/min`, titrate rapidly to `400 mcg/min`; don't be timid",
           "**IV push strategy**: `NTG 2 mg IV push q3–5 min` (repeated boluses shown to reduce intubation without dangerous hypotension)",
           "Goal: afterload and preload reduction → fluid redistribution back to systemic compartment",
         ],
@@ -4203,7 +4203,7 @@ export const DIAGNOSES = [
         items: [
           "**IV artesunate** — `2.4 mg/kg IV at 0, 12, 24h, then daily × 7d` — first-line worldwide; available in US via CDC",
           "Transition to PO after 24h IV + clinical improvement: artemether-lumefantrine, atovaquone-proguanil, or mefloquine ×3 days",
-          "**If artesunate unavailable** — quinidine gluconate `10 mg/kg IV load over 1–2h, then 0.02 mg/kg/min` (continuous cardiac monitoring; QTc prolongation)",
+          "**If artesunate unavailable** — quinidine gluconate `10 mg/kg IV load over 1–2h`, then `0.02 mg/kg/min` (continuous cardiac monitoring; QTc prolongation)",
           "Empiric broad antibiotics if shock — coinfection common",
           "Exchange transfusion considered if parasitemia >10% with end-organ dysfunction (controversial)",
         ],
@@ -5000,7 +5000,7 @@ export const DIAGNOSES = [
           "**Sodium bicarbonate** — `1–2 mEq/kg IV bolus`, repeat until QRS narrows; then infusion `3 amps in 1L D5W at 200–250 mL/h`",
           "Goal arterial pH `7.50–7.55`; goal QRS <120 ms",
           "**Hypertonic saline** (3%) — alternative if bicarb-refractory",
-          "**Lipid emulsion** (Intralipid 20%) — `1.5 mL/kg bolus over 1 min, then 0.25 mL/kg/min × 30–60 min` — for refractory shock with lipid-soluble agents (TCA, bupropion, cocaine)",
+          "**Lipid emulsion** (Intralipid 20%) — `1.5 mL/kg bolus over 1 min`, then `0.25 mL/kg/min × 30–60 min` — for refractory shock with lipid-soluble agents (TCA, bupropion, cocaine)",
           "**Hypotension refractory** — norepinephrine first-line; epinephrine if needed",
           "**Seizures** — benzodiazepines first-line; **AVOID phenytoin** (Class IB → worsens)",
           "**Bupropion**: prolonged toxicity from extended-release; consider hemodialysis with refractory shock",
@@ -5688,7 +5688,7 @@ export const DIAGNOSES = [
         items: [
           "**Hypoglycemia** → `Dextrose 50 mL D50 IV` (peds `D25 2 mL/kg`); give thiamine first if alcohol/malnutrition",
           "**Eclampsia / pregnancy or postpartum** → `Magnesium sulfate 4–6 g IV` over 15–20 min, then `1–2 g/h` infusion (NOT a standard AED)",
-          "**INH or hydrazine toxicity** → `Pyridoxine (vitamin B6) 1 g per gram INH ingested IV` (empiric `5 g IV` if dose unknown)",
+          "**INH or hydrazine toxicity** → Pyridoxine (vitamin B6) `1 g per gram INH ingested IV` (empiric `5 g IV` if dose unknown)",
           "Check Na, Ca, Mg, tox screen, TCA/bupropion exposure, urea; CT head if focal/trauma/new",
         ],
       },
@@ -6174,7 +6174,7 @@ export const DIAGNOSES = [
         heading: "Treatment — anticoagulate (even if hemorrhagic)",
         items: [
           "**Anticoagulate even in the presence of hemorrhagic venous infarction** — heparin treats the cause and improves outcomes",
-          "**`Therapeutic LMWH (enoxaparin 1 mg/kg SC q12h)`** is preferred over unfractionated heparin in most cases",
+          "**Therapeutic LMWH (enoxaparin `1 mg/kg SC q12h`)** is preferred over unfractionated heparin in most cases",
           "Use **`UFH IV`** (weight-based) if the patient is unstable, may need a procedure, or has renal failure",
           "**VITT exception**: do **NOT** give heparin — use a **non-heparin anticoagulant** (e.g., argatroban, fondaparinux, DOAC) **+ `IVIG 1 g/kg/day` ×2 days**, and avoid platelet transfusion",
         ],
@@ -8772,7 +8772,7 @@ export const DIAGNOSES = [
         heading: "Immediate actions",
         items: [
           "**CT angiography (arterial + venous phase) is the test of choice** — obtain emergently; do not delay for serial labs",
-          "**Systemic anticoagulation**: `Heparin IV bolus 80 units/kg then 18 units/kg/h` infusion (unless contraindicated) once diagnosis suspected/confirmed",
+          "**Systemic anticoagulation**: Heparin IV bolus `80 units/kg` then `18 units/kg/h` infusion (unless contraindicated) once diagnosis suspected/confirmed",
           "Aggressive crystalloid resuscitation; **minimize vasoconstrictors** (worsen splanchnic ischemia) — if pressor needed, avoid pure alpha-agonists where possible",
           "NPO, NG decompression if obstructed/vomiting, broad-spectrum antibiotics, type & screen, early surgery/IR consult",
         ],
@@ -9720,7 +9720,7 @@ export const DIAGNOSES = [
       items: [
         "**Start high-dose corticosteroids immediately on clinical suspicion** — vision loss is preventable but irreversible once established",
         "**No visual symptoms**: `Prednisone 40-60 mg PO daily` (≈`1 mg/kg/day`)",
-        "**Any visual symptoms or vision loss**: `IV Methylprednisolone 500-1000 mg daily x3 days`, then transition to oral prednisone",
+        "**Any visual symptoms or vision loss**: IV Methylprednisolone `500-1000 mg daily x3 days`, then transition to oral prednisone",
         "Add **`Aspirin 81 mg PO daily`** (reduces ischemic/visual events) unless contraindicated; start GI and bone prophylaxis (PPI, calcium/vitamin D)",
         "**Steroids do NOT alter biopsy histology for `1-2 weeks`** — so treating first does not compromise the diagnosis",
       ],
@@ -9779,7 +9779,7 @@ export const DIAGNOSES = [
       heading: "Treatment detail",
       items: [
         "**Vision intact**: `Prednisone 40-60 mg PO daily`, continued until symptoms resolve and inflammatory markers normalize, then slow taper over `12-24 months`",
-        "**Vision threatened/lost or diplopia**: **`IV Methylprednisolone 500-1000 mg daily x3 days`** then high-dose oral prednisone; goal is to protect the fellow eye (recovery of lost vision is uncommon)",
+        "**Vision threatened/lost or diplopia**: **IV Methylprednisolone `500-1000 mg daily x3 days`** then high-dose oral prednisone; goal is to protect the fellow eye (recovery of lost vision is uncommon)",
         "**`Aspirin 81 mg daily`** unless contraindicated; PPI for GI prophylaxis; calcium + vitamin D ± bisphosphonate for steroid-induced osteoporosis",
         "**`Tocilizumab`** (IL-6R inhibitor; GiACTA trial) reduces relapse and cumulative steroid dose — steroid-sparing for refractory/relapsing disease or steroid intolerance",
         "Monitor and counsel on steroid toxicity: hyperglycemia, hypertension, infection, mood, osteoporosis; never stop abruptly",
@@ -9930,7 +9930,7 @@ export const DIAGNOSES = [
       heading: "Give epinephrine NOW — first-line, do not delay",
       items: [
         "**Epinephrine is the ONLY first-line drug and the only one that reduces mortality** — give immediately, before antihistamines/steroids/labs",
-        "`Epinephrine 0.3-0.5 mg (0.01 mg/kg, max 0.5 mg) IM` into the **anterolateral thigh (vastus lateralis)**; repeat **q5-15 min** as needed",
+        "Epinephrine `0.3-0.5 mg (0.01 mg/kg, max 0.5 mg) IM` into the **anterolateral thigh (vastus lateralis)**; repeat **q5-15 min** as needed",
         "Peds: `Epinephrine 0.01 mg/kg IM` (max single dose `0.3 mg`); autoinjector `0.15 mg` for `<25-30 kg`, `0.3 mg` for `>=25-30 kg`",
         "**IM, NOT SC or IV-push** — SC absorption is erratic; IV push of `1:1000` concentration causes myocardial ischemia, arrhythmia, death",
         "**Delayed epinephrine is the leading cause of fatal anaphylaxis** — when in doubt, give it",
